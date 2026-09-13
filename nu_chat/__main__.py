@@ -1,0 +1,43 @@
+"""Run each stage independently: python -m nu_chat --help."""
+
+import argparse
+import json
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Nile Guide: collect, embed, retrieve, generate")
+    parser.add_argument("command", choices=["collect", "index", "ingest", "serve", "evaluate"])
+    parser.add_argument(
+        "--max-pages", type=int, default=100, help="Maximum attempted document URLs per collection"
+    )
+    parser.add_argument(
+        "--no-sitemaps", action="store_true", help="Use seeds and discovered links only"
+    )
+    parser.add_argument("--port", type=int, default=8000)
+    parser.add_argument(
+        "--with-llm", action="store_true", help="Use Qwen normalization during evaluation"
+    )
+    args = parser.parse_args()
+    if args.max_pages < 1:
+        parser.error("--max-pages must be positive")
+    if args.command in {"collect", "ingest"}:
+        from nu_chat.collect import collect
+
+        report = collect(args.max_pages, not args.no_sitemaps)
+        print(json.dumps({k: v for k, v in report.items() if k != "skipped"}, indent=2))
+    if args.command in {"index", "ingest"}:
+        from nu_chat.retrieval import build_index
+
+        print(json.dumps(build_index(), indent=2))
+    if args.command == "serve":
+        import uvicorn
+
+        uvicorn.run("nu_chat.api:app", host="127.0.0.1", port=args.port)
+    if args.command == "evaluate":
+        from nu_chat.evaluate import evaluate
+
+        print(json.dumps(evaluate(args.with_llm), indent=2, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

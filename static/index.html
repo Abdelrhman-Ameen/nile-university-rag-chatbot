@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#092d50" />
+    <title>Nile University Chat</title>
+    <link rel="icon" href="/static/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#question">Skip to chat</a>
+    <aside class="sidebar" id="sidebar">
+      <a
+        class="brand"
+        href="https://nu.edu.eg"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><img
+          src="/static/nu-logo.png"
+          alt="Nile University — جامعة النيل"
+        /><span>Nile University</span></a
+      >
+      <button id="new-chat" class="nav-button">
+        <span aria-hidden="true">＋</span> New chat
+      </button>
+      <button id="library-button" class="nav-button">
+        <span aria-hidden="true">▤</span> Sources
+      </button>
+      <div id="recent-chats" class="recent-chats"></div>
+      <a
+        class="university-link"
+        href="https://nu.edu.eg"
+        target="_blank"
+        rel="noopener noreferrer"
+        >nu.edu.eg <span aria-hidden="true">↗</span></a
+      >
+    </aside>
+    <main>
+      <header class="topbar">
+        <div class="header-left">
+          <button
+            id="menu-button"
+            class="icon-button"
+            aria-label="Toggle sidebar"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            ☰</button
+          ><span>Nile University</span>
+        </div>
+        <button id="status-button" class="model-status" title="Model status">
+          <span id="status-dot" class="dot pending"></span
+          ><span id="status-text">Qwen 3</span>
+        </button>
+      </header>
+      <section id="chat-panel" class="chat-panel empty" aria-label="Chat">
+        <div class="conversation" id="conversation">
+          <div
+            id="messages"
+            role="log"
+            aria-live="polite"
+            aria-relevant="additions"
+            aria-label="Conversation"
+          ></div>
+        </div>
+        <div class="composer-area">
+          <h1 id="welcome">How can I help you?</h1>
+          <div id="notice" class="notice" role="status" hidden></div>
+          <div id="error" class="error" role="alert" hidden></div>
+          <form id="chat-form" class="composer">
+            <label class="sr-only" for="question"
+              >Message Nile University</label
+            >
+            <textarea
+              id="question"
+              rows="2"
+              maxlength="1500"
+              placeholder="Message Nile University"
+              dir="auto"
+              required
+            ></textarea>
+            <div class="composer-tools">
+              <label class="sr-only" for="reply-language">Reply language</label>
+              <select id="reply-language" aria-label="Reply language">
+                <option value="auto">Auto</option>
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+                <option value="franco">Franco</option>
+                <option value="mixed">عربي + English</option>
+              </select>
+              <button id="send-button" type="submit" aria-label="Send message">
+                ↑
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <dialog id="library-dialog" aria-labelledby="library-title">
+      <div class="dialog-heading">
+        <h2 id="library-title">Sources</h2>
+        <button
+          id="close-library"
+          class="icon-button"
+          aria-label="Close sources"
+        >
+          ×
+        </button>
+      </div>
+      <label class="sr-only" for="source-search">Search sources</label
+      ><input id="source-search" type="search" placeholder="Search sources" />
+      <div id="library-results"></div>
+    </dialog>
+    <div id="toast" role="status" hidden></div>
+  </body>
+</html>

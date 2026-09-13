@@ -1,0 +1,79 @@
+[
+  {
+    "question": "How do I apply to Nile University?",
+    "language": "en",
+    "expected_url_terms": ["how-to-apply", "admission-requirement"]
+  },
+  {
+    "question": "What are Nile University tuition fees?",
+    "language": "en",
+    "expected_url_terms": ["fees-and-financials", "financials"]
+  },
+  {
+    "question": "What undergraduate scholarships are available?",
+    "language": "en",
+    "expected_url_terms": ["scholarship"]
+  },
+  {
+    "question": "What are the English test requirements for admission?",
+    "language": "en",
+    "expected_url_terms": ["admission-requirement", "faqs"]
+  },
+  {
+    "question": "Can I transfer from another university to NU?",
+    "language": "en",
+    "expected_url_terms": ["admission-requirement", "faqs"]
+  },
+  {
+    "question": "Does NU have international student exchange programs?",
+    "language": "en",
+    "expected_url_terms": ["student-exchange", "international-affairs"]
+  },
+  {
+    "question": "مصاريف جامعة النيل كام؟",
+    "language": "ar",
+    "expected_url_terms": ["fees-and-financials", "financials"]
+  },
+  {
+    "question": "ازاي اقدم في جامعة النيل؟",
+    "language": "ar",
+    "expected_url_terms": ["how-to-apply", "admission-requirement"]
+  },
+  {
+    "question": "ايه المنح الدراسية المتاحة في جامعة النيل؟",
+    "language": "ar",
+    "expected_url_terms": ["scholarship"]
+  },
+  {
+    "question": "ايه شروط IELTS في جامعة النيل؟",
+    "language": "mixed",
+    "expected_url_terms": ["admission-requirement", "faqs"]
+  },
+  {
+    "question": "masareef Nile University bekam?",
+    "language": "franco",
+    "expected_url_terms": ["fees-and-financials", "financials"]
+  },
+  {
+    "question": "ezay a2adem fel gam3a?",
+    "language": "franco",
+    "expected_url_terms": ["how-to-apply", "admission-requirement"]
+  },
+  {
+    "question": "3ayez a3raf el mena7 el mota7a",
+    "language": "franco",
+    "expected_url_terms": ["scholarship"]
+  },
+  {
+    "question": "Who won the 2022 FIFA World Cup?",
+    "language": "en",
+    "expected_url_terms": [],
+    "unanswerable": true
+  },
+  {
+    "question": "How do I bake chocolate brownies?",
+    "language": "en",
+    "expected_url_terms": [],
+    "unanswerable": true
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "allowed_domains": ["nu.edu.eg"],
+  "seeds": [
+    "https://www.nu.edu.eg/faqs",
+    "https://www.nu.edu.eg/fees-and-financials",
+    "https://www.nu.edu.eg/how-to-apply",
+    "https://www.nu.edu.eg/admission-requirement-and-documents",
+    "https://www.nu.edu.eg/scholarship/undergraduate-scholarship",
+    "https://www.nu.edu.eg/student-exchange",
+    "https://www.nu.edu.eg/academic-calendar",
+    "https://www.nu.edu.eg/",
+    "https://itcs.nu.edu.eg/",
+    "https://eas.nu.edu.eg/",
+    "https://ba.nu.edu.eg/",
+    "https://biotech.nu.edu.eg/",
+    "https://mot.nu.edu.eg/",
+    "https://itcs.nu.edu.eg/program/computer-science",
+    "https://itcs.nu.edu.eg/program/artificial-intelligence",
+    "https://itcs.nu.edu.eg/program/cybersecurity",
+    "https://www.nu.edu.eg/office-international-affairs",
+    "https://nu.edu.eg/sites/default/files/2023-01/stem_scholarship_spring_2023_announcement.pdf",
+    "https://www.nu.edu.eg/sites/default/files/2025-10/september_newsletter.pdf",
+    "https://oldwebsite.nu.edu.eg/upload/nu/BBA%20Program%20Bylaws.pdf",
+    "https://oldwebsite.nu.edu.eg/upload/nu/Ph.D.%20Programs%20Bylaws.pdf"
+  ]
+}

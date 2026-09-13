@@ -1,0 +1,283 @@
+{
+  "evaluated_at": "2026-09-13T23:14:20.048470+00:00",
+  "with_llm": true,
+  "note": "Development set: URL-level relevance labels, not full answer correctness or Franco fluency.",
+  "classification_accuracy": 1.0,
+  "hit_at_5": 1.0,
+  "mrr_at_5": 1.0,
+  "unanswerable_rejection_rate": 1.0,
+  "cases": [
+    {
+      "question": "How do I apply to Nile University?",
+      "language": "en",
+      "expected_url_terms": [
+        "how-to-apply",
+        "admission-requirement"
+      ],
+      "detected": "en",
+      "query": "How do I apply to Nile University?",
+      "normalization": "original",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/how-to-apply",
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/admission-requirement-and-documents"
+      ]
+    },
+    {
+      "question": "What are Nile University tuition fees?",
+      "language": "en",
+      "expected_url_terms": [
+        "fees-and-financials",
+        "financials"
+      ],
+      "detected": "en",
+      "query": "What are Nile University tuition fees?",
+      "normalization": "original",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/fees-and-financials",
+        "https://nu.edu.eg/fees-and-financials"
+      ]
+    },
+    {
+      "question": "What undergraduate scholarships are available?",
+      "language": "en",
+      "expected_url_terms": [
+        "scholarship"
+      ],
+      "detected": "en",
+      "query": "What undergraduate scholarships are available?",
+      "normalization": "original",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/scholarship/undergraduate-scholarship",
+        "https://nu.edu.eg/scholarship/undergraduate-scholarship"
+      ]
+    },
+    {
+      "question": "What are the English test requirements for admission?",
+      "language": "en",
+      "expected_url_terms": [
+        "admission-requirement",
+        "faqs"
+      ],
+      "detected": "en",
+      "query": "What are the English test requirements for admission?",
+      "normalization": "original",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/how-to-apply"
+      ]
+    },
+    {
+      "question": "Can I transfer from another university to NU?",
+      "language": "en",
+      "expected_url_terms": [
+        "admission-requirement",
+        "faqs"
+      ],
+      "detected": "en",
+      "query": "Can I transfer from another university to NU?",
+      "normalization": "original",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/student-exchange",
+        "https://nu.edu.eg/student-exchange",
+        "https://nu.edu.eg/faqs"
+      ]
+    },
+    {
+      "question": "Does NU have international student exchange programs?",
+      "language": "en",
+      "expected_url_terms": [
+        "student-exchange",
+        "international-affairs"
+      ],
+      "detected": "en",
+      "query": "Does NU have international student exchange programs?",
+      "normalization": "original",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/student-exchange",
+        "https://nu.edu.eg/student-exchange",
+        "https://nu.edu.eg/faqs",
+        "https://nu.edu.eg/office-international-affairs",
+        "https://nu.edu.eg/office-international-affairs"
+      ]
+    },
+    {
+      "question": "مصاريف جامعة النيل كام؟",
+      "language": "ar",
+      "expected_url_terms": [
+        "fees-and-financials",
+        "financials"
+      ],
+      "detected": "ar",
+      "query": "What are the tuition fees at Nile University?",
+      "normalization": "qwen",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/fees-and-financials",
+        "https://nu.edu.eg/fees-and-financials"
+      ]
+    },
+    {
+      "question": "ازاي اقدم في جامعة النيل؟",
+      "language": "ar",
+      "expected_url_terms": [
+        "how-to-apply",
+        "admission-requirement"
+      ],
+      "detected": "ar",
+      "query": "How to apply to Nile University?",
+      "normalization": "qwen",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/how-to-apply",
+        "https://nu.edu.eg/admission-requirement-and-documents"
+      ]
+    },
+    {
+      "question": "ايه المنح الدراسية المتاحة في جامعة النيل؟",
+      "language": "ar",
+      "expected_url_terms": [
+        "scholarship"
+      ],
+      "detected": "ar",
+      "query": "What scholarships are available at Nile University?",
+      "normalization": "qwen",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/scholarship/undergraduate-scholarship",
+        "https://nu.edu.eg/scholarship/undergraduate-scholarship"
+      ]
+    },
+    {
+      "question": "ايه شروط IELTS في جامعة النيل؟",
+      "language": "mixed",
+      "expected_url_terms": [
+        "admission-requirement",
+        "faqs"
+      ],
+      "detected": "mixed",
+      "query": "What are the IELTS requirements for Nile University?",
+      "normalization": "qwen",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/faqs",
+        "https://nu.edu.eg/faqs"
+      ]
+    },
+    {
+      "question": "masareef Nile University bekam?",
+      "language": "franco",
+      "expected_url_terms": [
+        "fees-and-financials",
+        "financials"
+      ],
+      "detected": "franco",
+      "query": "What are the tuition fees at Nile University?",
+      "normalization": "qwen",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/fees-and-financials",
+        "https://nu.edu.eg/fees-and-financials"
+      ]
+    },
+    {
+      "question": "ezay a2adem fel gam3a?",
+      "language": "franco",
+      "expected_url_terms": [
+        "how-to-apply",
+        "admission-requirement"
+      ],
+      "detected": "franco",
+      "query": "How to apply to the university?",
+      "normalization": "qwen",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/how-to-apply",
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/admission-requirement-and-documents"
+      ]
+    },
+    {
+      "question": "3ayez a3raf el mena7 el mota7a",
+      "language": "franco",
+      "expected_url_terms": [
+        "scholarship"
+      ],
+      "detected": "franco",
+      "query": "How to apply for scholarships at Nile University?",
+      "normalization": "qwen",
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "rejected": false,
+      "top_urls": [
+        "https://nu.edu.eg/scholarship/undergraduate-scholarship",
+        "https://nu.edu.eg/scholarship/undergraduate-scholarship",
+        "https://nu.edu.eg/how-to-apply",
+        "https://nu.edu.eg/admission-requirement-and-documents",
+        "https://nu.edu.eg/admission-requirement-and-documents"
+      ]
+    },
+    {
+      "question": "Who won the 2022 FIFA World Cup?",
+      "language": "en",
+      "expected_url_terms": [],
+      "unanswerable": true,
+      "detected": "en",
+      "query": "Who won the 2022 FIFA World Cup?",
+      "normalization": "original",
+      "hit_at_5": false,
+      "reciprocal_rank": 0,
+      "rejected": true,
+      "top_urls": []
+    },
+    {
+      "question": "How do I bake chocolate brownies?",
+      "language": "en",
+      "expected_url_terms": [],
+      "unanswerable": true,
+      "detected": "en",
+      "query": "How do I bake chocolate brownies?",
+      "normalization": "original",
+      "hit_at_5": false,
+      "reciprocal_rank": 0,
+      "rejected": true,
+      "top_urls": []
+    }
+  ]
+}
