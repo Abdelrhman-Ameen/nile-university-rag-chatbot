@@ -15,6 +15,7 @@ from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlsplit
+from uuid import uuid4
 from zipfile import ZipFile
 
 from pypdf import PdfReader
@@ -29,9 +30,32 @@ from nu_chat.collect import (
 )
 from nu_chat.config import DATA_DIR, ROOT
 
+HTML_EXTRACTION_VERSION = 2
+
+
+def reextract_cached_html(result: dict) -> dict:
+    """Apply parser fixes to saved HTML without changing download dates or refetching."""
+    if result.get("html_extraction_version") == HTML_EXTRACTION_VERSION:
+        return result
+    if not result.get("raw_path") or not any(
+        d.get("kind") == "html" for d in result.get("documents", [])
+    ):
+        return result
+    body = Path(result["raw_path"]).read_bytes()
+    url = result.get("final_url") or result["url"]
+    title, text, links = extract_html(body, url)
+    template = result["documents"][0]
+    return {
+        **result,
+        "documents": [{**template, "title": title, "text": text}],
+        "links": links,
+        "images": content_images(body, url),
+        "html_extraction_version": HTML_EXTRACTION_VERSION,
+    }
+
 
 def atomic_json(path: Path, value):
-    temporary = path.with_suffix(".tmp")
+    temporary = path.with_name(f".{path.name}.{uuid4().hex}.tmp")
     temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
     replace_file(temporary, path)
 
@@ -159,6 +183,7 @@ def fetch_page(collector: Collector, url: str, raw_dir: Path) -> dict:
             "gaps": gaps,
             "raw_path": str(raw_path),
             "content_sha256": digest,
+            "html_extraction_version": HTML_EXTRACTION_VERSION if kind == "html" else None,
         }
     except SourceBlocked as exc:
         return {
@@ -315,6 +340,13 @@ def collect(
         for (payload,) in database.execute("SELECT result FROM pages"):
             cached = json.loads(payload)
             if cached["status"] == "ok" and canonical_url(cached["url"], domains):
+                updated = reextract_cached_html(cached)
+                if updated is not cached:
+                    cached = updated
+                    database.execute(
+                        "UPDATE pages SET result=? WHERE url=?",
+                        (json.dumps(cached, ensure_ascii=False), cached["url"]),
+                    )
                 process(cached)
                 seen.add(cached["url"])
                 reused += 1

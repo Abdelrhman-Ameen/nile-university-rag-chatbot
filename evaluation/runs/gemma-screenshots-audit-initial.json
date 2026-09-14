@@ -1,0 +1,291 @@
+{
+  "checked_at": "2026-09-14T04:21:50.710986+00:00",
+  "checker_version": "efeed79c0125fef6",
+  "health": {
+    "index_ready": true,
+    "intent_ready": true,
+    "model_ready": true,
+    "model": "gemma4:12b",
+    "thinking": false,
+    "index_version": 1789358993852111800,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "retrieval_device": "cuda",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "d03186e49f8b8b22",
+    "chunks": 25205,
+    "sources": 1904,
+    "collected_at": "2026-09-14T03:57:05.228887+00:00"
+  },
+  "total": 5,
+  "mechanical_passes": 2,
+  "manual_review_required": true,
+  "cases": [
+    {
+      "id": "R001",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "d03186e49f8b8b22",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "franco",
+        "opinion",
+        "user-screenshot"
+      ],
+      "review": "Make a useful evidence-based case for choosing NU, connect concrete opportunities to student interests, and ask a relevant fit question. No invented location, prestige or job guarantees; no missing-evidence refusal or unsolicited programming offer.",
+      "errors": [
+        "turn 1: HTTP 503; expected 200: The local model could not verify its answer. Please retry."
+      ],
+      "turns": [
+        {
+          "question": "hal elgam3a 7lwa?",
+          "status": 503,
+          "seconds": 33.69,
+          "result": {
+            "detail": "The local model could not verify its answer. Please retry."
+          },
+          "errors": [
+            "HTTP 503; expected 200: The local model could not verify its answer. Please retry."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R002",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "d03186e49f8b8b22",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "arabic",
+        "opinion",
+        "user-screenshot"
+      ],
+      "review": "Make a useful evidence-based case for choosing NU, connect concrete opportunities to student interests, and ask a relevant fit question. No invented location, prestige or job guarantees; no missing-evidence refusal or unsolicited programming offer.",
+      "errors": [
+        "turn 1: HTTP 503; expected 200: The local model could not verify its answer. Please retry."
+      ],
+      "turns": [
+        {
+          "question": "هل الجامعة كويسة؟",
+          "status": 503,
+          "seconds": 54.81,
+          "result": {
+            "detail": "The local model could not verify its answer. Please retry."
+          },
+          "errors": [
+            "HTTP 503; expected 200: The local model could not verify its answer. Please retry."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R003",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "d03186e49f8b8b22",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "arabic",
+        "advising",
+        "user-screenshot"
+      ],
+      "review": "Address the negative opinion and why the student should consider enrolling. Give documented reasons and ask the specific concern; no introduction or coding diversion.",
+      "errors": [
+        "turn 1: HTTP 503; expected 200: The local model could not verify its answer. Please retry."
+      ],
+      "turns": [
+        {
+          "question": "مش عجباني الجامعة ليه اجي عندكم برضو",
+          "status": 503,
+          "seconds": 25.81,
+          "result": {
+            "detail": "The local model could not verify its answer. Please retry."
+          },
+          "errors": [
+            "HTTP 503; expected 200: The local model could not verify its answer. Please retry."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R004",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "d03186e49f8b8b22",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "arabic",
+        "location",
+        "user-screenshot"
+      ],
+      "review": "Correct campus in Sheikh Zayed, Giza; no Mansoura/Zamalek invention.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "جامعة النيل فين بالظبط؟",
+          "status": 200,
+          "seconds": 4.95,
+          "result": {
+            "answer": "جامعة النيل موجودة في ميدان جهينة، طريق ٢٦ يوليو، مدينة الشيخ زايد، الجيزة، مصر [1].",
+            "sources": [
+              {
+                "id": "fc92e8d926300290-0",
+                "url": "https://nu.edu.eg/contact-us-Departments",
+                "title": "Contact Us | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:50.915373+00:00",
+                "archived": false,
+                "content_sha256": "3ef5b35c1b62eac5e9f91c8980ccef639edf39fcacb5519a07b2c3c707105f71",
+                "similarity": 0.5374,
+                "score": 0.571,
+                "rerank_score": 0.9252,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "location of Nile University in Egypt",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "Where exactly is Nile University?",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "university",
+                "intent_score": 0.3558,
+                "score": 0.3558,
+                "margin": 0.0389,
+                "confident": false,
+                "route": "university",
+                "general_information": false,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 4.95,
+              "planning_seconds": 1.82,
+              "retrieval_seconds": 0.22,
+              "generation_seconds": 2.91,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "R005",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "d03186e49f8b8b22",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "arabic",
+        "emotion",
+        "contrast"
+      ],
+      "review": "A complaint without an enrollment question deserves empathy, no sales pitch or programming diversion.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "انا متضايق من الجامعة النهارده",
+          "status": 200,
+          "seconds": 1.47,
+          "result": {
+            "answer": "أنا مقدر جداً إنك متضايق، ومقدر إن فيه أيام بتبقى صعبة ومستفزة في الجامعة. فضفض لو حابب، إيه اللي مضايقك بالظبط؟",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": false,
+              "message_meaning": "",
+              "normalization": "intent_classifier",
+              "intent_classification": {
+                "label": "emotion",
+                "intent_score": 0.9161,
+                "score": 0.9268,
+                "margin": 0.891,
+                "confident": true,
+                "route": "general",
+                "general_information": false,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 1.46,
+              "planning_seconds": 0.01,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 1.45,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ]
+    }
+  ],
+  "export_note": "Complete answers and source metadata retained. Full retrieved passages remain in the local data run. Mechanical pass is not a manual quality verdict."
+}

@@ -1,0 +1,51 @@
+{
+  "as_of": "2026-09-14T03:57:24.829233+00:00",
+  "indexed_chunks": 25205,
+  "indexed_source_urls": 1904,
+  "indexed_document_records": 5312,
+  "crawl": {
+    "documents": 2139,
+    "unique_urls": 1889,
+    "pending_urls": 13332,
+    "sitemap_urls_discovered": 19245,
+    "frontier_exhausted": false,
+    "blocked_hosts": {
+      "mot.nu.edu.eg": "HTTP 405: host paused; access challenge, throttling or service unavailable. Retry after the site permits access.",
+      "eas.nu.edu.eg": "HTTP 405: host paused; access challenge, throttling or service unavailable. Retry after the site permits access.",
+      "biotech.nu.edu.eg": "HTTP 405: host paused; access challenge, throttling or service unavailable. Retry after the site permits access.",
+      "winc.nu.edu.eg": "HTTP 405: host paused; access challenge, throttling or service unavailable. Retry after the site permits access.",
+      "itcs.nu.edu.eg": "HTTP 405: host paused; access challenge, throttling or service unavailable. Retry after the site permits access.",
+      "ba.nu.edu.eg": "HTTP 405: host paused; access challenge, throttling or service unavailable. Retry after the site permits access.",
+      "sesc.nu.edu.eg": "HTTP 405: host paused; access challenge, throttling or service unavailable. Retry after the site permits access.",
+      "nu.edu.eg": "HTTP 405: host paused; access challenge, throttling or service unavailable. Retry after the site permits access."
+    }
+  },
+  "ocr": {
+    "processed": 4600,
+    "documents": 3172,
+    "reviewed_documents": 33,
+    "scope": "Public crawl images and every page of cached PDFs, including images inside pages with a text layer. Automatic OCR is not manually verified."
+  },
+  "ocr_statuses": {
+    "ok": 4531,
+    "error": 69
+  },
+  "ocr_failures": {
+    "timed out": 9,
+    "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions": 58,
+    "Image size (267349305 pixels) exceeds limit of 178956970 pixels, could be decompression bomb DOS attack.": 1,
+    "cannot identify image file <_io.BytesIO object at 0x000001D7BC538B30>": 1
+  },
+  "location_audit": {
+    "official_url": "https://nu.edu.eg/contact-us",
+    "address": "Juhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt",
+    "invented_phrase": "الزمالك الجديد",
+    "invented_phrase_matches_in_corpora": 0
+  },
+  "limits": [
+    "Snapshot of discoverable public pages, not complete university coverage.",
+    "Automatic OCR is unreviewed except 33 sections from 9 hash-matched images.",
+    "436 PDF pages processed; not every page produces usable OCR text.",
+    "The absence of the invented address does not certify the rest of the corpus as error-free."
+  ]
+}

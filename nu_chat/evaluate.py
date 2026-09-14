@@ -12,7 +12,7 @@ from nu_chat.retrieval import Retriever
 def evaluate(with_llm: bool = False) -> dict:
     cases = json.loads((ROOT / "evaluation/questions.json").read_text(encoding="utf-8"))
     if with_llm and not model_available():
-        raise RuntimeError("Qwen must be running for --with-llm evaluation")
+        raise RuntimeError("The local model must be running for --with-llm evaluation")
     retriever = Retriever()
     rows = []
     for case in cases:
@@ -52,7 +52,7 @@ def evaluate(with_llm: bool = False) -> dict:
         "cases": rows,
     }
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    filename = "evaluation-qwen.json" if with_llm else "evaluation-baseline.json"
+    filename = "evaluation-model.json" if with_llm else "evaluation-baseline.json"
     (DATA_DIR / filename).write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
     )

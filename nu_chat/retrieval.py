@@ -19,9 +19,11 @@ from nu_chat.config import (
     EMBEDDING_MODEL,
     MIN_SIMILARITY,
     RERANK_MODEL,
+    RETRIEVAL_THREADS,
     ROOT,
     TOP_K,
 )
+from nu_chat.evidence import general_tuition
 from nu_chat.language import tokens
 
 STOP_WORDS = set(
@@ -37,10 +39,18 @@ ABBREVIATIONS = {
     "CIS": "Center for Informatics Science",
     "IPTTO": "Intellectual Property and Technology Transfer Office",
     "OSP": "Office of Sponsored Programs",
+    "FACT": "FESTO Authorized and Certified Training Centre",
+    "SCE": "School of Continuing Education",
+    "IECC": "Innovation Entrepreneurship and Competitiveness Centre",
 }
 
 
 def expand_abbreviations(text: str) -> str:
+    # Rewrites often already contain "Full school name (ITCS)". Expanding both
+    # copies overwhelms the topic and can rank individual courses above degree lists.
+    for abbreviation, full_name in ABBREVIATIONS.items():
+        if full_name.lower() in text.lower():
+            text = re.sub(r"\(?\b" + abbreviation + r"\b\)?", "", text, flags=re.I)
     return re.sub(
         r"\b(" + "|".join(ABBREVIATIONS) + r")\b",
         lambda match: ABBREVIATIONS[match[0].upper()],
@@ -56,6 +66,7 @@ def reranker():
 
     if not RERANK_MODEL:
         return None
+    configure_cpu_threads()
     return CrossEncoder(
         RERANK_MODEL, device=EMBEDDING_DEVICE, activation_fn=Sigmoid(), max_length=384
     )
@@ -69,6 +80,10 @@ def search_terms(text: str) -> list[str]:
         "admissions": "admission",
         "requirements": "requirement",
         "programs": "program",
+        "major": "program",
+        "majors": "program",
+        "degree": "program",
+        "degrees": "program",
         "scholarships": "scholarship",
         "discounts": "discount",
         "financials": "fees",
@@ -83,9 +98,19 @@ def search_terms(text: str) -> list[str]:
 
 
 @lru_cache(maxsize=1)
+def configure_cpu_threads():
+    import torch
+
+    # Small inference batches get slower when competing with OCR for every CPU core.
+    if EMBEDDING_DEVICE == "cpu":
+        torch.set_num_threads(max(1, RETRIEVAL_THREADS))
+
+
+@lru_cache(maxsize=1)
 def encoder():
     from sentence_transformers import SentenceTransformer
 
+    configure_cpu_threads()
     return SentenceTransformer(EMBEDDING_MODEL, device=EMBEDDING_DEVICE)
 
 
@@ -226,10 +251,27 @@ class Retriever:
         self.lock = threading.Lock()
 
     def search(
-        self, query: str, original: str = "", k: int = TOP_K, meaning: str = ""
+        self,
+        query: str,
+        original: str = "",
+        k: int = TOP_K,
+        meaning: str = "",
+        prefer_text: bool = False,
     ) -> list[dict]:
         query = expand_abbreviations(query)
         meaning = expand_abbreviations(meaning)
+        program_list = bool(
+            re.search(r"\b(programs?|majors?|degrees?)\b", query, re.I)
+            and re.search(r"\b(undergraduate|bachelor|available|list|offered)\b", query, re.I)
+            and not re.search(r"\b(courses?|modules?|curriculum)\b", query, re.I)
+        )
+        if re.search(
+            r"\b(?:location|address|located)\b|\bwhere is (?:the )?(?:nile university|nu|university|campus)\b",
+            query,
+            re.I,
+        ):
+            query += " campus location address contact"
+            meaning = query
         # This is a single-university corpus: the institution name can drown out the actual topic.
         focused = re.sub(
             r"\b(?:nile university|nu|in egypt)\b|جامعة النيل", "", query, flags=re.IGNORECASE
@@ -261,8 +303,28 @@ class Retriever:
         candidate_ids.update(
             int(i) for i in np.argsort(title_precision)[-24:] if title_precision[i] > 0
         )
+        tuition_tables = set()
+        if general_tuition(query):
+            years = re.findall(r"\b20\d{2}\b", query)
+            tuition_tables = {
+                i
+                for i, chunk in enumerate(self.chunks)
+                if chunk.get("ocr_reviewed")
+                and "Tuition fees by discount category" in chunk.get("context", chunk["text"])
+                and all(year in chunk.get("context", chunk["text"]) for year in years)
+            }
+            candidate_ids.update(tuition_tables)
         candidates = sorted(
-            (i for i in candidate_ids if dense[i] >= 0.28 or lexical[i] > 0),
+            (
+                i
+                for i in candidate_ids
+                if (dense[i] >= 0.28 or lexical[i] > 0)
+                and not (
+                    prefer_text
+                    and self.chunks[i].get("kind") in {"image", "pdf-ocr"}
+                    and not self.chunks[i].get("ocr_reviewed")
+                )
+            ),
             key=lambda i: scores[i],
             reverse=True,
         )
@@ -279,7 +341,12 @@ class Retriever:
                             meaning or query,
                             flags=re.I,
                         ),
-                        self.chunks[i]["title"]
+                        (
+                            self.chunks[i]["title"]
+                            if self.chunks[i].get("kind") != "image"
+                            or self.chunks[i].get("ocr_reviewed")
+                            else ""
+                        )
                         + "\n"
                         + self.chunks[i].get("context", self.chunks[i]["text"]),
                     )
@@ -290,7 +357,26 @@ class Retriever:
                 # The ranker is a relevance signal, not a truth probability.
                 # Retain exact title/topic matching as a small independent signal.
                 candidates.sort(
-                    key=lambda i: 0.75 * reranked[i] + 0.15 * title_match[i] + 0.1 * scores[i],
+                    key=lambda i: (
+                        0.75 * reranked[i]
+                        + 0.15 * title_match[i]
+                        + 0.1 * scores[i]
+                        # Reviewed general tables take priority over certificate-specific
+                        # or old GPA tables for a question about undergraduate tuition.
+                        + (0.35 if i in tuition_tables else 0)
+                        # Course pages carry an explicit Course ID field. A matching course
+                        # title is weaker evidence for a degree catalogue than a program list.
+                        - (
+                            0.3
+                            if program_list
+                            and re.search(
+                                r"\bCourse ID\b",
+                                self.chunks[i].get("context", self.chunks[i]["text"]),
+                                re.I,
+                            )
+                            else 0
+                        )
+                    ),
                     reverse=True,
                 )
         chosen, per_source, contexts = [], {}, set()
@@ -305,7 +391,7 @@ class Retriever:
                 continue
             contexts.add(context_key)
             # Preserve useful adjacent evidence, while avoiding a single-page monopoly.
-            if per_source.get(chunk["url"], 0) >= 2:
+            if per_source.get(chunk["url"], 0) >= (5 if tuition_tables else 2):
                 continue
             per_source[chunk["url"]] = per_source.get(chunk["url"], 0) + 1
             chosen.append(
@@ -320,4 +406,37 @@ class Retriever:
             )
             if len(chosen) == k:
                 break
+        return chosen
+
+    def advise(self, query: str, original: str = "") -> list[dict]:
+        """A vague 'why enroll?' needs distinct evidence topics, not a similarity to 'good'."""
+        topics = [
+            query,
+            "Undergraduate Research Forum student projects and participation",
+            "IECC Entrepreneurship Program Undergrad Track student startups",
+            "undergraduate student exchange programs",
+        ]
+        chosen, seen = [], set()
+        for topic in topics:
+            for hit in self.search(
+                topic,
+                original=original if topic == query else "",
+                meaning=topic,
+                k=2 if topic == query else 1,
+                prefer_text=True,
+            ):
+                if hit["id"] not in seen:
+                    # A generic exchange-page statement is not evidence of a named
+                    # program's accreditation. Don't turn it into an unsolicited sales claim.
+                    if not re.search(r"accredit|certif|اعتماد|معتمد", query + " " + original, re.I):
+                        hit = {
+                            **hit,
+                            "answer_text": "\n".join(
+                                line
+                                for line in hit["text"].splitlines()
+                                if not re.search(r"accredit|certified internationally", line, re.I)
+                            ),
+                        }
+                    chosen.append({**hit, "citation": len(chosen) + 1})
+                    seen.add(hit["id"])
         return chosen

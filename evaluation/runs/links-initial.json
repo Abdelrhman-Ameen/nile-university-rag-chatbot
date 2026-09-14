@@ -1,0 +1,713 @@
+{
+  "checked_at": "2026-09-14T05:08:44.868783+00:00",
+  "checker_version": "440760ee001e8ad3",
+  "health": {
+    "index_ready": true,
+    "intent_ready": true,
+    "model_ready": true,
+    "model": "gemma4:12b",
+    "thinking": false,
+    "index_version": 1789358993852111800,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "retrieval_device": "cuda",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "290c04ca20bb4596",
+    "chunks": 25205,
+    "sources": 1904,
+    "collected_at": "2026-09-14T03:57:05.228887+00:00"
+  },
+  "total": 3,
+  "mechanical_passes": 3,
+  "manual_review_required": false,
+  "cases": [
+    {
+      "id": "R006",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "290c04ca20bb4596",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "franco",
+        "multipart",
+        "user-screenshot",
+        "fresh-links"
+      ],
+      "review": "Answer BOTH how to apply and tuition. Give real annual amounts with school, Egyptian category, academic year and first-year scope; no invented certificate eligibility or citizenship. If school is unknown, give labeled examples and ask which school. Visible official links for both application and fees. Follow-up must answer cost, not merely send the user away.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "nice bs azay a3ml apply? we elmsarref kam?",
+          "status": 200,
+          "seconds": 12.24,
+          "result": {
+            "answer": "عشان تقدم في جامعة النيل (NU)، الخطوات هي:\n1. ادخل على موقع الجامعة ودوس على زرار \"Apply Now\" [1][2].\n2. اعمل حساب خاص بيك باستخدام إيميلك [1][2].\n3. املأ بيانات التقديم [1][2].\n4. احجز امتحان تحديد مستوى اللغة الإنجليزية [1][2].\n5. ارفع الأوراق المطلوبة [1][2].\n6. ادفع مصاريف التقديم واختبار اللغة أونلاين أو عن طريق تحويل بنكي (CIB أو QNB) [1][2].\n7. قدم الطلب [1][2].\n\nبالنسبة للمصاريف، المصاريف السنوية للسنة الأولى (Freshman) هي 152,640 جنيه مصري لطلاب كلية إدارة الأعمال، و193,680 جنيه مصري لطلاب كلية الهندسة والعلوم التطبيقية للعام الدراسي 2026/2027 [3][4].\n\nالتفاصيل والتحديثات على الصفحات الرسمية: [How to apply? — Apply Now | Information Technology and Computer Science School](https://itcs.nu.edu.eg/apply-now) · [How to Apply | NU](https://nu.edu.eg/how-to-apply) · [Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Business Administration — Tuition fees by di](https://nu.edu.eg/fees-and-financials).",
+            "sources": [
+              {
+                "id": "69ba1b7a9026c94d-s5-0",
+                "url": "https://itcs.nu.edu.eg/apply-now",
+                "title": "How to apply? — Apply Now | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:48.071666+00:00",
+                "archived": false,
+                "content_sha256": "e6ddba7135dfab2c43f16574379a9673ce884d46f3018bb33be8f5035907e52a",
+                "similarity": 0.5538,
+                "score": 0.7005,
+                "rerank_score": 0.9966,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "8870d38c3b923bc8-0",
+                "url": "https://nu.edu.eg/how-to-apply",
+                "title": "How to Apply | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.867374+00:00",
+                "archived": false,
+                "content_sha256": "1328eec33292b6c81002167c044b2f7e370b09c919ec5b824b97af5b2999b432",
+                "similarity": 0.4918,
+                "score": 0.6561,
+                "rerank_score": 0.978,
+                "citation": 2,
+                "cited": true
+              },
+              {
+                "id": "e12f8d73ad7a3ffc-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+                "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Business Administration — Tuition fees by discount category",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+                "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+                "archived": false,
+                "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+                "ocr_reviewed": true,
+                "similarity": 0.7591,
+                "score": 0.8421,
+                "rerank_score": 0.9876,
+                "citation": 3,
+                "cited": true
+              },
+              {
+                "id": "a26b53f4f7d8f3b0-74",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+                "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Engineering and Applied Sciences — Tuition fees by discount category",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+                "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+                "archived": false,
+                "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+                "ocr_reviewed": true,
+                "similarity": 0.7875,
+                "score": 0.8606,
+                "rerank_score": 0.9849,
+                "citation": 4,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "franco",
+              "reply_language": "ar",
+              "retrieval_query": "how to apply to Nile University | tuition fees at Nile University",
+              "retrieval_queries": [
+                "how to apply to Nile University",
+                "tuition fees at Nile University"
+              ],
+              "current_information_links": true,
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "Nice, how do I apply? And how much are the fees?",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "mixed",
+                "intent_score": 0.2627,
+                "score": 0.2627,
+                "margin": 0.0264,
+                "confident": false,
+                "route": "mixed",
+                "general_information": true,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 12.23,
+              "planning_seconds": 2.34,
+              "retrieval_seconds": 0.29,
+              "generation_seconds": 9.61,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        },
+        {
+          "question": "متعرفش المصاريف كام؟",
+          "status": 200,
+          "seconds": 17.75,
+          "result": {
+            "answer": "المصاريف السنوية للسنة الأولى (Freshman) لعام 2026/2027 هي 193,680 جنيه مصري لطلاب كلية الهندسة والعلوم التطبيقية [1].\n\nرسوم التقديم (Application fee) هي 1,500 جنيه مصري وغير مستردة [3][5]، بينما تذكر صفحة كلية إدارة الأعمال أن رسوم التقديم هي 1,000 جنيه مصري وغير مستردة [2][4]. كما تبلغ رسوم اختبار اللغة الإنجليزية 200 جنيه مصري [2][4].\n\nالتفاصيل والتحديثات على الصفحات الرسمية: [Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Engineering and Applied Sciences — Tuition f](https://nu.edu.eg/fees-and-financials) · [What are the admission documents? — Apply Now | Business Administration School](https://ba.nu.edu.eg/apply-now) · [Introduction — Admission Requirements and Documents | NU](https://nu.edu.eg/admission-requirement-and-documents) · [Admission Requirements — Professional Diploma in Computational Drug Discovery  C3D  | NU](https://nu.edu.eg/professional-development/computer-science-ai/professional-diploma-computational-drug-discovery-c3d).",
+            "sources": [
+              {
+                "id": "a26b53f4f7d8f3b0-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+                "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Engineering and Applied Sciences — Tuition fees by discount category",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+                "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+                "archived": false,
+                "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+                "ocr_reviewed": true,
+                "similarity": 0.8107,
+                "score": 0.8192,
+                "rerank_score": 0.9999,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "88f46fa45e64c40e-s6-370",
+                "url": "https://ba.nu.edu.eg/apply-now",
+                "title": "What are the admission documents? — Apply Now | Business Administration School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:32.689360+00:00",
+                "archived": false,
+                "content_sha256": "96b38f24ff5dcde6b5c34858f718dcd4dc1e7e086771726a5562c9c9812c1d5c",
+                "similarity": 0.4217,
+                "score": 0.4799,
+                "rerank_score": 0.9752,
+                "citation": 2,
+                "cited": true
+              },
+              {
+                "id": "5c081e07661f2f38-s3-0",
+                "url": "https://nu.edu.eg/admission-requirement-and-documents",
+                "title": "Introduction — Admission Requirements and Documents | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.868373+00:00",
+                "archived": false,
+                "content_sha256": "2267c906a786ea66206b773e5a171609581f689b58dccc6567262251faca8169",
+                "similarity": 0.6398,
+                "score": 0.6331,
+                "rerank_score": 0.9911,
+                "citation": 3,
+                "cited": true
+              },
+              {
+                "id": "88f46fa45e64c40e-s6-296",
+                "url": "https://ba.nu.edu.eg/apply-now",
+                "title": "What are the admission documents? — Apply Now | Business Administration School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:32.689360+00:00",
+                "archived": false,
+                "content_sha256": "96b38f24ff5dcde6b5c34858f718dcd4dc1e7e086771726a5562c9c9812c1d5c",
+                "similarity": 0.6481,
+                "score": 0.6199,
+                "rerank_score": 0.8785,
+                "citation": 4,
+                "cited": true
+              },
+              {
+                "id": "db99ea2e96ef0ccb-s11-0",
+                "url": "https://nu.edu.eg/professional-development/computer-science-ai/professional-diploma-computational-drug-discovery-c3d",
+                "title": "Admission Requirements — Professional Diploma in Computational Drug Discovery (C3D) | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:27:13.773804+00:00",
+                "archived": false,
+                "content_sha256": "a4720c5fc526e43b2139ec4aa78ce6d41bff7d70d73c89182556e2f5b8c7034c",
+                "similarity": 0.3919,
+                "score": 0.5371,
+                "rerank_score": 0.9471,
+                "citation": 5,
+                "cited": true
+              },
+              {
+                "id": "c2d448c5938d6594-s22-0",
+                "url": "https://nu.edu.eg/office-international-affairs",
+                "title": "Application Steps — The Office of International Affairs | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:30.540517+00:00",
+                "archived": false,
+                "content_sha256": "b59cead8fdd081d31c7a411142317bf40490f88792153f26c247b091129658e0",
+                "similarity": 0.4674,
+                "score": 0.5504,
+                "rerank_score": 0.9415,
+                "citation": 6,
+                "cited": false
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "tuition fees 2026/2027 | admission application fees",
+              "retrieval_queries": [
+                "tuition fees 2026/2027",
+                "admission application fees"
+              ],
+              "current_information_links": true,
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "I don't know how much the fees are.",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "followup",
+                "intent_score": 0.2262,
+                "score": 0.2262,
+                "margin": 0.0216,
+                "confident": false,
+                "route": null,
+                "general_information": null,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 17.75,
+              "planning_seconds": 2.59,
+              "retrieval_seconds": 0.3,
+              "generation_seconds": 14.85,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "fail",
+        "notes": "Steps and labeled fees returned, but follow-up adds unrequested conflicting application charges and a postgraduate source."
+      }
+    },
+    {
+      "id": "R007",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "290c04ca20bb4596",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "arabic",
+        "multipart",
+        "fees",
+        "fresh-links"
+      ],
+      "review": "Preserve ITCS from explicit context, answer application steps and 2026/27 first-year Egyptian base 193680 EGP; no IGCSE/Thanaweya tiers unless asked. Immediately following 50% question must give 96840 EGP without guaranteeing eligibility. Visible official links on both answers.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "عايز اقدم حاسبات، اعمل ايه والمصاريف كام قبل المنح؟",
+          "status": 200,
+          "seconds": 10.03,
+          "result": {
+            "answer": "عشان تقدم في كلية تكنولوجيا المعلومات وعلوم الحاسب (ITCS) في جامعة النيل، لازم تتبع الخطوات دي: أولاً، تدخل على موقع الجامعة وتضغط على زرار \"Apply Now\"، وتعمل حساب جديد بإيميلك، وبعدين تملا بيانات التقديم، وتحجز اختبار تحديد مستوى اللغة الإنجليزية، وترفع المستندات المطلوبة، وتدفع مصاريف التقديم أونلاين أو عن طريق تحويل بنكي (CIB أو QNB)، وفي الآخر تقدم الطلب [1].\n\nبالنسبة للمصاريف الدراسية لطلاب السنة الأولى (Freshman) في كلية تكنولوجيا المعلومات وعلوم الحاسب للعام الدراسي 2026/2027، التكلفة السنوية قبل خصم المنح هي 193,680 جنيه مصري [2].\n\nالتفاصيل والتحديثات على الصفحات الرسمية: [How to apply? — Apply Now | Information Technology and Computer Science School](https://itcs.nu.edu.eg/apply-now) · [Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science ](https://nu.edu.eg/fees-and-financials).",
+            "sources": [
+              {
+                "id": "69ba1b7a9026c94d-s5-0",
+                "url": "https://itcs.nu.edu.eg/apply-now",
+                "title": "How to apply? — Apply Now | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:48.071666+00:00",
+                "archived": false,
+                "content_sha256": "e6ddba7135dfab2c43f16574379a9673ce884d46f3018bb33be8f5035907e52a",
+                "similarity": 0.5899,
+                "score": 0.6943,
+                "rerank_score": 0.9998,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "e11a9e460e01b2db-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+                "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+                "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+                "archived": false,
+                "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+                "ocr_reviewed": true,
+                "similarity": 0.7909,
+                "score": 0.8629,
+                "rerank_score": 0.9994,
+                "citation": 2,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "how to apply for Computer Science at Nile University | tuition fees for Computer Science at Nile University",
+              "retrieval_queries": [
+                "how to apply for Computer Science at Nile University",
+                "tuition fees for Computer Science at Nile University"
+              ],
+              "current_information_links": true,
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "I want to apply for Computer Science, what should I do and how much are the fees before scholarships?",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "university",
+                "intent_score": 0.6045,
+                "score": 0.6045,
+                "margin": 0.359,
+                "confident": false,
+                "route": "university",
+                "general_information": false,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 10.03,
+              "planning_seconds": 2.61,
+              "retrieval_seconds": 0.33,
+              "generation_seconds": 7.09,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        },
+        {
+          "question": "ولو معايا خصم 50% هتبقى كام؟",
+          "status": 200,
+          "seconds": 8.98,
+          "result": {
+            "answer": "لو معاك خصم 50% (Category 1)، المصاريف الدراسية السنوية لطلاب السنة الأولى (Freshman) في كلية تكنولوجيا المعلومات وعلوم الحاسب (ITCS) للعام الدراسي 2026/2027 هتكون 96,840 جنيه مصري [2].\n\nالتفاصيل والتحديثات على الصفحات الرسمية: [Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science ](https://nu.edu.eg/fees-and-financials).",
+            "sources": [
+              {
+                "id": "e11a9e460e01b2db-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+                "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+                "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+                "archived": false,
+                "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+                "ocr_reviewed": true,
+                "similarity": 0.812,
+                "score": 0.8715,
+                "rerank_score": 1.0,
+                "citation": 1,
+                "cited": false
+              },
+              {
+                "id": "e11a9e460e01b2db-74",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+                "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+                "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+                "archived": false,
+                "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+                "ocr_reviewed": true,
+                "similarity": 0.6995,
+                "score": 0.7904,
+                "rerank_score": 0.9998,
+                "citation": 2,
+                "cited": true
+              },
+              {
+                "id": "69ba1b7a9026c94d-s12-0",
+                "url": "https://itcs.nu.edu.eg/apply-now",
+                "title": "Do you have scholarships? — Apply Now | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:48.071666+00:00",
+                "archived": false,
+                "content_sha256": "e6ddba7135dfab2c43f16574379a9673ce884d46f3018bb33be8f5035907e52a",
+                "similarity": 0.6224,
+                "score": 0.6548,
+                "rerank_score": 0.9836,
+                "citation": 3,
+                "cited": false
+              },
+              {
+                "id": "b5a4a59f77ae22f9-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20133037.png",
+                "title": "Fees and Financials | NU — American Diploma — School of Information Technology and Computer Science — American Diploma",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.381156+00:00",
+                "extracted_at": "2026-09-14T03:37:55.130695+00:00",
+                "archived": false,
+                "content_sha256": "d3491d2f376376d38dbc96137eb2e2976da1334a508bf199195af5d86b7e6290",
+                "ocr_reviewed": true,
+                "similarity": 0.6869,
+                "score": 0.738,
+                "rerank_score": 0.9997,
+                "citation": 4,
+                "cited": false
+              },
+              {
+                "id": "69ba1b7a9026c94d-s15-0",
+                "url": "https://itcs.nu.edu.eg/apply-now",
+                "title": "Contact Us — Apply Now | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:48.071666+00:00",
+                "archived": false,
+                "content_sha256": "e6ddba7135dfab2c43f16574379a9673ce884d46f3018bb33be8f5035907e52a",
+                "similarity": 0.6173,
+                "score": 0.604,
+                "rerank_score": 0.9651,
+                "citation": 5,
+                "cited": false
+              },
+              {
+                "id": "11965d8fadd53806-0",
+                "url": "https://nu.edu.eg/admission/fees-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/2022-05/itcs.png",
+                "title": "Historical ITCS tuition and GPA merit scholarship table — ITCS GPA discounts — historical table; current applicability unconfirmed — ITCS first-year tuition: historical image without an academic year",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:47.921407+00:00",
+                "extracted_at": "2026-09-14T03:37:55.141246+00:00",
+                "archived": true,
+                "content_sha256": "ee93757653ebd0aa80a041d28fd866ddf55920ad81a3e17dd91f90b4e8ecd0c8",
+                "ocr_reviewed": true,
+                "similarity": 0.6268,
+                "score": 0.6011,
+                "rerank_score": 0.9986,
+                "citation": 6,
+                "cited": false
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "tuition fees for ITCS 2026/2027 | scholarships and discounts for ITCS",
+              "retrieval_queries": [
+                "tuition fees for ITCS 2026/2027",
+                "scholarships and discounts for ITCS"
+              ],
+              "current_information_links": true,
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "And if I have a 50% discount, how much will it be?",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "followup",
+                "intent_score": 0.4728,
+                "score": 0.4728,
+                "margin": 0.2562,
+                "confident": false,
+                "route": null,
+                "general_information": null,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 8.97,
+              "planning_seconds": 2.76,
+              "retrieval_seconds": 0.42,
+              "generation_seconds": 5.79,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "pass",
+        "notes": "Both ITCS application and base tuition answered; 50% follow-up correct and links visible."
+      }
+    },
+    {
+      "id": "R008",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "290c04ca20bb4596",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "english",
+        "fresh-links",
+        "deadline"
+      ],
+      "review": "Give recorded June 7 deadline as past on current date, not open enrollment. Include explicit event/submission link.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "What is the submission deadline for the 22nd UGRF?",
+          "status": 200,
+          "seconds": 6.76,
+          "result": {
+            "answer": "The submission deadline for the 22nd Undergraduate Research Forum (UGRF) is June 7th [1] [3] [4].\n\nOfficial pages for details and updates: [22nd UGRF | UGRF - Undergraduate Research Forum — 22nd UGRF Submission Instructions — Image text](https://ugrf.nu.edu.eg/22nd-UGRF) · [The 22nd Edition of UGRF | NU](https://nu.edu.eg/events/22nd-edition-ugrf).",
+            "sources": [
+              {
+                "id": "a263a436e49303b0-0",
+                "url": "https://ugrf.nu.edu.eg/22nd-UGRF",
+                "asset_url": "https://ugrf.nu.edu.eg/sites/ugrftest.nu.edu/files/inline-images/Screenshot%202026-05-11%20153628.png",
+                "title": "22nd UGRF | UGRF - Undergraduate Research Forum — 22nd UGRF Submission Instructions — Image text",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:45:34.401355+00:00",
+                "extracted_at": "2026-09-14T03:38:46.834883+00:00",
+                "archived": false,
+                "content_sha256": "aa472909f69f0ac30b80d33c169fbcc89fe84f15b1682389f2736dddd12a5fab",
+                "ocr_reviewed": false,
+                "similarity": 0.7081,
+                "score": 0.796,
+                "rerank_score": 0.9997,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "3a8a02050463a0f7-s8-74",
+                "url": "https://ugrf.nu.edu.eg/22nd-UGRF",
+                "title": "22nd UGRF Submission Instructions — 22nd UGRF | UGRF - Undergraduate Research Forum",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:01.583985+00:00",
+                "archived": false,
+                "content_sha256": "47d1b2b9ef6bf3f8f91fc730e0dc735c47118c809af2ef59b8cd385636ac3cb2",
+                "similarity": 0.6647,
+                "score": 0.6885,
+                "rerank_score": 0.9985,
+                "citation": 2,
+                "cited": false
+              },
+              {
+                "id": "823de7c2dce40240-0",
+                "url": "https://nu.edu.eg/events/22nd-edition-ugrf",
+                "title": "The 22nd Edition of UGRF | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:25.974505+00:00",
+                "archived": false,
+                "content_sha256": "1efce20ba87191ecece893fbead10eda8e6103fc6af43189740d1c51847519b4",
+                "similarity": 0.5628,
+                "score": 0.5345,
+                "rerank_score": 0.9971,
+                "citation": 3,
+                "cited": true
+              },
+              {
+                "id": "823de7c2dce40240-148",
+                "url": "https://nu.edu.eg/events/22nd-edition-ugrf",
+                "title": "The 22nd Edition of UGRF | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:25.974505+00:00",
+                "archived": false,
+                "content_sha256": "1efce20ba87191ecece893fbead10eda8e6103fc6af43189740d1c51847519b4",
+                "similarity": 0.1818,
+                "score": 0.2215,
+                "rerank_score": 0.9387,
+                "citation": 4,
+                "cited": true
+              },
+              {
+                "id": "ad67d6b1763886ec-0",
+                "url": "https://nu.edu.eg/",
+                "asset_url": "https://nu.edu.eg/sites/default/files/2026-06/701708282_1401686881988466_1087410430087061751_n.jpg",
+                "title": "Homepage | NU — The 8th Novel Intelligent And Leading Emerging Sciences Conference - NILES2026 — Image text",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:49:43.483296+00:00",
+                "extracted_at": "2026-09-14T03:38:55.514292+00:00",
+                "archived": false,
+                "content_sha256": "f98daa2d1d9626f634fbb5eb52edffc217f2c263b02dbb7b29c60831a36d5ba5",
+                "ocr_reviewed": false,
+                "similarity": 0.4795,
+                "score": 0.4249,
+                "rerank_score": 0.791,
+                "citation": 5,
+                "cited": false
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "22nd UGRF submission deadline",
+              "retrieval_queries": [
+                "22nd UGRF submission deadline"
+              ],
+              "current_information_links": true,
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What is the submission deadline for the 22nd Undergraduate Research Forum?",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "university",
+                "intent_score": 0.9124,
+                "score": 0.9124,
+                "margin": 0.8667,
+                "confident": true,
+                "route": "university",
+                "general_information": false,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 6.76,
+              "planning_seconds": 1.99,
+              "retrieval_seconds": 0.17,
+              "generation_seconds": 4.6,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "partial",
+        "notes": "Correct day and official links, but date lacks year/past-deadline context."
+      }
+    }
+  ]
+}

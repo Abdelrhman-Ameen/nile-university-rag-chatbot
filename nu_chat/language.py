@@ -1,7 +1,7 @@
 """Transparent language routing, not an SBERT classification head.
 
 Franco is unstandardized: rules are a baseline, and the UI allows correction.
-Qwen performs the actual contextual Franco-to-English query normalization.
+The local model performs the actual contextual Franco-to-English query normalization.
 """
 
 import re
@@ -94,6 +94,13 @@ AMBIGUOUS = {
     "bel",
 }
 FRANCO_HINTS = {
+    "7elwa": "good",
+    "7lwa": "good",
+    "helwa": "good",
+    "ra2yak": "your opinion",
+    "rayak": "your opinion",
+    "tensa7ny": "recommend",
+    "koleya": "college",
     "mabsoot": "happy",
     "mabsout": "happy",
     "naga7t": "I passed",
@@ -157,6 +164,6 @@ def detect_language(text: str) -> str:
 
 
 def fallback_query(text: str) -> str:
-    """A small domain glossary when Qwen is unavailable; not a full translator."""
+    """A small domain glossary when The local model is unavailable; not a full translator."""
     hints = [FRANCO_HINTS[w] for w in tokens(text) if w in FRANCO_HINTS]
     return text + ("\n" + " ".join(hints) if hints else "")

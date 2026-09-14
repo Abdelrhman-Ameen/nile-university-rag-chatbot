@@ -1,0 +1,534 @@
+{
+  "checked_at": "2026-09-14T04:17:06.318484+00:00",
+  "checker_version": "efeed79c0125fef6",
+  "health": {
+    "index_ready": true,
+    "intent_ready": true,
+    "model_ready": true,
+    "model": "gemma4:12b",
+    "thinking": false,
+    "index_version": 1789358993852111800,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "retrieval_device": "cuda",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "9545a185df487a99",
+    "chunks": 25205,
+    "sources": 1904,
+    "collected_at": "2026-09-14T03:57:05.228887+00:00"
+  },
+  "total": 5,
+  "mechanical_passes": 5,
+  "manual_review_required": true,
+  "cases": [
+    {
+      "id": "R001",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "9545a185df487a99",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "franco",
+        "opinion",
+        "user-screenshot"
+      ],
+      "review": "Make a useful evidence-based case for choosing NU, connect concrete opportunities to student interests, and ask a relevant fit question. No invented location, prestige or job guarantees; no missing-evidence refusal or unsolicited programming offer.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "hal elgam3a 7lwa?",
+          "status": 200,
+          "seconds": 13.5,
+          "result": {
+            "answer": "جامعة النيل بتقدم فرص قوية جداً لو أنت مهتم بالبحث العلمي والابتكار. الجامعة بتنظم منتدى أبحاث الطلاب (UGRF) كل فصل دراسي، وده بيسمح للطلاب من كل الكليات إنهم يقدموا أبحاثهم العلمية للتقييم والنشر، سواء كانت مشاريع لطلاب في سنوات دراسية مختلفة أو مشاريع تخرج للطلاب في السنة الأخيرة [1]. ده بيساعدك تطبق اللي بتدرسه عملي وتنمي مهاراتك البحثية.\n\nكمان، الجامعة بتهتم بتحويل الأبحاث لشركات ناشئة من خلال مركز الابتكار والريادة والتنافسية (IECC)، وبتقدم برامج لتدريب الطلاب والقدرة على تسويق الأبحاث [2]. بالإضافة لده، الشهادات اللي بتطلعها معتمدة دولياً، والجامعة بتوفر برامج تبادل طلابي في تخصصات زي الهندسة، وإدارة الأعمال، وتكنولوجيا المعلومات، والبيوتكنولوجي في جامعات دولية زي جامعة ميشيغان في أمريكا أو جامعة كليرمون في فرنسا [3]. كل الفرص دي بتدعم خططك لو بتدور على تعليم بيجمع بين البحث العلمي والفرص الدولية.\\n\\nإيه أكتر تخصص دراسي مهتم بيه أو في حاجة معينة قلقاك بخصوص الدراسة في مصر؟",
+            "sources": [
+              {
+                "id": "96cdda725cbd65a8-74",
+                "url": "https://ugrf.nu.edu.eg/",
+                "title": "Home page | UGRF - Undergraduate Research Forum",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:01.587986+00:00",
+                "archived": false,
+                "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+                "similarity": 0.7113,
+                "score": 0.7624,
+                "rerank_score": 0.999,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "ff39b7d2859cdce0-s1-0",
+                "url": "https://iecc.nu.edu.eg/news/nile-universitys-iecc-concludes-faculty-track-entrepreneurship-program-showcasing-groundbreaking-startups-from-academic-research/",
+                "title": "Nile University’s IECC Concludes Faculty Track Entrepreneurship Program, Showcasing Groundbreaking Startups from Academic Research — Nile University’s IECC Concludes Faculty Track Entrepreneurship Program, Showcasing Groundbreaking Startups from Academic Research - IECC",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:34:54.422130+00:00",
+                "archived": false,
+                "content_sha256": "de9eaa4f2a383caa8cf2b243c655f48cb3ab1fdff521d17069ab841a2b1e5ee7",
+                "similarity": 0.5693,
+                "score": 0.6441,
+                "rerank_score": 0.9808,
+                "citation": 2,
+                "cited": true
+              },
+              {
+                "id": "6637c9ef47423d28-s2-148",
+                "url": "https://nu.edu.eg/student-exchange",
+                "title": "Student Exchange Programs — Student Exchange | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.868373+00:00",
+                "archived": false,
+                "content_sha256": "d3eee444896ec65f02239e83894a8a5174754aca1573b7e453e20632966cea81",
+                "similarity": 0.7891,
+                "score": 0.8091,
+                "rerank_score": 0.9973,
+                "citation": 3,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "franco",
+              "reply_language": "ar",
+              "retrieval_query": "Nile University quality and benefits",
+              "route": "advising",
+              "general_information": false,
+              "message_meaning": "Is the university good?",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "opinion",
+                "intent_score": 0.3382,
+                "score": 0.4325,
+                "margin": 0.071,
+                "confident": false,
+                "route": "general",
+                "general_information": false,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 13.5,
+              "planning_seconds": 1.86,
+              "retrieval_seconds": 0.74,
+              "generation_seconds": 10.9,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "R002",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "9545a185df487a99",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "arabic",
+        "opinion",
+        "user-screenshot"
+      ],
+      "review": "Make a useful evidence-based case for choosing NU, connect concrete opportunities to student interests, and ask a relevant fit question. No invented location, prestige or job guarantees; no missing-evidence refusal or unsolicited programming offer.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "هل الجامعة كويسة؟",
+          "status": 200,
+          "seconds": 13.92,
+          "result": {
+            "answer": "جامعة النيل بتقدم تجربة أكاديمية قوية بتركز على البحث العلمي والابتكار. الجامعة بتنظم منتدى أبحاث البكالوريوس (UGRF) مرتين في السنة، وده بيدي الفرصة للطلبة في كل الكليات إنهم يقدموا أبحاثهم العلمية للتقييم والنشر، بالإضافة لمشاريع التخرج [1]. كمان الجامعة عندها مركز الابتكار وريادة الأعمال (IECC) اللي بيدعم تحويل الأبحاث العلمية لشركات ناشئة ناجحة في مجالات زي الذكاء الاصطناعي والتكنولوجيا المستدامة [2].\n\nبالإضافة لده، البرامج الدراسية معتمدة محلياً ودولياً وبتعتمد نظام الساعات المعتمدة (Credit Hour System)، وده بيسهل انتقال الساعات لو حبيت تدرس في مكان تاني [3]. لو بتدور على فرص دولية، الجامعة بتوفر برامج تبادل طلابي في تخصصات زي الهندسة، وإدارة الأعمال، وتكنولوجيا المعلومات، والبيوتكنولوجي مع جامعات في أمريكا، وفرنسا، وألمانيا، وإستونيا، واسكتلندا [3].\n\nالفرص دي مهمة جداً لو هدفك هو بناء مسيرة مهنية قائمة على البحث العلمي وتطوير حلول عملية، أو لو بتخطط لتعلم لغات وتجربة دراسة في دول تانية.\n\nإيه هو التخصص اللي ناوي تدرسه في جامعة النيل؟",
+            "sources": [
+              {
+                "id": "96cdda725cbd65a8-74",
+                "url": "https://ugrf.nu.edu.eg/",
+                "title": "Home page | UGRF - Undergraduate Research Forum",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:01.587986+00:00",
+                "archived": false,
+                "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+                "similarity": 0.7113,
+                "score": 0.7624,
+                "rerank_score": 0.999,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "ff39b7d2859cdce0-s1-0",
+                "url": "https://iecc.nu.edu.eg/news/nile-universitys-iecc-concludes-faculty-track-entrepreneurship-program-showcasing-groundbreaking-startups-from-academic-research/",
+                "title": "Nile University’s IECC Concludes Faculty Track Entrepreneurship Program, Showcasing Groundbreaking Startups from Academic Research — Nile University’s IECC Concludes Faculty Track Entrepreneurship Program, Showcasing Groundbreaking Startups from Academic Research - IECC",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:34:54.422130+00:00",
+                "archived": false,
+                "content_sha256": "de9eaa4f2a383caa8cf2b243c655f48cb3ab1fdff521d17069ab841a2b1e5ee7",
+                "similarity": 0.5693,
+                "score": 0.6441,
+                "rerank_score": 0.9808,
+                "citation": 2,
+                "cited": true
+              },
+              {
+                "id": "6637c9ef47423d28-s2-148",
+                "url": "https://nu.edu.eg/student-exchange",
+                "title": "Student Exchange Programs — Student Exchange | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.868373+00:00",
+                "archived": false,
+                "content_sha256": "d3eee444896ec65f02239e83894a8a5174754aca1573b7e453e20632966cea81",
+                "similarity": 0.7891,
+                "score": 0.8091,
+                "rerank_score": 0.9973,
+                "citation": 3,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "Nile University benefits and quality",
+              "route": "advising",
+              "general_information": false,
+              "message_meaning": "Is the university good?",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "university",
+                "intent_score": 0.4197,
+                "score": 0.4197,
+                "margin": 0.2152,
+                "confident": false,
+                "route": "university",
+                "general_information": false,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 13.92,
+              "planning_seconds": 1.99,
+              "retrieval_seconds": 0.72,
+              "generation_seconds": 11.2,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "R003",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "9545a185df487a99",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "arabic",
+        "advising",
+        "user-screenshot"
+      ],
+      "review": "Address the negative opinion and why the student should consider enrolling. Give documented reasons and ask the specific concern; no introduction or coding diversion.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "مش عجباني الجامعة ليه اجي عندكم برضو",
+          "status": 200,
+          "seconds": 15.43,
+          "result": {
+            "answer": "أنا متفهم جداً لترددك، فقرار اختيار الجامعة هو خطوة مهمة لمستقبلك. اللي بيميز جامعة النيل هو تركيزها القوي على تحويل الأفكار لواقع عملي، وده ممكن يساعدك لو بتدور على تجربة تعليمية متكاملة مش مجرد دراسة أكاديمية.\n\nالجامعة بتوفر فرص بحث علمي لطلاب البكالوريوس، حيث تشجع الـ SBA الطلاب على المشاركة في مشاريع بحثية بقيادة أعضاء هيئة التدريس أو تقديم أفكارهم الخاصة [1]. كل ده بيتوج في \"منتدى أبحاث البكالوريوس\" (UGRF)، وهو منصة مهمة جداً لعرض الأبحاث وتقييمها ونشرها [3]. كمان، لو عندك اهتمام بريادة الأعمال، الجامعة بتوفر بيئة تدعم التحول من الأبحاث العلمية لشركات ناشئة من خلال مراكز متخصصة ومسرعات أعمال بتوفر موارد وتوجيه مهمين لبناء مشاريع ناجحة [2, 4]. لو بتفكر في فرص عالمية، الجامعة بتوفر برامج تبادل طلابي في تخصصات زي الهندسة، إدارة الأعمال، وتكنولوجيا المعلومات في جامعات عالمية زي جامعة ميشيغان في أمريكا أو جامعة كليرمون في فرنسا [5].\n\nإيه أكتر حاجة بتدور عليها في دراستك؟ هل هو الجانب البحثي، ولا ريادة الأعمال، ولا فرص التبادل الدولي؟",
+            "sources": [
+              {
+                "id": "8a25de96fc8e6fb7-s14-0",
+                "url": "https://ba.nu.edu.eg/faqs",
+                "title": "Are there research opportunities for undergraduates? — FAQs | Business Administration School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:20.224621+00:00",
+                "archived": false,
+                "content_sha256": "fbff424124729503c8faec5f19354788fe3e845830332ce31bb36a6d87b89a06",
+                "similarity": 0.5886,
+                "score": 0.5951,
+                "rerank_score": 0.9419,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "c6569324605550cd-s1-370",
+                "url": "https://np.eg/universitys-role-in-industry-acceleration/",
+                "title": "University’s Role in Industry Acceleration — University's Role in Industry Acceleration - NilePreneurs",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:45:32.359022+00:00",
+                "archived": false,
+                "content_sha256": "a33cf7d365dbead13301288b88ad3868c47e8823647ccc603cd8dba1855d4736",
+                "similarity": 0.5705,
+                "score": 0.4295,
+                "rerank_score": 0.9212,
+                "citation": 2,
+                "cited": false
+              },
+              {
+                "id": "96cdda725cbd65a8-74",
+                "url": "https://ugrf.nu.edu.eg/",
+                "title": "Home page | UGRF - Undergraduate Research Forum",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:01.587986+00:00",
+                "archived": false,
+                "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+                "similarity": 0.7113,
+                "score": 0.7624,
+                "rerank_score": 0.999,
+                "citation": 3,
+                "cited": true
+              },
+              {
+                "id": "ff39b7d2859cdce0-s1-0",
+                "url": "https://iecc.nu.edu.eg/news/nile-universitys-iecc-concludes-faculty-track-entrepreneurship-program-showcasing-groundbreaking-startups-from-academic-research/",
+                "title": "Nile University’s IECC Concludes Faculty Track Entrepreneurship Program, Showcasing Groundbreaking Startups from Academic Research — Nile University’s IECC Concludes Faculty Track Entrepreneurship Program, Showcasing Groundbreaking Startups from Academic Research - IECC",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:34:54.422130+00:00",
+                "archived": false,
+                "content_sha256": "de9eaa4f2a383caa8cf2b243c655f48cb3ab1fdff521d17069ab841a2b1e5ee7",
+                "similarity": 0.5693,
+                "score": 0.6441,
+                "rerank_score": 0.9808,
+                "citation": 4,
+                "cited": false
+              },
+              {
+                "id": "6637c9ef47423d28-s2-148",
+                "url": "https://nu.edu.eg/student-exchange",
+                "title": "Student Exchange Programs — Student Exchange | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.868373+00:00",
+                "archived": false,
+                "content_sha256": "d3eee444896ec65f02239e83894a8a5174754aca1573b7e453e20632966cea81",
+                "similarity": 0.7891,
+                "score": 0.8091,
+                "rerank_score": 0.9973,
+                "citation": 5,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "Why choose Nile University and what are the benefits of its undergraduate research, student projects, and entrepreneurship programs?",
+              "route": "advising",
+              "general_information": false,
+              "message_meaning": "I don't like the university, why should I come to you anyway?",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "mixed",
+                "intent_score": 0.2958,
+                "score": 0.2958,
+                "margin": 0.0142,
+                "confident": false,
+                "route": "mixed",
+                "general_information": true,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 15.43,
+              "planning_seconds": 2.49,
+              "retrieval_seconds": 0.72,
+              "generation_seconds": 12.22,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "R004",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "9545a185df487a99",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "arabic",
+        "location",
+        "user-screenshot"
+      ],
+      "review": "Correct campus in Sheikh Zayed, Giza; no Mansoura/Zamalek invention.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "جامعة النيل فين بالظبط؟",
+          "status": 200,
+          "seconds": 4.63,
+          "result": {
+            "answer": "جامعة النيل موجودة في ميدان جهينة، طريق ٢٦ يوليو، مدينة الشيخ زايد، الجيزة، مصر [1].",
+            "sources": [
+              {
+                "id": "fc92e8d926300290-0",
+                "url": "https://nu.edu.eg/contact-us-Departments",
+                "title": "Contact Us | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:50.915373+00:00",
+                "archived": false,
+                "content_sha256": "3ef5b35c1b62eac5e9f91c8980ccef639edf39fcacb5519a07b2c3c707105f71",
+                "similarity": 0.5374,
+                "score": 0.571,
+                "rerank_score": 0.9252,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "location of Nile University in Egypt",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "Where exactly is Nile University?",
+              "normalization": "model",
+              "intent_classification": {
+                "label": "university",
+                "intent_score": 0.3558,
+                "score": 0.3558,
+                "margin": 0.0389,
+                "confident": false,
+                "route": "university",
+                "general_information": false,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 4.62,
+              "planning_seconds": 2.02,
+              "retrieval_seconds": 0.24,
+              "generation_seconds": 2.37,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ]
+    },
+    {
+      "id": "R005",
+      "environment": {
+        "index_ready": true,
+        "intent_ready": true,
+        "model_ready": true,
+        "model": "gemma4:12b",
+        "thinking": false,
+        "index_version": 1789358993852111800,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "9545a185df487a99",
+        "chunks": 25205,
+        "sources": 1904,
+        "collected_at": "2026-09-14T03:57:05.228887+00:00"
+      },
+      "tags": [
+        "arabic",
+        "emotion",
+        "contrast"
+      ],
+      "review": "A complaint without an enrollment question deserves empathy, no sales pitch or programming diversion.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "انا متضايق من الجامعة النهارده",
+          "status": 200,
+          "seconds": 2.54,
+          "result": {
+            "answer": "أنا مقدر جداً إنك متضايق، ومقدر إن ساعات اليوم في الجامعة بيبقى فيه ضغط أو مواقف توتر. حقيقي مقدر شعورك.\n\nلو حابب تحكي إيه اللي حصل أو إيه اللي مضايقك بالظبط أنا هنا لو محتاج تفضفض أو لو في حاجة معينة أقدر أساعدك فيها.",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": false,
+              "message_meaning": "",
+              "normalization": "intent_classifier",
+              "intent_classification": {
+                "label": "emotion",
+                "intent_score": 0.9161,
+                "score": 0.9268,
+                "margin": 0.891,
+                "confident": true,
+                "route": "general",
+                "general_information": false,
+                "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+                "head_version": "69301ae44b2aa1db"
+              },
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "gemma4:12b",
+              "elapsed_seconds": 2.54,
+              "planning_seconds": 0.02,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 2.51,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ]
+    }
+  ],
+  "export_note": "Complete answers and source metadata retained. Full retrieved passages remain in the local data run. Mechanical pass is not a manual quality verdict."
+}

@@ -1,0 +1,227 @@
+[
+  {
+    "id": "R001",
+    "tags": [
+      "franco",
+      "opinion",
+      "user-screenshot"
+    ],
+    "review": "Make a useful evidence-based case for choosing NU, connect concrete opportunities to student interests, and ask a relevant fit question. No invented location, prestige or job guarantees; no missing-evidence refusal or unsolicited programming offer.",
+    "steps": [
+      {
+        "question": "hal elgam3a 7lwa?",
+        "route": "advising",
+        "language": "ar",
+        "general_information": false,
+        "forbidden": [
+          "معنديش إجابة",
+          "مش لاقي معلومة موثقة",
+          "المنصورة",
+          "الزمالك",
+          "Mansoura",
+          "Zamalek"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R002",
+    "tags": [
+      "arabic",
+      "opinion",
+      "user-screenshot"
+    ],
+    "review": "Make a useful evidence-based case for choosing NU, connect concrete opportunities to student interests, and ask a relevant fit question. No invented location, prestige or job guarantees; no missing-evidence refusal or unsolicited programming offer.",
+    "steps": [
+      {
+        "question": "هل الجامعة كويسة؟",
+        "route": "advising",
+        "language": "ar",
+        "general_information": false,
+        "forbidden": [
+          "معنديش إجابة",
+          "مش لاقي معلومة موثقة",
+          "المنصورة",
+          "الزمالك",
+          "Mansoura",
+          "Zamalek"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R003",
+    "tags": [
+      "arabic",
+      "advising",
+      "user-screenshot"
+    ],
+    "review": "Address the negative opinion and why the student should consider enrolling. Give documented reasons and ask the specific concern; no introduction or coding diversion.",
+    "steps": [
+      {
+        "question": "مش عجباني الجامعة ليه اجي عندكم برضو",
+        "route": "advising",
+        "language": "ar",
+        "general_information": false,
+        "forbidden": [
+          "البرمجة",
+          "المنصورة",
+          "الزمالك",
+          "أنا NU Chat",
+          "معنديش إجابة",
+          "مش لاقي معلومة موثقة"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R004",
+    "tags": [
+      "arabic",
+      "location",
+      "user-screenshot"
+    ],
+    "review": "Correct campus in Sheikh Zayed, Giza; no Mansoura/Zamalek invention.",
+    "steps": [
+      {
+        "question": "جامعة النيل فين بالظبط؟",
+        "route": "university",
+        "language": "ar",
+        "any_of": [
+          "الشيخ زايد",
+          "الشيخ زايـد"
+        ],
+        "forbidden": [
+          "المنصورة",
+          "الزمالك"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R005",
+    "tags": [
+      "arabic",
+      "emotion",
+      "contrast"
+    ],
+    "review": "A complaint without an enrollment question deserves empathy, no sales pitch or programming diversion.",
+    "steps": [
+      {
+        "question": "انا متضايق من الجامعة النهارده",
+        "route": "general",
+        "language": "ar",
+        "general_information": false
+      }
+    ]
+  },
+  {
+    "id": "R006",
+    "tags": [
+      "franco",
+      "multipart",
+      "user-screenshot",
+      "fresh-links"
+    ],
+    "review": "Answer BOTH how to apply and tuition. Give real annual amounts with school, Egyptian category, academic year and first-year scope; no invented certificate eligibility or citizenship. If school is unknown, give labeled examples and ask which school. Visible official links for both application and fees. Follow-up must answer cost, not merely send the user away.",
+    "steps": [
+      {
+        "question": "nice bs azay a3ml apply? we elmsarref kam?",
+        "route": "university",
+        "language": "ar",
+        "min_queries": 2,
+        "official_link": true,
+        "forbidden": [
+          "معنديش إجابة مؤكدة",
+          "مش لاقي معلومة موثقة",
+          "أنا معمول مخصوص"
+        ],
+        "general_information": false,
+        "required": [
+          "2026/2027"
+        ]
+      },
+      {
+        "question": "متعرفش المصاريف كام؟",
+        "route": "university",
+        "language": "ar",
+        "official_link": true,
+        "forbidden": [
+          "معنديش إجابة مؤكدة",
+          "أنا معمول مخصوص",
+          "1,500",
+          "1500",
+          "Application fee",
+          "رسوم تقديم"
+        ],
+        "general_information": false,
+        "required": [
+          "2026/2027"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R007",
+    "tags": [
+      "arabic",
+      "multipart",
+      "fees",
+      "fresh-links"
+    ],
+    "review": "Preserve ITCS from explicit context, answer application steps and 2026/27 first-year Egyptian base 193680 EGP; no IGCSE/Thanaweya tiers unless asked. Immediately following 50% question must give 96840 EGP without guaranteeing eligibility. Visible official links on both answers.",
+    "steps": [
+      {
+        "question": "عايز اقدم حاسبات، اعمل ايه والمصاريف كام قبل المنح؟",
+        "route": "university",
+        "language": "ar",
+        "min_queries": 2,
+        "official_link": true,
+        "required": [
+          "193680",
+          "2026/2027"
+        ],
+        "forbidden": [
+          "95%",
+          "85%",
+          "أنا معمول مخصوص"
+        ],
+        "general_information": false
+      },
+      {
+        "question": "ولو معايا خصم 50% هتبقى كام؟",
+        "route": "university",
+        "language": "ar",
+        "official_link": true,
+        "required": [
+          "96840",
+          "2026/2027"
+        ],
+        "general_information": false,
+        "forbidden": [
+          "أنا معمول مخصوص"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "R008",
+    "tags": [
+      "english",
+      "fresh-links",
+      "deadline"
+    ],
+    "review": "Give recorded June 7 deadline as past on current date, not open enrollment. Include explicit event/submission link.",
+    "steps": [
+      {
+        "question": "What is the submission deadline for the 22nd UGRF?",
+        "route": "university",
+        "official_link": true,
+        "any_of": [
+          "June 7",
+          "7 June"
+        ]
+      }
+    ]
+  }
+]

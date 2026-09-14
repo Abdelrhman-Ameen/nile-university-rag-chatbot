@@ -20,6 +20,7 @@ from nu_chat.config import ROOT
 
 AGENT = "NileGuideStudentProject/1.0"
 MAX_BYTES = 20 * 1024 * 1024
+MAX_DOWNLOAD_SECONDS = 90
 
 
 class SourceBlocked(RuntimeError):
@@ -115,7 +116,10 @@ class Collector:
     def fetch(
         self, url: str, check_robots: bool = True, assets: bool = False
     ) -> tuple[str, bytes, str]:
+        deadline = time.monotonic() + MAX_DOWNLOAD_SECONDS
         for _ in range(6):
+            if time.monotonic() > deadline:
+                raise TimeoutError("Source exceeded the download time limit")
             safe = canonical_url(url, self.domains, assets=assets)
             if not safe:
                 raise ValueError("URL or redirect outside public source scope")
@@ -147,6 +151,8 @@ class Collector:
                 response.raise_for_status()
                 data = bytearray()
                 for block in response.iter_bytes():
+                    if time.monotonic() > deadline:
+                        raise TimeoutError("Source exceeded the download time limit")
                     data.extend(block)
                     if len(data) > MAX_BYTES:
                         raise ValueError("Source exceeds 20 MB download limit")
@@ -189,6 +195,16 @@ def extract_html(body: bytes, url: str) -> tuple[str, str, list[str]]:
         urljoin(url, tag.get("href", tag.get("src", tag.get("data", ""))))
         for tag in soup.select("a[href], iframe[src], embed[src], object[data]")
     ]
+    contacts = list(
+        dict.fromkeys(
+            tag.get_text(" ", strip=True)
+            for tag in soup.select(
+                "footer address, footer .location-block, footer .tel-link, "
+                "footer a[href^='mailto:'], footer a[href^='tel:']"
+            )
+            if tag.get_text(" ", strip=True)
+        )
+    )
     for tag in soup.select(
         "script, style, nav, header, footer, noscript, form, .breadcrumb, .menu, .social-links, [class*='testimonial']"
     ):
@@ -215,6 +231,8 @@ def extract_html(body: bytes, url: str) -> tuple[str, str, list[str]]:
     main = soup.select_one("main") or soup.select_one("#content") or soup.body or soup
     lines = [re.sub(r"\s+", " ", line).strip() for line in main.get_text("\n").splitlines()]
     text = "\n".join(line for line in lines if line)
+    if contacts:
+        text += "\n## Website contact details\n" + "\n".join(contacts)
     return title, text, links
 
 

@@ -1,0 +1,207 @@
+{
+  "run": "runs/qwen9-direct-full.json",
+  "reviewed": 40,
+  "complete": false,
+  "cases": [
+    {
+      "id": "S001",
+      "verdict": "pass",
+      "notes": "Correct independent NU Egypt identity."
+    },
+    {
+      "id": "S002",
+      "verdict": "pass",
+      "notes": "Correct Arabic identity."
+    },
+    {
+      "id": "S003",
+      "verdict": "pass",
+      "notes": "Correct repeated identity question."
+    },
+    {
+      "id": "S004",
+      "verdict": "pass",
+      "notes": "Franco input gets Arabic identity."
+    },
+    {
+      "id": "S005",
+      "verdict": "pass",
+      "notes": "Natural English greeting."
+    },
+    {
+      "id": "S006",
+      "verdict": "pass",
+      "notes": "Friendly Arabic greeting; slightly effusive."
+    },
+    {
+      "id": "S007",
+      "verdict": "pass",
+      "notes": "Brief acknowledgment without footer."
+    },
+    {
+      "id": "S008",
+      "verdict": "partial",
+      "notes": "Unnatural wording when responding to thanks."
+    },
+    {
+      "id": "S009",
+      "verdict": "partial",
+      "notes": "Brief but grammatically broken acknowledgment."
+    },
+    {
+      "id": "S010",
+      "verdict": "pass",
+      "notes": "Appropriate thanks response."
+    },
+    {
+      "id": "S011",
+      "verdict": "partial",
+      "notes": "Recognizes frustration but inappropriate opening and unnecessary coding redirection."
+    },
+    {
+      "id": "S012",
+      "verdict": "fail",
+      "notes": "Echoes profanity back toward the user and assumes a technical problem."
+    },
+    {
+      "id": "S013",
+      "verdict": "partial",
+      "notes": "Recognizes stress but overlong, awkward Arabic and stray English."
+    },
+    {
+      "id": "S014",
+      "verdict": "pass",
+      "notes": "Acknowledges disappointment without admissions redirection."
+    },
+    {
+      "id": "S015",
+      "verdict": "partial",
+      "notes": "Positive emotion understood; awkward Arabic."
+    },
+    {
+      "id": "S016",
+      "verdict": "pass",
+      "notes": "Celebrates passing."
+    },
+    {
+      "id": "S017",
+      "verdict": "partial",
+      "notes": "Offers to joke but does not provide much actual banter."
+    },
+    {
+      "id": "S018",
+      "verdict": "fail",
+      "notes": "Invents a claim about Nile width fitting Cairo."
+    },
+    {
+      "id": "S019",
+      "verdict": "pass",
+      "notes": "Appropriate response to sadness."
+    },
+    {
+      "id": "S020",
+      "verdict": "partial",
+      "notes": "Agrees to listen but assumes pressure at NU."
+    },
+    {
+      "id": "S021",
+      "verdict": "pass",
+      "notes": "Correct overfitting explanation."
+    },
+    {
+      "id": "S022",
+      "verdict": "pass",
+      "notes": "Correct 391 and calculation."
+    },
+    {
+      "id": "S023",
+      "verdict": "partial",
+      "notes": "Core mutability distinction correct; overstates fixed contents and adds questionable loop-performance generalization."
+    },
+    {
+      "id": "S024",
+      "verdict": "pass",
+      "notes": "Correct RAG expansion and basic mechanism."
+    },
+    {
+      "id": "S025",
+      "verdict": "pass",
+      "notes": "Useful embedding explanation."
+    },
+    {
+      "id": "S026",
+      "verdict": "partial",
+      "notes": "Basic ML idea mostly correct; awkward/non-Egyptian Arabic and simplistic example."
+    },
+    {
+      "id": "S027",
+      "verdict": "partial",
+      "notes": "Overfitting concept right; overstates total failure and uses non-Egyptian phrasing."
+    },
+    {
+      "id": "S028",
+      "verdict": "fail",
+      "notes": "General AI/ML question routed to NU; source preface, unrelated courses, missing note."
+    },
+    {
+      "id": "S029",
+      "verdict": "pass",
+      "notes": "Correct simplified Rayleigh scattering explanation."
+    },
+    {
+      "id": "S030",
+      "verdict": "fail",
+      "notes": "Exact literal string replacement is presented as preventing script execution; misses case/attribute variants. html.escape would be suitable."
+    },
+    {
+      "id": "S031",
+      "verdict": "pass",
+      "notes": "Correct simple addition function."
+    },
+    {
+      "id": "S032",
+      "verdict": "fail",
+      "notes": "Second precision example incorrectly gives 50%; 10/15 is about 66.7%."
+    },
+    {
+      "id": "S033",
+      "verdict": "pass",
+      "notes": "Correct cosine formula and geometric interpretation."
+    },
+    {
+      "id": "S034",
+      "verdict": "pass",
+      "notes": "Useful encoder/generator distinction."
+    },
+    {
+      "id": "S035",
+      "verdict": "fail",
+      "notes": "Core Arabizi point is present, but invents French teaching at NU and muddles Arabic/Franco terminology."
+    },
+    {
+      "id": "S036",
+      "verdict": "pass",
+      "notes": "Four-line poem, no disclaimer."
+    },
+    {
+      "id": "S037",
+      "verdict": "partial",
+      "notes": "Supportive but noticeably awkward Arabic."
+    },
+    {
+      "id": "S038",
+      "verdict": "pass",
+      "notes": "Usable simple study plan."
+    },
+    {
+      "id": "S039",
+      "verdict": "partial",
+      "notes": "Correct translation with unasked NU branding."
+    },
+    {
+      "id": "S040",
+      "verdict": "pass",
+      "notes": "Short joke, no source disclaimer."
+    }
+  ]
+}

@@ -27,6 +27,12 @@ def check(step, status, result):
         return errors
     answer = result.get("answer", "")
     pipeline = result.get("pipeline", {})
+    if step.get("min_queries") and len(pipeline.get("retrieval_queries", [])) < step["min_queries"]:
+        errors.append("lost a separate question during retrieval planning")
+    if step.get("official_link") and not re.search(
+        r"\]\(https://(?:[a-z0-9-]+\.)*(?:nu\.edu\.eg|np\.eg)/[^)]+\)", answer, re.I
+    ):
+        errors.append("missing explicit official link")
     if not answer.strip():
         errors.append("empty answer")
     if step.get("route") and pipeline.get("route") != step["route"]:
@@ -48,7 +54,8 @@ def check(step, status, result):
         if phrase.lower() in answer.lower():
             errors.append("unwanted: " + phrase)
     sources = result.get("sources", [])
-    citations = {int(n) for n in re.findall(r"\[(\d+)\]", answer)}
+    prose_citations = re.sub(r"```[\s\S]*?(?:```|$)|`[^`\n]*`", "", answer)
+    citations = {int(n) for n in re.findall(r"\[(\d+)\]", prose_citations)}
     if not citations <= {s["citation"] for s in sources}:
         errors.append("invalid citation")
     if pipeline.get("route") in {"general", "identity"} and sources:
@@ -84,11 +91,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", default="http://127.0.0.1:8000")
     parser.add_argument("--output", default="data/scenarios-100.json")
+    parser.add_argument("--suite", type=Path, default=Path(__file__).with_name("scenarios_100.json"))
     parser.add_argument("--ids", help="Comma-separated IDs to rerun")
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
-    cases = json.loads(Path(__file__).with_name("scenarios_100.json").read_text(encoding="utf-8"))
-    assert len(cases) == 100 and len({c["id"] for c in cases}) == 100
+    cases = json.loads(args.suite.read_text(encoding="utf-8"))
+    assert cases and len({c["id"] for c in cases}) == len(cases)
     if args.ids:
         cases = [c for c in cases if c["id"] in args.ids.split(",")]
     output = Path(args.output)

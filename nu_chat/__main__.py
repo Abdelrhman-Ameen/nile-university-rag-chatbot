@@ -7,7 +7,7 @@ import json
 def main():
     parser = argparse.ArgumentParser(description="Nile Guide: collect, embed, retrieve, generate")
     parser.add_argument(
-        "command", choices=["collect", "ocr", "index", "ingest", "serve", "evaluate"]
+        "command", choices=["collect", "ocr", "index", "ingest", "serve", "evaluate", "train-intent"]
     )
     parser.add_argument(
         "--max-pages",
@@ -29,11 +29,15 @@ def main():
         "--max-images", type=int, default=0, help="Image OCR limit; 0 processes all selected images"
     )
     parser.add_argument(
-        "--with-llm", action="store_true", help="Use Qwen normalization during evaluation"
+        "--with-llm", action="store_true", help="Use local model normalization during evaluation"
     )
     args = parser.parse_args()
     if args.max_pages < 0:
         parser.error("--max-pages cannot be negative")
+    if args.command in {"train-intent", "ingest"}:
+        from nu_chat.intent import train_intent
+
+        print(json.dumps(train_intent(), indent=2))
     if args.command in {"collect", "ingest"}:
         from nu_chat.collect import collect
 

@@ -254,19 +254,32 @@ async function sendQuestion(question) {
   loading.querySelector(".message-text").append(indicator);
   scrollChat();
   try {
-    const response = await fetch("/api/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      signal: AbortSignal.timeout(360000),
-      body: JSON.stringify({
-        question,
-        language: $("#reply-language").value,
-        history: turns
-          .slice(-6)
-          .map((t) => ({ role: t.role, content: t.content.slice(0, 5000) })),
-      }),
+    const requestBody = JSON.stringify({
+      request_id: crypto.randomUUID(),
+      question,
+      language: $("#reply-language").value,
+      history: turns.slice(-6).map((t) => ({ role: t.role, content: t.content.slice(0, 5000) })),
     });
-    const result = await response.json();
+    const signal = AbortSignal.timeout(360000);
+    let response, result;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          signal,
+          body: requestBody,
+        });
+        result = await response.json();
+        break;
+      } catch (err) {
+        // The same UUID lets a reconnect obtain the original response without
+        // queueing a second generation if only the response connection was lost.
+        if (!(err instanceof TypeError) || signal.aborted || attempt === 2) throw err;
+        indicator.lastChild.textContent = "Reconnecting…";
+        await new Promise((resolve) => setTimeout(resolve, 500 * (attempt + 1)));
+      }
+    }
     if (!response.ok)
       throw new Error(
         typeof result.detail === "string"
@@ -275,6 +288,8 @@ async function sendQuestion(question) {
       );
     loading.remove();
     renderAnswer(result);
+    if (result.pipeline?.generator && result.pipeline.generator !== $("#status-button").title)
+      loadStatus();
     turns.push(
       { role: "user", content: question },
       { role: "assistant", content: result.answer, result },
@@ -285,6 +300,7 @@ async function sendQuestion(question) {
     }
     currentChat.turns = [...turns];
   } catch (err) {
+    console.error("Chat request failed:", err);
     loading.remove();
     const nextDraft = $("#question").value.trim();
     if (!nextDraft) {
@@ -295,9 +311,9 @@ async function sendQuestion(question) {
     }
     error(
       err.name === "TimeoutError"
-        ? "Qwen took too long. Please try again."
+        ? "The model took too long. Please try again."
         : err.message === "Failed to fetch"
-          ? "The server is unavailable. Please restart it."
+          ? "The connection was interrupted. Please try again."
           : err.message,
     );
     if (!turns.length && !nextDraft) $("#chat-panel").classList.add("empty");
@@ -379,20 +395,21 @@ async function loadStatus() {
     const status = await response.json();
     $("#status-dot").classList.toggle(
       "pending",
-      !status.model_ready || !status.index_ready,
+      !status.model_ready || !status.index_ready || status.intent_ready === false,
     );
-    const modelLabel = status.model.split(":")[0].replace(/^qwen/i, "Qwen ");
+    const modelLabel = status.model.split(":")[0].replace(/^qwen/i, "Qwen ").replace(/^gemma/i, "Gemma ");
     $("#status-text").textContent = status.model_ready
       ? modelLabel
-      : "Qwen offline";
+      : "Model offline";
     $("#status-button").title = status.model_ready
       ? status.model
-      : "Click to check Qwen";
-    $("#notice").hidden = status.model_ready && status.index_ready;
+      : "Click to check the model";
+    $("#notice").hidden = status.model_ready && status.index_ready && status.intent_ready !== false;
     $("#notice").textContent = !status.index_ready
       ? "Sources are not indexed yet."
-      : "Qwen is unavailable. Start Ollama, then retry.";
-    if (!status.model_ready || !status.index_ready)
+      : status.intent_ready === false ? "Chat setup is incomplete. Check the local server setup."
+      : "The local model is unavailable. Start Ollama, then retry.";
+    if (!status.model_ready || !status.index_ready || status.intent_ready === false)
       statusTimer = setTimeout(loadStatus, 10000);
   } catch {
     $("#status-dot").classList.add("pending");

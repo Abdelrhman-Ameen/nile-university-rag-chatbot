@@ -1,0 +1,84 @@
+{
+  "health": {
+    "index_ready": true,
+    "intent_ready": true,
+    "model_ready": true,
+    "model": "gemma4:12b",
+    "thinking": false,
+    "index_version": 1789358993852111800,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "retrieval_device": "cuda",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "5f1522fe4ed39e05",
+    "chunks": 25205,
+    "sources": 1904,
+    "collected_at": "2026-09-14T03:57:05.228887+00:00"
+  },
+  "checks": [
+    {
+      "case": "original",
+      "status": 200,
+      "seconds": 0.008,
+      "result": {
+        "answer": "أنا NU Chat، شات بوت معمول مخصوص لجامعة النيل في مصر. بساعدك تعرف برامجها وفرصها، وتناقش أي حاجة مقلقاك عشان تقرر لو مناسبة ليك. وكمان أقدر أجاوب على أسئلة عامة. أنا مشروع طلابي مستقل، مش خدمة الدعم الرسمية للجامعة.",
+        "sources": [],
+        "mode": "identity",
+        "pipeline": {
+          "detected_language": "ar",
+          "reply_language": "ar",
+          "retrieval_query": "",
+          "retrieval_queries": [],
+          "current_information_links": false,
+          "route": "identity",
+          "general_information": false,
+          "message_meaning": "انت مين؟",
+          "normalization": "identity",
+          "intent_classification": null,
+          "encoder": null,
+          "generator": null,
+          "elapsed_seconds": 0.0,
+          "planning_seconds": 0.0,
+          "retrieval_seconds": 0.0,
+          "generation_seconds": 0.0
+        }
+      }
+    },
+    {
+      "case": "replay",
+      "status": 200,
+      "seconds": 0.002,
+      "result": {
+        "answer": "أنا NU Chat، شات بوت معمول مخصوص لجامعة النيل في مصر. بساعدك تعرف برامجها وفرصها، وتناقش أي حاجة مقلقاك عشان تقرر لو مناسبة ليك. وكمان أقدر أجاوب على أسئلة عامة. أنا مشروع طلابي مستقل، مش خدمة الدعم الرسمية للجامعة.",
+        "sources": [],
+        "mode": "identity",
+        "pipeline": {
+          "detected_language": "ar",
+          "reply_language": "ar",
+          "retrieval_query": "",
+          "retrieval_queries": [],
+          "current_information_links": false,
+          "route": "identity",
+          "general_information": false,
+          "message_meaning": "انت مين؟",
+          "normalization": "identity",
+          "intent_classification": null,
+          "encoder": null,
+          "generator": null,
+          "elapsed_seconds": 0.0,
+          "planning_seconds": 0.0,
+          "retrieval_seconds": 0.0,
+          "generation_seconds": 0.0
+        }
+      }
+    },
+    {
+      "case": "changed_payload",
+      "status": 409,
+      "seconds": 0.002,
+      "result": {
+        "detail": "This request ID was already used for a different message."
+      }
+    }
+  ],
+  "passed": true
+}

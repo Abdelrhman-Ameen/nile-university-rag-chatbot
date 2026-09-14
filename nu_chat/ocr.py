@@ -9,9 +9,12 @@ import io
 import json
 import re
 import sqlite3
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from hashlib import sha256
 from pathlib import Path
+from uuid import uuid4
 
 import numpy as np
 
@@ -88,17 +91,16 @@ def extract_images(all_images: bool = True, max_images: int = 0, refresh: bool =
             for line in output.read_text(encoding="utf-8").splitlines()
             if line and (d := json.loads(line))
         }
-    engine = None
-    arabic_engine = None
+    engines = threading.local()
 
     def recognize(body):
-        nonlocal engine, arabic_engine
         digest = sha256(body).hexdigest()
         cache = ocr_dir / (digest + ".en-ar-v1.json")
         if digest in verified:
             return digest, {"sections": verified[digest]["sections"], "reviewed": True}
         if cache.exists():
             return digest, json.loads(cache.read_text(encoding="utf-8"))
+        engine = getattr(engines, "english", None)
         if engine is None:
             engine = RapidOCR(
                 params={
@@ -106,7 +108,9 @@ def extract_images(all_images: bool = True, max_images: int = 0, refresh: bool =
                     "EngineConfig.onnxruntime.inter_op_num_threads": 1,
                 }
             )
+            engines.english = engine
         result = engine(body)
+        arabic_engine = getattr(engines, "arabic", None)
         if arabic_engine is None:
             arabic_engine = RapidOCR(
                 params={
@@ -117,6 +121,7 @@ def extract_images(all_images: bool = True, max_images: int = 0, refresh: bool =
                     "EngineConfig.onnxruntime.inter_op_num_threads": 1,
                 }
             )
+            engines.arabic = arabic_engine
         arabic = arabic_engine(body)
         items = [
             (box, text, score)
@@ -235,12 +240,71 @@ def extract_images(all_images: bool = True, max_images: int = 0, refresh: bool =
                     {"url": url, "kind": "pdf-ocr", "status": "error", "reason": str(exc)}
                 )
 
+    def read_image(asset):
+        safe = asset["url"]
+        try:
+            raw_path = ocr_dir / (sha256(safe.encode()).hexdigest() + ".image")
+            if raw_path.exists() and not refresh:
+                body = raw_path.read_bytes()
+            else:
+                _, body, _ = collector.fetch(safe, assets=True)
+                temporary = raw_path.with_suffix(f".{uuid4().hex}.tmp")
+                temporary.write_bytes(body)
+                replace_file(temporary, raw_path)
+            fetched_at = datetime.fromtimestamp(raw_path.stat().st_mtime, timezone.utc).isoformat()
+            digest, record = recognize(body)
+            if record["reviewed"]:
+                asset = {**asset, **verified[digest]}
+            return {
+                "asset": asset,
+                "url": safe,
+                "status": "ok",
+                "record": record,
+                "digest": digest,
+                "fetched_at": fetched_at,
+            }
+        except Exception as exc:
+            return {"url": safe, "status": "error", "reason": str(exc)}
+
+    def accept_image(result):
+        nonlocal documents
+        safe = result["url"]
+        if result["status"] == "ok":
+            asset, record = result["asset"], result["record"]
+            documents = {key: d for key, d in documents.items() if d.get("asset_url") != safe}
+            for index, section in enumerate(record["sections"]):
+                # A short phone number, date or fee can be the whole useful image.
+                if not section["text"].strip():
+                    continue
+                identifier = sha256(f"{safe}#{index}".encode()).hexdigest()[:16]
+                documents[identifier] = {
+                    "id": identifier,
+                    "url": asset["source_url"],
+                    "asset_url": safe,
+                    "title": asset["source_title"]
+                    + " — "
+                    + asset["section"]
+                    + " — "
+                    + section["title"],
+                    "text": section["text"],
+                    "page": None,
+                    "kind": "image",
+                    "fetched_at": result["fetched_at"],
+                    "extracted_at": datetime.now(timezone.utc).isoformat(),
+                    "archived": asset.get("archived", False),
+                    "content_sha256": result["digest"],
+                    "ocr_reviewed": record["reviewed"],
+                }
+            statuses.append({"url": safe, "status": "ok", "reviewed": record["reviewed"]})
+        else:
+            statuses.append(result)
+        print(f"OCR [{len(statuses)}]: {result['status']} {safe}", flush=True)
+        if len(statuses) % 20 == 0:
+            save()
+
     try:
-        pdfs_done = False
+        selected = []
         for asset in assets:
-            if not pdfs_done and asset["url"] not in reviewed_urls:
-                pdf_pages()
-                pdfs_done = True
             if not all_images and not asset.get("ocr_candidate"):
                 continue
             safe = canonical_url(asset["url"], config["allowed_domains"], assets=True)
@@ -249,52 +313,17 @@ def extract_images(all_images: bool = True, max_images: int = 0, refresh: bool =
             if max_images and len(seen) >= max_images:
                 break
             seen.add(safe)
-            try:
-                download_key = sha256(safe.encode()).hexdigest()
-                raw_path = ocr_dir / (download_key + ".image")
-                if raw_path.exists() and not refresh:
-                    body = raw_path.read_bytes()
-                else:
-                    _, body, _ = collector.fetch(safe, assets=True)
-                    raw_path.write_bytes(body)
-                fetched_at = datetime.fromtimestamp(
-                    raw_path.stat().st_mtime, timezone.utc
-                ).isoformat()
-                digest, record = recognize(body)
-                if record["reviewed"]:
-                    asset = {**asset, **verified[digest]}
-                # Replace older OCR for this asset even if the replacement is empty.
-                documents = {key: d for key, d in documents.items() if d.get("asset_url") != safe}
-                for index, section in enumerate(record["sections"]):
-                    if len(section["text"].strip()) < 60:
-                        continue
-                    identifier = sha256(f"{safe}#{index}".encode()).hexdigest()[:16]
-                    documents[identifier] = {
-                        "id": identifier,
-                        "url": asset["source_url"],
-                        "asset_url": safe,
-                        "title": asset["source_title"]
-                        + " — "
-                        + asset["section"]
-                        + " — "
-                        + section["title"],
-                        "text": section["text"],
-                        "page": None,
-                        "kind": "image",
-                        "fetched_at": fetched_at,
-                        "extracted_at": datetime.now(timezone.utc).isoformat(),
-                        "archived": asset.get("archived", False),
-                        "content_sha256": digest,
-                        "ocr_reviewed": record["reviewed"],
-                    }
-                statuses.append({"url": safe, "status": "ok", "reviewed": record["reviewed"]})
-            except Exception as exc:
-                statuses.append({"url": safe, "status": "error", "reason": str(exc)})
-            print(f"OCR [{len(statuses)}]: {statuses[-1]['status']} {safe}", flush=True)
-            if len(statuses) % 20 == 0:
-                save()
-        if not pdfs_done:
-            pdf_pages()
+            selected.append({**asset, "url": safe})
+        for asset in selected:
+            if asset["url"] in reviewed_urls:
+                accept_image(read_image(asset))
+        pdf_pages()
+        # Each worker owns its OCR engines. Only this coordinator updates the corpus.
+        remaining = [asset for asset in selected if asset["url"] not in reviewed_urls]
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            futures = [pool.submit(read_image, asset) for asset in remaining]
+            for future in as_completed(futures):
+                accept_image(future.result())
         return save()
     finally:
         save()

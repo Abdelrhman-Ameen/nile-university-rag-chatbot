@@ -12,8 +12,10 @@ EMBEDDING_MODEL = os.getenv(
     "EMBEDDING_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 )
 EMBEDDING_DEVICE = os.getenv("EMBEDDING_DEVICE", "cpu")
+RETRIEVAL_THREADS = int(os.getenv("RETRIEVAL_THREADS", "4"))
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://127.0.0.1:11434").rstrip("/")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:14b")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma4:12b")
+MODEL_THINKING = os.getenv("MODEL_THINKING", "0") == "1"
 RERANK_MODEL = os.getenv("RERANK_MODEL", "cross-encoder/ms-marco-MiniLM-L6-v2")
 TOP_K = int(os.getenv("TOP_K", "5"))
 MIN_SIMILARITY = float(os.getenv("MIN_SIMILARITY", "0.45"))

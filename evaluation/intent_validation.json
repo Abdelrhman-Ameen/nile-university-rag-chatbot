@@ -1,0 +1,1641 @@
+{
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "classes": [
+    "creative",
+    "emotion",
+    "followup",
+    "general_information",
+    "identity",
+    "mixed",
+    "opinion",
+    "social",
+    "university",
+    "university_advice"
+  ],
+  "examples_sha256": "69301ae44b2aa1db3b54e53b3088960f3affc63a9829d53e235f12b15c965c3e",
+  "version": 2,
+  "train_count": 256,
+  "validation_count": 79,
+  "classification": {
+    "creative": {
+      "precision": 0.7272727272727273,
+      "recall": 1.0,
+      "f1-score": 0.8421052631578947,
+      "support": 8.0
+    },
+    "emotion": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 8.0
+    },
+    "followup": {
+      "precision": 0.875,
+      "recall": 0.875,
+      "f1-score": 0.875,
+      "support": 8.0
+    },
+    "general_information": {
+      "precision": 1.0,
+      "recall": 0.625,
+      "f1-score": 0.7692307692307693,
+      "support": 8.0
+    },
+    "identity": {
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1-score": 0.75,
+      "support": 8.0
+    },
+    "mixed": {
+      "precision": 0.8333333333333334,
+      "recall": 0.625,
+      "f1-score": 0.7142857142857143,
+      "support": 8.0
+    },
+    "opinion": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 4.0
+    },
+    "social": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1-score": 0.8888888888888888,
+      "support": 8.0
+    },
+    "university": {
+      "precision": 0.6666666666666666,
+      "recall": 0.75,
+      "f1-score": 0.7058823529411765,
+      "support": 8.0
+    },
+    "university_advice": {
+      "precision": 0.8333333333333334,
+      "recall": 0.9090909090909091,
+      "f1-score": 0.8695652173913043,
+      "support": 11.0
+    },
+    "accuracy": 0.8227848101265823,
+    "macro avg": {
+      "precision": 0.8485606060606061,
+      "recall": 0.8034090909090909,
+      "f1-score": 0.8081624872562415,
+      "support": 79.0
+    },
+    "weighted avg": {
+      "precision": 0.8403145377828923,
+      "recall": 0.8227848101265823,
+      "f1-score": 0.8176585818481844,
+      "support": 79.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      7,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      5,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      8,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      6,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      10
+    ]
+  ],
+  "cases": [
+    {
+      "text": "Are you representing Nile officially?",
+      "expected": "identity",
+      "predicted": "identity",
+      "score": 0.7098,
+      "margin": 0.5834,
+      "correct": true,
+      "decision": {
+        "label": "identity",
+        "intent_score": 0.7098,
+        "score": 0.7098,
+        "margin": 0.5834,
+        "confident": true,
+        "route": "identity",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "What kind of assistant am I talking to?",
+      "expected": "identity",
+      "predicted": "identity",
+      "score": 0.8105,
+      "margin": 0.7563,
+      "correct": true,
+      "decision": {
+        "label": "identity",
+        "intent_score": 0.8105,
+        "score": 0.8105,
+        "margin": 0.7397,
+        "confident": true,
+        "route": "identity",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Is this a student-made chatbot?",
+      "expected": "identity",
+      "predicted": "identity",
+      "score": 0.7307,
+      "margin": 0.6177,
+      "correct": true,
+      "decision": {
+        "label": "identity",
+        "intent_score": 0.7307,
+        "score": 0.7307,
+        "margin": 0.5912,
+        "confident": true,
+        "route": "identity",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "المساعد اللي بيكلمني ده دوره إيه؟",
+      "expected": "identity",
+      "predicted": "identity",
+      "score": 0.5936,
+      "margin": 0.4956,
+      "correct": true,
+      "decision": {
+        "label": "identity",
+        "intent_score": 0.5936,
+        "score": 0.5936,
+        "margin": 0.4366,
+        "confident": false,
+        "route": "identity",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "إنت خدمة الجامعة الرسمية ولا مشروع؟",
+      "expected": "identity",
+      "predicted": "identity",
+      "score": 0.2513,
+      "margin": 0.0178,
+      "correct": true,
+      "decision": {
+        "label": "identity",
+        "intent_score": 0.2513,
+        "score": 0.2513,
+        "margin": 0.0023,
+        "confident": false,
+        "route": "identity",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "معايا مين في الشات ده؟",
+      "expected": "identity",
+      "predicted": "social",
+      "score": 0.3256,
+      "margin": 0.0049,
+      "correct": false,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.3256,
+        "score": 0.3991,
+        "margin": 0.0784,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "enta betmathel NU rasmeyan?",
+      "expected": "identity",
+      "predicted": "identity",
+      "score": 0.5239,
+      "margin": 0.2521,
+      "correct": true,
+      "decision": {
+        "label": "identity",
+        "intent_score": 0.5239,
+        "score": 0.5239,
+        "margin": 0.201,
+        "confident": false,
+        "route": "identity",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "el bot dah mashroo3 tollaby?",
+      "expected": "identity",
+      "predicted": "creative",
+      "score": 0.3176,
+      "margin": 0.0015,
+      "correct": false,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.3176,
+        "score": 0.5261,
+        "margin": 0.2101,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "Hey, good afternoon!",
+      "expected": "social",
+      "predicted": "social",
+      "score": 0.8966,
+      "margin": 0.8588,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.8966,
+        "score": 0.9426,
+        "margin": 0.9048,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Understood, appreciate it.",
+      "expected": "social",
+      "predicted": "social",
+      "score": 0.8763,
+      "margin": 0.8412,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.8763,
+        "score": 0.9322,
+        "margin": 0.9125,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Okay, give me a second to think.",
+      "expected": "social",
+      "predicted": "social",
+      "score": 0.6082,
+      "margin": 0.4516,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.6082,
+        "score": 0.7088,
+        "margin": 0.5522,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "أشكرك يا صديقي",
+      "expected": "social",
+      "predicted": "social",
+      "score": 0.7669,
+      "margin": 0.6398,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.7669,
+        "score": 0.9147,
+        "margin": 0.8817,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "اتفقنا خلاص",
+      "expected": "social",
+      "predicted": "social",
+      "score": 0.8545,
+      "margin": 0.8236,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.8545,
+        "score": 0.906,
+        "margin": 0.8751,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "مساء الورد",
+      "expected": "social",
+      "predicted": "social",
+      "score": 0.848,
+      "margin": 0.8094,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.848,
+        "score": 0.9166,
+        "margin": 0.8901,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "shokran ya sa7by",
+      "expected": "social",
+      "predicted": "social",
+      "score": 0.536,
+      "margin": 0.3435,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.536,
+        "score": 0.7935,
+        "margin": 0.7097,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "fhemt ya ma3allem",
+      "expected": "social",
+      "predicted": "social",
+      "score": 0.6869,
+      "margin": 0.5861,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.6869,
+        "score": 0.8227,
+        "margin": 0.773,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "The workload is making me miserable.",
+      "expected": "emotion",
+      "predicted": "emotion",
+      "score": 0.8894,
+      "margin": 0.8575,
+      "correct": true,
+      "decision": {
+        "label": "emotion",
+        "intent_score": 0.8894,
+        "score": 0.9222,
+        "margin": 0.8903,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "I am proud of my latest project result.",
+      "expected": "emotion",
+      "predicted": "emotion",
+      "score": 0.5734,
+      "margin": 0.4537,
+      "correct": true,
+      "decision": {
+        "label": "emotion",
+        "intent_score": 0.5734,
+        "score": 0.7859,
+        "margin": 0.7326,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "The administration has made me angry again.",
+      "expected": "emotion",
+      "predicted": "emotion",
+      "score": 0.7365,
+      "margin": 0.6312,
+      "correct": true,
+      "decision": {
+        "label": "emotion",
+        "intent_score": 0.7365,
+        "score": 0.7723,
+        "margin": 0.667,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "حاسة بالإحباط بعد السكشن",
+      "expected": "emotion",
+      "predicted": "emotion",
+      "score": 0.4568,
+      "margin": 0.2746,
+      "correct": true,
+      "decision": {
+        "label": "emotion",
+        "intent_score": 0.4568,
+        "score": 0.7358,
+        "margin": 0.5869,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "نجحت في المادة ومش مصدق من الفرحة",
+      "expected": "emotion",
+      "predicted": "emotion",
+      "score": 0.3753,
+      "margin": 0.2029,
+      "correct": true,
+      "decision": {
+        "label": "emotion",
+        "intent_score": 0.3753,
+        "score": 0.7265,
+        "margin": 0.6309,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "التسجيل تعب أعصابي",
+      "expected": "emotion",
+      "predicted": "emotion",
+      "score": 0.8624,
+      "margin": 0.8127,
+      "correct": true,
+      "decision": {
+        "label": "emotion",
+        "intent_score": 0.8624,
+        "score": 0.9322,
+        "margin": 0.9114,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "el workload khan2ny",
+      "expected": "emotion",
+      "predicted": "emotion",
+      "score": 0.2212,
+      "margin": 0.0899,
+      "correct": true,
+      "decision": {
+        "label": "emotion",
+        "intent_score": 0.2212,
+        "score": 0.4665,
+        "margin": 0.3475,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "mabsoot en el project nage7",
+      "expected": "emotion",
+      "predicted": "emotion",
+      "score": 0.381,
+      "margin": 0.2587,
+      "correct": true,
+      "decision": {
+        "label": "emotion",
+        "intent_score": 0.381,
+        "score": 0.6524,
+        "margin": 0.5301,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "What is a hash table?",
+      "expected": "general_information",
+      "predicted": "general_information",
+      "score": 0.3136,
+      "margin": 0.0536,
+      "correct": true,
+      "decision": {
+        "label": "general_information",
+        "intent_score": 0.3136,
+        "score": 0.3136,
+        "margin": 0.0536,
+        "confident": false,
+        "route": "general",
+        "general_information": true
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Calculate 35 plus 48.",
+      "expected": "general_information",
+      "predicted": "general_information",
+      "score": 0.4852,
+      "margin": 0.3519,
+      "correct": true,
+      "decision": {
+        "label": "general_information",
+        "intent_score": 0.4852,
+        "score": 0.4852,
+        "margin": 0.2345,
+        "confident": false,
+        "route": "general",
+        "general_information": true
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Explain why magnets attract iron.",
+      "expected": "general_information",
+      "predicted": "general_information",
+      "score": 0.2155,
+      "margin": 0.0567,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.1588,
+        "score": 0.3888,
+        "margin": 0.1733,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "إزاي عملية البناء الضوئي بتحصل؟",
+      "expected": "general_information",
+      "predicted": "university",
+      "score": 0.4559,
+      "margin": 0.1553,
+      "correct": false,
+      "decision": {
+        "label": "university",
+        "intent_score": 0.4559,
+        "score": 0.4559,
+        "margin": 0.1553,
+        "confident": false,
+        "route": "university",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "هات كود يحسب متوسط أرقام",
+      "expected": "general_information",
+      "predicted": "general_information",
+      "score": 0.4856,
+      "margin": 0.3383,
+      "correct": true,
+      "decision": {
+        "label": "general_information",
+        "intent_score": 0.4856,
+        "score": 0.4856,
+        "margin": 0.3186,
+        "confident": false,
+        "route": "general",
+        "general_information": true
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "الفرق بين الرام والهارد إيه؟",
+      "expected": "general_information",
+      "predicted": "followup",
+      "score": 0.3848,
+      "margin": 0.1185,
+      "correct": false,
+      "decision": {
+        "label": "followup",
+        "intent_score": 0.3848,
+        "score": 0.3848,
+        "margin": 0.1185,
+        "confident": false,
+        "route": null,
+        "general_information": null
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "ya3ni eh supervised learning?",
+      "expected": "general_information",
+      "predicted": "mixed",
+      "score": 0.3582,
+      "margin": 0.0761,
+      "correct": false,
+      "decision": {
+        "label": "mixed",
+        "intent_score": 0.3582,
+        "score": 0.3582,
+        "margin": 0.0761,
+        "confident": false,
+        "route": "mixed",
+        "general_information": true
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "eh el far2 ben AI w machine learning generally?",
+      "expected": "general_information",
+      "predicted": "general_information",
+      "score": 0.5812,
+      "margin": 0.3803,
+      "correct": true,
+      "decision": {
+        "label": "general_information",
+        "intent_score": 0.5812,
+        "score": 0.5812,
+        "margin": 0.3803,
+        "confident": false,
+        "route": "general",
+        "general_information": true
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Write a warm birthday wish for my classmate.",
+      "expected": "creative",
+      "predicted": "creative",
+      "score": 0.8827,
+      "margin": 0.8381,
+      "correct": true,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.8827,
+        "score": 0.9556,
+        "margin": 0.9379,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Translate 'welcome back' into English from Arabic.",
+      "expected": "creative",
+      "predicted": "creative",
+      "score": 0.7196,
+      "margin": 0.639,
+      "correct": true,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.7196,
+        "score": 0.8338,
+        "margin": 0.7869,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Help me organize tomorrow's revision time.",
+      "expected": "creative",
+      "predicted": "creative",
+      "score": 0.5798,
+      "margin": 0.3135,
+      "correct": true,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.5798,
+        "score": 0.6342,
+        "margin": 0.368,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "اعمل حوار خيالي بين طالب وكتاب",
+      "expected": "creative",
+      "predicted": "creative",
+      "score": 0.5536,
+      "margin": 0.4394,
+      "correct": true,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.5536,
+        "score": 0.7341,
+        "margin": 0.666,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "صيغلي اعتذار لطيف عن التأخير",
+      "expected": "creative",
+      "predicted": "creative",
+      "score": 0.6796,
+      "margin": 0.5359,
+      "correct": true,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.6796,
+        "score": 0.9308,
+        "margin": 0.9136,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "اكتب بيتين شعر عن المكتبة",
+      "expected": "creative",
+      "predicted": "creative",
+      "score": 0.5828,
+      "margin": 0.4906,
+      "correct": true,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.5828,
+        "score": 0.7619,
+        "margin": 0.6787,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "ektob tahne2a le sa7bety",
+      "expected": "creative",
+      "predicted": "creative",
+      "score": 0.346,
+      "margin": 0.1284,
+      "correct": true,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.346,
+        "score": 0.48,
+        "margin": 0.2625,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "targem ahlan beek lel english",
+      "expected": "creative",
+      "predicted": "creative",
+      "score": 0.5234,
+      "margin": 0.2962,
+      "correct": true,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.5234,
+        "score": 0.8086,
+        "margin": 0.7482,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "What scholarships does NU offer to students with high GPAs?",
+      "expected": "university",
+      "predicted": "university",
+      "score": 0.7426,
+      "margin": 0.6398,
+      "correct": true,
+      "decision": {
+        "label": "university",
+        "intent_score": 0.7426,
+        "score": 0.7426,
+        "margin": 0.6398,
+        "confident": true,
+        "route": "university",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "How can I contact the Nile registrar?",
+      "expected": "university",
+      "predicted": "university",
+      "score": 0.75,
+      "margin": 0.654,
+      "correct": true,
+      "decision": {
+        "label": "university",
+        "intent_score": 0.75,
+        "score": 0.75,
+        "margin": 0.654,
+        "confident": true,
+        "route": "university",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Where does NU publish its current fees?",
+      "expected": "university",
+      "predicted": "university",
+      "score": 0.7079,
+      "margin": 0.6036,
+      "correct": true,
+      "decision": {
+        "label": "university",
+        "intent_score": 0.7079,
+        "score": 0.7079,
+        "margin": 0.6036,
+        "confident": true,
+        "route": "university",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "إيه برامج الماجستير في كلية الحاسبات بالنيل؟",
+      "expected": "university",
+      "predicted": "university",
+      "score": 0.6162,
+      "margin": 0.3465,
+      "correct": true,
+      "decision": {
+        "label": "university",
+        "intent_score": 0.6162,
+        "score": 0.6162,
+        "margin": 0.3465,
+        "confident": false,
+        "route": "university",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "شروط مسابقة نيو بايوتالنت إيه؟",
+      "expected": "university",
+      "predicted": "university",
+      "score": 0.6935,
+      "margin": 0.6308,
+      "correct": true,
+      "decision": {
+        "label": "university",
+        "intent_score": 0.6935,
+        "score": 0.6935,
+        "margin": 0.6002,
+        "confident": true,
+        "route": "university",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "مين رئيس جامعة النيل الحالي؟",
+      "expected": "university",
+      "predicted": "identity",
+      "score": 0.3032,
+      "margin": 0.0127,
+      "correct": false,
+      "decision": {
+        "label": "identity",
+        "intent_score": 0.3032,
+        "score": 0.3032,
+        "margin": 0.0127,
+        "confident": false,
+        "route": "identity",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "masareef handasa NU lel sana el gedida?",
+      "expected": "university",
+      "predicted": "university",
+      "score": 0.6351,
+      "margin": 0.513,
+      "correct": true,
+      "decision": {
+        "label": "university",
+        "intent_score": 0.6351,
+        "score": 0.6351,
+        "margin": 0.4456,
+        "confident": false,
+        "route": "university",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "UGRF bey2bal anhy projects?",
+      "expected": "university",
+      "predicted": "creative",
+      "score": 0.198,
+      "margin": 0.0561,
+      "correct": false,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.198,
+        "score": 0.3622,
+        "margin": 0.2203,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "Explain overfitting and tell me which NU course covers it.",
+      "expected": "mixed",
+      "predicted": "mixed",
+      "score": 0.5046,
+      "margin": 0.2861,
+      "correct": true,
+      "decision": {
+        "label": "mixed",
+        "intent_score": 0.5046,
+        "score": 0.5046,
+        "margin": 0.2861,
+        "confident": false,
+        "route": "mixed",
+        "general_information": true
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "What is a scholarship, and what are Nile's scholarship deadlines?",
+      "expected": "mixed",
+      "predicted": "university",
+      "score": 0.7186,
+      "margin": 0.5391,
+      "correct": false,
+      "decision": {
+        "label": "university",
+        "intent_score": 0.7186,
+        "score": 0.7186,
+        "margin": 0.5391,
+        "confident": true,
+        "route": "university",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "What does STEM stand for and does NU give STEM scholarships?",
+      "expected": "mixed",
+      "predicted": "mixed",
+      "score": 0.6238,
+      "margin": 0.4197,
+      "correct": true,
+      "decision": {
+        "label": "mixed",
+        "intent_score": 0.6238,
+        "score": 0.6238,
+        "margin": 0.4197,
+        "confident": false,
+        "route": "mixed",
+        "general_information": true
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "يعني إيه أمن سيبراني وهل ليه برنامج في النيل؟",
+      "expected": "mixed",
+      "predicted": "mixed",
+      "score": 0.4334,
+      "margin": 0.3012,
+      "correct": true,
+      "decision": {
+        "label": "mixed",
+        "intent_score": 0.4334,
+        "score": 0.4334,
+        "margin": 0.2788,
+        "confident": false,
+        "route": "mixed",
+        "general_information": true
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "اشرح معنى تدريب عملي وفين أقدم على تدريب في الجامعة",
+      "expected": "mixed",
+      "predicted": "mixed",
+      "score": 0.2837,
+      "margin": 0.1066,
+      "correct": true,
+      "decision": {
+        "label": "mixed",
+        "intent_score": 0.2837,
+        "score": 0.2837,
+        "margin": 0.0942,
+        "confident": false,
+        "route": "mixed",
+        "general_information": true
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "اكتب كود صغير وقولي عنوان حرم النيل",
+      "expected": "mixed",
+      "predicted": "creative",
+      "score": 0.5266,
+      "margin": 0.2632,
+      "correct": false,
+      "decision": {
+        "label": "creative",
+        "intent_score": 0.5266,
+        "score": 0.5515,
+        "margin": 0.2881,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "ya3ni eh GPA w eh shoroot men7et NU?",
+      "expected": "mixed",
+      "predicted": "university",
+      "score": 0.5813,
+      "margin": 0.3374,
+      "correct": false,
+      "decision": {
+        "label": "university",
+        "intent_score": 0.5813,
+        "score": 0.5813,
+        "margin": 0.3374,
+        "confident": false,
+        "route": "university",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "eshra7 data science w NU 3andaha program feeh?",
+      "expected": "mixed",
+      "predicted": "mixed",
+      "score": 0.7821,
+      "margin": 0.6831,
+      "correct": true,
+      "decision": {
+        "label": "mixed",
+        "intent_score": 0.7821,
+        "score": 0.7821,
+        "margin": 0.6831,
+        "confident": true,
+        "route": "mixed",
+        "general_information": true
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Can you make that shorter?",
+      "expected": "followup",
+      "predicted": "followup",
+      "score": 0.6248,
+      "margin": 0.4427,
+      "correct": true,
+      "decision": {
+        "label": "followup",
+        "intent_score": 0.6248,
+        "score": 0.6248,
+        "margin": 0.4427,
+        "confident": false,
+        "route": null,
+        "general_information": null
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Would the other option cost less?",
+      "expected": "followup",
+      "predicted": "followup",
+      "score": 0.8407,
+      "margin": 0.7919,
+      "correct": true,
+      "decision": {
+        "label": "followup",
+        "intent_score": 0.8407,
+        "score": 0.8407,
+        "margin": 0.784,
+        "confident": false,
+        "route": null,
+        "general_information": null
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "And for the following year?",
+      "expected": "followup",
+      "predicted": "followup",
+      "score": 0.3316,
+      "margin": 0.1578,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.1229,
+        "score": 0.3355,
+        "margin": 0.0039,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "طب ده معناه إيه بالظبط؟",
+      "expected": "followup",
+      "predicted": "followup",
+      "score": 0.5922,
+      "margin": 0.4772,
+      "correct": true,
+      "decision": {
+        "label": "followup",
+        "intent_score": 0.5922,
+        "score": 0.5922,
+        "margin": 0.4393,
+        "confident": false,
+        "route": null,
+        "general_information": null
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "والموضوع ده له شروط تانية؟",
+      "expected": "followup",
+      "predicted": "followup",
+      "score": 0.6938,
+      "margin": 0.6177,
+      "correct": true,
+      "decision": {
+        "label": "followup",
+        "intent_score": 0.6938,
+        "score": 0.6938,
+        "margin": 0.5748,
+        "confident": false,
+        "route": null,
+        "general_information": null
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "احسبهالي بنفس الطريقة",
+      "expected": "followup",
+      "predicted": "followup",
+      "score": 0.3821,
+      "margin": 0.0697,
+      "correct": true,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.3124,
+        "score": 0.4372,
+        "margin": 0.0551,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "tab el sana elly ba3daha?",
+      "expected": "followup",
+      "predicted": "followup",
+      "score": 0.5806,
+      "margin": 0.4221,
+      "correct": true,
+      "decision": {
+        "label": "followup",
+        "intent_score": 0.5806,
+        "score": 0.5806,
+        "margin": 0.4221,
+        "confident": false,
+        "route": null,
+        "general_information": null
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "momken tebassa6 el shar7 dah?",
+      "expected": "followup",
+      "predicted": "identity",
+      "score": 0.294,
+      "margin": 0.0146,
+      "correct": false,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.1934,
+        "score": 0.3039,
+        "margin": 0.0098,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "Would NU be a sensible choice for my future?",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.8446,
+      "margin": 0.7684,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.8446,
+        "score": 0.8446,
+        "margin": 0.7684,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Do you think this college is worth considering?",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.8916,
+      "margin": 0.8447,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.8916,
+        "score": 0.8916,
+        "margin": 0.8447,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "How can I judge whether a university suits me?",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.7142,
+      "margin": 0.5811,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.7142,
+        "score": 0.7142,
+        "margin": 0.5151,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "جامعة النيل تستاهل أختارها؟",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.7861,
+      "margin": 0.694,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.7861,
+        "score": 0.7861,
+        "margin": 0.694,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "رأيك أروح النيل ولا أفكر في بدائل؟",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.7221,
+      "margin": 0.6374,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.7221,
+        "score": 0.7221,
+        "margin": 0.6333,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "إيه اللي يخليني أختار الكلية دي؟",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.5914,
+      "margin": 0.4656,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.5914,
+        "score": 0.5914,
+        "margin": 0.4155,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "el nile testahel akhtarha?",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.6771,
+      "margin": 0.5979,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.6771,
+        "score": 0.6771,
+        "margin": 0.5979,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "NU ekhteyar monaseb leya wala la?",
+      "expected": "university_advice",
+      "predicted": "social",
+      "score": 0.2916,
+      "margin": 0.0825,
+      "correct": false,
+      "decision": {
+        "label": "social",
+        "intent_score": 0.2916,
+        "score": 0.4171,
+        "margin": 0.2079,
+        "confident": false,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "My family thinks NU is not worth it. What is the case for it?",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.364,
+      "margin": 0.2216,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.364,
+        "score": 0.364,
+        "margin": 0.1873,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "مش متحمس للتقديم، شجعني بأسباب حقيقية",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.5639,
+      "margin": 0.442,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.5639,
+        "score": 0.5639,
+        "margin": 0.2223,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "e2na3ny be gam3et el nile men gheir mobala8a",
+      "expected": "university_advice",
+      "predicted": "university_advice",
+      "score": 0.5923,
+      "margin": 0.5146,
+      "correct": true,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.5923,
+        "score": 0.5923,
+        "margin": 0.4587,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Is learning a second language worth my time?",
+      "expected": "opinion",
+      "predicted": "opinion",
+      "score": 0.6675,
+      "margin": 0.5217,
+      "correct": true,
+      "decision": {
+        "label": "opinion",
+        "intent_score": 0.6675,
+        "score": 0.7261,
+        "margin": 0.5804,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    },
+    {
+      "text": "Would you recommend studying with friends?",
+      "expected": "opinion",
+      "predicted": "university_advice",
+      "score": 0.4726,
+      "margin": 0.2036,
+      "correct": false,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.4726,
+        "score": 0.4726,
+        "margin": 0.0851,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "رأيك أشتغل وأنا بدرس؟",
+      "expected": "opinion",
+      "predicted": "university_advice",
+      "score": 0.5394,
+      "margin": 0.4295,
+      "correct": false,
+      "decision": {
+        "label": "university_advice",
+        "intent_score": 0.5394,
+        "score": 0.5394,
+        "margin": 0.2734,
+        "confident": false,
+        "route": "advising",
+        "general_information": false
+      },
+      "policy_correct": false
+    },
+    {
+      "text": "tensa7ny azaker ma3 so7aby?",
+      "expected": "opinion",
+      "predicted": "opinion",
+      "score": 0.7453,
+      "margin": 0.6587,
+      "correct": true,
+      "decision": {
+        "label": "opinion",
+        "intent_score": 0.7453,
+        "score": 0.8206,
+        "margin": 0.7339,
+        "confident": true,
+        "route": "general",
+        "general_information": false
+      },
+      "policy_correct": true
+    }
+  ],
+  "note": "Authored development validation set used for tuning, not a blind production test. Scores are not calibrated probabilities of correctness."
+}

@@ -1,0 +1,1324 @@
+{
+  "checked_at": "2026-09-14T03:10:06.236088+00:00",
+  "checker_version": "6ae63ec995b66219",
+  "health": {
+    "index_ready": true,
+    "model_ready": true,
+    "model": "qwen3.5:35b-a3b",
+    "index_version": 1789354505308894000,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "08b6c1b11492ee8a",
+    "chunks": 21672,
+    "sources": 1894,
+    "collected_at": "2026-09-14T02:51:54.318021+00:00"
+  },
+  "total": 12,
+  "mechanical_passes": 9,
+  "manual_review_required": false,
+  "cases": [
+    {
+      "id": "S013",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "social",
+        "emotion",
+        "no-reminder"
+      ],
+      "review": "Responds to the emotion without inventing university facts or redirecting to applications. Egyptian language if requested. No specialization reminder.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "ana makhnoo2 men el gam3a awi",
+          "status": 200,
+          "seconds": 12.01,
+          "result": {
+            "answer": "Fahem enak metdaye2. Eh elly 7asal w 3amlo? Bta3tani nshouf ezay a9dar as7abak awi.",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "franco",
+              "reply_language": "franco",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": false,
+              "message_meaning": "I am frustrated and overwhelmed by the university.",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 11.99,
+              "planning_seconds": 7.28,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 4.72,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "fail",
+        "notes": "Franco begins appropriately but ends incoherently; this run predates approval to reply in Arabic."
+      }
+    },
+    {
+      "id": "S028",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "general",
+        "information",
+        "reminder"
+      ],
+      "review": "Correct useful general answer first, followed by one short NU specialization note. No fabricated NU citations. Code must remain literal and usable.",
+      "errors": [
+        "turn 1: wrong specialization-note decision",
+        "turn 1: Franco reply contains Arabic-script prose",
+        "turn 1: reply may be English rather than Franco; manual review required"
+      ],
+      "turns": [
+        {
+          "question": "eh el far2 ben AI w machine learning?",
+          "status": 200,
+          "seconds": 17.79,
+          "result": {
+            "answer": "AI (الذكاء الاصطناعي) هو مفهوم واسع بيغطي أي جهاز أو نظام بيعمل مهام بتتطلب ذكاء بشري، زي الكلام أو الرؤية أو اتخاذ القرار. أما Machine Learning فهو جزء من الـ AI، وبيعتمد على خوارزميات بتتعلم من البيانات عشان تحسن أدائها مع الوقت من غير ما يتم برمجتها يدويًا لكل مهمة.\n\nببساطة، كل الـ Machine Learning هو AI، لكن مش كل الـ AI هو Machine Learning.",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "franco",
+              "reply_language": "franco",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": false,
+              "message_meaning": "What is the difference between AI and machine learning?",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 17.79,
+              "planning_seconds": 6.14,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 11.65,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": [
+            "wrong specialization-note decision",
+            "Franco reply contains Arabic-script prose",
+            "reply may be English rather than Franco; manual review required"
+          ]
+        }
+      ],
+      "manual_review": {
+        "verdict": "partial",
+        "notes": "Correct AI/ML explanation in Arabic instead of then-requested Franco; misses specialization note."
+      }
+    },
+    {
+      "id": "S035",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "general",
+        "information",
+        "reminder"
+      ],
+      "review": "Correct useful general answer first, followed by one short NU specialization note. No fabricated NU citations. Code must remain literal and usable.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "اشرحلي الفرق بين اللغة العربية والفرانكو",
+          "status": 200,
+          "seconds": 15.64,
+          "result": {
+            "answer": "اللغة العربية هي لغة عربية فصحى مكتوبة بالخط العربي، وتُستخدم في الكتابة الرسمية، التعليم، الإعلام، والأدب، مع قواعد نحوية وصرفية محددة بدقة.\n\nأما \"الفرانكو\" (أو الأرابيزي) فهو طريقة لكتابة اللهجة المصرية أو العامية باستخدام الحروف اللاتينية والأرقام بدلاً من الحروف العربية، ويُستخدم غالبًا في المحادثات اليومية غير الرسمية عبر الإنترنت ووسائل التواصل الاجتماعي لتسهيل الكتابة السريعة دون الحاجة إلى لوحة مفاتيح عربية.\n\nأنا معمول مخصوص لجامعة النيل في مصر. دي إجابة عامة، مش معلومة متحقَّق منها من مصادر الجامعة.",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": true,
+              "message_meaning": "Explain the difference between Arabic language and Franco (Egyptian Arabic written with Latin letters).",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 15.63,
+              "planning_seconds": 6.03,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 9.6,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "partial",
+        "notes": "Correctly identifies Arabizi but inaccurately narrows Arabic to formal Arabic."
+      }
+    },
+    {
+      "id": "S045",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "university",
+        "core"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "ازاي اقدم في جامعة النيل؟",
+          "status": 200,
+          "seconds": 80.2,
+          "result": {
+            "answer": "لتقديم طلب في جامعة النيل، اتبع الخطوات التالية:\n\n**للطلاب المصريين:**\n1. أنشئ حسابًا على موقع الجامعة عبر النقر على زر \"Apply Now\" باستخدام بريدك الإلكتروني [3].\n2. املأ بيانات الطلب وارفع المستندات المطلوبة [3].\n3. احجز مقعدك في اختبار تحديد المستوى للغة الإنجليزية [3].\n4. ادفع رسوم التقديم ورسوم اختبار اللغة الإنجليزية عبر الإنترنت [3]. رسوم التقديم هي 1500 EGP، ورسوم اختبار اللغة الإنجليزية هي 500 EGP [4].\n5. قدم الطلب المكتمل [3].\n\n**للطلاب غير المصريين (الدوليين):**\n1. قدّم طلبك أولًا عبر بوابة \"Study in مصر\"، والتي تفتح عادةً حول منتصف شهر يونيو [2]، [4].\n2. بمجرد استلام خطاب الترشيح من بوابة \"Study in مصر\"، اتبع لإكمال إجراءات التقديم مباشرة مع جامعة النيل [2]، [4].\n3. قدّم طلبك عبر الإنترنت من خلال موقع جامعة النيل وادفع الرسوم المطلوبة (1500 EGP للتقديم، 500 EGP لاختبار اللغة الإنجليزية) [4].\n4. ارفع المستندات المطلوبة واحجز موعد اختبار اللغة الإنجليزية [4].\n5. بعد اجتياز اختبار اللغة الإنجليزية، قدم شهاداتك الأصلية مع نسخة من خطاب الترشيح إلى مكتب القبول [4].\n\n**ملاحظات إضافية:**\n- الطلاب الذين يسعون لنقل الاعتمادات يجب أن يقدموا كشوف درجات رسمية، ووصف المواد الدراسية، وإثبات الحضور، مع معدل تراكمي لا يقل عن 2.0/4.0 [3].\n- الطلبات المقدمة بعد الموعد النهائي أو التي تُركت غير مكتملة لن يتم النظر فيها [1]، [5].",
+            "sources": [
+              {
+                "id": "1f5128b3741e9835-s4-74",
+                "url": "https://nu.edu.eg/scholarship/undergraduate-scholarship?page=1",
+                "title": "How to Apply — Undergraduate Scholarship | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:21.408589+00:00",
+                "archived": false,
+                "content_sha256": "38fb451957eb6ca47780dd45286f14973e3c05845a9e48c041748d1a22a1979a",
+                "similarity": 0.3755,
+                "score": 0.355,
+                "rerank_score": 0.9938,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "5c081e07661f2f38-s35-0",
+                "url": "https://nu.edu.eg/admission-requirement-and-documents",
+                "title": "Non Egyptian Students — Admission Requirements and Documents | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.868373+00:00",
+                "archived": false,
+                "content_sha256": "2267c906a786ea66206b773e5a171609581f689b58dccc6567262251faca8169",
+                "similarity": 0.668,
+                "score": 0.6953,
+                "rerank_score": 0.9121,
+                "citation": 2,
+                "cited": true
+              },
+              {
+                "id": "8870d38c3b923bc8-74",
+                "url": "https://nu.edu.eg/how-to-apply",
+                "title": "How to Apply | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.867374+00:00",
+                "archived": false,
+                "content_sha256": "1328eec33292b6c81002167c044b2f7e370b09c919ec5b824b97af5b2999b432",
+                "similarity": 0.5243,
+                "score": 0.4064,
+                "rerank_score": 0.9424,
+                "citation": 3,
+                "cited": true
+              },
+              {
+                "id": "c2d448c5938d6594-s22-0",
+                "url": "https://nu.edu.eg/office-international-affairs",
+                "title": "Application Steps — The Office of International Affairs | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:30.540517+00:00",
+                "archived": false,
+                "content_sha256": "b59cead8fdd081d31c7a411142317bf40490f88792153f26c247b091129658e0",
+                "similarity": 0.7339,
+                "score": 0.5644,
+                "rerank_score": 0.7389,
+                "citation": 4,
+                "cited": true
+              },
+              {
+                "id": "6637c9ef47423d28-s6-74",
+                "url": "https://nu.edu.eg/student-exchange",
+                "title": "Application Process — Student Exchange | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.868373+00:00",
+                "archived": false,
+                "content_sha256": "d3eee444896ec65f02239e83894a8a5174754aca1573b7e453e20632966cea81",
+                "similarity": 0.4812,
+                "score": 0.4231,
+                "rerank_score": 0.6632,
+                "citation": 5,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "Nile University Egypt application process requirements",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "How do I apply to Nile University?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 80.19,
+              "planning_seconds": 5.21,
+              "retrieval_seconds": 17.64,
+              "generation_seconds": 57.34,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "partial",
+        "notes": "Application answer is overlong and volunteers unrelated international/transfer branches and application/exam fees; 80 seconds."
+      }
+    },
+    {
+      "id": "S047",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "university",
+        "core"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "What undergraduate programs are available in ITCS?",
+          "status": 200,
+          "seconds": 23.41,
+          "result": {
+            "answer": "The School of Information Technology and Computer Science at Nile University offers the following undergraduate programs: Computer Science, Artificial Intelligence, Biomedical Informatics, and Cybersecurity [1].",
+            "sources": [
+              {
+                "id": "6953e817644aa438-s8-0",
+                "url": "https://nu.edu.eg/faqs",
+                "title": "What is the programs available in the School of Information Technology and Computer Science? — FAQs | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.866374+00:00",
+                "archived": false,
+                "content_sha256": "fdca01d86bed84c4edeef244fd80c9729bd4f749d83d050af254fbfecd9f2fa3",
+                "similarity": 0.6466,
+                "score": 0.748,
+                "rerank_score": 0.9998,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "2a13ac6eb26ba129-0",
+                "url": "https://itcs.nu.edu.eg/program/undergraduate-program-computer-science-cs/courses/selected-topics-undergraduate-program",
+                "title": "Selected Topics in Undergraduate Program of Computer Science (CS) | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:33.203953+00:00",
+                "archived": false,
+                "content_sha256": "19000cb88f2a7a57a2ffedd284e31e147253bf073db57b8331398935790b3f3e",
+                "similarity": 0.6589,
+                "score": 0.7164,
+                "rerank_score": 0.9991,
+                "citation": 2,
+                "cited": false
+              },
+              {
+                "id": "69ba1b7a9026c94d-s4-0",
+                "url": "https://itcs.nu.edu.eg/apply-now",
+                "title": "What are the programs available at the School of Information Technology and Computer Science? — Apply Now | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:48.071666+00:00",
+                "archived": false,
+                "content_sha256": "e6ddba7135dfab2c43f16574379a9673ce884d46f3018bb33be8f5035907e52a",
+                "similarity": 0.5772,
+                "score": 0.6978,
+                "rerank_score": 0.9994,
+                "citation": 3,
+                "cited": false
+              },
+              {
+                "id": "2f3de9c411680a48-s5-0",
+                "url": "https://itcs.nu.edu.eg/",
+                "title": "School Programs — Home page | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:26.980942+00:00",
+                "archived": false,
+                "content_sha256": "0660f20e5dee660aec5da24d19c7cc33493c14eb65ebc7a4330d1f112a3d23fd",
+                "similarity": 0.8473,
+                "score": 0.821,
+                "rerank_score": 0.9981,
+                "citation": 4,
+                "cited": false
+              },
+              {
+                "id": "b910085b2442002a-0",
+                "url": "https://itcs.nu.edu.eg/program/undergraduate-program-artificial-intelligence-ai/courses/undergraduate-program-artificial",
+                "title": "Undergraduate Program of Artificial Intelligence (AI) | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:23.159626+00:00",
+                "archived": false,
+                "content_sha256": "44dbe3a8b676ad8c4d2f4e3470b299c376e00322f295f7271780d99ec0befad3",
+                "similarity": 0.5939,
+                "score": 0.6369,
+                "rerank_score": 0.9988,
+                "citation": 5,
+                "cited": false
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "Nile University School of Information Technology and Computer Science undergraduate programs",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What undergraduate programs are available in the School of Information Technology and Computer Science?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 23.41,
+              "planning_seconds": 6.53,
+              "retrieval_seconds": 7.24,
+              "generation_seconds": 9.64,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "pass",
+        "notes": "Includes all four ITCS undergraduate programs."
+      }
+    },
+    {
+      "id": "S048",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "university",
+        "core"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "ايه برامج undergraduate في ITCS؟",
+          "status": 200,
+          "seconds": 33.75,
+          "result": {
+            "answer": "كليات كلية تكنولوجيا المعلومات وعلوم الحاسب (الـ ITCS) في جامعة النيل تقدم أربع برامج بكالوريوس: علوم الحاسب، والمعلوماتية الطبية الحيوية، والذكاء الاصطناعي، والأمن السيبراني [5].",
+            "sources": [
+              {
+                "id": "2a13ac6eb26ba129-0",
+                "url": "https://itcs.nu.edu.eg/program/undergraduate-program-computer-science-cs/courses/selected-topics-undergraduate-program",
+                "title": "Selected Topics in Undergraduate Program of Computer Science (CS) | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:33.203953+00:00",
+                "archived": false,
+                "content_sha256": "19000cb88f2a7a57a2ffedd284e31e147253bf073db57b8331398935790b3f3e",
+                "similarity": 0.5547,
+                "score": 0.6667,
+                "rerank_score": 0.9994,
+                "citation": 1,
+                "cited": false
+              },
+              {
+                "id": "b910085b2442002a-0",
+                "url": "https://itcs.nu.edu.eg/program/undergraduate-program-artificial-intelligence-ai/courses/undergraduate-program-artificial",
+                "title": "Undergraduate Program of Artificial Intelligence (AI) | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:23.159626+00:00",
+                "archived": false,
+                "content_sha256": "44dbe3a8b676ad8c4d2f4e3470b299c376e00322f295f7271780d99ec0befad3",
+                "similarity": 0.5656,
+                "score": 0.6299,
+                "rerank_score": 0.9995,
+                "citation": 2,
+                "cited": false
+              },
+              {
+                "id": "2f3de9c411680a48-s5-0",
+                "url": "https://itcs.nu.edu.eg/",
+                "title": "School Programs — Home page | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:26.980942+00:00",
+                "archived": false,
+                "content_sha256": "0660f20e5dee660aec5da24d19c7cc33493c14eb65ebc7a4330d1f112a3d23fd",
+                "similarity": 0.7084,
+                "score": 0.7502,
+                "rerank_score": 0.9986,
+                "citation": 3,
+                "cited": false
+              },
+              {
+                "id": "a1dcea98e11f0b08-74",
+                "url": "https://itcs.nu.edu.eg/program/undergraduate-program-artificial-intelligence-ai/courses/selected-topics-undergraduate",
+                "title": "Selected Topics in Undergraduate Program of Artificial Intelligence (AI) | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:46.865100+00:00",
+                "archived": false,
+                "content_sha256": "b240a46bfd6c8dd6e2367e605ed2d86dd379f40afedd51559a988ab41f65c084",
+                "similarity": 0.5334,
+                "score": 0.6051,
+                "rerank_score": 0.9961,
+                "citation": 4,
+                "cited": false
+              },
+              {
+                "id": "6953e817644aa438-s8-0",
+                "url": "https://nu.edu.eg/faqs",
+                "title": "What is the programs available in the School of Information Technology and Computer Science? — FAQs | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.866374+00:00",
+                "archived": false,
+                "content_sha256": "fdca01d86bed84c4edeef244fd80c9729bd4f749d83d050af254fbfecd9f2fa3",
+                "similarity": 0.5702,
+                "score": 0.6011,
+                "rerank_score": 0.9993,
+                "citation": 5,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "mixed",
+              "reply_language": "mixed",
+              "retrieval_query": "Nile University Egypt undergraduate programs in School of Information Technology and Computer Science ITCS",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What are the undergraduate programs in the School of Information Technology and Computer Science?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 33.74,
+              "planning_seconds": 8.44,
+              "retrieval_seconds": 11.35,
+              "generation_seconds": 13.96,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "partial",
+        "notes": "Includes all four programs but Arabic phrasing is awkward."
+      }
+    },
+    {
+      "id": "S049",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "university",
+        "core",
+        "fees"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "مصاريف حاسبات ومعلومات كام",
+          "status": 200,
+          "seconds": 93.75,
+          "result": {
+            "answer": "بالنسبة لـ كلية تكنولوجيا المعلومات وعلوم الحاسب في جامعة النيل، تنطبق رسوم الدراسة الجامعية للعام الأكاديمي 2026/2027 على طلاب السنة الأولى (الطلاب الجدد) فقط [1][2]. وتعتمد مبالغ الرسوم السنوية على فئة المنحة بناءً على درجات الثانوية العامة:\n\n- **أعلى 500**: 0 EGP سنويًا [2].\n- **درجة ≥95%**: 96,840 EGP سنويًا (خصم 50%) [1].\n- **درجة 90–94.9%**: 116,208 EGP سنويًا (خصم 40%) [1].\n- **درجة 85–89.9%**: 154,944 EGP سنويًا (خصم 20%) [1].\n- **درجة <85%**: 193,680 EGP سنويًا (بدون خصم) [1].\n\nتمثل هذه الأرقام متوسط الرسوم السنوية ولا تشمل الدورات غير الأكاديمية. بالنسبة للطلاب غير المصريين في هذه المدرسة، فإن متوسط الرسوم السنوية يقارب $6,646 USD (بناءً على $185 لكل ساعة معتمدة) لفصل الخريف 2026 [3]. توجد بيانات تاريخية للرسوم من السنوات السابقة لكنها غير مؤكدة كسياسة حالية [4].",
+            "sources": [
+              {
+                "id": "d012f6cce625b8e9-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20133134.png",
+                "title": "Fees and Financials | NU — IGSCE — School of Information Technology and Computer Science — IGCSE (page groups IGCSE, IB, Nile and International Schools)",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.383157+00:00",
+                "extracted_at": "2026-09-14T02:52:43.890861+00:00",
+                "archived": false,
+                "content_sha256": "1d27ec2bedb9f58d13a53ee8b45907861addebcce080f87dcbebc722c78455bd",
+                "ocr_reviewed": true,
+                "similarity": 0.706,
+                "score": 0.7482,
+                "rerank_score": 0.9993,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "e11a9e460e01b2db-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+                "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+                "extracted_at": "2026-09-14T02:52:43.885858+00:00",
+                "archived": false,
+                "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+                "ocr_reviewed": true,
+                "similarity": 0.6892,
+                "score": 0.7473,
+                "rerank_score": 0.9993,
+                "citation": 2,
+                "cited": true
+              },
+              {
+                "id": "bbf204f132b2361f-0",
+                "url": "https://nu.edu.eg/office-international-affairs",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/WhatsApp%20Image%202026-05-19%20at%2010.41.12%20AM%282%29.jpeg",
+                "title": "The Office of International Affairs | NU — International students' tuition fees for fall 2026 — Image text",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:01.437470+00:00",
+                "extracted_at": "2026-09-14T02:44:22.318747+00:00",
+                "archived": false,
+                "content_sha256": "52d3f33de189c293ad86e10136eb01a4b42c7a312c56a30743c192051d4bc5bb",
+                "ocr_reviewed": false,
+                "similarity": 0.5364,
+                "score": 0.5676,
+                "rerank_score": 0.9979,
+                "citation": 3,
+                "cited": true
+              },
+              {
+                "id": "11965d8fadd53806-0",
+                "url": "https://nu.edu.eg/admission/fees-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/2022-05/itcs.png",
+                "title": "Historical ITCS tuition and GPA merit scholarship table — ITCS GPA discounts — historical table; current applicability unconfirmed — ITCS first-year tuition: historical image without an academic year",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:47.921407+00:00",
+                "extracted_at": "2026-09-14T02:52:43.895921+00:00",
+                "archived": true,
+                "content_sha256": "ee93757653ebd0aa80a041d28fd866ddf55920ad81a3e17dd91f90b4e8ecd0c8",
+                "ocr_reviewed": true,
+                "similarity": 0.5238,
+                "score": 0.5162,
+                "rerank_score": 0.9823,
+                "citation": 4,
+                "cited": true
+              },
+              {
+                "id": "c2d448c5938d6594-s10-0",
+                "url": "https://nu.edu.eg/office-international-affairs",
+                "title": "School of Information Technology and Computer Science — The Office of International Affairs | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:30.540517+00:00",
+                "archived": false,
+                "content_sha256": "b59cead8fdd081d31c7a411142317bf40490f88792153f26c247b091129658e0",
+                "similarity": 0.6971,
+                "score": 0.6447,
+                "rerank_score": 0.2824,
+                "citation": 5,
+                "cited": false
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "Nile University School of Information Technology and Computer Science fees",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "How much are the fees for the School of Information Technology and Computer Science?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 93.74,
+              "planning_seconds": 6.89,
+              "retrieval_seconds": 17.74,
+              "generation_seconds": 69.11,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "partial",
+        "notes": "Correct fee amounts but assumes a certificate and adds unasked international fees; 94 seconds."
+      }
+    },
+    {
+      "id": "S050",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "university",
+        "core",
+        "fees"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "What is the 2026/2027 first-year ITCS tuition before scholarships for an Egyptian student?",
+          "status": 200,
+          "seconds": 59.37,
+          "result": {
+            "answer": "For the 2026/2027 academic year, the first-year (freshman) tuition fees for Egyptian students in the School of Information Technology and Computer Science (ITCS) at Nile University range from **193,680 EGP** to **96,840 EGP**, depending on the student's high school certificate score [1]. The specific amounts before any scholarship discounts are:  \n- **193,680 EGP**: For students with a school certificate score below 75% (no discount) [1].  \n- **154,944 EGP**: For scores between 75% and 80% [1].  \n- **116,208 EGP**: For scores between 80% and 85% [1].  \n- **96,840 EGP**: For scores of 85% and above (50% discount applied) [1].  \n- **0 EGP**: For students ranked in the top 500 (100% scholarship) [1].  \n\nThese figures represent the *average annual tuition* for the first year only, excluding non-curricular courses [1]. The highest fee listed (193,680 EGP) is the base rate before any percentage-based scholarships are applied.",
+            "sources": [
+              {
+                "id": "e69e2f30a12bde0d-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132947.png",
+                "title": "Fees and Financials | NU — Thanawya Amma Students — School of Information Technology and Computer Science — Egyptian Thanaweya Amma (page groups Thanawya Amma, STEM and Azhar students)",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.379157+00:00",
+                "extracted_at": "2026-09-14T02:52:43.887859+00:00",
+                "archived": false,
+                "content_sha256": "50d8386a1f7a23bb0903e27a72ab1def31dc83d26d381265b780f5f3ec1a3772",
+                "ocr_reviewed": true,
+                "similarity": 0.8374,
+                "score": 0.8286,
+                "rerank_score": 0.9995,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "357573219824653b-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20133216.png",
+                "title": "Fees and Financials | NU — International Students — School of Information Technology and Computer Science — Non-Egyptian students",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.384155+00:00",
+                "extracted_at": "2026-09-14T02:52:43.891862+00:00",
+                "archived": false,
+                "content_sha256": "1b2cf601c97e73c723aea44232767cac79b8265c0f215d5347fa46ef658e3551",
+                "ocr_reviewed": true,
+                "similarity": 0.7799,
+                "score": 0.7746,
+                "rerank_score": 0.9991,
+                "citation": 2,
+                "cited": false
+              },
+              {
+                "id": "11965d8fadd53806-0",
+                "url": "https://nu.edu.eg/admission/fees-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/2022-05/itcs.png",
+                "title": "Historical ITCS tuition and GPA merit scholarship table — ITCS GPA discounts — historical table; current applicability unconfirmed — ITCS first-year tuition: historical image without an academic year",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:47.921407+00:00",
+                "extracted_at": "2026-09-14T02:52:43.895921+00:00",
+                "archived": true,
+                "content_sha256": "ee93757653ebd0aa80a041d28fd866ddf55920ad81a3e17dd91f90b4e8ecd0c8",
+                "ocr_reviewed": true,
+                "similarity": 0.5846,
+                "score": 0.6633,
+                "rerank_score": 0.9977,
+                "citation": 3,
+                "cited": false
+              },
+              {
+                "id": "bbf204f132b2361f-0",
+                "url": "https://nu.edu.eg/office-international-affairs",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/WhatsApp%20Image%202026-05-19%20at%2010.41.12%20AM%282%29.jpeg",
+                "title": "The Office of International Affairs | NU — International students' tuition fees for fall 2026 — Image text",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:01.437470+00:00",
+                "extracted_at": "2026-09-14T02:44:22.318747+00:00",
+                "archived": false,
+                "content_sha256": "52d3f33de189c293ad86e10136eb01a4b42c7a312c56a30743c192051d4bc5bb",
+                "ocr_reviewed": false,
+                "similarity": 0.7957,
+                "score": 0.7185,
+                "rerank_score": 0.989,
+                "citation": 4,
+                "cited": false
+              },
+              {
+                "id": "a6bea3ff0839be56-0",
+                "url": "https://nu.edu.eg/admission/fees-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/2022-05/itcs.png",
+                "title": "Historical ITCS tuition and GPA merit scholarship table — ITCS GPA discounts — historical table; current applicability unconfirmed — ITCS continuing students: historical GPA-to-discount table",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:47.921407+00:00",
+                "extracted_at": "2026-09-14T02:52:43.895921+00:00",
+                "archived": true,
+                "content_sha256": "ee93757653ebd0aa80a041d28fd866ddf55920ad81a3e17dd91f90b4e8ecd0c8",
+                "ocr_reviewed": true,
+                "similarity": 0.6285,
+                "score": 0.6441,
+                "rerank_score": 0.9753,
+                "citation": 5,
+                "cited": false
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "Nile University ITCS first-year tuition fees 2026/2027 Egyptian students before scholarships",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What is the 2026/2027 first-year tuition fee for the School of Information Technology and Computer Science (ITCS) at Nile University, before applying any scholarships, for an Egyptian student?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 59.37,
+              "planning_seconds": 11.68,
+              "retrieval_seconds": 12.95,
+              "generation_seconds": 34.73,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "fail",
+        "notes": "Asked for base tuition; lists discounted amounts as before-scholarship fees and assumes certificate thresholds. Base amount present but answer misleading."
+      }
+    },
+    {
+      "id": "S059",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "university",
+        "core",
+        "fees"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [
+        "turn 1: HTTP 503; expected 200: Qwen could not finish the response. Please retry."
+      ],
+      "turns": [
+        {
+          "question": "لو جايب GPA 3.98 ليا خصم كام؟",
+          "status": 503,
+          "seconds": 15.98,
+          "result": {
+            "detail": "Qwen could not finish the response. Please retry."
+          },
+          "errors": [
+            "HTTP 503; expected 200: Qwen could not finish the response. Please retry."
+          ]
+        }
+      ],
+      "manual_review": {
+        "verdict": "fail",
+        "notes": "HTTP 503; log records transient WinError 10013 connecting to local Ollama."
+      }
+    },
+    {
+      "id": "S060",
+      "environment": {
+        "index_ready": true,
+        "model_ready": false,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "university",
+        "core",
+        "fees"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [
+        "turn 1: HTTP 503; expected 200: Qwen is unavailable. Start Ollama, then retry."
+      ],
+      "turns": [
+        {
+          "question": "I am a continuing ITCS student with GPA 3.98. What exact tuition discount do I get?",
+          "status": 503,
+          "seconds": 0.51,
+          "result": {
+            "detail": "Qwen is unavailable. Start Ollama, then retry."
+          },
+          "errors": [
+            "HTTP 503; expected 200: Qwen is unavailable. Start Ollama, then retry."
+          ]
+        }
+      ],
+      "manual_review": {
+        "verdict": "fail",
+        "notes": "HTTP 503 model unavailable; subsequent scenarios recovered without restarting Ollama."
+      }
+    },
+    {
+      "id": "S081",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "history",
+        "fees",
+        "regression"
+      ],
+      "review": "Maintain ITCS context. Do not confuse college GPA with school percentage; no unsupported discount or repeated request for the program.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "مصاريف حاسبات ومعلومات كام",
+          "status": 200,
+          "seconds": 69.66,
+          "result": {
+            "answer": "بالنسبة لـ كلية تكنولوجيا المعلومات وعلوم الحاسب في جامعة النيل، تنطبق رسوم الدراسة الجامعية لعام 2026/2027 الأكاديمي على طلاب السنة الأولى (الفرقة الأولى) فقط. تُحدد الرسوم حسب فئات المنح القائمة على الاستحقاق بناءً على درجة شهادة الثانوية العامة:\n\n- **أعلى 500**: 0 EGP رسوم دراسية سنوية.\n- **درجة 95% وما فوق (50% خصم)**: 96,840 EGP سنويًا.\n- **درجة 90% إلى 95% (40% خصم)**: 116,208 EGP سنويًا.\n- **درجة 85% إلى 90% (20% خصم)**: 154,944 EGP سنويًا.\n- **أقل من درجة 85% (0% خصم)**: 193,680 EGP سنويًا.\n\nتمثل هذه الأرقام متوسط الرسوم الدراسية السنوية ولا تشمل الدورات غير الأكاديمية [1][2].\n\nبالنسبة للطلاب الدوليين (غير المصريين) في نفس الكلية لفصل الخريف 2026,، تكون الرسوم $185 لكل ساعة معتمدة، بمتوسط رسوم سنوية يقارب $6,646 USD [3]. تشير البيانات التاريخية من السنوات السابقة إلى أن المعدلات ونسب المنح كانت مختلفة، لكن هذه ليست سياسات مؤكدة حاليًا [4].",
+            "sources": [
+              {
+                "id": "d012f6cce625b8e9-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20133134.png",
+                "title": "Fees and Financials | NU — IGSCE — School of Information Technology and Computer Science — IGCSE (page groups IGCSE, IB, Nile and International Schools)",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.383157+00:00",
+                "extracted_at": "2026-09-14T02:52:43.890861+00:00",
+                "archived": false,
+                "content_sha256": "1d27ec2bedb9f58d13a53ee8b45907861addebcce080f87dcbebc722c78455bd",
+                "ocr_reviewed": true,
+                "similarity": 0.706,
+                "score": 0.7482,
+                "rerank_score": 0.9997,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "e11a9e460e01b2db-0",
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+                "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+                "extracted_at": "2026-09-14T02:52:43.885858+00:00",
+                "archived": false,
+                "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+                "ocr_reviewed": true,
+                "similarity": 0.6892,
+                "score": 0.7473,
+                "rerank_score": 0.9997,
+                "citation": 2,
+                "cited": true
+              },
+              {
+                "id": "bbf204f132b2361f-0",
+                "url": "https://nu.edu.eg/office-international-affairs",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/WhatsApp%20Image%202026-05-19%20at%2010.41.12%20AM%282%29.jpeg",
+                "title": "The Office of International Affairs | NU — International students' tuition fees for fall 2026 — Image text",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:01.437470+00:00",
+                "extracted_at": "2026-09-14T02:44:22.318747+00:00",
+                "archived": false,
+                "content_sha256": "52d3f33de189c293ad86e10136eb01a4b42c7a312c56a30743c192051d4bc5bb",
+                "ocr_reviewed": false,
+                "similarity": 0.5364,
+                "score": 0.5676,
+                "rerank_score": 0.997,
+                "citation": 3,
+                "cited": true
+              },
+              {
+                "id": "11965d8fadd53806-0",
+                "url": "https://nu.edu.eg/admission/fees-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/2022-05/itcs.png",
+                "title": "Historical ITCS tuition and GPA merit scholarship table — ITCS GPA discounts — historical table; current applicability unconfirmed — ITCS first-year tuition: historical image without an academic year",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:47.921407+00:00",
+                "extracted_at": "2026-09-14T02:52:43.895921+00:00",
+                "archived": true,
+                "content_sha256": "ee93757653ebd0aa80a041d28fd866ddf55920ad81a3e17dd91f90b4e8ecd0c8",
+                "ocr_reviewed": true,
+                "similarity": 0.5238,
+                "score": 0.5162,
+                "rerank_score": 0.9914,
+                "citation": 4,
+                "cited": true
+              },
+              {
+                "id": "c2d448c5938d6594-s10-0",
+                "url": "https://nu.edu.eg/office-international-affairs",
+                "title": "School of Information Technology and Computer Science — The Office of International Affairs | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:30.540517+00:00",
+                "archived": false,
+                "content_sha256": "b59cead8fdd081d31c7a411142317bf40490f88792153f26c247b091129658e0",
+                "similarity": 0.6971,
+                "score": 0.6447,
+                "rerank_score": 0.8581,
+                "citation": 5,
+                "cited": false
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "Nile University School of Information Technology and Computer Science fees",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What are the fees for the School of Information Technology and Computer Science?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 69.66,
+              "planning_seconds": 6.57,
+              "retrieval_seconds": 6.5,
+              "generation_seconds": 56.59,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        },
+        {
+          "question": "لو جايب GPA 3.98 ليا خصم كام؟",
+          "status": 200,
+          "seconds": 41.89,
+          "result": {
+            "answer": "بالنسبة لـ GPA 3.98، معنديش جدول مؤكد وساري حاليًا لخصومات الطلاب المستمرين حسب الـ GPA، فمش هقدر أأكد استحقاقك لنسبة معينة دلوقتي. محتاجين نتأكد من سياسة دفعتك مع الشؤون المالية.\n\nأقرب صفحة رسمية ممكن تراجعها هي [1].",
+            "sources": [
+              {
+                "id": "a6bea3ff0839be56-148",
+                "url": "https://nu.edu.eg/admission/fees-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/2022-05/itcs.png",
+                "title": "Historical ITCS tuition and GPA merit scholarship table — ITCS GPA discounts — historical table; current applicability unconfirmed — ITCS continuing students: historical GPA-to-discount table",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:47.921407+00:00",
+                "extracted_at": "2026-09-14T02:52:43.895921+00:00",
+                "archived": true,
+                "content_sha256": "ee93757653ebd0aa80a041d28fd866ddf55920ad81a3e17dd91f90b4e8ecd0c8",
+                "ocr_reviewed": true,
+                "similarity": 0.6706,
+                "score": 0.7288,
+                "rerank_score": 0.3427,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "id": "a6bea3ff0839be56-74",
+                "url": "https://nu.edu.eg/admission/fees-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/2022-05/itcs.png",
+                "title": "Historical ITCS tuition and GPA merit scholarship table — ITCS GPA discounts — historical table; current applicability unconfirmed — ITCS continuing students: historical GPA-to-discount table",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:54:47.921407+00:00",
+                "extracted_at": "2026-09-14T02:52:43.895921+00:00",
+                "archived": true,
+                "content_sha256": "ee93757653ebd0aa80a041d28fd866ddf55920ad81a3e17dd91f90b4e8ecd0c8",
+                "ocr_reviewed": true,
+                "similarity": 0.7124,
+                "score": 0.7506,
+                "rerank_score": 0.1063,
+                "citation": 2,
+                "cited": false
+              }
+            ],
+            "mode": "insufficient_evidence",
+            "pipeline": {
+              "detected_language": "mixed",
+              "reply_language": "mixed",
+              "retrieval_query": "Nile University continuing student merit scholarships GPA discount thresholds",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "If I have a GPA of 3.98, what discount do I get?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 41.88,
+              "planning_seconds": 8.51,
+              "retrieval_seconds": 10.59,
+              "generation_seconds": 22.79,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "partial",
+        "notes": "Initial fees include unrelated categories; GPA follow-up omits available historical table while correctly declining to confirm current eligibility."
+      }
+    },
+    {
+      "id": "S090",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:35b-a3b",
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "08b6c1b11492ee8a",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "history",
+        "mixed-intent"
+      ],
+      "review": "Answer both parts, cite NU facts only, then respond naturally to acknowledgment.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "Where is Nile University, and what is a Python list?",
+          "status": 200,
+          "seconds": 27.25,
+          "result": {
+            "answer": "Nile University is located at Juhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt [2]. A Python list is a built-in data structure in the Python programming language that stores an ordered collection of items, which can be of different types, and allows for indexing, slicing, and various methods to manipulate the elements.",
+            "sources": [
+              {
+                "id": "1f355b4c3008a24b-s5-0",
+                "url": "https://nu.edu.eg/nu-tour",
+                "title": "Campus Facilities at Nile University — NU Tour | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:24:53.465606+00:00",
+                "archived": false,
+                "content_sha256": "00ea7ca10620406e6b503f89294197598dc1ba22ffbf87fe3ef5036e5df7ac08",
+                "similarity": 0.5143,
+                "score": 0.5519,
+                "rerank_score": 0.6507,
+                "citation": 1,
+                "cited": false
+              },
+              {
+                "id": "fc92e8d926300290-0",
+                "url": "https://nu.edu.eg/contact-us-Departments",
+                "title": "Contact Us | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:50.915373+00:00",
+                "archived": false,
+                "content_sha256": "3ef5b35c1b62eac5e9f91c8980ccef639edf39fcacb5519a07b2c3c707105f71",
+                "similarity": 0.4977,
+                "score": 0.4869,
+                "rerank_score": 0.6777,
+                "citation": 2,
+                "cited": true
+              },
+              {
+                "id": "c2d448c5938d6594-s26-0",
+                "url": "https://nu.edu.eg/office-international-affairs",
+                "title": "Campus Life — The Office of International Affairs | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:30.540517+00:00",
+                "archived": false,
+                "content_sha256": "b59cead8fdd081d31c7a411142317bf40490f88792153f26c247b091129658e0",
+                "similarity": 0.5445,
+                "score": 0.5151,
+                "rerank_score": 0.3156,
+                "citation": 3,
+                "cited": false
+              },
+              {
+                "id": "168fff4433e6301b-148",
+                "url": "https://nu.edu.eg/sites/default/files/2023-08/august_01.pdf",
+                "title": "august_01.pdf",
+                "page": 7,
+                "kind": "pdf-ocr",
+                "fetched_at": "2026-09-14T00:24:44.226751+00:00",
+                "extracted_at": "2026-09-14T02:52:50.833114+00:00",
+                "archived": false,
+                "content_sha256": "a3442c2d773d5ba10db727f995e09ba0336760390ead92148e9c8d6bfa952ff5",
+                "ocr_reviewed": false,
+                "similarity": 0.4981,
+                "score": 0.4581,
+                "rerank_score": 0.0802,
+                "citation": 4,
+                "cited": false
+              },
+              {
+                "id": "e180b31b0046cade-74",
+                "url": "https://nu.edu.eg/sites/default/files/2026-03/february_newsletter.pdf",
+                "title": "february_newsletter.pdf",
+                "page": 6,
+                "kind": "pdf-ocr",
+                "fetched_at": "2026-09-14T00:27:05.454689+00:00",
+                "extracted_at": "2026-09-14T02:53:14.410430+00:00",
+                "archived": false,
+                "content_sha256": "2effc4b2f7a23551daf357d4ef351610276d368a6e8597a8817c3759bcee8b6b",
+                "ocr_reviewed": false,
+                "similarity": 0.494,
+                "score": 0.4205,
+                "rerank_score": 0.0683,
+                "citation": 5,
+                "cited": false
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "Nile University campus location",
+              "route": "mixed",
+              "general_information": false,
+              "message_meaning": "Where is Nile University located, and what is a Python list?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 27.24,
+              "planning_seconds": 5.82,
+              "retrieval_seconds": 5.79,
+              "generation_seconds": 15.63,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        },
+        {
+          "question": "ممم",
+          "status": 200,
+          "seconds": 7.64,
+          "result": {
+            "answer": "أهلاً بيك! إيه اللي بتفكر فيه؟",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": false,
+              "message_meaning": "Hmm",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3.5:35b-a3b",
+              "elapsed_seconds": 7.63,
+              "planning_seconds": 4.86,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 2.77,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "partial",
+        "notes": "Both factual parts answered correctly; lacks note after substantive general explanation; acknowledgment restarts with greeting."
+      }
+    }
+  ],
+  "review_scope": "All answers manually read; factual review limited to supplied sources and targeted official-source checks. Development cases, not a held-out benchmark."
+}

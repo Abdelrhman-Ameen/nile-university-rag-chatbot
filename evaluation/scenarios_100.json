@@ -64,7 +64,7 @@
       {
         "question": "enta meen?",
         "route": "identity",
-        "language": "franco",
+        "language": "ar",
         "required": [
           "NU Chat"
         ]
@@ -269,7 +269,7 @@
       {
         "question": "ana makhnoo2 men el gam3a awi",
         "route": "general",
-        "language": "franco",
+        "language": "ar",
         "general_information": false,
         "forbidden": [
           "Apply Now",
@@ -413,7 +413,7 @@
       {
         "question": "ana za3lan",
         "route": "general",
-        "language": "franco",
+        "language": "ar",
         "general_information": false,
         "forbidden": [
           "Apply Now",
@@ -596,7 +596,7 @@
       {
         "question": "eh el far2 ben AI w machine learning?",
         "route": "general",
-        "language": "franco",
+        "language": "ar",
         "general_information": true,
         "required": []
       }
@@ -878,7 +878,7 @@
       {
         "question": "el gam3a feen?",
         "route": "university",
-        "language": "franco",
+        "language": "ar",
         "required": [],
         "forbidden": [
           "Abuja",
@@ -946,7 +946,7 @@
       {
         "question": "ezay a2adem fel gam3a?",
         "route": "university",
-        "language": "franco",
+        "language": "ar",
         "required": [],
         "forbidden": [
           "Abuja",
@@ -1782,17 +1782,17 @@
       "history",
       "franco"
     ],
-    "review": "Natural Egyptian Franco across distinct university questions, correct source retrieval.",
+    "review": "Natural Egyptian Arabic replies to Franco across distinct university questions, correct source retrieval.",
     "steps": [
       {
         "question": "el gam3a feen?",
         "route": "university",
-        "language": "franco"
+        "language": "ar"
       },
       {
         "question": "ezay a2adem?",
         "route": "university",
-        "language": "franco"
+        "language": "ar"
       }
     ]
   },

@@ -1,0 +1,123 @@
+{
+  "checked_at": "2026-09-14T03:33:47.553444+00:00",
+  "checker_version": "efeed79c0125fef6",
+  "health": {
+    "index_ready": true,
+    "model_ready": true,
+    "model": "qwen3.5:9b",
+    "thinking": true,
+    "index_version": 1789354505308894000,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "retrieval_device": "cuda",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "37eec86677d588e8",
+    "chunks": 21672,
+    "sources": 1894,
+    "collected_at": "2026-09-14T02:51:54.318021+00:00"
+  },
+  "total": 2,
+  "mechanical_passes": 1,
+  "manual_review_required": false,
+  "cases": [
+    {
+      "id": "R001",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:9b",
+        "thinking": true,
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "37eec86677d588e8",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "franco",
+        "opinion",
+        "user-screenshot"
+      ],
+      "review": "Understand the question as 'Is the university good?'. Give useful personal-fit advice in Egyptian Arabic and optionally ask the intended major. Do not reject an opinion for missing documents, invent institutional merits or add a specialization disclaimer.",
+      "errors": [
+        "turn 1: HTTP 503; expected 200: Qwen returned an incomplete response. Please retry."
+      ],
+      "turns": [
+        {
+          "question": "hal elgam3a 7lwa?",
+          "status": 503,
+          "seconds": 142.16,
+          "result": {
+            "detail": "Qwen returned an incomplete response. Please retry."
+          },
+          "errors": [
+            "HTTP 503; expected 200: Qwen returned an incomplete response. Please retry."
+          ]
+        }
+      ],
+      "manual_review": {
+        "verdict": "fail",
+        "notes": "Truncated model response after 142 seconds."
+      }
+    },
+    {
+      "id": "R002",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3.5:9b",
+        "thinking": true,
+        "index_version": 1789354505308894000,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "retrieval_device": "cuda",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "37eec86677d588e8",
+        "chunks": 21672,
+        "sources": 1894,
+        "collected_at": "2026-09-14T02:51:54.318021+00:00"
+      },
+      "tags": [
+        "arabic",
+        "opinion",
+        "user-screenshot"
+      ],
+      "review": "Give useful personal-fit advice without unsupported claims of NU quality. Do not reject the question for missing source documents; a useful follow-up about the intended major is acceptable.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "هل الجامعة كويسة؟",
+          "status": 200,
+          "seconds": 77.8,
+          "result": {
+            "answer": "أجل، نيل للعلوم والهندسة اسمها طيب جداً بين الطلاب والكادر التدريسي فيها مميز. الجامعة معروفة بالتركيز على البحث العلمي والتدريب العملي، وفيها فرص كثيرة للتطوير المهني سواء كنت بتعمل دراسات عليا أو بتبدأ مشروعك الخاص. الأهم إن البيئة الأكاديمية فيها حرية وبيئة عمل مناسبة للإبداع.",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": false,
+              "message_meaning": "Is the university good?",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3.5:9b",
+              "elapsed_seconds": 77.79,
+              "planning_seconds": 43.56,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 34.23,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "verdict": "fail",
+        "notes": "77.8-second answer invents institutional reputation, staff quality and opportunities without sources; misnames NU."
+      }
+    }
+  ]
+}
