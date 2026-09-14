@@ -1,5 +1,8 @@
 {
-  "allowed_domains": ["nu.edu.eg"],
+  "allowed_domains": [
+    "nu.edu.eg",
+    "np.eg"
+  ],
   "seeds": [
     "https://www.nu.edu.eg/faqs",
     "https://www.nu.edu.eg/fees-and-financials",
@@ -9,6 +12,21 @@
     "https://www.nu.edu.eg/student-exchange",
     "https://www.nu.edu.eg/academic-calendar",
     "https://www.nu.edu.eg/",
+    "https://ugrf.nu.edu.eg/22nd-UGRF",
+    "https://ugrf.nu.edu.eg/",
+    "https://cis.nu.edu.eg/",
+    "https://winc.nu.edu.eg/",
+    "https://nisc.nu.edu.eg/",
+    "https://sesc.nu.edu.eg/",
+    "https://iecc.nu.edu.eg/",
+    "https://fact.nu.edu.eg/",
+    "https://sce.nu.edu.eg/",
+    "https://library.nu.edu.eg/",
+    "https://iecc.nu.edu.eg/constructx-competition-landing/",
+    "https://iecc.nu.edu.eg/nu-innovation-competition/",
+    "https://nu.edu.eg/research-at-NU/research-events",
+    "https://nu.edu.eg/events/nu-biotalent-competition",
+    "https://nu.edu.eg/events/22nd-edition-ugrf",
     "https://itcs.nu.edu.eg/",
     "https://eas.nu.edu.eg/",
     "https://ba.nu.edu.eg/",
@@ -21,6 +39,18 @@
     "https://nu.edu.eg/sites/default/files/2023-01/stem_scholarship_spring_2023_announcement.pdf",
     "https://www.nu.edu.eg/sites/default/files/2025-10/september_newsletter.pdf",
     "https://oldwebsite.nu.edu.eg/upload/nu/BBA%20Program%20Bylaws.pdf",
-    "https://oldwebsite.nu.edu.eg/upload/nu/Ph.D.%20Programs%20Bylaws.pdf"
+    "https://oldwebsite.nu.edu.eg/upload/nu/Ph.D.%20Programs%20Bylaws.pdf",
+    "https://np.eg/",
+    "https://nu.edu.eg/iptto",
+    "https://nu.edu.eg/innovation-entrepreneurship/nilepreneurs"
+  ],
+  "crawl_delay_seconds": 0.4,
+  "scope": "Nile University in Egypt, its public schools, research centres, UGRF, competitions and officially linked affiliated initiatives. No accounts or private portals.",
+  "affiliation_evidence": [
+    {
+      "domain": "np.eg",
+      "official_reference": "https://nu.edu.eg/news/training-trainers-managing-technology-incubator",
+      "relationship": "NilePreneurs, piloted at Nile University; the official NU article links np.eg."
+    }
   ]
 }

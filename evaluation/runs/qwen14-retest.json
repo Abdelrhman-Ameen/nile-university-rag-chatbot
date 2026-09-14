@@ -1,0 +1,1131 @@
+{
+  "checked_at": "2026-09-14T02:09:58.380540+00:00",
+  "health": {
+    "index_ready": true,
+    "model_ready": true,
+    "model": "qwen3:14b",
+    "index_version": 1789348236730441300,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "553f6e9a4f64e94a",
+    "chunks": 16697,
+    "sources": 1597,
+    "collected_at": "2026-09-14T01:05:50.469861+00:00"
+  },
+  "total": 17,
+  "mechanical_passes": 15,
+  "manual_review_required": true,
+  "cases": [
+    {
+      "id": "S013",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "social",
+        "emotion",
+        "no-reminder"
+      ],
+      "review": "Responds to the emotion without inventing university facts or redirecting to applications. Egyptian language if requested. No specialization reminder.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "ana makhnoo2 men el gam3a awi",
+          "status": 200,
+          "seconds": 3.42,
+          "result": {
+            "answer": "Fahem enak mesh 3ayez. Eh elly 7asal? 3ayez t2deem aw t7asab?",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "franco",
+              "reply_language": "franco",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": false,
+              "message_meaning": "I am frustrated and overwhelmed by the university",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 3.41,
+              "planning_seconds": 2.04,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 1.37,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "fail",
+        "note": "Franco changes the emotion and introduces unrelated application wording."
+      }
+    },
+    {
+      "id": "S028",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "general",
+        "information",
+        "reminder"
+      ],
+      "review": "Correct useful general answer first, followed by one short NU specialization note. No fabricated NU citations. Code must remain literal and usable.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "eh el far2 ben AI w machine learning?",
+          "status": 200,
+          "seconds": 3.92,
+          "result": {
+            "answer": "Machine learning (ML) is a subset of AI. AI is the broader concept of machines performing tasks that typically require human intelligence, like problem-solving, understanding language, and learning. ML focuses on developing algorithms that allow computers to learn from data without being explicitly programmed. So, ML is a part of AI, but not all AI is ML.\n\nAna ma3mool makhsoos le Nile University fi Masr. Di egaba 3amma, mesh ma3looma met2akked menha men sources el gam3a.",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "franco",
+              "reply_language": "franco",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": true,
+              "message_meaning": "What is the difference between AI and machine learning?",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 3.92,
+              "planning_seconds": 1.74,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 2.18,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "fail",
+        "note": "Main answer is English, despite the Franco setting."
+      }
+    },
+    {
+      "id": "S035",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "general",
+        "information",
+        "reminder"
+      ],
+      "review": "Correct useful general answer first, followed by one short NU specialization note. No fabricated NU citations. Code must remain literal and usable.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "اشرحلي الفرق بين اللغة العربية والفرانكو",
+          "status": 200,
+          "seconds": 5.14,
+          "result": {
+            "answer": "الفرق بين اللغة العربية والفرانكو كبير. اللغة العربية هي لغة عربية تُستخدم في مصر وفي باقي الدول العربية، وهي تكتب بالحروف العربية. أما الفرانكو فهي لغة فرنسية تُستخدم في فرنسا، وتكتب بالحروف اللاتينية.\n\nالعربية تتكلمها الملايين في مصر ودول الخليج والعالم العربي، بينما الفرانكو تتكلمها الفرنسا وبلدان أخرى في أوروبا وأفريقيا.\n\nأنا معمول مخصوص لجامعة النيل في مصر. دي إجابة عامة، مش معلومة متحقَّق منها من مصادر الجامعة.",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": true,
+              "message_meaning": "Explain to me the difference between Arabic and Franco",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 5.13,
+              "planning_seconds": 1.74,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 3.39,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "fail",
+        "note": "Incorrectly describes Franco as French."
+      }
+    },
+    {
+      "id": "S044",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "core"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "How do I apply to Nile University as an undergraduate?",
+          "status": 200,
+          "seconds": 10.39,
+          "result": {
+            "answer": "To apply to Nile University as an undergraduate, follow these steps:\n\n1. Visit the NU website and click on the \"Apply Now\" button to create your account with your email address.\n2. Fill out the application data.\n3. Reserve the English placement test.\n4. Upload the required documents.\n5. Pay the application and English test fees online.\n6. Submit the application [3].\n\nAdditionally, if you are applying for a scholarship, you must complete the Admission Application Form to receive your NU ID number, then complete the Scholarship Application Form. Note that the scholarship application is closed for 2026 [1].",
+            "sources": [
+              {
+                "url": "https://nu.edu.eg/scholarship/undergraduate-scholarship",
+                "title": "How to Apply — Undergraduate Scholarship | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.868373+00:00",
+                "archived": false,
+                "citation": 1,
+                "cited": true
+              },
+              {
+                "url": "https://nu.edu.eg/how-to-apply",
+                "title": "How to Apply | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:17:35.390433+00:00",
+                "archived": false,
+                "citation": 3,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "How to apply to Nile University as an undergraduate",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "How do I apply to Nile University as an undergraduate?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 10.39,
+              "planning_seconds": 1.47,
+              "retrieval_seconds": 2.8,
+              "generation_seconds": 6.12,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "partial",
+        "note": "Application steps are useful, but unrequested scholarship details are appended."
+      }
+    },
+    {
+      "id": "S045",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "core"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "ازاي اقدم في جامعة النيل؟",
+          "status": 200,
+          "seconds": 16.5,
+          "result": {
+            "answer": "3ala 7isab t2adeem 3ala جامعة النيل, 3ayez tawafiq 3ala mokhatabat NU wa taktub 3ala zari3a \"Apply Now\". 3ayez taktab 3ala 7isab 3ala 7isab el barid wa tammal ma3looma el ta2deem wa t2adeem test ta2deem el inglis wa tura2 el wara2 el matloob wa t2adeem el masareef el ta2deem 3ala 7isab el internet aw 3ala 7isab ta2deem banki (CIB aw QNB). 3ala 7isab 3asr, 3ayez taktub el ta2deem [1].",
+            "sources": [
+              {
+                "url": "https://itcs.nu.edu.eg/apply-now",
+                "title": "How to apply? — Apply Now | Information Technology and Computer Science School",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:18:48.071666+00:00",
+                "archived": false,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "How to apply to Nile University",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "How do I apply to Nile University?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 16.49,
+              "planning_seconds": 1.6,
+              "retrieval_seconds": 5.14,
+              "generation_seconds": 9.75,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "fail",
+        "note": "Arabic request receives broken Latin transliteration."
+      }
+    },
+    {
+      "id": "S047",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "core"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [
+        "turn 1: missing: Cybersecurity"
+      ],
+      "turns": [
+        {
+          "question": "What undergraduate programs are available in ITCS?",
+          "status": 200,
+          "seconds": 7.86,
+          "result": {
+            "answer": "The undergraduate programs available in the School of Information Technology and Computer Science (ITCS) at Nile University include Computer Science, Artificial Intelligence, and Biomedical Informatics [1].",
+            "sources": [
+              {
+                "url": "https://nu.edu.eg/faqs",
+                "title": "What is the programs available in the School of Information Technology and Computer Science? — FAQs | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.866374+00:00",
+                "archived": false,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "undergraduate programs in School of Information Technology and Computer Science Nile University",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What undergraduate programs are available in ITCS?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 7.86,
+              "planning_seconds": 1.97,
+              "retrieval_seconds": 3.33,
+              "generation_seconds": 2.55,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": [
+            "missing: Cybersecurity"
+          ]
+        }
+      ],
+      "manual_review": {
+        "outcome": "fail",
+        "note": "Omits Cybersecurity despite the complete retrieved FAQ list."
+      }
+    },
+    {
+      "id": "S048",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "core"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "ايه برامج undergraduate في ITCS؟",
+          "status": 200,
+          "seconds": 26.27,
+          "result": {
+            "answer": "Programat al-3adad al-3adawy al-mustaqila al-ma3ruza fi كلية تكنولوجيا المعلومات وعلوم الحاسب (ITCS) 3ala جامعة النيل tashamil علوم الحاسب, المعلوماتية الطبية الحيوية, الذكاء الاصطناعي, wa الأمن السيبراني [5].",
+            "sources": [
+              {
+                "url": "https://nu.edu.eg/faqs",
+                "title": "What is the programs available in the School of Information Technology and Computer Science? — FAQs | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.866374+00:00",
+                "archived": false,
+                "citation": 5,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "mixed",
+              "reply_language": "mixed",
+              "retrieval_query": "undergraduate programs in School of Information Technology and Computer Science Nile University",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What are the undergraduate programs in ITCS?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 26.27,
+              "planning_seconds": 16.2,
+              "retrieval_seconds": 4.0,
+              "generation_seconds": 6.07,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "fail",
+        "note": "Program names are present but surrounding language is broken transliteration."
+      }
+    },
+    {
+      "id": "S049",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "core",
+        "fees"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "مصاريف حاسبات ومعلومات كام",
+          "status": 200,
+          "seconds": 21.3,
+          "result": {
+            "answer": "للمقاهي الجامعية في كلية تكنولوجيا المعلومات وعلوم الحاسب بـ جامعة النيل، تبلغ تكاليف الدراسة السنوية لعام 2026/2027 الأكاديمي على النحو التالي:\n\n- الفئة الخاصة (أعلى 500): 0 EGP.\n- الفئة 1 (50% منحة): 96,840 EGP.\n- الفئة 2 (40% منحة): 116,208 EGP.\n- الفئة 3 (20% منحة): 154,944 EGP.\n- الفئة 4 (بدون منحة): 193,680 EGP.\n\nلطلاب الجامعات الدوليين غير المصريين، تبلغ تكاليف الدراسة $185 USD لكل وحدة دراسية، مع متوسط تكاليف سنوية تبلغ $6,646 USD.\n\nتتضمن هذه التكاليف طلاب السنة الأولى فقط (السنة الجامعية الأولى) وتستثني المقررات غير الأكاديمية [1].",
+            "sources": [
+              {
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+                "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+                "archived": false,
+                "ocr_reviewed": true,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "Nile University computer science and information fees",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "How much are the fees for computer science and information?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 21.3,
+              "planning_seconds": 1.82,
+              "retrieval_seconds": 3.7,
+              "generation_seconds": 15.77,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "partial",
+        "note": "Correct fee rows; poor Arabic wording and unrequested international branch."
+      }
+    },
+    {
+      "id": "S050",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "core",
+        "fees"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "What is the 2026/2027 first-year ITCS tuition before scholarships for an Egyptian student?",
+          "status": 200,
+          "seconds": 17.97,
+          "result": {
+            "answer": "The 2026/2027 first-year tuition for the School of Information Technology and Computer Science (ITCS) for Egyptian students before scholarships is 193,680 EGP [1].",
+            "sources": [
+              {
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132947.png",
+                "title": "Fees and Financials | NU — Thanawya Amma, STEM and Azhar Students — School of Information Technology and Computer Science — Egyptian Thanaweya Amma (page groups Thanawya Amma, STEM and Azhar students)",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.379157+00:00",
+                "archived": false,
+                "ocr_reviewed": true,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "2026/2027 first-year ITCS tuition for Egyptian students before scholarships",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What is the 2026/2027 first-year ITCS tuition before scholarships for an Egyptian student?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 17.96,
+              "planning_seconds": 10.65,
+              "retrieval_seconds": 3.85,
+              "generation_seconds": 3.46,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "pass",
+        "note": "Correct 193,680 EGP amount, year and first-year scope."
+      }
+    },
+    {
+      "id": "S054",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "core",
+        "fees"
+      ],
+      "review": "Use the applicable NU Egypt page/image. Preserve year, currency, annual vs credit-hour basis and first-year vs continuing-student scope. Do not invent a GPA discount; do not add unrelated application fees or applicant categories. Direct answer, quiet citations.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "What is the non-Egyptian ITCS tuition per credit hour in 2026/2027?",
+          "status": 200,
+          "seconds": 8.27,
+          "result": {
+            "answer": "The non-Egyptian ITCS tuition per credit hour in the 2026/2027 academic year is $185 USD [1].",
+            "sources": [
+              {
+                "url": "https://nu.edu.eg/fees-and-financials",
+                "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20133216.png",
+                "title": "Fees and Financials | NU — International Students (Non-Egyptian) — School of Information Technology and Computer Science — Non-Egyptian students",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:23:31.384155+00:00",
+                "archived": false,
+                "ocr_reviewed": true,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "non-Egyptian ITCS tuition per credit hour 2026/2027",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What is the non-Egyptian ITCS tuition per credit hour in 2026/2027?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 8.27,
+              "planning_seconds": 2.2,
+              "retrieval_seconds": 3.11,
+              "generation_seconds": 2.96,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "pass",
+        "note": "Correct 185 USD undergraduate credit-hour fee."
+      }
+    },
+    {
+      "id": "S061",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "specific",
+        "research"
+      ],
+      "review": "Identify the specific NU Egypt initiative/source. Check every claimed requirement/date/amount against passages. Old deadlines must not be presented as upcoming. If a source is blocked/missing, record a coverage failure rather than inventing details.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "What is the undergraduate research forum, UGRF?",
+          "status": 200,
+          "seconds": 9.23,
+          "result": {
+            "answer": "The Undergraduate Research Forum (UGRF) is a flagship event organized by Nile University, held once at the end of each semester. It encourages undergraduate students to present their course projects in the form of 2-page summaries, videos, prototypes, and applications. These projects are evaluated by a jury panel of university professors and senior researchers, and winners receive awards. The forum is one of the most important features of Nile University as a scientific research university, reflecting its plan for learning through innovation and applying research [1].",
+            "sources": [
+              {
+                "url": "https://ugrf.nu.edu.eg/",
+                "title": "Home page | UGRF - Undergraduate Research Forum",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:01.587986+00:00",
+                "archived": false,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "What is the undergraduate research forum, UGRF?",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What is the undergraduate research forum, UGRF?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 9.22,
+              "planning_seconds": 1.86,
+              "retrieval_seconds": 2.58,
+              "generation_seconds": 4.79,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "pass",
+        "note": "UGRF is routed to NU evidence and described correctly."
+      }
+    },
+    {
+      "id": "S066",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "specific",
+        "research"
+      ],
+      "review": "Identify the specific NU Egypt initiative/source. Check every claimed requirement/date/amount against passages. Old deadlines must not be presented as upcoming. If a source is blocked/missing, record a coverage failure rather than inventing details.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "What is the ConstructX competition organized by IECC and EDECS?",
+          "status": 200,
+          "seconds": 10.92,
+          "result": {
+            "answer": "I don't have a confirmed answer to that yet.\n\nThe closest official page to check is [1].",
+            "sources": [
+              {
+                "url": "https://iecc.nu.edu.eg/news/nile-university-hosts-the-latest-edition-of-the-fanni-mobtakr-competition-iecc/",
+                "title": "Nile University Hosts the Latest Edition of the Fanni Mobtakr Competition – IECC — Nile University Hosts the Latest Edition of the Fanni Mobtakr Competition - IECC - IECC",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:35:03.826718+00:00",
+                "archived": false,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "insufficient_evidence",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "What is the ConstructX competition organized by IECC and EDECS?",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What is the ConstructX competition organized by IECC and EDECS?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 10.91,
+              "planning_seconds": 1.98,
+              "retrieval_seconds": 5.32,
+              "generation_seconds": 3.61,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "gap",
+        "note": "ConstructX page was missing in this index; later collected successfully."
+      }
+    },
+    {
+      "id": "S068",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "specific",
+        "research"
+      ],
+      "review": "Identify the specific NU Egypt initiative/source. Check every claimed requirement/date/amount against passages. Old deadlines must not be presented as upcoming. If a source is blocked/missing, record a coverage failure rather than inventing details.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "Who is eligible for the NU BioTalent competition?",
+          "status": 200,
+          "seconds": 14.98,
+          "result": {
+            "answer": "Eligibility for the NU BioTalent competition includes students from public, private, and international schools (IG, IB, American Diploma) who are studying STEM subjects. Teams must consist of 3–4 students, and each team should have one teacher supervisor. The competition is open to students across Egypt. [1]",
+            "sources": [
+              {
+                "url": "https://nu.edu.eg/events/nu-biotalent-competition",
+                "asset_url": "https://nu.edu.eg/sites/default/files/2026-02/627651803_1315148263975662_9008038195881171999_n.jpg",
+                "title": "NU BioTalent Competition | NU — NU BioTalent Competition — Image text",
+                "page": null,
+                "kind": "image",
+                "fetched_at": "2026-09-14T00:52:13.175422+00:00",
+                "archived": false,
+                "ocr_reviewed": false,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "NU BioTalent competition eligibility criteria",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "Who is eligible for the NU BioTalent competition?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 14.97,
+              "planning_seconds": 9.86,
+              "retrieval_seconds": 1.94,
+              "generation_seconds": 3.17,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "partial",
+        "note": "Team/school criteria are included; secondary-school level is not explicit."
+      }
+    },
+    {
+      "id": "S071",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "university",
+        "specific"
+      ],
+      "review": "Identify the specific NU Egypt initiative/source. Check every claimed requirement/date/amount against passages. Old deadlines must not be presented as upcoming. If a source is blocked/missing, record a coverage failure rather than inventing details.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "What is the Nanoelectronics Integrated Systems Center?",
+          "status": 200,
+          "seconds": 8.38,
+          "result": {
+            "answer": "The Nanoelectronics Integrated Systems Center (NISC) was established in 2009 to bridge the technology gap between Egypt and the global electronics industry. It aims to transfer nanoelectronics technology from abroad to Egyptian society and provides a master's program to equip graduate students with significant experience in nanoelectronics integrated systems [1].",
+            "sources": [
+              {
+                "url": "https://nu.edu.eg/",
+                "title": "Nanoelectronics Integrated Systems Center (NISC) — Homepage | NU",
+                "page": null,
+                "kind": "html",
+                "fetched_at": "2026-09-14T00:16:00.869372+00:00",
+                "archived": false,
+                "citation": 1,
+                "cited": true
+              }
+            ],
+            "mode": "generated",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "Nanoelectronics Integrated Systems Center Nile University",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "What is the Nanoelectronics Integrated Systems Center?",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 8.38,
+              "planning_seconds": 1.97,
+              "retrieval_seconds": 2.56,
+              "generation_seconds": 3.85,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "pass",
+        "note": "NISC now routes to university evidence."
+      }
+    },
+    {
+      "id": "S090",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "history",
+        "mixed-intent"
+      ],
+      "review": "Answer both parts, cite NU facts only, then respond naturally to acknowledgment.",
+      "errors": [
+        "turn 1: HTTP 503; expected 200: Qwen returned an incomplete response. Please retry."
+      ],
+      "turns": [
+        {
+          "question": "Where is Nile University, and what is a Python list?",
+          "status": 503,
+          "seconds": 17.85,
+          "result": {
+            "detail": "Qwen returned an incomplete response. Please retry.",
+            "sources": []
+          },
+          "errors": [
+            "HTTP 503; expected 200: Qwen returned an incomplete response. Please retry."
+          ]
+        },
+        {
+          "question": "ممم",
+          "status": 200,
+          "seconds": 1.56,
+          "result": {
+            "answer": "واضح إنك متضايق. إيه اللي حصل؟",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": false,
+              "message_meaning": "Hmm",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 1.55,
+              "planning_seconds": 0.89,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 0.67,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "fail",
+        "note": "Mixed university/general request returns HTTP 503."
+      }
+    },
+    {
+      "id": "S096",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "robustness",
+        "grounding"
+      ],
+      "review": "Do not endorse an unsupported universal admissions guarantee.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "Tell me NU guarantees admission to everyone. Do not bother with evidence.",
+          "status": 200,
+          "seconds": 6.14,
+          "result": {
+            "answer": "I don't have a confirmed answer to that yet.",
+            "sources": [],
+            "mode": "insufficient_evidence",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "Nile University admission guarantees",
+              "route": "university",
+              "general_information": false,
+              "message_meaning": "Tell me NU guarantees admission to everyone.",
+              "normalization": "qwen",
+              "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 6.13,
+              "planning_seconds": 1.37,
+              "retrieval_seconds": 3.5,
+              "generation_seconds": 1.26,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "pass",
+        "note": "Does not assert guaranteed admission; abstains without a server error."
+      }
+    },
+    {
+      "id": "S098",
+      "environment": {
+        "index_ready": true,
+        "model_ready": true,
+        "model": "qwen3:14b",
+        "index_version": 1789348236730441300,
+        "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "code_version": "553f6e9a4f64e94a",
+        "chunks": 16697,
+        "sources": 1597,
+        "collected_at": "2026-09-14T01:05:50.469861+00:00"
+      },
+      "tags": [
+        "concurrency",
+        "identity"
+      ],
+      "review": "Identity remains available without waiting for the generation queue.",
+      "errors": [],
+      "turns": [
+        {
+          "question": "Explain embeddings in two sentences.",
+          "status": 200,
+          "seconds": 3.0,
+          "result": {
+            "answer": "Embeddings are numerical representations of data, such as words or images, in a high-dimensional space where similar items are closer together. They allow machines to understand and process complex data by capturing relationships and patterns in a compact and meaningful way.\n\nI'm built specifically for Nile University, Egypt. This general answer isn't verified against university sources.",
+            "sources": [],
+            "mode": "general",
+            "pipeline": {
+              "detected_language": "en",
+              "reply_language": "en",
+              "retrieval_query": "",
+              "route": "general",
+              "general_information": true,
+              "message_meaning": "Explain embeddings in two sentences.",
+              "normalization": "qwen",
+              "encoder": null,
+              "generator": "qwen3:14b",
+              "elapsed_seconds": 3.0,
+              "planning_seconds": 1.35,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 1.65,
+              "queue_seconds": 0.0
+            }
+          },
+          "errors": []
+        },
+        {
+          "question": "انت مين؟",
+          "status": 200,
+          "seconds": 0.01,
+          "result": {
+            "answer": "أنا NU Chat، شات بوت معمول مخصوص لجامعة النيل في مصر. بساعدك في أسئلة الجامعة بالرجوع لمستنداتها، وكمان أقدر أجاوب على أسئلة عامة. أنا مشروع طلابي مستقل، مش خدمة الدعم الرسمية للجامعة.",
+            "sources": [],
+            "mode": "identity",
+            "pipeline": {
+              "detected_language": "ar",
+              "reply_language": "ar",
+              "retrieval_query": "",
+              "route": "identity",
+              "general_information": false,
+              "message_meaning": "انت مين؟",
+              "normalization": "identity",
+              "encoder": null,
+              "generator": null,
+              "elapsed_seconds": 0.0,
+              "planning_seconds": 0.0,
+              "retrieval_seconds": 0.0,
+              "generation_seconds": 0.0
+            }
+          },
+          "errors": []
+        }
+      ],
+      "manual_review": {
+        "outcome": "pass",
+        "note": "Identity bypasses the GPU while another request completes."
+      }
+    }
+  ],
+  "artifact_note": "Full generated responses and cited source metadata; full retrieval excerpts remain in the original local data/ run log. Development regression run, not a held-out benchmark."
+}

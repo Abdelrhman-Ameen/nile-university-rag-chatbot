@@ -1,5 +1,7 @@
 # Development evaluation — September 14, 2026
 
+**Historical baseline below.** These initial URL-level scores did not catch the broken Arabic rewrites or repeated admissions replies to complaints. They are not evidence that the current chatbot works. The new `check_chat.py` suite tests real chat requests, including general conversation; rejecting every non-university question is no longer the desired behavior. See `CHAT_REVIEW.md` for the revised model's results.
+
 Corpus: **148 public NU Egypt URLs**, including **2 PDFs**, producing **1,058 chunks**. The crawl attempted 160 URLs; 158 extracted page/text records were retained. PDF pages count separately from source URLs. Many additional sitemap URLs remain outside the bounded collection.
 
 Models: `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` and `qwen3:4b-instruct` through local Ollama.

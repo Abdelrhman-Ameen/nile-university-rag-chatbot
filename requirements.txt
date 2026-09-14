@@ -4,6 +4,8 @@ annotated-doc==0.0.5
     # via fastapi
 annotated-types==0.8.0
     # via pydantic
+antlr4-python3-runtime==4.9.3
+    # via omegaconf
 anyio==4.15.1
     # via
     #   httpx
@@ -23,8 +25,13 @@ cloudpickle==3.1.2
     # via joblib
 colorama==0.4.6
     # via
+    #   colorlog
     #   pytest
     #   tqdm
+colorlog==6.12.0
+    # via rapidocr
+et-xmlfile==2.0.0
+    # via openpyxl
 fastapi==0.141.1
     # via -r requirements.in
 filelock==3.32.6
@@ -32,6 +39,8 @@ filelock==3.32.6
     #   huggingface-hub
     #   torch
     #   transformers
+flatbuffers==25.12.19
+    # via onnxruntime
 fsspec==2026.7.0
     # via
     #   huggingface-hub
@@ -60,6 +69,8 @@ jinja2==3.1.6
     # via torch
 joblib==1.6.0
     # via scikit-learn
+lxml==6.1.3
+    # via python-docx
 markupsafe==3.0.3
     # via jinja2
 mpmath==1.3.0
@@ -71,18 +82,37 @@ networkx==3.6.1
 numpy==2.5.3
     # via
     #   -r requirements.in
+    #   onnxruntime
+    #   opencv-python
     #   rank-bm25
+    #   rapidocr
     #   scikit-learn
     #   scipy
     #   sentence-transformers
+    #   shapely
     #   transformers
+omegaconf==2.3.1
+    # via rapidocr
+onnxruntime==1.30.0
+    # via -r requirements.in
+opencv-python==5.0.0.93
+    # via rapidocr
+openpyxl==3.1.5
+    # via -r requirements.in
 packaging==26.3
     # via
     #   huggingface-hub
+    #   onnxruntime
     #   pytest
     #   transformers
+pillow==12.3.0
+    # via rapidocr
 pluggy==1.6.0
     # via pytest
+protobuf==7.36.1
+    # via onnxruntime
+pyclipper==1.4.0
+    # via rapidocr
 pydantic==2.13.5
     # via fastapi
 pydantic-core==2.46.5
@@ -91,21 +121,32 @@ pygments==2.21.0
     # via pytest
 pypdf==6.18.1
     # via -r requirements.in
+pypdfium2==5.13.0
+    # via -r requirements.in
 pytest==9.1.1
+    # via -r requirements.in
+python-bidi==0.6.11
+    # via -r requirements.in
+python-docx==1.2.0
     # via -r requirements.in
 python-dotenv==1.2.3
     # via -r requirements.in
 pyyaml==6.0.3
     # via
     #   huggingface-hub
+    #   omegaconf
+    #   rapidocr
     #   transformers
 rank-bm25==0.2.2
+    # via -r requirements.in
+rapidocr==3.9.2
     # via -r requirements.in
 regex==2026.9.10
     # via transformers
 requests==2.34.2
     # via
     #   huggingface-hub
+    #   rapidocr
     #   transformers
 ruff==0.16.7
     # via -r requirements.in
@@ -121,6 +162,10 @@ sentence-transformers==5.7.0
     # via -r requirements.in
 setuptools==84.0.0
     # via torch
+shapely==2.1.2
+    # via rapidocr
+six==1.17.0
+    # via rapidocr
 soupsieve==2.9.2
     # via beautifulsoup4
 starlette==1.6.0
@@ -138,6 +183,7 @@ torch==2.14.0
 tqdm==4.70.1
     # via
     #   huggingface-hub
+    #   rapidocr
     #   sentence-transformers
     #   transformers
 transformers==4.57.6
@@ -152,6 +198,7 @@ typing-extensions==4.16.0
     #   huggingface-hub
     #   pydantic
     #   pydantic-core
+    #   python-docx
     #   sentence-transformers
     #   starlette
     #   torch

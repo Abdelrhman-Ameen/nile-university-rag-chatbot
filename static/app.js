@@ -66,27 +66,96 @@ function message(role, text = "") {
   $("#messages").append(wrapper);
   return wrapper;
 }
-function renderAnswer(result) {
-  const wrapper = message("assistant");
-  const body = wrapper.querySelector(".message-text");
-  for (const paragraph of result.answer.split(/\n\s*\n/)) {
-    const p = el("p");
-    p.dir = "auto";
-    for (const part of paragraph.split(/(\[\d+\]|\*\*[^*\n]+\*\*)/g)) {
+function inlineText(parent, text, sources) {
+    // Parse a deliberately small Markdown subset with DOM nodes, never innerHTML.
+    for (const part of text.split(/(`[^`\n]+`|\[[^\]\n]+\]\(https?:\/\/[^\s)]+\)|\[\d+\]|\*\*[^*\n]+\*\*)/g)) {
       const match = /^\[(\d+)\]$/.exec(part);
       const source =
-        match && result.sources.find((s) => s.citation === Number(match[1]));
-      if (source) {
+        match && sources.find((s) => s.citation === Number(match[1]));
+      const markdownLink = /^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/.exec(part);
+      if (part.startsWith("`") && part.endsWith("`")) {
+        parent.append(el("code", "inline-code", part.slice(1, -1)));
+      } else if (markdownLink) {
+        parent.append(sourceLink({url: markdownLink[2]}, markdownLink[1]));
+      } else if (source) {
         const link = sourceLink(source, part);
         link.className = "citation";
         link.title = source.title;
-        p.append(link);
+        parent.append(link);
       } else if (part.startsWith("**") && part.endsWith("**"))
-        p.append(el("strong", "", part.slice(2, -2)));
-      else p.append(document.createTextNode(part));
+        parent.append(el("strong", "", part.slice(2, -2)));
+      else parent.append(document.createTextNode(part));
     }
-    body.append(p);
+}
+function renderMarkdown(body, text, sources) {
+  const lines = text.split("\n");
+  let paragraph = [], list = null;
+  const flush = () => {
+    if (paragraph.length) {
+      const p = el("p");
+      p.dir = "auto";
+      inlineText(p, paragraph.join("\n"), sources);
+      body.append(p);
+      paragraph = [];
+    }
+  };
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (/^\s*```/.test(line)) {
+      flush(); list = null;
+      const codeLines = [];
+      while (++i < lines.length && !/^\s*```/.test(lines[i])) codeLines.push(lines[i]);
+      const pre = el("pre");
+      pre.dir = "ltr";
+      pre.append(el("code", "", codeLines.join("\n")));
+      body.append(pre);
+    } else if (line.includes("|") && /^\s*\|?\s*:?-{3,}/.test(lines[i + 1] || "")) {
+      flush(); list = null;
+      const cells = (row) => row.trim().replace(/^\||\|$/g, "").split("|").map((s) => s.trim());
+      const holder = el("div", "table-scroll");
+      const table = el("table");
+      const header = el("tr");
+      cells(line).forEach((value) => {
+        const cell = el("th"); inlineText(cell, value, sources); header.append(cell);
+      });
+      const head = el("thead"); head.append(header); table.append(head);
+      const rows = el("tbody");
+      i++;
+      while (i + 1 < lines.length && lines[i + 1].includes("|") && lines[i + 1].trim()) {
+        const row = el("tr");
+        cells(lines[++i]).forEach((value) => {
+          const cell = el("td"); inlineText(cell, value, sources); row.append(cell);
+        });
+        rows.append(row);
+      }
+      table.append(rows); holder.append(table); body.append(holder);
+    } else if (!line.trim()) {
+      flush(); list = null;
+    } else if (/^#{1,6}\s/.test(line)) {
+      flush(); list = null;
+      const heading = el("h3");
+      heading.dir = "auto";
+      inlineText(heading, line.replace(/^#{1,6}\s+/, ""), sources);
+      body.append(heading);
+    } else if (/^\s*(?:[-*]|\d+[.)])\s+/.test(line)) {
+      flush();
+      const kind = /^\s*\d/.test(line) ? "ol" : "ul";
+      if (!list || list.tagName.toLowerCase() !== kind) {
+        list = el(kind); list.dir = "auto"; body.append(list);
+      }
+      const item = el("li");
+      inlineText(item, line.replace(/^\s*(?:[-*]|\d+[.)])\s+/, ""), sources);
+      list.append(item);
+    } else {
+      list = null; paragraph.push(line);
+    }
   }
+  flush();
+}
+function renderAnswer(result) {
+  const wrapper = message("assistant");
+  const body = wrapper.querySelector(".message-text");
+  renderMarkdown(body, result.answer, result.sources);
   const actions = el("div", "message-actions");
   const copy = el("button", "copy-button", "Copy");
   copy.addEventListener("click", async () => {
@@ -106,6 +175,9 @@ function renderAnswer(result) {
     for (const source of citedSources) {
       const card = el("div", "source-card");
       card.append(sourceLink(source, `[${source.citation}] ${source.title}`));
+      if (source.asset_url) {
+        card.append(sourceLink({url: source.asset_url}, "Original image"));
+      }
       card.append(
         el(
           "small",
@@ -185,7 +257,7 @@ async function sendQuestion(question) {
     const response = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      signal: AbortSignal.timeout(240000),
+      signal: AbortSignal.timeout(360000),
       body: JSON.stringify({
         question,
         language: $("#reply-language").value,
@@ -214,8 +286,13 @@ async function sendQuestion(question) {
     currentChat.turns = [...turns];
   } catch (err) {
     loading.remove();
-    user.remove();
-    $("#question").value = question;
+    const nextDraft = $("#question").value.trim();
+    if (!nextDraft) {
+      user.remove();
+      $("#question").value = question;
+    } else {
+      user.append(el("small", "message-error", "Response failed. Please retry this message."));
+    }
     error(
       err.name === "TimeoutError"
         ? "Qwen took too long. Please try again."
@@ -223,7 +300,7 @@ async function sendQuestion(question) {
           ? "The server is unavailable. Please restart it."
           : err.message,
     );
-    if (!turns.length) $("#chat-panel").classList.add("empty");
+    if (!turns.length && !nextDraft) $("#chat-panel").classList.add("empty");
   } finally {
     busy = false;
     $("#send-button").disabled = false;
@@ -304,21 +381,23 @@ async function loadStatus() {
       "pending",
       !status.model_ready || !status.index_ready,
     );
+    const modelLabel = status.model.split(":")[0].replace(/^qwen/i, "Qwen ");
     $("#status-text").textContent = status.model_ready
-      ? "Qwen 3"
+      ? modelLabel
       : "Qwen offline";
     $("#status-button").title = status.model_ready
-      ? "Qwen is ready"
+      ? status.model
       : "Click to check Qwen";
     $("#notice").hidden = status.model_ready && status.index_ready;
     $("#notice").textContent = !status.index_ready
       ? "Sources are not indexed yet."
-      : "Qwen is not ready yet. Please wait for the model to finish loading.";
+      : "Qwen is unavailable. Start Ollama, then retry.";
     if (!status.model_ready || !status.index_ready)
       statusTimer = setTimeout(loadStatus, 10000);
   } catch {
     $("#status-dot").classList.add("pending");
     $("#status-text").textContent = "Offline";
+    statusTimer = setTimeout(loadStatus, 10000);
   }
 }
 loadStatus();

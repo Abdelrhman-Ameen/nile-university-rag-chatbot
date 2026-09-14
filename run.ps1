@@ -36,6 +36,9 @@ if ($settings.model -notin $models.models.name) {
     $result = Invoke-RestMethod -Method Post -Uri "$($settings.url)/api/pull" -ContentType 'application/json' -Body $body -TimeoutSec 3600
     if ($result.status -ne 'success') { throw 'Model download failed. Try running the script again.' }
 }
+Write-Host "Loading $($settings.model)..."
+$warmupBody = @{model=$settings.model; stream=$false; keep_alive='30m'; options=@{num_ctx=8192}} | ConvertTo-Json -Depth 3
+$null = Invoke-RestMethod -Method Post -Uri "$($settings.url)/api/generate" -ContentType 'application/json' -Body $warmupBody -TimeoutSec 180
 Write-Host 'Open http://127.0.0.1:8000'
 & $projectPython -X utf8 -m nu_chat serve
 if ($LASTEXITCODE -ne 0) { throw 'The chat server exited with an error.' }

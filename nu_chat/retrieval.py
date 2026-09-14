@@ -9,34 +9,77 @@ import re
 import threading
 from functools import lru_cache
 from pathlib import Path
-from urllib.parse import urlsplit
 
 import numpy as np
 from rank_bm25 import BM25Okapi
 
-from nu_chat.config import DATA_DIR, EMBEDDING_DEVICE, EMBEDDING_MODEL, MIN_SIMILARITY, TOP_K
+from nu_chat.config import (
+    DATA_DIR,
+    EMBEDDING_DEVICE,
+    EMBEDDING_MODEL,
+    MIN_SIMILARITY,
+    RERANK_MODEL,
+    ROOT,
+    TOP_K,
+)
 from nu_chat.language import tokens
 
 STOP_WORDS = set(
     "a an the of to in at for is are do does how what can i me my we you your with and or nile university nu".split()
 )
-
-
-# Authority hints point to dedicated university service pages, not canned answers.
-TOPIC_PAGES = {
-    r"\b(apply|application|admission)\b": ("/how-to-apply", "/admission-requirement-and-documents"),
-    r"\b(fees?|tuition|cost)\b": ("/fees-and-financials",),
-    r"\b(where|location|located|address)\b": ("/contact-us-Departments",),
-    r"\b(programs?|majors?|speciali[sz]ations?|departments?)\b": (
-        "/faqs",
-        "/undergraduate-programs",
-    ),
-    r"\bscholarships?\b": ("/scholarship/undergraduate-scholarship",),
+ABBREVIATIONS = {
+    "ITCS": "School of Information Technology and Computer Science",
+    "EAS": "School of Engineering and Applied Sciences",
+    "UGRF": "Undergraduate Research Forum",
+    "WINC": "Wireless Intelligent Networks Center",
+    "NISC": "Nanoelectronics Integrated Systems Center",
+    "SESC": "Smart Engineering Systems Research Center",
+    "CIS": "Center for Informatics Science",
+    "IPTTO": "Intellectual Property and Technology Transfer Office",
+    "OSP": "Office of Sponsored Programs",
 }
 
 
+def expand_abbreviations(text: str) -> str:
+    return re.sub(
+        r"\b(" + "|".join(ABBREVIATIONS) + r")\b",
+        lambda match: ABBREVIATIONS[match[0].upper()],
+        text,
+        flags=re.I,
+    )
+
+
+@lru_cache(maxsize=1)
+def reranker():
+    from sentence_transformers import CrossEncoder
+    from torch.nn import Sigmoid
+
+    if not RERANK_MODEL:
+        return None
+    return CrossEncoder(
+        RERANK_MODEL, device=EMBEDDING_DEVICE, activation_fn=Sigmoid(), max_length=384
+    )
+
+
 def search_terms(text: str) -> list[str]:
-    return [word for word in tokens(text) if word not in STOP_WORDS]
+    aliases = {
+        "application": "apply",
+        "applications": "apply",
+        "applying": "apply",
+        "admissions": "admission",
+        "requirements": "requirement",
+        "programs": "program",
+        "scholarships": "scholarship",
+        "discounts": "discount",
+        "financials": "fees",
+        "cost": "fees",
+        "costs": "fees",
+        "tuition": "fees",
+        "students": "student",
+        "steps": "step",
+        "researchers": "researcher",
+    }
+    return [aliases.get(word, word) for word in tokens(text) if word not in STOP_WORDS]
 
 
 @lru_cache(maxsize=1)
@@ -52,6 +95,32 @@ def chunk_document(
     if not 0 <= overlap < max_tokens:
         raise ValueError("Overlap must be smaller than chunk size")
     text = document["text"]
+    # Split long pages on meaningful sections so a FAQ answer cannot borrow the
+    # neighboring question's transfer/scholarship rules. Short pages stay whole.
+    if len(text) > 1800 and "\n## " in text:
+        sections = re.split(r"(?m)^##\s+", text)
+        output = []
+        for number, section in enumerate(sections):
+            if not section.strip():
+                continue
+            heading, _, body = section.partition("\n")
+            if not body.strip():
+                continue
+            output.extend(
+                chunk_document(
+                    {
+                        **document,
+                        "id": f"{document['id']}-s{number}",
+                        "title": heading.strip() + " — " + document["title"],
+                        "text": heading + "\n" + body.strip(),
+                    },
+                    tokenizer,
+                    max_tokens,
+                    overlap,
+                )
+            )
+        if output:
+            return output
     offsets = tokenizer(
         text, add_special_tokens=False, return_offsets_mapping=True, truncation=False, verbose=False
     )["offset_mapping"]
@@ -78,19 +147,52 @@ def build_index() -> dict:
     documents = [
         json.loads(line) for line in corpus.read_text(encoding="utf-8").splitlines() if line
     ]
+    reviewed_path = ROOT / "sources" / "reviewed_documents.json"
+    if reviewed_path.exists():
+        documents.extend(json.loads(reviewed_path.read_text(encoding="utf-8")))
+    ocr_corpus = DATA_DIR / "ocr_documents.jsonl"
+    if ocr_corpus.exists():
+        documents.extend(
+            json.loads(line) for line in ocr_corpus.read_text(encoding="utf-8").splitlines() if line
+        )
     model = encoder()
     chunks = [chunk for doc in documents for chunk in chunk_document(doc, model.tokenizer)]
     if not chunks:
         raise RuntimeError("The corpus has no usable text")
     # Reserve token space for the source title, so text is not silently truncated.
     texts = [
-        model.tokenizer.decode(model.tokenizer.encode(c["title"], add_special_tokens=False)[:28])
+        model.tokenizer.decode(
+            model.tokenizer.encode(
+                c["title"], add_special_tokens=False, truncation=True, max_length=28
+            )
+        )
         + "\n"
         + c["text"]
         for c in chunks
     ]
-    vectors = model.encode(texts, normalize_embeddings=True, show_progress_bar=True, batch_size=32)
-    metadata = {"model": EMBEDDING_MODEL, "chunks": chunks}
+    cached = {}
+    index_path = DATA_DIR / "index.npz"
+    if index_path.exists():
+        with np.load(index_path, allow_pickle=False) as previous:
+            old = json.loads(str(previous["metadata"]))
+            if old["model"] == EMBEDDING_MODEL and old.get("encoding_version") == 1:
+                cached = {
+                    (c["title"], c["text"]): v.copy()
+                    for c, v in zip(old["chunks"], previous["vectors"])
+                }
+    missing = [i for i, c in enumerate(chunks) if (c["title"], c["text"]) not in cached]
+    if missing:
+        encoded = model.encode(
+            [texts[i] for i in missing],
+            normalize_embeddings=True,
+            show_progress_bar=True,
+            batch_size=32,
+        )
+        cached.update(
+            ((chunks[i]["title"], chunks[i]["text"]), v) for i, v in zip(missing, encoded)
+        )
+    vectors = np.array([cached[(c["title"], c["text"])] for c in chunks])
+    metadata = {"model": EMBEDDING_MODEL, "encoding_version": 1, "chunks": chunks}
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     temp = DATA_DIR / "index.tmp"
     with temp.open("wb") as stream:
@@ -100,10 +202,13 @@ def build_index() -> dict:
             metadata=json.dumps(metadata, ensure_ascii=False),
         )
     temp.replace(DATA_DIR / "index.npz")
+    # Download the reranker during setup rather than on the first user's question.
+    reranker()
     return {
         "chunks": len(chunks),
         "documents": len(documents),
         "dimensions": vectors.shape[1],
+        "new_embeddings": len(missing),
         "model": EMBEDDING_MODEL,
     }
 
@@ -120,7 +225,11 @@ class Retriever:
         self.title_terms = [set(search_terms(c["title"])) for c in self.chunks]
         self.lock = threading.Lock()
 
-    def search(self, query: str, original: str = "", k: int = TOP_K) -> list[dict]:
+    def search(
+        self, query: str, original: str = "", k: int = TOP_K, meaning: str = ""
+    ) -> list[dict]:
+        query = expand_abbreviations(query)
+        meaning = expand_abbreviations(meaning)
         # This is a single-university corpus: the institution name can drown out the actual topic.
         focused = re.sub(
             r"\b(?:nile university|nu|in egypt)\b|جامعة النيل", "", query, flags=re.IGNORECASE
@@ -138,30 +247,60 @@ class Retriever:
         title_match = np.array(
             [len(words & title) / max(len(words), 1) for title in self.title_terms]
         )
-        preferred_paths = {
-            path
-            for pattern, paths in TOPIC_PAGES.items()
-            if re.search(pattern, query, re.IGNORECASE)
-            for path in paths
-        }
-        authority = np.array(
-            [float(urlsplit(c["url"]).path in preferred_paths) for c in self.chunks]
+        title_precision = np.array(
+            [len(words & title) / max(len(title), 1) for title in self.title_terms]
         )
-        # Prefer dedicated service pages when they contain a match. This prevents
-        # incidental mentions (such as exchange fees) from confusing the generator.
-        direct = (authority > 0) & (dense >= 0.28)
-        use_direct = bool(direct.any()) and not re.search(
-            r"\b(master|phd|postgraduate|graduate|exchange)\b", query, re.IGNORECASE
+        scores = 0.65 * dense + 0.25 * lexical + 0.1 * title_match
+        # Retrieve broadly, then compare the actual question against each passage.
+        # No topic can restrict retrieval to a handpicked set of pages.
+        # Union, rather than one blended top-24, protects exact names and rare
+        # details which the multilingual encoder may rank much lower.
+        candidate_ids = set(map(int, np.argsort(dense)[-40:]))
+        candidate_ids.update(int(i) for i in np.argsort(lexical)[-40:] if lexical[i] > 0)
+        candidate_ids.update(int(i) for i in np.argsort(title_match)[-24:] if title_match[i] > 0)
+        candidate_ids.update(
+            int(i) for i in np.argsort(title_precision)[-24:] if title_precision[i] > 0
         )
-        scores = 0.65 * dense + 0.2 * lexical + 0.1 * title_match + 0.15 * authority
+        candidates = sorted(
+            (i for i in candidate_ids if dense[i] >= 0.28 or lexical[i] > 0),
+            key=lambda i: scores[i],
+            reverse=True,
+        )
+        if not candidates:
+            return []
+        with self.lock:
+            ranker = reranker()
+            if ranker is not None:
+                pairs = [
+                    (
+                        re.sub(
+                            r"\b(?:Nile University(?: in Egypt)?|NU)\b",
+                            "the university",
+                            meaning or query,
+                            flags=re.I,
+                        ),
+                        self.chunks[i]["title"]
+                        + "\n"
+                        + self.chunks[i].get("context", self.chunks[i]["text"]),
+                    )
+                    for i in candidates
+                ]
+                relevance = ranker.predict(pairs, batch_size=8, show_progress_bar=False)
+                reranked = dict(zip(candidates, map(float, relevance)))
+                # The ranker is a relevance signal, not a truth probability.
+                # Retain exact title/topic matching as a small independent signal.
+                candidates.sort(
+                    key=lambda i: 0.75 * reranked[i] + 0.15 * title_match[i] + 0.1 * scores[i],
+                    reverse=True,
+                )
         chosen, per_source, contexts = [], {}, set()
-        for idx in np.argsort(scores)[::-1]:
-            if use_direct and not direct[idx]:
+        for idx in candidates:
+            if ranker is not None and reranked[idx] < 0.05:
                 continue
-            if dense[idx] < MIN_SIMILARITY and not (dense[idx] >= 0.28 and authority[idx] > 0):
+            if ranker is None and dense[idx] < MIN_SIMILARITY:
                 continue
             chunk = self.chunks[int(idx)]
-            context_key = (chunk["url"], chunk.get("context", chunk["text"]))
+            context_key = re.sub(r"\s+", " ", chunk.get("context", chunk["text"])).strip()
             if context_key in contexts:
                 continue
             contexts.add(context_key)
@@ -175,6 +314,7 @@ class Retriever:
                     "text": chunk.get("context", chunk["text"]),
                     "similarity": round(float(dense[idx]), 4),
                     "score": round(float(scores[idx]), 4),
+                    "rerank_score": round(reranked[idx], 4) if ranker is not None else None,
                     "citation": len(chosen) + 1,
                 }
             )

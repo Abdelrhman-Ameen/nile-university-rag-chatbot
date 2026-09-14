@@ -8,7 +8,7 @@
   --soft: #f4f6f8;
   font-family: "Segoe UI", Tahoma, Arial, sans-serif;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 15px;
 }
 * {
   box-sizing: border-box;
@@ -351,13 +351,39 @@ textarea:focus-visible {
   object-fit: contain;
 }
 .assistant .message-text {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.9;
   overflow-wrap: anywhere;
 }
 .assistant .message-text p {
   margin: 0 0 15px;
   white-space: pre-wrap;
+}
+.message-text h3 {
+  font-size: 17px;
+  margin: 20px 0 10px;
+}
+.message-text ul, .message-text ol {
+  padding-inline-start: 25px;
+  margin: 0 0 16px;
+}
+.message-text li { margin: 5px 0; }
+.message-text pre {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 17px 20px;
+  overflow-x: auto;
+  font: 13px/1.7 Consolas, monospace;
+  white-space: pre;
+  text-align: left;
+}
+.message-text .inline-code {
+  background: var(--soft);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+  unicode-bidi: isolate;
 }
 .citation {
   display: inline-block;
@@ -584,10 +610,10 @@ dialog::backdrop {
     font-size: 13px;
   }
   .assistant .message-text {
-    font-size: 13px;
+    font-size: 15px;
   }
   .user .message-text {
-    font-size: 13px;
+    font-size: 15px;
   }
   .model-status {
     gap: 5px;
@@ -617,4 +643,13 @@ dialog::backdrop {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+.table-scroll { overflow-x: auto; margin: 1em 0; }
+.message-text table { border-collapse: collapse; width: 100%; font-size: .95em; }
+.message-text th, .message-text td { padding: .65em .8em; border-bottom: 1px solid #dbe4ed; text-align: start; }
+.message-text th { background: #f3f6fa; font-weight: 600; }
+.message-error {
+  display: block;
+  margin-top: 8px;
+  color: #b42318;
 }

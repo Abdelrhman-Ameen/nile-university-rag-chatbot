@@ -1,0 +1,512 @@
+{
+  "run": "data/scenarios-100-qwen14.json",
+  "scope": "Manual review of all 116 recorded responses against their scenario rubrics. Not an independent production certification. Some responses have only partial supporting evidence.",
+  "counts": {
+    "pass": 52,
+    "partial": 17,
+    "fail": 28,
+    "gap": 3
+  },
+  "cases": [
+    {
+      "id": "S001",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S002",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S003",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S004",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S005",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S006",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S007",
+      "status": "partial",
+      "note": "Understandable acknowledgment, but awkward Egyptian wording."
+    },
+    {
+      "id": "S008",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S009",
+      "status": "partial",
+      "note": "Answers an acknowledgment with a new greeting."
+    },
+    {
+      "id": "S010",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S011",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S012",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S013",
+      "status": "fail",
+      "note": "Franco changes the emotion into not wanting something."
+    },
+    {
+      "id": "S014",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S015",
+      "status": "partial",
+      "note": "Unnatural wording about seeing the user’s happiness."
+    },
+    {
+      "id": "S016",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S017",
+      "status": "fail",
+      "note": "Refuses/does not joke and mixes dialects."
+    },
+    {
+      "id": "S018",
+      "status": "partial",
+      "note": "Offers an unsolicited factual anecdote instead of a creative response."
+    },
+    {
+      "id": "S019",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S020",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S021",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S022",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S023",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S024",
+      "status": "partial",
+      "note": "Overstates RAG as ensuring accuracy rather than improving grounding."
+    },
+    {
+      "id": "S025",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S026",
+      "status": "partial",
+      "note": "Correct basic explanation, but formal Arabic rather than conversational Egyptian."
+    },
+    {
+      "id": "S027",
+      "status": "fail",
+      "note": "Awkward mixed-language phrasing and a weak overfitting example."
+    },
+    {
+      "id": "S028",
+      "status": "fail",
+      "note": "Answers in English despite Franco being selected."
+    },
+    {
+      "id": "S029",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S030",
+      "status": "fail",
+      "note": "Exact lowercase script-tag replacement is presented as general HTML execution protection."
+    },
+    {
+      "id": "S031",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S032",
+      "status": "fail",
+      "note": "The example calls a basket ten apples while including two oranges."
+    },
+    {
+      "id": "S033",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S034",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S035",
+      "status": "fail",
+      "note": "Confuses Franco with French in an added paragraph."
+    },
+    {
+      "id": "S036",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S037",
+      "status": "partial",
+      "note": "Understandable encouragement, with awkward wording and repetition."
+    },
+    {
+      "id": "S038",
+      "status": "fail",
+      "note": "Unwanted specialization note; labels a 30-minute slot a 15-minute break."
+    },
+    {
+      "id": "S039",
+      "status": "fail",
+      "note": "Incorrect Arabic translation and unnecessary specialization note."
+    },
+    {
+      "id": "S040",
+      "status": "fail",
+      "note": "Repetitive, incoherent joke and non-Egyptian dialect."
+    },
+    {
+      "id": "S041",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S042",
+      "status": "partial",
+      "note": "Location facts preserved, but nearly all place names remain English."
+    },
+    {
+      "id": "S043",
+      "status": "fail",
+      "note": "Franco location wording is not meaningful."
+    },
+    {
+      "id": "S044",
+      "status": "partial",
+      "note": "Correct application sequence followed by unrequested transfer rules."
+    },
+    {
+      "id": "S045",
+      "status": "fail",
+      "note": "Arabic translation fails and falls back to English; about 60 seconds."
+    },
+    {
+      "id": "S046",
+      "status": "fail",
+      "note": "Franco translation fails and falls back to English; about 59 seconds."
+    },
+    {
+      "id": "S047",
+      "status": "fail",
+      "note": "Omits Cybersecurity despite the retrieved FAQ listing it."
+    },
+    {
+      "id": "S048",
+      "status": "fail",
+      "note": "Retrieves course pages, lists only two programs, and translation fails."
+    },
+    {
+      "id": "S049",
+      "status": "fail",
+      "note": "Correct numeric range, but unnatural Arabic and missing clear first-year qualification."
+    },
+    {
+      "id": "S050",
+      "status": "fail",
+      "note": "Fails to retrieve the requested ITCS fee despite its presence in the index."
+    },
+    {
+      "id": "S051",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S052",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S053",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S054",
+      "status": "fail",
+      "note": "Uses the postgraduate USD 200 rate for an unqualified ITCS undergraduate context."
+    },
+    {
+      "id": "S055",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S056",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S057",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S058",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S059",
+      "status": "gap",
+      "note": "No current GPA discount table in this index snapshot; does not invent a discount."
+    },
+    {
+      "id": "S060",
+      "status": "gap",
+      "note": "No confirmed current continuing-student GPA mapping; historical image was found later."
+    },
+    {
+      "id": "S061",
+      "status": "fail",
+      "note": "Routes a NU UGRF question to general knowledge."
+    },
+    {
+      "id": "S062",
+      "status": "partial",
+      "note": "Supports the listed project formats; does not incorporate the external competition guide."
+    },
+    {
+      "id": "S063",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S064",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S065",
+      "status": "partial",
+      "note": "Broad comparison is useful, but generalizes an industrial-engineering capstone rule to all graduation projects."
+    },
+    {
+      "id": "S066",
+      "status": "fail",
+      "note": "General route invents expansions of IECC and EDECS."
+    },
+    {
+      "id": "S067",
+      "status": "fail",
+      "note": "General route invents generic ConstructX prize types."
+    },
+    {
+      "id": "S068",
+      "status": "partial",
+      "note": "Omits the secondary-school limitation and STEM category."
+    },
+    {
+      "id": "S069",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S070",
+      "status": "partial",
+      "note": "Adds specific research topics without attaching the passage supporting those topics."
+    },
+    {
+      "id": "S071",
+      "status": "fail",
+      "note": "Routes a named NU research center to general knowledge."
+    },
+    {
+      "id": "S072",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S073",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S074",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S075",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S076",
+      "status": "partial",
+      "note": "Training description is supported; extra internship details need tighter citations."
+    },
+    {
+      "id": "S077",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S078",
+      "status": "gap",
+      "note": "Library contact data unavailable in this index; live library TLS failed."
+    },
+    {
+      "id": "S079",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S080",
+      "status": "partial",
+      "note": "Correct final answer, but generation/retry latency exceeds 100 seconds."
+    },
+    {
+      "id": "S081",
+      "status": "fail",
+      "note": "Repeats poor tuition wording and lacks the requested current GPA mapping."
+    },
+    {
+      "id": "S082",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S083",
+      "status": "fail",
+      "note": "Emotion follow-up works, but the initial Arabic application instructions contain mistranslations."
+    },
+    {
+      "id": "S084",
+      "status": "partial",
+      "note": "Follow-up location is resolved correctly; application answer adds an unrequested international branch."
+    },
+    {
+      "id": "S085",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S086",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S087",
+      "status": "partial",
+      "note": "Correct arithmetic and prices; omits the first-year restriction."
+    },
+    {
+      "id": "S088",
+      "status": "fail",
+      "note": "Franco location is malformed and application translation falls back to English."
+    },
+    {
+      "id": "S089",
+      "status": "fail",
+      "note": "Fails the initial complete-program-list question."
+    },
+    {
+      "id": "S090",
+      "status": "fail",
+      "note": "Mixed university/general question returns HTTP 503."
+    },
+    {
+      "id": "S091",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S092",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S093",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S094",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S095",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S096",
+      "status": "fail",
+      "note": "Grounding challenge returns HTTP 503 rather than a useful refusal to assert an unsupported fact."
+    },
+    {
+      "id": "S097",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S098",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S099",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    },
+    {
+      "id": "S100",
+      "status": "pass",
+      "note": "Meets the scenario’s requested behavior in this recorded response."
+    }
+  ]
+}

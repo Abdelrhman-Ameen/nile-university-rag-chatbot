@@ -13,6 +13,7 @@ EMBEDDING_MODEL = os.getenv(
 )
 EMBEDDING_DEVICE = os.getenv("EMBEDDING_DEVICE", "cpu")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://127.0.0.1:11434").rstrip("/")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:4b-instruct")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:14b")
+RERANK_MODEL = os.getenv("RERANK_MODEL", "cross-encoder/ms-marco-MiniLM-L6-v2")
 TOP_K = int(os.getenv("TOP_K", "5"))
 MIN_SIMILARITY = float(os.getenv("MIN_SIMILARITY", "0.45"))

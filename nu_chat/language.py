@@ -8,6 +8,9 @@ import re
 import unicodedata
 
 FRANCO_WORDS = {
+    "enta",
+    "enty",
+    "meen",
     "ezay",
     "ezzay",
     "ezai",
@@ -91,6 +94,16 @@ AMBIGUOUS = {
     "bel",
 }
 FRANCO_HINTS = {
+    "mabsoot": "happy",
+    "mabsout": "happy",
+    "naga7t": "I passed",
+    "sa2att": "I failed",
+    "3ashan": "because",
+    "makhnoo2": "frustrated and overwhelmed",
+    "makhno2": "frustrated and overwhelmed",
+    "mdaye2": "upset",
+    "za3lan": "upset",
+    "bakrah": "I hate",
     "masareef": "tuition fees",
     "masarif": "tuition fees",
     "bekam": "cost",

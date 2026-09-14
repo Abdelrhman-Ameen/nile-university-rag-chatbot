@@ -1,110 +1,103 @@
-# Nile University Chat
+# NU Chat
 
-A course project in NLP and large language models: a multilingual RAG chatbot for **Nile University in Sheikh Zayed, Giza, Egypt**. Its sources are `nu.edu.eg` and the university's school subdomains. It is an independent student project, not an official university service.
+A local RAG chatbot for **Nile University in Egypt**, built as an independent NLP/LLM course project. Ask university questions, have a conversation, or ask general questions in English, Arabic, Egyptian Franco, or mixed language. It is not an official university service.
 
-The interface is a simple chat with the Egyptian university's colors and logo. Ask in English, Arabic, Egyptian Franco (Arabizi), or a mixture. Answers link to the public university pages and PDF passages used.
+The interface is plain HTML/CSS/JavaScript with NU colors, Arabic layout, chat history, code blocks, tables, and expandable citations. Model diagnostics stay in the API rather than the conversation UI.
 
 ## Run on Windows
 
-Requires Python 3.12 and [Ollama](https://ollama.com/download/windows). An NVIDIA GPU is useful for Qwen; CPU inference is also possible but slower. No paid API or API key is required.
+Requires Python 3.12 and [Ollama](https://ollama.com/download/windows). The default generator, [Qwen 3 14B](https://ollama.com/library/qwen3:14b), downloads about 9.3 GB. This workspace uses a 16 GB NVIDIA GPU for Ollama. Embedding, reranking, and OCR run on CPU; CPU-only generation is possible but substantially slower.
 
 ```powershell
 .\setup.ps1
 .\run.ps1
 ```
 
-Open http://127.0.0.1:8000. `setup.ps1` installs dependencies, collects up to 160 public URLs, and builds the vector index. `run.ps1` starts Ollama if needed, downloads the configured model if absent, and starts the app. The initial model download is approximately 2.5 GB; the sentence encoder downloads separately if it is not already cached. Subsequent runs reuse both.
+Open [the chatbot](http://127.0.0.1:8000/). Setup installs pinned dependencies, crawls public sources, extracts image text, and builds the index. The first collection can take a long time. Successful downloads, OCR, and unchanged embeddings are cached. The launch script starts Ollama if necessary, downloads the configured generator, warms it, and starts the app. An existing portable runtime under `.runtime/ollama/` is also supported.
 
-This workspace also supports an already downloaded portable Ollama in `.runtime/ollama/ollama.exe`; `run.ps1` detects it automatically. That runtime is not committed to GitHub. Fresh clones should install Ollama normally.
-
-## Manual setup (Windows, Linux, macOS)
+For manual setup:
 
 ```bash
 python -m venv .venv
-# Activate .venv (Windows: .venv\Scripts\activate; Unix: source .venv/bin/activate)
+# Activate .venv using your shell's activation command.
 python -m pip install -r requirements.txt
-ollama pull qwen3:4b-instruct
-# Keep Ollama running. If the desktop service is not running: ollama serve
-python -m nu_chat ingest --max-pages 160
+ollama pull qwen3:14b
+# Keep Ollama running (ollama serve if the service is not running).
+python -m nu_chat ingest
 python -m nu_chat serve
 ```
 
-The pinned requirements were resolved and tested on Windows/Python 3.12. On another operating system, if a platform-specific wheel is unavailable, resolve `requirements.in` with `uv pip compile requirements.in -o requirements-local.txt` and install that result.
+Copy `.env.example` to `.env` to override models or paths. The requirements were resolved on Windows/Python 3.12; other platforms can resolve `requirements.in` if a pinned wheel is unavailable. A smaller model can be configured, but its response quality must be evaluated separately.
 
-Copy `.env.example` to `.env` to change the model, embedding device, data directory, or retrieval cutoff. The default generator is explicitly **`qwen3:4b-instruct`**. Do not substitute the ambiguous `qwen3:4b` tag: it currently resolves to a thinking variant and can exhaust a short answer budget before producing an answer.
+## Pipeline
 
-## How it works
+1. **Collect public sources.** `sources.json` defines seeds and allowed domains: NU Egypt and its subdomains, plus the publicly linked NilePreneurs affiliate `np.eg`. The crawler discovers sitemaps, links, embedded documents, and content images. It extracts HTML, PDF, DOCX paragraphs/tables, and XLSX saved cell values with number formats; it does not recalculate formulas. It preserves raw snapshots, source URLs, dates, PDF pages, failures, and the pending frontier in SQLite/JSON. A blocked host is paused; private portals and access challenges are not bypassed.
+2. **Extract text from images.** RapidOCR processes content images in English and Arabic; PDFium renders every cached PDF page for OCR, including pages with both selectable text and images. Facing pages with a clear text gutter are read separately. Only extracted text is embedded. The nine manually checked fee/policy images in `sources/reviewed_images.json` have content hashes and structured table rows. Their transcriptions apply only when downloaded image bytes match those hashes. Other OCR remains explicitly unreviewed. A historical GPA chart is explicitly marked as historical; its presence does not establish current eligibility. Reviewed public webpage snapshots live in `sources/reviewed_documents.json` with provenance.
+3. **Embed and search.** Multilingual Sentence-BERT produces 384-dimensional vectors. Token-aware chunks contain 92 tokens with 18-token overlap and adjacent context. NumPy cosine search, BM25, and title matching form a candidate union. An English MS MARCO cross-encoder reranks using the normalized English question; repeated passages and low-relevance candidates are removed. This English reranker is a limitation for Arabic-only source text. Unchanged chunks reuse their vectors during index refresh.
+4. **Understand the message.** A small language heuristic selects English/Arabic/Franco/mixed; users can override the reply language. Qwen classifies identity, casual/general chat, university facts, and mixed requests before retrieval. It interprets real follow-ups using recent conversation. SBERT supplies embeddings; it is not a trained language-classification head.
+5. **Answer.** General chat uses Qwen without unrelated university passages. Identity is application-owned. A short NU-specialization note is added only to substantive general information. University answers use retrieved evidence, quiet citations, and an explicit distinction between unsupported facts and verified details. They are drafted in English and translated while protecting numbers, names, and citation IDs. Translation can fall back to the sourced English answer if protected facts change. Citation validation checks reference IDs, not semantic truth.
+6. **Handle requests.** One local GPU serves one generation pipeline at a time. Other requests wait in a bounded FIFO queue, with guaranteed release after success or failure. Identity questions do not need the GPU. Connection pooling avoids unnecessary socket churn. Per-stage timings are returned in API diagnostics. There is no artificial delay between completed replies.
 
-```mermaid
-flowchart LR
-    A[Public NU Egypt pages and PDFs] --> B[Clean text and preserve source metadata]
-    B --> C[Token-aware overlapping chunks]
-    C --> D[Multilingual Sentence-BERT]
-    D --> E[NumPy vector index + BM25]
-    Q[Question and recent conversation] --> L[Language routing]
-    L --> N[Qwen query normalization]
-    N --> E
-    E --> G[Qwen with retrieved evidence]
-    G --> V[Citation checks]
-    V --> U[Chat answer and source links]
+## Collect, refresh, and test
+
+```bash
+python -m nu_chat collect
+python -m nu_chat ocr
+python -m nu_chat index
+# Refetch cached pages and images explicitly:
+python -m nu_chat ingest --refresh
+# Optional bounded exploration; zero is the default unbounded frontier:
+python -m nu_chat collect --max-pages 200
+python -m nu_chat ocr --document-images-only
+python -m pytest -q
+python -m ruff check nu_chat tests evaluation/check_chat.py evaluation/run_scenarios.py
+# With the app and Ollama running:
+python evaluation/run_scenarios.py
+python evaluation/run_scenarios.py --resume
+python evaluation/run_scenarios.py --ids S097,S098,S099,S100 --output data/concurrency-check.json
 ```
 
-1. **Collect.** Start from reviewed URLs in `sources.json`, read bounded sitemap files, and follow in-scope links including embedded PDFs. Respect robots rules, delays, redirects, and a 20 MB download limit. Record failures, dates, PDF page numbers, and source URLs. Remove menus, scripts, forms, footers, and testimonials. Do not treat testimonials about other universities as NU policy.
-2. **Chunk and embed.** Use `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`, a 384-dimensional multilingual sentence encoder. Split the text with its tokenizer into 92-token windows with 18-token overlap; reserve title space inside the model's 128-token limit. Store normalized vectors and metadata together in an atomic NPZ file. Neighboring passage text is retained for answer context.
-3. **Route language.** A small, readable heuristic distinguishes `en`, `ar`, `franco`, and `mixed`. This is a baseline classifier, **not a trained SBERT classification head**. Digits in dates or model names are not sufficient Franco evidence. The UI allows a reply-language override.
-4. **Normalize.** Qwen translates Arabic/Franco queries to an English retrieval query and resolves follow-ups using the last few messages. A small Franco university glossary provides a limited fallback. General Franco transliteration is ambiguous; there is no claim of perfect coverage.
-5. **Retrieve.** Cosine similarity, BM25, and title matching rank chunks. The generic university name is removed from the search focus because every document belongs to the same institution. Transparent topic rules prefer dedicated NU service pages for broad admissions, fees, location, scholarship, and program questions. Their matches use a lower semantic cutoff; other searches use the configured cutoff. Results are limited per URL and duplicate passages are removed.
-6. **Generate.** Give Qwen the original and normalized question, reply language, recent conversation, and retrieved passages. Place the actual question after the evidence so questions inside source FAQs do not replace the user's request. A structured response contains the answer, citation IDs, and an explicit evidence-sufficiency flag. Validate citation IDs, reject truncated outputs, and abstain when evidence is missing. Model errors or invalid citations fall back to clearly labeled source passages; they are not silently reported as a successful generation.
+`ingest` runs collection, OCR, and indexing in order. `--max-pages` limits new network requests; cached results do not consume that allowance. `--max-images` optionally limits selected images. Public URLs on a newly approved domain must be added to `sources.json` deliberately.
 
-The chatbot searches its collected corpus, not the live web on every message. Refresh it explicitly when university information changes.
+The 100-scenario suite includes 116 messages across identity, greetings, emotions, coding, NLP, fees, GPA, admissions, research, competitions, source grounding, follow-ups, invalid input, and concurrent requests. It uses the actual `/api/chat` endpoint and preserves full responses, cited passages, and timings in `data/scenarios-100.json`. Each scenario includes a manual-review rubric. Mechanical passes are regression signals, not factual-quality scores or production certification. See [evaluation notes](evaluation/RESULTS.md).
 
-## Project map
+Coverage artifacts:
+
+- `data/collection_report.json`: downloaded documents, errors, blocked hosts, and pending URLs.
+- `data/source_inventory.json`: per-URL outcomes.
+- `data/crawl/assets.json`: discovered image URLs and page context.
+- `data/crawl/external_links.json`: external links requiring scope review.
+- `data/ocr_report.json`: OCR success/failure and manual-review status.
+- `data/documents.jsonl` and `data/ocr_documents.jsonl`: text corpora used by the index.
+
+## Code map
 
 | File | Responsibility |
 | --- | --- |
-| `nu_chat/collect.py` | Public crawling, PDF/HTML extraction, collection reports |
-| `nu_chat/language.py` | Language detection and Franco glossary |
-| `nu_chat/retrieval.py` | Chunking, embeddings, vector storage, hybrid search |
-| `nu_chat/generation.py` | Qwen query rewriting and cited answers |
-| `nu_chat/api.py` | FastAPI endpoints and request validation |
-| `nu_chat/evaluate.py` | Small retrieval/language evaluation |
-| `static/` | Plain HTML, CSS, and JavaScript chat UI |
-| `tests/` | Deterministic tests without model downloads |
+| `nu_chat/collect.py`, `crawl.py` | Scope, robots rules, extraction, durable crawl frontier |
+| `nu_chat/ocr.py` | Image and PDF text extraction |
+| `nu_chat/language.py`, `persona.py` | Language hints and NU identity |
+| `nu_chat/retrieval.py` | Chunking, embeddings, indexing, hybrid search |
+| `nu_chat/generation.py` | Qwen planning, grounded answers, translation |
+| `nu_chat/request_queue.py`, `api.py` | Bounded queue, validation, API |
+| `static/` | Chat interface with no frontend build step |
+| `evaluation/`, `tests/` | Live scenarios, review rubrics, deterministic checks |
 
-There is no LangChain, vector database service, frontend build step, or cloud account dependency. NumPy is sufficient for this corpus and makes similarity search easy to inspect.
+API: `GET /api/health`, `GET /api/sources`, `POST /api/chat`; interactive schema at `/docs`. Conversation history stays in browser memory and resets on reload. There is no cloud API dependency or hosted vector database.
 
-## Refresh and evaluate
+## Known limits
 
-```bash
-python -m nu_chat collect --max-pages 160
-python -m nu_chat index
-python -m nu_chat evaluate
-python -m nu_chat evaluate --with-llm
-python -m pytest -q
-python -m ruff check nu_chat tests
-```
+The corpus is a snapshot, not live web search. A drained frontier would still not prove every university document was discoverable; currently some sites return access challenges and some old domains fail. Check the reports before claiming coverage. JavaScript-only content, external document hosts, legacy Office formats and images embedded in Office documents can remain missing.
 
-`ingest` combines `collect` and `index`. Use `--no-sitemaps` for a links-only crawl. The page bound is a maximum number of attempted URLs, not a promise of that many usable sources. Add discovered public URLs to `sources.json`; explicitly add another trusted domain only if it is relevant to NU Egypt.
+Franco generation and some Arabic wording still need improvement. Conflicting historical policies, unreviewed OCR, and model hallucinations require manual evidence review. A historical GPA-to-discount chart must not be presented as confirmed current eligibility. Neither this model nor the small evaluation set establishes production readiness.
 
-Reports in `data/` include the collection inventory, skipped URLs, and per-question evaluation results. `evaluation/questions.json` is a small, hand-authored **development** set. Hit@5 measures whether at least one expected URL appears in the first five results; MRR@5 rewards earlier relevant results. These metrics do not measure factual correctness, citation entailment, Arabic fluency, or robustness across all Franco spellings. Expand the dataset and reserve a separate held-out test set for a stronger course evaluation.
-
-See [the recorded development results and limitations](evaluation/RESULTS.md).
-
-API: `GET /api/health`, `GET /api/sources`, `POST /api/chat`. Interactive API documentation is at `/docs`. Each chat response includes routing and retrieval diagnostics in JSON; these details are intentionally absent from the minimal chat UI. Conversation history is held in browser memory and resets on reload.
-
-## Scope and limitations
-
-- Public, accessible information only. This does not access private portals, credentials, student records, restricted files, or every document on the internet. Older unlinked PDFs can be added when their public URL is known. The crawler does not guess private paths.
-- Scanned PDFs and image-only tables need OCR, which is not included. JavaScript-only content and externally hosted embeds may be skipped. Check the collection report rather than assuming complete coverage.
-- University sites contain old pages, contradictory fees, and mixed academic years. A fetch date is not a policy's effective date. Confirm fees, deadlines, and admission decisions with the university.
-- Valid citation numbers are not a proof that every generated claim is supported. Prompt-injection defenses and the retrieval threshold reduce errors but do not guarantee correctness. Review answers manually for the final presentation.
-- The server binds to loopback. Internet deployment would require authentication, rate limits, request monitoring, and a deliberate model-hosting plan.
-- Source content and model/runtime files stay out of Git. See [asset attribution](docs/ASSETS.md) for the university logo.
+The server binds to loopback. Public deployment needs authentication, per-user limits, monitoring, a deployment load test, and a model-hosting plan. Disconnecting a client currently does not cancel a generation already running; inference timeouts bound it. Runtime files, downloaded sources, and model weights are excluded from Git. See [logo attribution](docs/ASSETS.md).
 
 ## References
 
 - [Nile University, Egypt](https://nu.edu.eg/)
 - [Sentence-BERT paper](https://aclanthology.org/D19-1410/)
-- [Multilingual MiniLM model card](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2)
-- [Qwen3 4B Instruct in Ollama](https://ollama.com/library/qwen3:4b-instruct)
+- [Multilingual MiniLM encoder](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2)
+- [MS MARCO cross-encoder](https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2)
 - [Ollama chat API](https://docs.ollama.com/api/chat)
+- [RapidOCR](https://github.com/RapidAI/RapidOCR)

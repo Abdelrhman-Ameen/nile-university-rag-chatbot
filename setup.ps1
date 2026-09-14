@@ -15,6 +15,6 @@ if (Get-Command uv -ErrorAction SilentlyContinue) {
     & '.venv\Scripts\python.exe' -m pip install -r requirements.txt
 }
 if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed.' }
-& '.venv\Scripts\python.exe' -X utf8 -m nu_chat ingest --max-pages 160
+& '.venv\Scripts\python.exe' -X utf8 -m nu_chat ingest
 if ($LASTEXITCODE -ne 0) { throw 'Source ingestion failed. Check the output above.' }
 Write-Host 'Ready. Run .\run.ps1 to start the chat.'
