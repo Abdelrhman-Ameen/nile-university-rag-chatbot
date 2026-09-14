@@ -261,31 +261,14 @@ async function sendQuestion(question) {
       history: turns.slice(-6).map((t) => ({ role: t.role, content: t.content.slice(0, 5000) })),
     });
     const signal = AbortSignal.timeout(360000);
-    let response, result;
-    for (let attempt = 0; attempt < 3; attempt++) {
-      try {
-        response = await fetch("/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          signal,
-          body: requestBody,
-        });
-        result = await response.json();
-        break;
-      } catch (err) {
-        // The same UUID lets a reconnect obtain the original response without
-        // queueing a second generation if only the response connection was lost.
-        if (!(err instanceof TypeError) || signal.aborted || attempt === 2) throw err;
-        indicator.lastChild.textContent = "Reconnecting…";
-        await new Promise((resolve) => setTimeout(resolve, 500 * (attempt + 1)));
-      }
-    }
-    if (!response.ok)
-      throw new Error(
-        typeof result.detail === "string"
-          ? result.detail
-          : "Please shorten your message and try again.",
-      );
+    const labels = {
+      queued: "Waiting…", starting: "Starting local model…", understanding: "Thinking…",
+      searching: "Searching…", answering: "Writing…", checking: "Checking answer…",
+      refining: "Refining answer…", reconnecting: "Reconnecting…",
+    };
+    const result = await requestChat(requestBody, signal, (stage) => {
+      indicator.lastChild.textContent = labels[stage] || "Thinking…";
+    });
     loading.remove();
     renderAnswer(result);
     if (result.pipeline?.generator && result.pipeline.generator !== $("#status-button").title)
@@ -324,7 +307,6 @@ async function sendQuestion(question) {
     renderRecent();
     scrollChat();
     $("#question").focus();
-    loadStatus();
   }
 }
 $("#chat-form").addEventListener("submit", (e) => {
@@ -390,7 +372,7 @@ $("#status-button").addEventListener("click", loadStatus);
 async function loadStatus() {
   clearTimeout(statusTimer);
   try {
-    const response = await fetch("/api/health");
+    const response = await fetch("/api/health", { signal: AbortSignal.timeout(5000) });
     if (!response.ok) throw new Error();
     const status = await response.json();
     $("#status-dot").classList.toggle(
@@ -398,7 +380,7 @@ async function loadStatus() {
       !status.model_ready || !status.index_ready || status.intent_ready === false,
     );
     const modelLabel = status.model.split(":")[0].replace(/^qwen/i, "Qwen ").replace(/^gemma/i, "Gemma ");
-    $("#status-text").textContent = status.model_ready
+    $("#status-text").textContent = status.startup_error ? "Startup failed" : status.ready === false ? "Starting…" : status.model_ready
       ? modelLabel
       : "Model offline";
     $("#status-button").title = status.model_ready
@@ -409,8 +391,9 @@ async function loadStatus() {
       ? "Sources are not indexed yet."
       : status.intent_ready === false ? "Chat setup is incomplete. Check the local server setup."
       : "The local model is unavailable. Start Ollama, then retry.";
-    if (!status.model_ready || !status.index_ready || status.intent_ready === false)
-      statusTimer = setTimeout(loadStatus, 10000);
+    if (status.ready === false) $("#notice").textContent = "Starting local models…";
+    if (status.startup_error) $("#notice").textContent = status.startup_error;
+    statusTimer = setTimeout(loadStatus, status.ready === false ? 2000 : status.model_ready ? 30000 : 10000);
   } catch {
     $("#status-dot").classList.add("pending");
     $("#status-text").textContent = "Offline";

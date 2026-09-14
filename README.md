@@ -13,7 +13,7 @@ Requires Python 3.12 and [Ollama](https://ollama.com/download/windows). The defa
 .\run.ps1
 ```
 
-Open [the chatbot](http://127.0.0.1:8000/). Setup installs pinned dependencies, trains the intent classifier, crawls public sources, extracts image text, and builds the index. The first collection can take a long time. Successful downloads, OCR, and unchanged embeddings are cached. The launch script starts Ollama if necessary, downloads the configured generator, warms it, and starts the app. An existing portable runtime under `.runtime/ollama/` is also supported.
+Open [the chatbot](http://127.0.0.1:8000/). Setup installs pinned dependencies, trains the intent classifier, crawls public sources, extracts image text, and builds the index. The first collection can take a long time. Successful downloads, OCR, and unchanged embeddings are cached. The launch script starts Ollama if necessary, downloads the configured generator, and starts FastAPI. The UI is available while models warm in the background. An existing portable runtime under `.runtime/ollama/` is also supported.
 
 For GPU retrieval on a compatible NVIDIA driver, use `./setup.ps1 -Gpu` and set
 `EMBEDDING_DEVICE=cuda` in `.env` before running the app. This installs the CUDA 13.0
@@ -41,7 +41,8 @@ Copy `.env.example` to `.env` to override models or paths. The requirements were
 3. **Embed and search.** Multilingual Sentence-BERT produces 384-dimensional vectors. Token-aware chunks contain 92 tokens with 18-token overlap and adjacent context. NumPy cosine search, BM25, and title matching form a candidate union. An English MS MARCO cross-encoder reranks using the normalized English question; unreviewed image titles cannot stand in for their actual OCR text, and degree-list requests downrank pages with an explicit Course ID field; repeated passages and low-relevance candidates are removed. This English reranker is a limitation for Arabic-only source text. Unchanged chunks reuse their vectors during index refresh.
 4. **Classify before retrieval.** A small supervised logistic-regression head uses frozen Sentence-BERT embeddings plus hashed character features. It separates identity, social chat, emotion, general opinion, university choice/advising, factual university questions, general information, creative work, mixed requests and follow-ups. Confident ordinary chat decisions skip retrieval planning. Document requests already require an English search rewrite, so that same local-model call resolves their exact intent using conversation history and official acronym meanings; it prevents an application procedure from turning into a persuasion response. Ambiguous messages also use that planner. This trains an intent head, not the encoder or generator. English/Arabic/Franco/mixed detection is separate; Franco input gets Egyptian Arabic by default. `evaluation/intent_examples.json` contains 256 training and 79 development-validation examples. The validation set was used for tuning and is not a blind benchmark. Rebuild the head with `python -m nu_chat train-intent`.
 5. **Answer.** General chat uses the local model without unrelated university passages. Identity is application-owned. A short NU-specialization note is added only to substantive general information. University answers use retrieved evidence and quiet citations. The advising route searches several concrete topics, including student research and entrepreneurship, to discuss why NU may fit a student and address objections without inventing advantages. It prioritizes text and reviewed image transcriptions for those broad recommendations; detailed factual retrieval still includes all OCR. Answers are generated directly in the requested language. Citation-ID checks are followed by a separate local-model evidence audit and at most one repair. The audit can still miss errors or reject a correct answer; it is not proof of truth.
-6. **Handle requests.** One local GPU serves one generation pipeline at a time. Other requests wait in a bounded FIFO queue, with guaranteed release after success or failure. Identity questions do not need the GPU. Connection pooling avoids unnecessary socket churn. Network reconnects retry the same request UUID at most twice; a bounded in-memory cache replays completed answers or joins an in-flight generation. Reusing an ID with a changed payload returns 409. Per-stage timings are returned in API diagnostics. There is no artificial delay between completed replies.
+6. **Handle requests.** FastAPI accepts chat requests asynchronously. One local GPU serves one pipeline at a time; up to eight others wait in a FIFO queue without occupying worker threads. Identity questions do not need the GPU. The browser receives live progress and a heartbeat at least every ten seconds through `/api/chat/stream`; only the final checked answer is displayed. Network reconnects retry the same request UUID at most twice. An in-memory cache joins the original task even after a client disconnects, or replays its result for five minutes (128 entries maximum). Reusing an ID with a changed payload returns 409. The queue releases before the final response, allowing an immediate follow-up. `/api/chat` remains available for JSON clients.
+7. **Bound repeated work and memory.** Exact query plans (including language and conversation history) and retrievals use independent 128-entry caches; rebuilding the index discards its retrieval cache. Returned passages are copied before per-answer citation edits. Health replies use a background snapshot, refreshed every 30 seconds, instead of probing Ollama on each request. Model calls use a pooled client with separate connect/read/pool timeouts and expose token counts and inference timings. `MODEL_KEEP_ALIVE=-1` keeps the model resident; set `30m` to allow idle unloading. The launch script starts one Ollama model/slot, disables the llama.cpp backend's 8 GiB retired-prompt RAM cache, and limits context checkpoints to two. Those backend limits apply when this script starts Ollama; restart an existing server to change its process environment. No model quantization or grounding check was removed. See [measured performance and connection tests](evaluation/PERFORMANCE.md).
 
 ## Collect, refresh, and test
 
@@ -56,11 +57,14 @@ python -m nu_chat ingest --refresh
 python -m nu_chat collect --max-pages 200
 python -m nu_chat ocr --document-images-only
 python -m pytest -q
+node --test tests/chat-transport.test.cjs
 python -m ruff check nu_chat tests evaluation/check_chat.py evaluation/run_scenarios.py
 # With the app and Ollama running:
 python evaluation/run_scenarios.py
 python evaluation/run_scenarios.py --resume
 python evaluation/run_scenarios.py --ids S097,S098,S099,S100 --output data/concurrency-check.json
+python evaluation/benchmark_http.py --output data/performance.json
+python evaluation/check_connections.py --output data/connections.json
 ```
 
 `ingest` trains the intent head, then runs collection, OCR, and indexing in order. `--max-pages` limits new network requests; cached results do not consume that allowance. `--max-images` optionally limits selected images. Public URLs on a newly approved domain must be added to `sources.json` deliberately.
@@ -92,7 +96,7 @@ Coverage artifacts:
 | `static/` | Chat interface with no frontend build step |
 | `evaluation/`, `tests/` | Live scenarios, review rubrics, deterministic checks |
 
-API: `GET /api/health`, `GET /api/sources`, `POST /api/chat`; interactive schema at `/docs`. Conversation history stays in browser memory and resets on reload. There is no cloud API dependency or hosted vector database.
+API: `GET /api/health`, `GET /api/sources`, `POST /api/chat`, `POST /api/chat/stream`; interactive schema at `/docs`. Both chat endpoints accept the same JSON and optional `request_id` UUID. Stream events are `status` (`stage`), `result` (the normal response), or `error` (`status`, `detail`); validation and conflicting IDs fail before streaming starts. A disconnected stream can reconnect using the identical body. Health distinguishes startup from readiness and reports active/waiting jobs; its model status reflects the last background residency check. Conversation history stays in browser memory and resets on reload. There is no cloud API dependency or hosted vector database.
 
 ## Known limits
 
@@ -102,7 +106,7 @@ The corpus is a snapshot, not live web search. A drained frontier would still no
 
 Automatic replies to Franco input use Egyptian Arabic. Explicit Franco output and some Arabic wording remain unreliable. Conflicting historical policies, unreviewed OCR, and model hallucinations require manual evidence review. A historical GPA-to-discount chart must not be presented as confirmed current eligibility. Neither this model nor the small evaluation set establishes production readiness.
 
-The server binds to loopback. Public deployment needs authentication, per-user limits, monitoring, a deployment load test, and a model-hosting plan. Disconnecting a client currently does not cancel a generation already running; inference timeouts bound it. Runtime files, downloaded sources, and model weights are excluded from Git. See [logo attribution](docs/ASSETS.md).
+The server binds to loopback and uses one Uvicorn process, which owns the GPU queue and reconnect cache. Multiple web workers would require shared task storage and a separate inference worker. Public deployment needs authentication, per-user limits, monitoring, a deployment load test, and a model-hosting plan. Disconnecting a client preserves its generation for reconnection; inference timeouts bound it. Restarting the server loses in-memory jobs and cached responses. Runtime files, downloaded sources, and model weights are excluded from Git. See [logo attribution](docs/ASSETS.md).
 
 ## References
 

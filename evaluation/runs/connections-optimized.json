@@ -1,0 +1,184 @@
+{
+  "events": [
+    {
+      "stage": "understanding"
+    },
+    {
+      "stage": "understanding"
+    },
+    {
+      "stage": "searching"
+    },
+    {
+      "stage": "answering"
+    },
+    {
+      "stage": "checking"
+    }
+  ],
+  "server": {
+    "index_ready": true,
+    "index_version": 1789358993852111800,
+    "chunks": 25205,
+    "sources": 1904,
+    "collected_at": "2026-09-14T03:57:05.228887+00:00",
+    "ready": true,
+    "startup_error": null,
+    "intent_ready": true,
+    "model_ready": true,
+    "model": "gemma4:12b",
+    "thinking": false,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "retrieval_device": "cuda",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "fe296684833c0197",
+    "queue": {
+      "active": false,
+      "waiting": 0,
+      "capacity": 8
+    }
+  },
+  "first_event_seconds": 0.0238,
+  "result": {
+    "answer": "The undergraduate tuition fees for the School of Information Technology and Computer Science for the 2026/2027 academic year are 193,680 EGP for the first year (Freshman) only [1].\n\nOfficial pages for details and updates: [Fees and Financials — 2026/2027](https://nu.edu.eg/fees-and-financials).",
+    "sources": [
+      {
+        "id": "e11a9e460e01b2db-0",
+        "url": "https://nu.edu.eg/fees-and-financials",
+        "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+        "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+        "text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+        "page": null,
+        "kind": "image",
+        "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+        "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+        "archived": false,
+        "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+        "ocr_reviewed": true,
+        "context": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+        "similarity": 0.778,
+        "score": 0.8453,
+        "rerank_score": 1.0,
+        "citation": 1,
+        "answer_text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+        "cited": true
+      }
+    ],
+    "mode": "generated",
+    "pipeline": {
+      "detected_language": "en",
+      "reply_language": "en",
+      "retrieval_query": "ITCS tuition fees | School of Information Technology and Computer Science tuition",
+      "retrieval_queries": [
+        "ITCS tuition fees",
+        "School of Information Technology and Computer Science tuition"
+      ],
+      "current_information_links": true,
+      "route": "university",
+      "general_information": false,
+      "message_meaning": "What are the tuition fees for the School of Information Technology and Computer Science before any scholarships are applied?",
+      "normalization": "model",
+      "intent_classification": {
+        "label": "university",
+        "intent_score": 0.7737,
+        "score": 0.7737,
+        "margin": 0.6446,
+        "confident": true,
+        "route": "university",
+        "general_information": false,
+        "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "head_version": "69301ae44b2aa1db"
+      },
+      "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "generator": "gemma4:12b",
+      "elapsed_seconds": 6.62,
+      "planning_seconds": 2.9,
+      "retrieval_seconds": 0.22,
+      "generation_seconds": 3.5,
+      "queue_seconds": 0.0,
+      "model_calls": [
+        {
+          "stage": "understanding",
+          "seconds": 2.851,
+          "load_duration": 2152100,
+          "prompt_eval_count": 905,
+          "prompt_eval_duration": 970909000,
+          "eval_count": 75,
+          "eval_duration": 1865974000
+        },
+        {
+          "stage": "answering",
+          "seconds": 2.794,
+          "load_duration": 1697600,
+          "prompt_eval_count": 891,
+          "prompt_eval_duration": 657830000,
+          "eval_count": 80,
+          "eval_duration": 2121601000
+        },
+        {
+          "stage": "checking",
+          "seconds": 0.709,
+          "load_duration": 2135500,
+          "prompt_eval_count": 469,
+          "prompt_eval_duration": 406134000,
+          "eval_count": 13,
+          "eval_duration": 292412000
+        }
+      ]
+    }
+  },
+  "completion_seconds": 6.641,
+  "replay_seconds": 0.0023,
+  "queue_after_result": {
+    "active": false,
+    "waiting": 0,
+    "capacity": 8
+  },
+  "next_seconds": 0.536,
+  "next_status": 200,
+  "next_result": {
+    "answer": "العفو، تحت أمرك في أي وقت!",
+    "sources": [],
+    "mode": "general",
+    "pipeline": {
+      "detected_language": "ar",
+      "reply_language": "ar",
+      "retrieval_query": "",
+      "retrieval_queries": [],
+      "current_information_links": false,
+      "route": "general",
+      "general_information": false,
+      "message_meaning": "",
+      "normalization": "intent_classifier",
+      "intent_classification": {
+        "label": "social",
+        "intent_score": 0.8912,
+        "score": 0.947,
+        "margin": 0.9281,
+        "confident": true,
+        "route": "general",
+        "general_information": false,
+        "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "head_version": "69301ae44b2aa1db"
+      },
+      "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "generator": "gemma4:12b",
+      "elapsed_seconds": 0.53,
+      "planning_seconds": 0.01,
+      "retrieval_seconds": 0.0,
+      "generation_seconds": 0.52,
+      "queue_seconds": 0.0,
+      "model_calls": [
+        {
+          "stage": "answering",
+          "seconds": 0.521,
+          "load_duration": 2664300,
+          "prompt_eval_count": 306,
+          "prompt_eval_duration": 258600000,
+          "eval_count": 11,
+          "eval_duration": 251125000
+        }
+      ]
+    }
+  }
+}

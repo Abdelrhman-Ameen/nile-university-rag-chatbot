@@ -7,7 +7,8 @@ import json
 def main():
     parser = argparse.ArgumentParser(description="Nile Guide: collect, embed, retrieve, generate")
     parser.add_argument(
-        "command", choices=["collect", "ocr", "index", "ingest", "serve", "evaluate", "train-intent"]
+        "command",
+        choices=["collect", "ocr", "index", "ingest", "serve", "evaluate", "train-intent"],
     )
     parser.add_argument(
         "--max-pages",
@@ -55,9 +56,21 @@ def main():
 
         print(json.dumps(build_index(), indent=2))
     if args.command == "serve":
+        import os
+
+        os.environ.setdefault("HF_HUB_OFFLINE", "1")
+        os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
         import uvicorn
 
-        uvicorn.run("nu_chat.api:app", host="127.0.0.1", port=args.port)
+        # One process owns the GPU and reconnect cache. Additional workers would
+        # duplicate model memory and route retries to unrelated caches.
+        uvicorn.run(
+            "nu_chat.api:app",
+            host="127.0.0.1",
+            port=args.port,
+            timeout_keep_alive=30,
+            timeout_graceful_shutdown=240,
+        )
     if args.command == "evaluate":
         from nu_chat.evaluate import evaluate
 

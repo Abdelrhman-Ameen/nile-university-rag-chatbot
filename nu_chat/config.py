@@ -16,6 +16,10 @@ RETRIEVAL_THREADS = int(os.getenv("RETRIEVAL_THREADS", "4"))
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://127.0.0.1:11434").rstrip("/")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma4:12b")
 MODEL_THINKING = os.getenv("MODEL_THINKING", "0") == "1"
+MODEL_KEEP_ALIVE = os.getenv("MODEL_KEEP_ALIVE", "-1")
+if MODEL_KEEP_ALIVE.lstrip("-").isdigit():
+    MODEL_KEEP_ALIVE = int(MODEL_KEEP_ALIVE)
+RERANK_BATCH_SIZE = int(os.getenv("RERANK_BATCH_SIZE", "16" if EMBEDDING_DEVICE == "cuda" else "8"))
 RERANK_MODEL = os.getenv("RERANK_MODEL", "cross-encoder/ms-marco-MiniLM-L6-v2")
 TOP_K = int(os.getenv("TOP_K", "5"))
 MIN_SIMILARITY = float(os.getenv("MIN_SIMILARITY", "0.45"))

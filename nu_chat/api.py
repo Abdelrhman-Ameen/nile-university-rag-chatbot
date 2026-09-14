@@ -1,15 +1,18 @@
 """Small same-origin API. Ingestion is an explicit CLI action, not a web endpoint."""
 
 import asyncio
+import json
+import logging
+import threading
 import time
 from contextlib import asynccontextmanager
 from functools import lru_cache
 from hashlib import sha256
 from typing import Literal
-from uuid import UUID
+from uuid import UUID, uuid4
 
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -28,7 +31,9 @@ from nu_chat.generation import (
     GenerationError,
     generate_answer,
     model_available,
+    model_client,
     plan_query,
+    warm_model,
 )
 from nu_chat.intent import INTENT_FILE, classify_intent
 from nu_chat.language import detect_language
@@ -36,31 +41,71 @@ from nu_chat.persona import identity_question
 from nu_chat.request_cache import RequestCache
 from nu_chat.request_queue import RequestQueue
 from nu_chat.retrieval import Retriever, encoder, reranker
+from nu_chat.telemetry import model_timings, progress, stage
+
+log = logging.getLogger(__name__)
 
 
 @asynccontextmanager
 async def lifespan(app):
-    if (DATA_DIR / "index.npz").exists():
+    app.state.ready = False
+    app.state.model_ready = False
+    app.state.index_status = {}
+    app.state.startup_error = None
 
-        def warm_retrieval():
+    def warmup():
+        if (DATA_DIR / "index.npz").exists():
             encoder()
             reranker()
             retriever()
             classify_intent("Good morning")
+        try:
+            warm_model()
+        except Exception:
+            log.exception("Local model warmup failed; requests can retry when Ollama recovers")
 
-        await asyncio.to_thread(warm_retrieval)
-    yield
+    async def initialize():
+        try:
+            await asyncio.to_thread(warmup)
+            app.state.index_status = await asyncio.to_thread(index_status)
+            app.state.model_ready = await asyncio.to_thread(model_available)
+            app.state.ready = True
+        except Exception:
+            app.state.startup_error = (
+                "Local retrieval models could not start. Check the server log."
+            )
+            log.exception("Retrieval startup failed")
+            raise
+
+    async def refresh_status():
+        while True:
+            app.state.model_ready = await asyncio.to_thread(model_available)
+            if app.state.ready:
+                app.state.index_status = await asyncio.to_thread(index_status)
+            await asyncio.sleep(30)
+
+    app.state.warmup = asyncio.create_task(initialize())
+    monitor = asyncio.create_task(refresh_status())
+    try:
+        yield
+    finally:
+        monitor.cancel()
+        await asyncio.gather(monitor, return_exceptions=True)
+        await asyncio.gather(app.state.warmup, return_exceptions=True)
+        await request_cache.drain()
+        model_client.close()
 
 
 app = FastAPI(
     title="NU Chat",
     description="Nile University Egypt multilingual chat",
-    version="1.2.0",
+    version="1.3.0",
     lifespan=lifespan,
 )
 app.mount("/static", StaticFiles(directory=ROOT / "static"), name="static")
 chat_queue = RequestQueue()
 request_cache = RequestCache()
+index_lock = threading.Lock()
 CODE_VERSION = sha256(
     b"".join(path.read_bytes() for path in sorted((ROOT / "nu_chat").glob("*.py")))
 ).hexdigest()[:16]
@@ -84,7 +129,9 @@ def _load_retriever(index_modified: int):
 
 
 def retriever():
-    return _load_retriever((DATA_DIR / "index.npz").stat().st_mtime_ns)
+    # lru_cache alone permits duplicate concurrent loads on a cold cache miss.
+    with index_lock:
+        return _load_retriever((DATA_DIR / "index.npz").stat().st_mtime_ns)
 
 
 @app.get("/")
@@ -93,57 +140,135 @@ def home():
 
 
 @app.get("/api/health")
-def health():
-    exists = (DATA_DIR / "index.npz").exists()
-    index = retriever() if exists else None
+async def health():
+    # Never probe Ollama, scan the corpus, or wait for inference on a health request.
     return {
-        "index_ready": exists,
+        **getattr(app.state, "index_status", {}),
+        "ready": getattr(app.state, "ready", False),
+        "startup_error": getattr(app.state, "startup_error", None),
+        "index_ready": getattr(app.state, "index_status", {}).get("index_ready", False),
         "intent_ready": INTENT_FILE.exists(),
-        "model_ready": model_available(),
+        "model_ready": getattr(app.state, "model_ready", False),
         "model": OLLAMA_MODEL,
         "thinking": MODEL_THINKING,
-        "index_version": (DATA_DIR / "index.npz").stat().st_mtime_ns if exists else None,
         "encoder": EMBEDDING_MODEL,
         "retrieval_device": EMBEDDING_DEVICE,
         "reranker": RERANK_MODEL,
         "code_version": CODE_VERSION,
-        "chunks": len(index.chunks) if index else 0,
-        "sources": len({c["url"] for c in index.chunks}) if index else 0,
-        "collected_at": max((c["fetched_at"] for c in index.chunks), default=None)
-        if index
-        else None,
+        "queue": {
+            "active": chat_queue.active,
+            "waiting": len(chat_queue.waiting),
+            "capacity": chat_queue.capacity,
+        },
     }
 
 
-@app.get("/api/sources")
-def source_library():
-    if not (DATA_DIR / "index.npz").exists():
-        return {"sources": []}
+@lru_cache(maxsize=1)
+def corpus_summary(version):
+    index = retriever()
     unique = {}
-    for c in retriever().chunks:
+    for c in index.chunks:
         unique.setdefault(
             c["url"], {k: c[k] for k in ("url", "title", "kind", "fetched_at", "archived")}
         )
-    return {"sources": sorted(unique.values(), key=lambda s: s["title"].lower())}
+    return {
+        "index_ready": True,
+        "index_version": version,
+        "chunks": len(index.chunks),
+        "sources": len(unique),
+        "collected_at": max((c["fetched_at"] for c in index.chunks), default=None),
+    }, sorted(unique.values(), key=lambda s: s["title"].lower())
+
+
+def index_status():
+    path = DATA_DIR / "index.npz"
+    return corpus_summary(path.stat().st_mtime_ns)[0] if path.exists() else {"index_ready": False}
+
+
+@app.get("/api/sources")
+async def source_library():
+    await wait_until_ready()
+    return await asyncio.to_thread(read_sources)
+
+
+def read_sources():
+    path = DATA_DIR / "index.npz"
+    return {"sources": corpus_summary(path.stat().st_mtime_ns)[1] if path.exists() else []}
+
+
+async def wait_until_ready():
+    warmup_task = getattr(app.state, "warmup", None)
+    if warmup_task:
+        try:
+            await asyncio.shield(warmup_task)
+        except Exception as exc:
+            raise HTTPException(503, "Local models could not start. Check the server log.") from exc
+
+
+def start_request(request):
+    if not request.question.strip():
+        raise HTTPException(422, "Write a question first.")
+    fingerprint = sha256(request.model_dump_json(exclude={"request_id"}).encode()).hexdigest()
+    return request_cache.start(
+        str(request.request_id or uuid4()), fingerprint, lambda entry: queued_answer(request, entry)
+    )
 
 
 @app.post("/api/chat")
-def chat(request: ChatRequest):
-    if request.request_id:
-        fingerprint = sha256(request.model_dump_json(exclude={"request_id"}).encode()).hexdigest()
-        return request_cache.run(
-            str(request.request_id), fingerprint, lambda: queued_answer(request)
-        )
-    return queued_answer(request)
+async def chat(request: ChatRequest):
+    return await asyncio.shield(start_request(request).task)
 
 
-def queued_answer(request: ChatRequest):
+@app.post("/api/chat/stream")
+async def stream_chat(request: ChatRequest):
+    entry = start_request(request)
+
+    async def events():
+        previous, last_sent = None, 0
+        while not entry.task.done():
+            now = time.monotonic()
+            if entry.stage != previous or now - last_sent >= 10:
+                yield "event: status\ndata: " + json.dumps({"stage": entry.stage}) + "\n\n"
+                previous, last_sent = entry.stage, now
+            # Waiting or disconnecting never cancels the shared inference job.
+            await asyncio.wait({entry.task}, timeout=0.25)
+        try:
+            result = entry.task.result()
+            yield "event: result\ndata: " + json.dumps(result, ensure_ascii=False) + "\n\n"
+        except HTTPException as exc:
+            yield (
+                "event: error\ndata: "
+                + json.dumps({"detail": exc.detail, "status": exc.status_code})
+                + "\n\n"
+            )
+        except Exception:
+            log.exception("Chat job failed")
+            yield 'event: error\ndata: {"detail":"The request could not be completed. Please retry.","status":500}\n\n'
+
+    return StreamingResponse(
+        events(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-store", "X-Accel-Buffering": "no"},
+    )
+
+
+async def queued_answer(request: ChatRequest, entry):
     if identity_question(request.question):
         return answer_request(request)
-    with chat_queue.slot() as waited:
-        result = answer_request(request)
-        result["pipeline"]["queue_seconds"] = waited
-        return result
+    async with chat_queue.slot() as waited:
+        entry.stage = "starting"
+        await wait_until_ready()
+        progress_token = progress.set(lambda name: setattr(entry, "stage", name))
+        timings = []
+        timing_token = model_timings.set(timings)
+        try:
+            # Only the active job occupies a worker; waiting clients remain asynchronous.
+            result = await asyncio.to_thread(answer_request, request)
+            result["pipeline"].update(queue_seconds=waited, model_calls=timings)
+            return result
+        finally:
+            progress.reset(progress_token)
+            model_timings.reset(timing_token)
 
 
 def answer_request(request: ChatRequest):
@@ -168,8 +293,11 @@ def answer_request(request: ChatRequest):
                 "normalization": "identity",
             }
         else:
+            stage("understanding")
             classification = classify_intent(question)
-            available = model_available()
+            # A tags probe cannot predict whether inference will succeed. Let the actual
+            # request reconnect or report its error, avoiding a redundant failure point.
+            available = True
             if classification["confident"] and classification["route"] == "identity":
                 plan = {
                     "route": "identity",
@@ -177,8 +305,6 @@ def answer_request(request: ChatRequest):
                     "meaning": "",
                     "normalization": "intent_classifier",
                 }
-            elif not available:
-                raise GenerationError("The local model is unavailable. Start Ollama, then retry.")
             elif classification["confident"] and classification["route"] == "general":
                 plan = {
                     "query": "",
@@ -197,6 +323,7 @@ def answer_request(request: ChatRequest):
         queries = plan.get("queries", [query] if query else [])
         sources = []
         if plan["route"] in ("university", "mixed", "advising"):
+            stage("searching")
             if not (DATA_DIR / "index.npz").exists():
                 raise HTTPException(503, "University sources are not indexed yet.")
             if plan["route"] == "advising":
@@ -223,6 +350,7 @@ def answer_request(request: ChatRequest):
                             sources.append({**hit, "citation": len(sources) + 1})
                             seen.add(key)
         retrieved = time.perf_counter()
+        stage("answering")
         answer, mode = generate_answer(
             question,
             language,

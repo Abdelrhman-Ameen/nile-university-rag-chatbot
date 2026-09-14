@@ -7,6 +7,7 @@ An atomic NPZ file contains both chunks and vectors, with no pickle loading.
 import json
 import re
 import threading
+from copy import deepcopy
 from functools import lru_cache
 from pathlib import Path
 
@@ -18,6 +19,7 @@ from nu_chat.config import (
     EMBEDDING_DEVICE,
     EMBEDDING_MODEL,
     MIN_SIMILARITY,
+    RERANK_BATCH_SIZE,
     RERANK_MODEL,
     RETRIEVAL_THREADS,
     ROOT,
@@ -249,8 +251,21 @@ class Retriever:
         self.bm25 = BM25Okapi([search_terms(c["title"] + " " + c["text"]) for c in self.chunks])
         self.title_terms = [set(search_terms(c["title"])) for c in self.chunks]
         self.lock = threading.Lock()
+        # A new index creates a new Retriever and therefore an empty cache. Keep
+        # every retrieval option in the key; callers receive independent dictionaries.
+        self.cached_search = lru_cache(maxsize=128)(self._search)
 
     def search(
+        self,
+        query: str,
+        original: str = "",
+        k: int = TOP_K,
+        meaning: str = "",
+        prefer_text: bool = False,
+    ) -> list[dict]:
+        return deepcopy(self.cached_search(query, original, k, meaning, prefer_text))
+
+    def _search(
         self,
         query: str,
         original: str = "",
@@ -352,7 +367,9 @@ class Retriever:
                     )
                     for i in candidates
                 ]
-                relevance = ranker.predict(pairs, batch_size=8, show_progress_bar=False)
+                relevance = ranker.predict(
+                    pairs, batch_size=RERANK_BATCH_SIZE, show_progress_bar=False
+                )
                 reranked = dict(zip(candidates, map(float, relevance)))
                 # The ranker is a relevance signal, not a truth probability.
                 # Retain exact title/topic matching as a small independent signal.

@@ -360,7 +360,11 @@ def test_invalid_answer_retries_once_and_recovers(monkeypatch, source):
 
 def test_api_model_failure_releases_lock(tmp_path, monkeypatch, client):
     monkeypatch.setattr(api, "DATA_DIR", tmp_path)
-    monkeypatch.setattr(api, "model_available", lambda: False)
+
+    def fail(*args):
+        raise generation.GenerationError("The local model is unavailable")
+
+    monkeypatch.setattr(api, "plan_query", fail)
     client = client
     for _ in range(2):
         response = client.post("/api/chat", json={"question": "hello"})
@@ -370,53 +374,54 @@ def test_api_model_failure_releases_lock(tmp_path, monkeypatch, client):
 
 
 def test_concurrent_requests_wait_then_release_in_order():
-    import threading
-    from concurrent.futures import ThreadPoolExecutor
+    import asyncio
 
     from nu_chat.request_queue import RequestQueue
 
-    queue = RequestQueue(timeout=2)
-    entered = threading.Event()
-    release = threading.Event()
-    order = []
+    async def scenario():
+        queue = RequestQueue(timeout=2)
+        entered, release = asyncio.Event(), asyncio.Event()
+        order = []
 
-    def first():
-        with queue.slot():
-            order.append(1)
-            entered.set()
-            assert release.wait(2)
+        async def first():
+            async with queue.slot():
+                order.append(1)
+                entered.set()
+                await release.wait()
 
-    def second():
-        assert entered.wait(2)
-        with queue.slot():
-            order.append(2)
+        async def second():
+            await entered.wait()
+            async with queue.slot():
+                order.append(2)
 
-    with ThreadPoolExecutor(max_workers=2) as workers:
-        one = workers.submit(first)
-        two = workers.submit(second)
-        assert entered.wait(2)
+        one, two = asyncio.create_task(first()), asyncio.create_task(second())
+        await entered.wait()
         release.set()
-        one.result()
-        two.result()
-    assert order == [1, 2]
-    assert not queue.active
-    with queue.slot():
-        assert queue.active
+        await asyncio.gather(one, two)
+        assert order == [1, 2] and not queue.active
+        async with queue.slot():
+            assert queue.active
+
+    asyncio.run(scenario())
 
 
 def test_queue_timeout_does_not_release_another_request():
+    import asyncio
+
     from fastapi import HTTPException
 
     from nu_chat.request_queue import RequestQueue
 
-    queue = RequestQueue(timeout=0.01)
-    with queue.slot():
-        with pytest.raises(HTTPException) as error:
-            with queue.slot():
-                pass
-        assert error.value.status_code == 503
-        assert queue.active
-    assert not queue.active
+    async def scenario():
+        queue = RequestQueue(timeout=0.01)
+        async with queue.slot():
+            with pytest.raises(HTTPException) as error:
+                async with queue.slot():
+                    pass
+            assert error.value.status_code == 503 and queue.active
+        assert not queue.active
+
+    asyncio.run(scenario())
 
 
 @pytest.mark.parametrize(

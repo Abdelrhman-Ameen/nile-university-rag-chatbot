@@ -4,22 +4,27 @@ import json
 import logging
 import re
 import time
+from copy import deepcopy
 from datetime import datetime
+from functools import lru_cache
 
 import httpx
 
 from nu_chat.citations import citation_ids, normalize_citations
-from nu_chat.config import MODEL_THINKING, OLLAMA_MODEL, OLLAMA_URL
+from nu_chat.config import MODEL_KEEP_ALIVE, MODEL_THINKING, OLLAMA_MODEL, OLLAMA_URL
 from nu_chat.evidence import scoped_queries
 from nu_chat.intent import POLICIES
 from nu_chat.language import FRANCO_HINTS, fallback_query, tokens
 from nu_chat.persona import GENERAL_NOTE, IDENTITY
 from nu_chat.retrieval import ABBREVIATIONS
+from nu_chat.telemetry import current_stage, model_timings, stage
 
 log = logging.getLogger(__name__)
 model_client = httpx.Client(
-    transport=httpx.HTTPTransport(retries=4),
-    limits=httpx.Limits(max_connections=4, max_keepalive_connections=4, keepalive_expiry=60),
+    transport=httpx.HTTPTransport(
+        retries=2,
+        limits=httpx.Limits(max_connections=4, max_keepalive_connections=4, keepalive_expiry=60),
+    ),
     trust_env=False,
 )
 LANGUAGES = {
@@ -57,7 +62,7 @@ class GenerationError(RuntimeError):
 
 def model_available() -> bool:
     try:
-        response = model_client.get(OLLAMA_URL + "/api/tags", timeout=2)
+        response = model_client.get(OLLAMA_URL + "/api/ps", timeout=httpx.Timeout(2))
         response.raise_for_status()
         expected = OLLAMA_MODEL if ":" in OLLAMA_MODEL else OLLAMA_MODEL + ":latest"
         return any(
@@ -68,6 +73,21 @@ def model_available() -> bool:
         return False
 
 
+def warm_model():
+    """Load once at startup; keep the model resident between conversations."""
+    response = model_client.post(
+        OLLAMA_URL + "/api/generate",
+        json={
+            "model": OLLAMA_MODEL,
+            "stream": False,
+            "keep_alive": MODEL_KEEP_ALIVE,
+            "options": {"num_ctx": 8192},
+        },
+        timeout=httpx.Timeout(180, connect=2, write=10, pool=2),
+    )
+    response.raise_for_status()
+
+
 def call_model(
     messages: list[dict],
     max_tokens: int = 1600,
@@ -75,6 +95,7 @@ def call_model(
     structured: bool | dict = False,
     temperature: float | None = None,
 ) -> str:
+    started = time.perf_counter()
     schema = ANSWER_SCHEMA if structured is True else structured
     for attempt in range(2):
         response = model_client.post(
@@ -85,7 +106,7 @@ def call_model(
                 "messages": messages,
                 "stream": False,
                 "think": MODEL_THINKING,
-                "keep_alive": "30m",
+                "keep_alive": MODEL_KEEP_ALIVE,
                 "options": {
                     "temperature": temperature
                     if temperature is not None
@@ -103,7 +124,9 @@ def call_model(
                     "num_ctx": 8192,
                 },
             },
-            timeout=max(90, timeout) if MODEL_THINKING else timeout,
+            timeout=httpx.Timeout(
+                max(90, timeout) if MODEL_THINKING else timeout, connect=2, write=10, pool=2
+            ),
         )
         if response.status_code not in {500, 502, 503, 504} or attempt == 1:
             break
@@ -113,6 +136,24 @@ def call_model(
     result = response.json()
     if not isinstance(result, dict) or not isinstance(result.get("message"), dict):
         raise ValueError("Invalid model response")
+    timings = model_timings.get()
+    if timings is not None:
+        timings.append(
+            {
+                "stage": current_stage.get(),
+                "seconds": round(time.perf_counter() - started, 3),
+                **{
+                    key: result.get(key)
+                    for key in (
+                        "load_duration",
+                        "prompt_eval_count",
+                        "prompt_eval_duration",
+                        "eval_count",
+                        "eval_duration",
+                    )
+                },
+            }
+        )
     if result.get("done_reason") == "length":
         raise ValueError("Model output was truncated")
     content = result["message"].get("content")
@@ -122,7 +163,15 @@ def call_model(
 
 
 def plan_query(question: str, language: str, history: list[dict]) -> dict:
+    # Planning has no live data. Exact language + question + conversation keys
+    # avoid repeating it; evidence retrieval still uses the current index.
+    return deepcopy(_cached_plan(question, language, json.dumps(history[-6:], ensure_ascii=False)))
+
+
+@lru_cache(maxsize=128)
+def _cached_plan(question: str, language: str, history_json: str) -> dict:
     """Classify intent before retrieval; a university mention alone is not a fact request."""
+    history = json.loads(history_json)
     prompt = """Classify the CURRENT message and return JSON: intent, meaning, queries, general_question.
 meaning: faithful standalone English translation. Use history only to resolve real follow-ups.
 Egyptian Franco/Arabizi is Arabic in Latin letters/digits, not French. Preserve negation.
@@ -379,6 +428,7 @@ def generate_answer(
         ]
     for attempt in range(2):
         try:
+            stage("answering" if attempt == 0 else "refining")
             raw = call_model(
                 messages,
                 max_tokens=1000 if route == "general" else (700 if attempt == 0 else 400),
@@ -483,6 +533,7 @@ def generate_answer(
 
 def verify_grounding(question: str, answer: str, sources: list[dict]) -> list[str]:
     """A separate evidence check catches drift; it is still a model, not a truth guarantee."""
+    stage("checking")
     schema = {
         "type": "object",
         "properties": {"unsupported_claims": {"type": "array", "items": {"type": "string"}}},

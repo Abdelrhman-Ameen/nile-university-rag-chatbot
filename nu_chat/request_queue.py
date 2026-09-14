@@ -1,9 +1,9 @@
-"""A small FIFO queue for one local GPU, with bounded waiting and guaranteed release."""
+"""Bounded FIFO admission for one GPU, without occupying waiting worker threads."""
 
-import threading
+import asyncio
 import time
 from collections import deque
-from contextlib import contextmanager
+from contextlib import asynccontextmanager
 
 from fastapi import HTTPException
 
@@ -12,15 +12,15 @@ class RequestQueue:
     def __init__(self, capacity=8, timeout=120):
         self.capacity = capacity
         self.timeout = timeout
-        self.condition = threading.Condition()
+        self.condition = asyncio.Condition()
         self.waiting = deque()
         self.active = False
 
-    @contextmanager
-    def slot(self):
+    @asynccontextmanager
+    async def slot(self):
         ticket = object()
         started = time.monotonic()
-        with self.condition:
+        async with self.condition:
             if len(self.waiting) >= self.capacity:
                 raise HTTPException(
                     429,
@@ -31,11 +31,12 @@ class RequestQueue:
             try:
                 while self.active or self.waiting[0] is not ticket:
                     remaining = self.timeout - (time.monotonic() - started)
-                    if remaining <= 0:
+                    try:
+                        await asyncio.wait_for(self.condition.wait(), max(0, remaining))
+                    except TimeoutError as exc:
                         raise HTTPException(
                             503, "The model is taking longer than expected. Please retry."
-                        )
-                    self.condition.wait(timeout=remaining)
+                        ) from exc
                 self.waiting.popleft()
                 self.active = True
             except BaseException:
@@ -45,6 +46,6 @@ class RequestQueue:
         try:
             yield round(time.monotonic() - started, 2)
         finally:
-            with self.condition:
+            async with self.condition:
                 self.active = False
                 self.condition.notify_all()

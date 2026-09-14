@@ -1,0 +1,1517 @@
+{
+  "requests": [
+    {
+      "label": "identity",
+      "question": "انت مين؟",
+      "status": 200,
+      "result": {
+        "answer": "أنا NU Chat، شات بوت معمول مخصوص لجامعة النيل في مصر. بساعدك تعرف برامجها وفرصها، وتناقش أي حاجة مقلقاك عشان تقرر لو مناسبة ليك. وكمان أقدر أجاوب على أسئلة عامة. أنا مشروع طلابي مستقل، مش خدمة الدعم الرسمية للجامعة.",
+        "sources": [],
+        "mode": "identity",
+        "pipeline": {
+          "detected_language": "ar",
+          "reply_language": "ar",
+          "retrieval_query": "",
+          "retrieval_queries": [],
+          "current_information_links": false,
+          "route": "identity",
+          "general_information": false,
+          "message_meaning": "انت مين؟",
+          "normalization": "identity",
+          "intent_classification": null,
+          "encoder": null,
+          "generator": null,
+          "elapsed_seconds": 0.0,
+          "planning_seconds": 0.0,
+          "retrieval_seconds": 0.0,
+          "generation_seconds": 0.0
+        }
+      },
+      "seconds": 0.013
+    },
+    {
+      "label": "fees",
+      "question": "مصروفات حاسبات ومعلومات كام قبل الخصم؟",
+      "status": 200,
+      "result": {
+        "answer": "مصاريف السنة الأولى (Freshman) في كلية تكنولوجيا المعلومات وعلوم الحاسب (School of Information Technology and Computer Science) هي 193,680 جنيه مصري (EGP) للسنة الدراسية 2026/2027، وده المبلغ قبل خصم المنح (Category 4: scholarship discount 0%) [1].\n\nالتفاصيل والتحديثات على الصفحات الرسمية: [Fees and Financials — 2026/2027](https://nu.edu.eg/fees-and-financials).",
+        "sources": [
+          {
+            "id": "e11a9e460e01b2db-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+            "text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+            "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "similarity": 0.778,
+            "score": 0.8453,
+            "rerank_score": 1.0,
+            "citation": 1,
+            "answer_text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "cited": true
+          },
+          {
+            "id": "a26b53f4f7d8f3b0-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Engineering and Applied Sciences — Tuition fees by discount category",
+            "text": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+            "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "similarity": 0.7375,
+            "score": 0.7057,
+            "rerank_score": 0.8655,
+            "citation": 2,
+            "answer_text": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "cited": false
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "ar",
+          "reply_language": "ar",
+          "retrieval_query": "ITCS tuition fees | ITCS tuition fees before discount",
+          "retrieval_queries": [
+            "ITCS tuition fees",
+            "ITCS tuition fees before discount"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "What are the fees for the School of Information Technology and Computer Science before the discount?",
+          "normalization": "model",
+          "intent_classification": {
+            "label": "mixed",
+            "intent_score": 0.556,
+            "score": 0.556,
+            "margin": 0.3534,
+            "confident": false,
+            "route": "mixed",
+            "general_information": true,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 7.97,
+          "planning_seconds": 2.79,
+          "retrieval_seconds": 0.46,
+          "generation_seconds": 4.72,
+          "queue_seconds": 0.0
+        }
+      },
+      "seconds": 7.975
+    },
+    {
+      "label": "franco",
+      "question": "nice bs azay a3ml apply? we elmsarref kam?",
+      "status": 200,
+      "result": {
+        "answer": "عشان تقدم في جامعة النيل (NU)، الخطوات هي:\n1. ادخل على موقع الجامعة ودوس على زرار \"Apply Now\" [1] [2].\n2. اعمل حساب خاص بيك باستخدام إيميلك [1] [2].\n3. املأ بيانات التقديم [1] [2].\n4. احجز اختبار تحديد مستوى اللغة الإنجليزية [1] [2].\n5. ارفع الأوراق المطلوبة [1] [2].\n6. ادفع مصاريف التقديم واختبار اللغة أونلاين أو عن طريق تحويل بنكي (CIB أو QNB) [1] [2].\n7. قدم الطلب [1] [2].\n\nبالنسبة للمصاريف الدراسية للسنة الأولى (Freshman) للعام الأكاديمي 2026/2027، بتختلف حسب الكلية (بدون خصومات):\n- كلية هندسة وعلوم تطبيقية: 193,680 جنيه مصري [3].\n- كلية إدارة الأعمال: 152,640 جنيه مصري [4].\n- كلية تكنولوجيا المعلومات وعلوم الحاسب: 193,680 جنيه مصري [5].\n- كلية هندسة الطاقة والبيئة: 96,840 جنيه مصري [6].\n- كلية التكنولوجيا الحيوية: 183,960 جنيه مصري [7].\n\nالتفاصيل والتحديثات على الصفحات الرسمية: [How to apply?](https://itcs.nu.edu.eg/apply-now) · [How to Apply](https://nu.edu.eg/how-to-apply) · [Fees and Financials — 2026/2027](https://nu.edu.eg/fees-and-financials).",
+        "sources": [
+          {
+            "id": "69ba1b7a9026c94d-s5-0",
+            "url": "https://itcs.nu.edu.eg/apply-now",
+            "title": "How to apply? — Apply Now | Information Technology and Computer Science School",
+            "text": "How to apply?\nStep 1:\nVisit NU Website and apply through the “Apply Now” button\nStep 2:\nCreate your account with your email address\nStep 3:\nFill out the application data\nStep 4:\nReserve the English placement test\nStep 5:\nUpload the required documents\nStep 6:\nPay the application fees online or via bank transfer (CIB or QNB)\nStep 7:\nSubmit the Application",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:18:48.071666+00:00",
+            "archived": false,
+            "content_sha256": "e6ddba7135dfab2c43f16574379a9673ce884d46f3018bb33be8f5035907e52a",
+            "context": "How to apply?\nStep 1:\nVisit NU Website and apply through the “Apply Now” button\nStep 2:\nCreate your account with your email address\nStep 3:\nFill out the application data\nStep 4:\nReserve the English placement test\nStep 5:\nUpload the required documents\nStep 6:\nPay the application fees online or via bank transfer (CIB or QNB)\nStep 7:\nSubmit the Application",
+            "similarity": 0.5538,
+            "score": 0.7005,
+            "rerank_score": 0.9966,
+            "citation": 1,
+            "cited": true
+          },
+          {
+            "id": "8870d38c3b923bc8-0",
+            "url": "https://nu.edu.eg/how-to-apply",
+            "title": "How to Apply | NU",
+            "text": "## How to Apply\n## How to Apply\n## Click on \"Apply Now\" button and create your account with your email address\n## Fill out application data\n## Reserve the English placement test\n## Upload required documents\n## Pay the application and English test fees online\n## Submit the application\nN.B: Credit Transfer\nStudents seeking credit transfer and who have attended studies in other institutions must submit the official academic transcript, course descriptions, and certificates proving attendance at the institution, even if the credit hours have not been earned. They must have an overall GPA not less than 2.0 out of 4.0.\n## Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:00.867374+00:00",
+            "archived": false,
+            "content_sha256": "1328eec33292b6c81002167c044b2f7e370b09c919ec5b824b97af5b2999b432",
+            "context": "## How to Apply\n## How to Apply\n## Click on \"Apply Now\" button and create your account with your email address\n## Fill out application data\n## Reserve the English placement test\n## Upload required documents\n## Pay the application and English test fees online\n## Submit the application\nN.B: Credit Transfer\nStudents seeking credit transfer and who have attended studies in other institutions must submit the official academic transcript, course descriptions, and certificates proving attendance at the institution, even if the credit hours have not been earned. They must have an overall GPA not less than 2.0 out of 4.0.\n## Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "similarity": 0.4918,
+            "score": 0.6561,
+            "rerank_score": 0.978,
+            "citation": 2,
+            "cited": true
+          },
+          {
+            "id": "a26b53f4f7d8f3b0-74",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Engineering and Applied Sciences — Tuition fees by discount category",
+            "text": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+            "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "similarity": 0.7927,
+            "score": 0.864,
+            "rerank_score": 0.9713,
+            "citation": 3,
+            "answer_text": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "cited": true
+          },
+          {
+            "id": "e12f8d73ad7a3ffc-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Business Administration — Tuition fees by discount category",
+            "text": "School of Business Administration. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 76,320 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 91,584 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 122,112 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 152,640 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+            "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Business Administration. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 76,320 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 91,584 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 122,112 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 152,640 EGP.",
+            "similarity": 0.7574,
+            "score": 0.8409,
+            "rerank_score": 0.9702,
+            "citation": 4,
+            "answer_text": "School of Business Administration. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 152,640 EGP.",
+            "cited": true
+          },
+          {
+            "id": "e11a9e460e01b2db-74",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+            "text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+            "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "similarity": 0.7445,
+            "score": 0.8302,
+            "rerank_score": 0.9627,
+            "citation": 5,
+            "answer_text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "cited": true
+          },
+          {
+            "id": "5662ecb1752040e9-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Energy and Environmental Engineering — Tuition fees by discount category",
+            "text": "School of Energy and Environmental Engineering. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 48,420 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 58,104 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 77,472 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 96,840 EGP.\nThe image additionally labels this school with 50% Discount and Available for 60 seats only; amounts above are the amounts printed in the table.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+            "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Energy and Environmental Engineering. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 48,420 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 58,104 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 77,472 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 96,840 EGP.\nThe image additionally labels this school with 50% Discount and Available for 60 seats only; amounts above are the amounts printed in the table.",
+            "similarity": 0.7452,
+            "score": 0.833,
+            "rerank_score": 0.9224,
+            "citation": 6,
+            "answer_text": "School of Energy and Environmental Engineering. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 96,840 EGP.\nThe image additionally labels this school with 50% Discount and Available for 60 seats only; amounts above are the amounts printed in the table.",
+            "cited": true
+          },
+          {
+            "id": "5d4c8c939a671bea-74",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Biotechnology — Tuition fees by discount category",
+            "text": "School of Biotechnology. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 91,980 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 110,376 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 147,168 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 183,960 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+            "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Biotechnology. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 91,980 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 110,376 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 147,168 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 183,960 EGP.",
+            "similarity": 0.7096,
+            "score": 0.8094,
+            "rerank_score": 0.8449,
+            "citation": 7,
+            "answer_text": "School of Biotechnology. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 183,960 EGP.",
+            "cited": true
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "franco",
+          "reply_language": "ar",
+          "retrieval_query": "how to apply to Nile University | Nile University tuition fees",
+          "retrieval_queries": [
+            "how to apply to Nile University",
+            "Nile University tuition fees"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "Nice, how do I apply? And how much is the tuition?",
+          "normalization": "model",
+          "intent_classification": {
+            "label": "mixed",
+            "intent_score": 0.2627,
+            "score": 0.2627,
+            "margin": 0.0264,
+            "confident": false,
+            "route": "mixed",
+            "general_information": true,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 16.33,
+          "planning_seconds": 2.55,
+          "retrieval_seconds": 0.3,
+          "generation_seconds": 13.49,
+          "queue_seconds": 0.0
+        }
+      },
+      "seconds": 16.337
+    },
+    {
+      "label": "location",
+      "question": "Where is Nile University in Egypt?",
+      "status": 200,
+      "result": {
+        "answer": "Nile University is located at Juhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt [1] [3] [4] [5]. The library specifically is located at 26 July El Mehwar Road, El Sheikh Zayed [2].",
+        "sources": [
+          {
+            "id": "fc92e8d926300290-0",
+            "url": "https://nu.edu.eg/contact-us-Departments",
+            "title": "Contact Us | NU",
+            "text": "## Hotline ## 16453\n## Our Location\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n##\n## NU Departments\nThe academic departments, professional services, administration, research centers, facilities, institutes and campus services work in harmony to make up Nile University. For any support needed, faculty members, students, or outsiders can easily reach out to our department through email or phone.\nRead More\n## Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:50.915373+00:00",
+            "archived": false,
+            "content_sha256": "3ef5b35c1b62eac5e9f91c8980ccef639edf39fcacb5519a07b2c3c707105f71",
+            "context": "## Hotline ## 16453\n## Our Location\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n##\n## NU Departments\nThe academic departments, professional services, administration, research centers, facilities, institutes and campus services work in harmony to make up Nile University. For any support needed, faculty members, students, or outsiders can easily reach out to our department through email or phone.\nRead More\n## Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "similarity": 0.7044,
+            "score": 0.6851,
+            "rerank_score": 0.9974,
+            "citation": 1,
+            "cited": true
+          },
+          {
+            "id": "nu-library-public-contact-20260914-0",
+            "url": "https://www.library.nu.edu.eg/",
+            "title": "Nile University Library — public contact details",
+            "text": "Nile University Egypt library contact details: Library@nu.edu.eg. Telephone: (+202) 3854-1861 and (+202) 3854-1863. Published hours: Sunday–Thursday, 9 am–7 pm; weekends closed. Address: 26 July El Mehwar Road, El Sheikh Zayed. This is a dated snapshot of the official homepage, not a live availability check.",
+            "kind": "reviewed-web",
+            "page": null,
+            "fetched_at": "2026-09-14T01:25:38.384208+00:00",
+            "archived": false,
+            "reviewed_at": "2026-09-14",
+            "retrieval_method": "Manually reviewed public search-index copy of the official library homepage, indexed approximately two weeks before review. Direct HTTPS collection failed certificate verification; verification was not disabled.",
+            "context": "Nile University Egypt library contact details: Library@nu.edu.eg. Telephone: (+202) 3854-1861 and (+202) 3854-1863. Published hours: Sunday–Thursday, 9 am–7 pm; weekends closed. Address: 26 July El Mehwar Road, El Sheikh Zayed. This is a dated snapshot of the official homepage, not a live availability check.",
+            "similarity": 0.6701,
+            "score": 0.6134,
+            "rerank_score": 0.996,
+            "citation": 2,
+            "cited": true
+          },
+          {
+            "id": "6ee2341174c1b27f-s17-0",
+            "url": "https://nu.edu.eg/students",
+            "title": "Website contact details — Students | NU",
+            "text": "Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:17:27.991755+00:00",
+            "archived": false,
+            "content_sha256": "c5ec318612becc1df160d094f9b7c2551387a0bfd709dd17e3941344d3fb1005",
+            "context": "Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "similarity": 0.7431,
+            "score": 0.6125,
+            "rerank_score": 0.9394,
+            "citation": 3,
+            "cited": true
+          },
+          {
+            "id": "38793453d25bbab6-148",
+            "url": "https://nu.edu.eg/research-at-NU/research-events?page=5",
+            "title": "Research Events | NU",
+            "text": "Via Zoom\n6\nFeb\n## 11th UGRF\nVia Zoom\n8\nAug\n## 1st Egyptian Junior Researcher Competition (UGRF10)\nNU Campus\n21\nDec\n## 9th Undergraduate Research Forum (UGRF09)\nNU Campus\n22\nJun\n## 8th Undergraduate Research Forum (UGRF08)\nNU Campus\n15\nDec\n## 7th Undergraduate Research Forum (UGRF07)\nNU Campus\n24\nOct\n## Postgraduate Research Forum\nNU Campus\n19\nMay\n## 6th Undergraduate Research Forum (UGRF06)\nNU Campus\n## Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:25:19.581024+00:00",
+            "archived": false,
+            "content_sha256": "bf90c5bb7fe0fe662c9ccadf10ee4c375401772826a7bcb0c731f1cb2fd2371c",
+            "context": "Via Zoom\n6\nFeb\n## 11th UGRF\nVia Zoom\n8\nAug\n## 1st Egyptian Junior Researcher Competition (UGRF10)\nNU Campus\n21\nDec\n## 9th Undergraduate Research Forum (UGRF09)\nNU Campus\n22\nJun\n## 8th Undergraduate Research Forum (UGRF08)\nNU Campus\n15\nDec\n## 7th Undergraduate Research Forum (UGRF07)\nNU Campus\n24\nOct\n## Postgraduate Research Forum\nNU Campus\n19\nMay\n## 6th Undergraduate Research Forum (UGRF06)\nNU Campus\n## Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "similarity": 0.6814,
+            "score": 0.6215,
+            "rerank_score": 0.853,
+            "citation": 4,
+            "cited": true
+          },
+          {
+            "id": "8c06a28b68c2d24b-148",
+            "url": "https://iecc.nu.edu.eg/contact-us/",
+            "title": "Contact Us - IECC",
+            "text": "edin\nTiktok\nYoutube\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n## Contact Us\nLinkedin\nFacebook\nInstagram\nTiktok\n## Nile University\nNU at a Glance\nAccreditations\nNU Tour\nGender Equity Plan\n## Quick Links\nHome\nOpen Opportunities\nContact Us\nNews & Events\nCareers\n## Services\nVenture Building\nVenture Business Accelerator\nUniversity Industry Collaboration\nCommunity Development\nCorporate Innovation\nManaging your Incubator\n## Copyrights © 2025 All Rights Reserved to IECC, Nile University",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:19:49.988340+00:00",
+            "archived": false,
+            "content_sha256": "4be438f8b71bfa6211c0967fb59c1e316f7d8bf40c0654d303540e7aa9882944",
+            "context": "edin\nTiktok\nYoutube\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n## Contact Us\nLinkedin\nFacebook\nInstagram\nTiktok\n## Nile University\nNU at a Glance\nAccreditations\nNU Tour\nGender Equity Plan\n## Quick Links\nHome\nOpen Opportunities\nContact Us\nNews & Events\nCareers\n## Services\nVenture Building\nVenture Business Accelerator\nUniversity Industry Collaboration\nCommunity Development\nCorporate Innovation\nManaging your Incubator\n## Copyrights © 2025 All Rights Reserved to IECC, Nile University",
+            "similarity": 0.2335,
+            "score": 0.221,
+            "rerank_score": 0.7308,
+            "citation": 5,
+            "cited": true
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "location of Nile University Egypt",
+          "retrieval_queries": [
+            "location of Nile University Egypt"
+          ],
+          "current_information_links": false,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "Where is Nile University in Egypt?",
+          "normalization": "model",
+          "intent_classification": {
+            "label": "university",
+            "intent_score": 0.3211,
+            "score": 0.3211,
+            "margin": 0.052,
+            "confident": false,
+            "route": "university",
+            "general_information": false,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 7.48,
+          "planning_seconds": 2.27,
+          "retrieval_seconds": 0.19,
+          "generation_seconds": 5.02,
+          "queue_seconds": 0.0
+        }
+      },
+      "seconds": 7.481
+    },
+    {
+      "label": "advice",
+      "question": "هل الجامعة كويسة لدراسة حاسبات؟",
+      "status": 200,
+      "result": {
+        "answer": "جامعة النيل بتقدم برنامج قوي في علوم الحاسب (Computer Science) بيركز على فهم أنظمة الكمبيوتر الحديثة بعمق وتطبيق نظريات الحاسب وتصميمها لحل مشكلات واقعية [2]. اللي بيميز الدراسة هناك هو التركيز على الابتكار من خلال منصات زي \"منتدى أبحاث البكالوريوس\" (UGRF) اللي بيسمح للطلاب في مختلف السنوات بالمشاركة في أبحاث علمية ومشاريع تخرج [3]. كمان فيه مركز الابتكار وريادة الأعمال (IECC) اللي بيقدم دعم عملي في إدارة التكنولوجيا وتطوير نماذج الأعمال [4].\n\nلو بتدور على فرص نمو، الجامعة بتوفر برامج تبادل طلابي في مجال تكنولوجيا المعلومات مع جامعات دولية في أماكن زي أمريكا وفرنسا وأوستريا [5]. ده ممكن يساعدك تبني خبرة دولية في مجالك. إيه أكتر حاجة بتهمك في دراسة الحاسبات، هل هي الجانب البحثي ولا ريادة الأعمال؟",
+        "sources": [
+          {
+            "id": "2a13ac6eb26ba129-0",
+            "url": "https://itcs.nu.edu.eg/program/undergraduate-program-computer-science-cs/courses/selected-topics-undergraduate-program",
+            "title": "Selected Topics in Undergraduate Program of Computer Science (CS) | Information Technology and Computer Science School",
+            "text": "## Selected Topics in Undergraduate Program of Computer Science (CS)\n## Selected Topics in Undergraduate Program of Computer Science (CS)\nThis course is tailored to introduce students to the latest advances in the various fields in\nCourse ID\nCSCI479\nProgram\nComputer Science\nLevel\nUndergraduate\nCredit Hours\nCH:3\n## Website contact details\n16453",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:18:33.203953+00:00",
+            "archived": false,
+            "content_sha256": "19000cb88f2a7a57a2ffedd284e31e147253bf073db57b8331398935790b3f3e",
+            "context": "## Selected Topics in Undergraduate Program of Computer Science (CS)\n## Selected Topics in Undergraduate Program of Computer Science (CS)\nThis course is tailored to introduce students to the latest advances in the various fields in\nCourse ID\nCSCI479\nProgram\nComputer Science\nLevel\nUndergraduate\nCredit Hours\nCH:3\n## Website contact details\n16453",
+            "similarity": 0.6206,
+            "score": 0.6028,
+            "rerank_score": 0.9953,
+            "citation": 1,
+            "answer_text": "## Selected Topics in Undergraduate Program of Computer Science (CS)\n## Selected Topics in Undergraduate Program of Computer Science (CS)\nThis course is tailored to introduce students to the latest advances in the various fields in\nCourse ID\nCSCI479\nProgram\nComputer Science\nLevel\nUndergraduate\nCredit Hours\nCH:3\n## Website contact details\n16453",
+            "cited": false
+          },
+          {
+            "id": "2f3de9c411680a48-s7-0",
+            "url": "https://itcs.nu.edu.eg/",
+            "title": "Computer Science — Home page | Information Technology and Computer Science School",
+            "text": "Computer Science\nComputer Science (CS) is about understanding modern computing systems at a deep level. The CS program provides students with enormous knowledge that builds their ability to apply Computer Science theories, abstraction, design, and implementation to solve real-life problems.\nRead more",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:26.980942+00:00",
+            "archived": false,
+            "content_sha256": "0660f20e5dee660aec5da24d19c7cc33493c14eb65ebc7a4330d1f112a3d23fd",
+            "context": "Computer Science\nComputer Science (CS) is about understanding modern computing systems at a deep level. The CS program provides students with enormous knowledge that builds their ability to apply Computer Science theories, abstraction, design, and implementation to solve real-life problems.\nRead more",
+            "similarity": 0.6957,
+            "score": 0.6105,
+            "rerank_score": 0.9981,
+            "citation": 2,
+            "answer_text": "Computer Science\nComputer Science (CS) is about understanding modern computing systems at a deep level. The CS program provides students with enormous knowledge that builds their ability to apply Computer Science theories, abstraction, design, and implementation to solve real-life problems.\nRead more",
+            "cited": true
+          },
+          {
+            "id": "96cdda725cbd65a8-74",
+            "url": "https://ugrf.nu.edu.eg/",
+            "title": "Home page | UGRF - Undergraduate Research Forum",
+            "text": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wael Akl - President of Nile University\n## Prof. Ahmed G. Radwan - Vice President for Research, Nile University\n## UGRF Documentary Videos\n## 15th UGRF Documentary Video\n## 14th UGRF Documentary Video\n## 13th UGRF Documentary Video\n## 12th UGRF Documentary Video\n## 11th UG",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:01.587986+00:00",
+            "archived": false,
+            "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+            "context": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wael Akl - President of Nile University\n## Prof. Ahmed G. Radwan - Vice President for Research, Nile University\n## UGRF Documentary Videos\n## 15th UGRF Documentary Video\n## 14th UGRF Documentary Video\n## 13th UGRF Documentary Video\n## 12th UGRF Documentary Video\n## 11th UG",
+            "similarity": 0.7113,
+            "score": 0.7624,
+            "rerank_score": 0.999,
+            "citation": 3,
+            "answer_text": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wael Akl - President of Nile University\n## Prof. Ahmed G. Radwan - Vice President for Research, Nile University\n## UGRF Documentary Videos\n## 15th UGRF Documentary Video\n## 14th UGRF Documentary Video\n## 13th UGRF Documentary Video\n## 12th UGRF Documentary Video\n## 11th UG",
+            "cited": true
+          },
+          {
+            "id": "aea915a4c78a58f9-s3-74",
+            "url": "https://iecc.nu.edu.eg/news/iecc-entrepreneurship-program-undergrad-track-concludes-its-third-and-final-round/",
+            "title": "Innovation Entrepreneurship and competitiveness Centre (IECC), is Nile University’s leading center that drives impact and economic growth. — IECC Entrepreneurship Program – Undergrad Track Concludes Its Third and Final Round - IECC",
+            "text": "Innovation Entrepreneurship and competitiveness Centre (IECC), is Nile University’s leading center that drives impact and economic growth.\nThe IECC utilizes Nile University versed know-how in management of technology, tangible industry experience with entrepreneurial approach. The result is market scale high impact innovations that increase industry competitiveness Through a team of professional practitioners, we bring necessary expertise to bridge co-founders and innovators resource gaps offering innovation management, entrepreneurial journey support, technology and business model advising, product design, engineering development and validation, go-to market strategy.",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:35:06.692861+00:00",
+            "archived": false,
+            "content_sha256": "5268b5340d63a2e4f7d2bad51bb8025b4142bd7245c9dbae7fb5dc1778c6c4c1",
+            "context": "Innovation Entrepreneurship and competitiveness Centre (IECC), is Nile University’s leading center that drives impact and economic growth.\nThe IECC utilizes Nile University versed know-how in management of technology, tangible industry experience with entrepreneurial approach. The result is market scale high impact innovations that increase industry competitiveness Through a team of professional practitioners, we bring necessary expertise to bridge co-founders and innovators resource gaps offering innovation management, entrepreneurial journey support, technology and business model advising, product design, engineering development and validation, go-to market strategy.",
+            "similarity": 0.5723,
+            "score": 0.6256,
+            "rerank_score": 0.9996,
+            "citation": 4,
+            "answer_text": "Innovation Entrepreneurship and competitiveness Centre (IECC), is Nile University’s leading center that drives impact and economic growth.\nThe IECC utilizes Nile University versed know-how in management of technology, tangible industry experience with entrepreneurial approach. The result is market scale high impact innovations that increase industry competitiveness Through a team of professional practitioners, we bring necessary expertise to bridge co-founders and innovators resource gaps offering innovation management, entrepreneurial journey support, technology and business model advising, product design, engineering development and validation, go-to market strategy.",
+            "cited": true
+          },
+          {
+            "id": "6637c9ef47423d28-s2-148",
+            "url": "https://nu.edu.eg/student-exchange",
+            "title": "Student Exchange Programs — Student Exchange | NU",
+            "text": ". Nile University’s degree programs are state-accredited and certified internationally.\nMoreover, Nile University academic programs adopt the credit hour system which allows for easy transfer of credits from other institutions.\nNile University offers Exchange programs in the areas of:\nEngineering and Applied Science\nBusiness Administration\nInformation Technologies and Computer Science\nBiotechnology\nNile University allows students to enroll for one semester abroad at international partner universities.\nList of available Exchange Programs:\nUniversity of Michigan – USA\nUniversity of Clermont - France\nRiga Technical University – Latvia\nUniversity of Applied Sciences Upper Austria – Austria\nGlasgow Caledonian University – Scotland, UK",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:00.868373+00:00",
+            "archived": false,
+            "content_sha256": "d3eee444896ec65f02239e83894a8a5174754aca1573b7e453e20632966cea81",
+            "context": ". Nile University’s degree programs are state-accredited and certified internationally.\nMoreover, Nile University academic programs adopt the credit hour system which allows for easy transfer of credits from other institutions.\nNile University offers Exchange programs in the areas of:\nEngineering and Applied Science\nBusiness Administration\nInformation Technologies and Computer Science\nBiotechnology\nNile University allows students to enroll for one semester abroad at international partner universities.\nList of available Exchange Programs:\nUniversity of Michigan – USA\nUniversity of Clermont - France\nRiga Technical University – Latvia\nUniversity of Applied Sciences Upper Austria – Austria\nGlasgow Caledonian University – Scotland, UK",
+            "similarity": 0.7891,
+            "score": 0.8092,
+            "rerank_score": 0.9973,
+            "citation": 5,
+            "answer_text": "Moreover, Nile University academic programs adopt the credit hour system which allows for easy transfer of credits from other institutions.\nNile University offers Exchange programs in the areas of:\nEngineering and Applied Science\nBusiness Administration\nInformation Technologies and Computer Science\nBiotechnology\nNile University allows students to enroll for one semester abroad at international partner universities.\nList of available Exchange Programs:\nUniversity of Michigan – USA\nUniversity of Clermont - France\nRiga Technical University – Latvia\nUniversity of Applied Sciences Upper Austria – Austria\nGlasgow Caledonian University – Scotland, UK",
+            "cited": true
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "ar",
+          "reply_language": "ar",
+          "retrieval_query": "computer science program at Nile University",
+          "retrieval_queries": [
+            "computer science program at Nile University"
+          ],
+          "current_information_links": false,
+          "route": "advising",
+          "general_information": false,
+          "message_meaning": "Is the university good for studying Computer Science?",
+          "normalization": "model",
+          "intent_classification": {
+            "label": "mixed",
+            "intent_score": 0.4335,
+            "score": 0.4335,
+            "margin": 0.1963,
+            "confident": false,
+            "route": "mixed",
+            "general_information": true,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 13.23,
+          "planning_seconds": 2.37,
+          "retrieval_seconds": 0.73,
+          "generation_seconds": 10.14,
+          "queue_seconds": 0.0
+        }
+      },
+      "seconds": 13.233
+    },
+    {
+      "label": "fees-repeat",
+      "question": "مصروفات حاسبات ومعلومات كام قبل الخصم؟",
+      "status": 200,
+      "result": {
+        "answer": "مصاريف كلية تكنولوجيا المعلومات وعلوم الحاسب (School of Information Technology and Computer Science) للسنة الأولى (Freshman) هي 193,680 جنيه مصري (EGP) قبل خصم المنح [1].\n\nالتفاصيل والتحديثات على الصفحات الرسمية: [Fees and Financials — 2026/2027](https://nu.edu.eg/fees-and-financials).",
+        "sources": [
+          {
+            "id": "e11a9e460e01b2db-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+            "text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+            "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "similarity": 0.778,
+            "score": 0.8453,
+            "rerank_score": 1.0,
+            "citation": 1,
+            "answer_text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "cited": true
+          },
+          {
+            "id": "a26b53f4f7d8f3b0-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Engineering and Applied Sciences — Tuition fees by discount category",
+            "text": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T00:23:31.377163+00:00",
+            "extracted_at": "2026-09-14T03:37:55.125777+00:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "similarity": 0.7375,
+            "score": 0.7057,
+            "rerank_score": 0.8655,
+            "citation": 2,
+            "answer_text": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "cited": false
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "ar",
+          "reply_language": "ar",
+          "retrieval_query": "ITCS tuition fees | ITCS tuition fees before discount",
+          "retrieval_queries": [
+            "ITCS tuition fees",
+            "ITCS tuition fees before discount"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "What are the fees for the School of Information Technology and Computer Science before the discount?",
+          "normalization": "model",
+          "intent_classification": {
+            "label": "mixed",
+            "intent_score": 0.556,
+            "score": 0.556,
+            "margin": 0.3534,
+            "confident": false,
+            "route": "mixed",
+            "general_information": true,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 7.1,
+          "planning_seconds": 2.73,
+          "retrieval_seconds": 0.43,
+          "generation_seconds": 3.93,
+          "queue_seconds": 0.0
+        }
+      },
+      "seconds": 7.1
+    },
+    {
+      "label": "overlap-retry",
+      "question": "What is UGRF?",
+      "status": 200,
+      "result": {
+        "answer": "The Undergraduate Research Forum (UGRF) is a flagship event at Nile University that has been held successfully for 11 years [2]. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students [1].\n\nOfficial pages for details and updates: [Home page](https://ugrf.nu.edu.eg/) · [22nd UGRF Submission Instructions](https://ugrf.nu.edu.eg/22nd-UGRF).",
+        "sources": [
+          {
+            "id": "96cdda725cbd65a8-74",
+            "url": "https://ugrf.nu.edu.eg/",
+            "title": "Home page | UGRF - Undergraduate Research Forum",
+            "text": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wael Akl - President of Nile University\n## Prof. Ahmed G. Radwan - Vice President for Research, Nile University\n## UGRF Documentary Videos\n## 15th UGRF Documentary Video\n## 14th UGRF Documentary Video\n## 13th UGRF Documentary Video\n## 12th UGRF Documentary Video\n## 11th UG",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:01.587986+00:00",
+            "archived": false,
+            "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+            "context": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wael Akl - President of Nile University\n## Prof. Ahmed G. Radwan - Vice President for Research, Nile University\n## UGRF Documentary Videos\n## 15th UGRF Documentary Video\n## 14th UGRF Documentary Video\n## 13th UGRF Documentary Video\n## 12th UGRF Documentary Video\n## 11th UG",
+            "similarity": 0.6972,
+            "score": 0.7775,
+            "rerank_score": 0.9997,
+            "citation": 1,
+            "cited": true
+          },
+          {
+            "id": "3a8a02050463a0f7-s8-74",
+            "url": "https://ugrf.nu.edu.eg/22nd-UGRF",
+            "title": "22nd UGRF Submission Instructions — 22nd UGRF | UGRF - Undergraduate Research Forum",
+            "text": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring to sponsor brilliant concepts and inspire solutions that can make a difference on a Wide scale.",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:01.583985+00:00",
+            "archived": false,
+            "content_sha256": "47d1b2b9ef6bf3f8f91fc730e0dc735c47118c809af2ef59b8cd385636ac3cb2",
+            "context": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring to sponsor brilliant concepts and inspire solutions that can make a difference on a Wide scale.",
+            "similarity": 0.6835,
+            "score": 0.7417,
+            "rerank_score": 0.9998,
+            "citation": 2,
+            "cited": true
+          },
+          {
+            "id": "3a8a02050463a0f7-s8-0",
+            "url": "https://ugrf.nu.edu.eg/22nd-UGRF",
+            "title": "22nd UGRF Submission Instructions — 22nd UGRF | UGRF - Undergraduate Research Forum",
+            "text": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:01.583985+00:00",
+            "archived": false,
+            "content_sha256": "47d1b2b9ef6bf3f8f91fc730e0dc735c47118c809af2ef59b8cd385636ac3cb2",
+            "context": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring",
+            "similarity": 0.6482,
+            "score": 0.7412,
+            "rerank_score": 0.9998,
+            "citation": 3,
+            "cited": false
+          },
+          {
+            "id": "96cdda725cbd65a8-0",
+            "url": "https://ugrf.nu.edu.eg/",
+            "title": "Home page | UGRF - Undergraduate Research Forum",
+            "text": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wa",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:01.587986+00:00",
+            "archived": false,
+            "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+            "context": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wa",
+            "similarity": 0.6114,
+            "score": 0.7188,
+            "rerank_score": 0.9997,
+            "citation": 4,
+            "cited": false
+          },
+          {
+            "id": "58cbccf021d6040f-148",
+            "url": "https://ugrf.nu.edu.eg/academic-staff/prof-alaa-sheta",
+            "title": "Prof. Alaa Sheta | UGRF - Undergraduate Research Forum",
+            "text": "in Information Technology from George Mason University, USA (1997) after completing his B.Sc. and M.Sc. degrees in Electronics and Communications Engineering from Cairo University.\nHis research has been funded by the U.S. National Science Foundation (NSF) and international research agencies. He has authored and co-authored more than 200 peer-reviewed publications, three books, and six book chapters, and supervised over 30 MSc and PhD theses. He is a Senior Member of IEEE and an associate editor of international scientific journals. His research interests include machine learning, data mining, image processing, deep learning, and robotics.\n## Website contact details\n16453",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:42:00.330805+00:00",
+            "archived": false,
+            "content_sha256": "a2225e9b1c5e8ba1bf240535124e3fa383415fa02cf271cdf3dadc916847f82e",
+            "context": "in Information Technology from George Mason University, USA (1997) after completing his B.Sc. and M.Sc. degrees in Electronics and Communications Engineering from Cairo University.\nHis research has been funded by the U.S. National Science Foundation (NSF) and international research agencies. He has authored and co-authored more than 200 peer-reviewed publications, three books, and six book chapters, and supervised over 30 MSc and PhD theses. He is a Senior Member of IEEE and an associate editor of international scientific journals. His research interests include machine learning, data mining, image processing, deep learning, and robotics.\n## Website contact details\n16453",
+            "similarity": 0.5513,
+            "score": 0.6155,
+            "rerank_score": 0.9959,
+            "citation": 5,
+            "cited": false
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "Undergraduate Research Forum Nile University",
+          "retrieval_queries": [
+            "Undergraduate Research Forum Nile University"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "What is UGRF?",
+          "normalization": "model",
+          "intent_classification": {
+            "label": "mixed",
+            "intent_score": 0.434,
+            "score": 0.434,
+            "margin": 0.2357,
+            "confident": false,
+            "route": "mixed",
+            "general_information": true,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 16.72,
+          "planning_seconds": 2.13,
+          "retrieval_seconds": 0.15,
+          "generation_seconds": 14.43,
+          "queue_seconds": 0.0
+        }
+      },
+      "seconds": 16.724
+    },
+    {
+      "label": "overlap-one",
+      "question": "What is UGRF?",
+      "status": 200,
+      "result": {
+        "answer": "The Undergraduate Research Forum (UGRF) is a flagship event at Nile University that has been held successfully for 11 years [2]. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students [1].\n\nOfficial pages for details and updates: [Home page](https://ugrf.nu.edu.eg/) · [22nd UGRF Submission Instructions](https://ugrf.nu.edu.eg/22nd-UGRF).",
+        "sources": [
+          {
+            "id": "96cdda725cbd65a8-74",
+            "url": "https://ugrf.nu.edu.eg/",
+            "title": "Home page | UGRF - Undergraduate Research Forum",
+            "text": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wael Akl - President of Nile University\n## Prof. Ahmed G. Radwan - Vice President for Research, Nile University\n## UGRF Documentary Videos\n## 15th UGRF Documentary Video\n## 14th UGRF Documentary Video\n## 13th UGRF Documentary Video\n## 12th UGRF Documentary Video\n## 11th UG",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:01.587986+00:00",
+            "archived": false,
+            "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+            "context": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wael Akl - President of Nile University\n## Prof. Ahmed G. Radwan - Vice President for Research, Nile University\n## UGRF Documentary Videos\n## 15th UGRF Documentary Video\n## 14th UGRF Documentary Video\n## 13th UGRF Documentary Video\n## 12th UGRF Documentary Video\n## 11th UG",
+            "similarity": 0.6972,
+            "score": 0.7775,
+            "rerank_score": 0.9997,
+            "citation": 1,
+            "cited": true
+          },
+          {
+            "id": "3a8a02050463a0f7-s8-74",
+            "url": "https://ugrf.nu.edu.eg/22nd-UGRF",
+            "title": "22nd UGRF Submission Instructions — 22nd UGRF | UGRF - Undergraduate Research Forum",
+            "text": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring to sponsor brilliant concepts and inspire solutions that can make a difference on a Wide scale.",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:01.583985+00:00",
+            "archived": false,
+            "content_sha256": "47d1b2b9ef6bf3f8f91fc730e0dc735c47118c809af2ef59b8cd385636ac3cb2",
+            "context": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring to sponsor brilliant concepts and inspire solutions that can make a difference on a Wide scale.",
+            "similarity": 0.6835,
+            "score": 0.7417,
+            "rerank_score": 0.9998,
+            "citation": 2,
+            "cited": true
+          },
+          {
+            "id": "3a8a02050463a0f7-s8-0",
+            "url": "https://ugrf.nu.edu.eg/22nd-UGRF",
+            "title": "22nd UGRF Submission Instructions — 22nd UGRF | UGRF - Undergraduate Research Forum",
+            "text": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:01.583985+00:00",
+            "archived": false,
+            "content_sha256": "47d1b2b9ef6bf3f8f91fc730e0dc735c47118c809af2ef59b8cd385636ac3cb2",
+            "context": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring",
+            "similarity": 0.6482,
+            "score": 0.7412,
+            "rerank_score": 0.9998,
+            "citation": 3,
+            "cited": false
+          },
+          {
+            "id": "96cdda725cbd65a8-0",
+            "url": "https://ugrf.nu.edu.eg/",
+            "title": "Home page | UGRF - Undergraduate Research Forum",
+            "text": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wa",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:16:01.587986+00:00",
+            "archived": false,
+            "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+            "context": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wa",
+            "similarity": 0.6114,
+            "score": 0.7188,
+            "rerank_score": 0.9997,
+            "citation": 4,
+            "cited": false
+          },
+          {
+            "id": "58cbccf021d6040f-148",
+            "url": "https://ugrf.nu.edu.eg/academic-staff/prof-alaa-sheta",
+            "title": "Prof. Alaa Sheta | UGRF - Undergraduate Research Forum",
+            "text": "in Information Technology from George Mason University, USA (1997) after completing his B.Sc. and M.Sc. degrees in Electronics and Communications Engineering from Cairo University.\nHis research has been funded by the U.S. National Science Foundation (NSF) and international research agencies. He has authored and co-authored more than 200 peer-reviewed publications, three books, and six book chapters, and supervised over 30 MSc and PhD theses. He is a Senior Member of IEEE and an associate editor of international scientific journals. His research interests include machine learning, data mining, image processing, deep learning, and robotics.\n## Website contact details\n16453",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T00:42:00.330805+00:00",
+            "archived": false,
+            "content_sha256": "a2225e9b1c5e8ba1bf240535124e3fa383415fa02cf271cdf3dadc916847f82e",
+            "context": "in Information Technology from George Mason University, USA (1997) after completing his B.Sc. and M.Sc. degrees in Electronics and Communications Engineering from Cairo University.\nHis research has been funded by the U.S. National Science Foundation (NSF) and international research agencies. He has authored and co-authored more than 200 peer-reviewed publications, three books, and six book chapters, and supervised over 30 MSc and PhD theses. He is a Senior Member of IEEE and an associate editor of international scientific journals. His research interests include machine learning, data mining, image processing, deep learning, and robotics.\n## Website contact details\n16453",
+            "similarity": 0.5513,
+            "score": 0.6155,
+            "rerank_score": 0.9959,
+            "citation": 5,
+            "cited": false
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "Undergraduate Research Forum Nile University",
+          "retrieval_queries": [
+            "Undergraduate Research Forum Nile University"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "What is UGRF?",
+          "normalization": "model",
+          "intent_classification": {
+            "label": "mixed",
+            "intent_score": 0.434,
+            "score": 0.434,
+            "margin": 0.2357,
+            "confident": false,
+            "route": "mixed",
+            "general_information": true,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 16.72,
+          "planning_seconds": 2.13,
+          "retrieval_seconds": 0.15,
+          "generation_seconds": 14.43,
+          "queue_seconds": 0.0
+        }
+      },
+      "seconds": 16.725
+    },
+    {
+      "label": "overlap-next",
+      "question": "Say hello in Arabic",
+      "status": 200,
+      "result": {
+        "answer": "أهلاً بك! (Ahlan bik!) How can I help you today?",
+        "sources": [],
+        "mode": "general",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "",
+          "retrieval_queries": [],
+          "current_information_links": false,
+          "route": "general",
+          "general_information": false,
+          "message_meaning": "",
+          "normalization": "intent_classifier",
+          "intent_classification": {
+            "label": "creative",
+            "intent_score": 0.5373,
+            "score": 0.8241,
+            "margin": 0.7614,
+            "confident": true,
+            "route": "general",
+            "general_information": false,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 0.81,
+          "planning_seconds": 0.02,
+          "retrieval_seconds": 0.0,
+          "generation_seconds": 0.8,
+          "queue_seconds": 16.7
+        }
+      },
+      "seconds": 17.538
+    }
+  ],
+  "health": [
+    {
+      "status": 200,
+      "seconds": 0.013914500000055341
+    },
+    {
+      "status": 200,
+      "seconds": 0.012450400000034278
+    },
+    {
+      "status": 200,
+      "seconds": 0.008929500000022017
+    },
+    {
+      "status": 200,
+      "seconds": 0.009827699999959805
+    },
+    {
+      "status": 200,
+      "seconds": 0.01077650000001995
+    },
+    {
+      "status": 200,
+      "seconds": 0.010342000000036933
+    },
+    {
+      "status": 200,
+      "seconds": 0.04360580000002301
+    },
+    {
+      "status": 200,
+      "seconds": 0.007970900000145775
+    },
+    {
+      "status": 200,
+      "seconds": 0.007906400000138092
+    },
+    {
+      "status": 200,
+      "seconds": 0.008318099999996775
+    },
+    {
+      "status": 200,
+      "seconds": 0.008048300000154995
+    },
+    {
+      "status": 200,
+      "seconds": 0.009253899999976056
+    },
+    {
+      "status": 200,
+      "seconds": 0.008189099999981408
+    },
+    {
+      "status": 200,
+      "seconds": 0.008083299999952942
+    },
+    {
+      "status": 200,
+      "seconds": 0.011192599999958475
+    },
+    {
+      "status": 200,
+      "seconds": 0.009331699999847842
+    },
+    {
+      "status": 200,
+      "seconds": 0.011508600000070146
+    },
+    {
+      "status": 200,
+      "seconds": 0.008206999999856635
+    },
+    {
+      "status": 200,
+      "seconds": 0.009487799999988056
+    },
+    {
+      "status": 200,
+      "seconds": 0.007867199999964214
+    },
+    {
+      "status": 200,
+      "seconds": 0.008078900000100475
+    },
+    {
+      "status": 200,
+      "seconds": 0.008030199999893739
+    },
+    {
+      "status": 200,
+      "seconds": 0.009449700000004668
+    },
+    {
+      "status": 200,
+      "seconds": 0.009346699999923658
+    },
+    {
+      "status": 200,
+      "seconds": 0.008117000000083863
+    },
+    {
+      "status": 200,
+      "seconds": 0.009296899999981179
+    },
+    {
+      "status": 200,
+      "seconds": 0.008288199999924473
+    },
+    {
+      "status": 200,
+      "seconds": 0.008362900000065565
+    },
+    {
+      "status": 200,
+      "seconds": 0.00831530000004932
+    },
+    {
+      "status": 200,
+      "seconds": 0.010130299999900672
+    },
+    {
+      "status": 200,
+      "seconds": 0.008700700000190409
+    },
+    {
+      "status": 200,
+      "seconds": 0.008374300000014046
+    },
+    {
+      "status": 200,
+      "seconds": 0.010021399999914138
+    },
+    {
+      "status": 200,
+      "seconds": 0.00787890000015068
+    },
+    {
+      "status": 200,
+      "seconds": 0.007981900000004316
+    },
+    {
+      "status": 200,
+      "seconds": 0.008969399999841698
+    },
+    {
+      "status": 200,
+      "seconds": 0.009795299999950657
+    },
+    {
+      "status": 200,
+      "seconds": 0.008545700000013312
+    },
+    {
+      "status": 200,
+      "seconds": 0.00842089999991913
+    },
+    {
+      "status": 200,
+      "seconds": 0.008657100000164064
+    },
+    {
+      "status": 200,
+      "seconds": 0.007650199999943652
+    },
+    {
+      "status": 200,
+      "seconds": 0.009367099999963102
+    },
+    {
+      "status": 200,
+      "seconds": 0.008119999999962602
+    },
+    {
+      "status": 200,
+      "seconds": 0.008207200000015291
+    },
+    {
+      "status": 200,
+      "seconds": 0.009433199999875796
+    },
+    {
+      "status": 200,
+      "seconds": 0.00956199999995988
+    },
+    {
+      "status": 200,
+      "seconds": 0.009787500000129512
+    },
+    {
+      "status": 200,
+      "seconds": 0.009037799999987328
+    },
+    {
+      "status": 200,
+      "seconds": 0.012025499999936073
+    },
+    {
+      "status": 200,
+      "seconds": 0.008637700000008408
+    },
+    {
+      "status": 200,
+      "seconds": 0.008389200000010533
+    },
+    {
+      "status": 200,
+      "seconds": 0.008786599999893951
+    },
+    {
+      "status": 200,
+      "seconds": 0.008259599999973943
+    },
+    {
+      "status": 200,
+      "seconds": 0.0087985000000117
+    },
+    {
+      "status": 200,
+      "seconds": 0.010354700000107186
+    },
+    {
+      "status": 200,
+      "seconds": 0.008010799999965457
+    },
+    {
+      "status": 200,
+      "seconds": 0.008110499999929743
+    },
+    {
+      "status": 200,
+      "seconds": 0.008815899999945032
+    },
+    {
+      "status": 200,
+      "seconds": 0.008721299999933763
+    },
+    {
+      "status": 200,
+      "seconds": 0.008685900000045876
+    },
+    {
+      "status": 200,
+      "seconds": 0.010966300000063711
+    },
+    {
+      "status": 200,
+      "seconds": 0.008858999999802109
+    },
+    {
+      "status": 200,
+      "seconds": 0.008120299999973213
+    },
+    {
+      "status": 200,
+      "seconds": 0.00969689999988077
+    },
+    {
+      "status": 200,
+      "seconds": 0.008968899999899804
+    },
+    {
+      "status": 200,
+      "seconds": 0.008933500000011918
+    },
+    {
+      "status": 200,
+      "seconds": 0.0082830000001195
+    },
+    {
+      "status": 200,
+      "seconds": 0.008117800000036368
+    },
+    {
+      "status": 200,
+      "seconds": 0.010557500000004438
+    },
+    {
+      "status": 200,
+      "seconds": 0.008391200000005483
+    },
+    {
+      "status": 200,
+      "seconds": 0.00950379999994766
+    },
+    {
+      "status": 200,
+      "seconds": 0.008431199999904493
+    },
+    {
+      "status": 200,
+      "seconds": 0.008580299999948693
+    },
+    {
+      "status": 200,
+      "seconds": 0.00843269999995755
+    },
+    {
+      "status": 200,
+      "seconds": 0.00874910000015916
+    },
+    {
+      "status": 200,
+      "seconds": 0.008956200000056924
+    },
+    {
+      "status": 200,
+      "seconds": 0.008723299999928713
+    },
+    {
+      "status": 200,
+      "seconds": 0.008125599999857513
+    },
+    {
+      "status": 200,
+      "seconds": 0.008503600000040024
+    },
+    {
+      "status": 200,
+      "seconds": 0.00817519999986871
+    },
+    {
+      "status": 200,
+      "seconds": 0.009023999999953958
+    },
+    {
+      "status": 200,
+      "seconds": 0.008385099999941303
+    },
+    {
+      "status": 200,
+      "seconds": 0.008282900000040172
+    },
+    {
+      "status": 200,
+      "seconds": 0.008209500000020853
+    },
+    {
+      "status": 200,
+      "seconds": 0.00842929999998887
+    },
+    {
+      "status": 200,
+      "seconds": 0.00945569999998952
+    },
+    {
+      "status": 200,
+      "seconds": 0.010426999999936015
+    },
+    {
+      "status": 200,
+      "seconds": 0.00825089999989359
+    },
+    {
+      "status": 200,
+      "seconds": 0.010588500000039858
+    },
+    {
+      "status": 200,
+      "seconds": 0.015119899999945119
+    },
+    {
+      "status": 200,
+      "seconds": 0.008579100000133622
+    },
+    {
+      "status": 200,
+      "seconds": 0.008730400000104055
+    },
+    {
+      "status": 200,
+      "seconds": 0.007965500000182146
+    },
+    {
+      "status": 200,
+      "seconds": 0.008113400000183901
+    },
+    {
+      "status": 200,
+      "seconds": 0.011219199999914053
+    },
+    {
+      "status": 200,
+      "seconds": 0.011006800000131989
+    },
+    {
+      "status": 200,
+      "seconds": 0.008416699999997945
+    },
+    {
+      "status": 200,
+      "seconds": 0.00812139999993633
+    },
+    {
+      "status": 200,
+      "seconds": 0.00844439999991664
+    },
+    {
+      "status": 200,
+      "seconds": 0.008349100000032195
+    },
+    {
+      "status": 200,
+      "seconds": 0.010732599999982995
+    },
+    {
+      "status": 200,
+      "seconds": 0.00813039999979992
+    },
+    {
+      "status": 200,
+      "seconds": 0.008691900000030728
+    },
+    {
+      "status": 200,
+      "seconds": 0.021333200000071884
+    },
+    {
+      "status": 200,
+      "seconds": 0.010570500000085303
+    },
+    {
+      "status": 200,
+      "seconds": 0.010945600000013656
+    },
+    {
+      "status": 200,
+      "seconds": 0.00928939999994327
+    },
+    {
+      "status": 200,
+      "seconds": 0.014331600000105027
+    },
+    {
+      "status": 200,
+      "seconds": 0.009781799999927898
+    },
+    {
+      "status": 200,
+      "seconds": 0.009510999999974956
+    },
+    {
+      "status": 200,
+      "seconds": 0.00920429999996486
+    },
+    {
+      "status": 200,
+      "seconds": 0.00886499999978696
+    },
+    {
+      "status": 200,
+      "seconds": 0.00947649999989153
+    },
+    {
+      "status": 200,
+      "seconds": 0.008394400000042879
+    },
+    {
+      "status": 200,
+      "seconds": 0.009981599999946411
+    },
+    {
+      "status": 200,
+      "seconds": 0.008751400000164722
+    },
+    {
+      "status": 200,
+      "seconds": 0.009396800000104122
+    },
+    {
+      "status": 200,
+      "seconds": 0.008547399999997651
+    },
+    {
+      "status": 200,
+      "seconds": 0.008619499999895197
+    },
+    {
+      "status": 200,
+      "seconds": 0.00947519999999713
+    },
+    {
+      "status": 200,
+      "seconds": 0.008735499999829699
+    },
+    {
+      "status": 200,
+      "seconds": 0.013079999999945358
+    },
+    {
+      "status": 200,
+      "seconds": 0.01114240000015343
+    },
+    {
+      "status": 200,
+      "seconds": 0.008799500000122862
+    },
+    {
+      "status": 200,
+      "seconds": 0.009448600000041552
+    },
+    {
+      "status": 200,
+      "seconds": 0.008414800000082323
+    },
+    {
+      "status": 200,
+      "seconds": 0.012920699999995122
+    },
+    {
+      "status": 200,
+      "seconds": 0.017562100000077407
+    },
+    {
+      "status": 200,
+      "seconds": 0.008894900000086636
+    },
+    {
+      "status": 200,
+      "seconds": 0.010170300000027055
+    },
+    {
+      "status": 200,
+      "seconds": 0.009607999999843742
+    },
+    {
+      "status": 200,
+      "seconds": 0.008975599999985207
+    },
+    {
+      "status": 200,
+      "seconds": 0.009738599999991493
+    },
+    {
+      "status": 200,
+      "seconds": 0.016177500000139844
+    },
+    {
+      "status": 200,
+      "seconds": 0.008388100000047416
+    },
+    {
+      "status": 200,
+      "seconds": 0.008409499999970649
+    },
+    {
+      "status": 200,
+      "seconds": 0.009776500000043598
+    }
+  ],
+  "server": {
+    "index_ready": true,
+    "intent_ready": true,
+    "model_ready": true,
+    "model": "gemma4:12b",
+    "thinking": false,
+    "index_version": 1789358993852111800,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "retrieval_device": "cuda",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "a2a31fe727df3c62",
+    "chunks": 25205,
+    "sources": 1904,
+    "collected_at": "2026-09-14T03:57:05.228887+00:00"
+  },
+  "health_summary": {
+    "count": 137,
+    "median": 0.008799500000122862,
+    "p95": 0.013079999999945358,
+    "errors": 0
+  }
+}

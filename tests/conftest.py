@@ -6,6 +6,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from nu_chat.api import app
+from nu_chat.generation import _cached_plan
 
 
 @asynccontextmanager
@@ -22,3 +23,10 @@ def client():
             yield test_client
     finally:
         app.router.lifespan_context = original
+
+
+@pytest.fixture(autouse=True)
+def isolated_planner_cache():
+    _cached_plan.cache_clear()
+    yield
+    _cached_plan.cache_clear()

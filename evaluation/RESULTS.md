@@ -1,5 +1,10 @@
 # Development evaluation — September 14, 2026
 
+The newer [performance run](PERFORMANCE.md) completed 100 scenarios / 116 requests
+with no unexpected HTTP failures and 100/100 mechanical checks. A
+[manual output smoke review](OPTIMIZED_REVIEW.md) records remaining content defects;
+this is not a new 100% factual-quality score or a replacement for the detailed review below.
+
 The most recent **complete 100-scenario review** used local `gemma4:12b`, GPU retrieval, and the expanded 1,904-URL corpus. It produced **82 pass, 14 partial, 4 fail** on manual review; the mechanical checker reported **97/100**. There were 116 HTTP requests. Successful non-identity responses had median 6.57 seconds, sampled p95 16.51 seconds and maximum 28.3 seconds. These are single-laptop development measurements, not deployment load-test results.
 
 Read [every case and its verdict](GEMMA_REVIEW.md) and [the full answer log](runs/gemma-second-full.json). That snapshot precedes the multipart retrieval, tuition evidence focusing and explicit official-link fixes. Later focused reruns are reported in [RETESTS.md](RETESTS.md); their scores do not replace the full-run score.

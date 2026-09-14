@@ -23,6 +23,14 @@ if (-not $ollamaReady) {
     }
     $env:OLLAMA_HOST = '127.0.0.1:11434'
     $env:OLLAMA_NO_CLOUD = '1'
+    # The app admits one GPU job at a time. Extra model slots duplicate KV memory.
+    $env:OLLAMA_NUM_PARALLEL = '1'
+    $env:OLLAMA_MAX_LOADED_MODELS = '1'
+    # Ollama 0.34's llama.cpp backend otherwise retains up to 8 GiB of
+    # retired prompt states in RAM. This laptop also runs the app and browser.
+    # App-level planning/retrieval caches remain available without those copies.
+    if (-not $env:LLAMA_ARG_CACHE_RAM) { $env:LLAMA_ARG_CACHE_RAM = '0' }
+    if (-not $env:LLAMA_ARG_CTX_CHECKPOINTS) { $env:LLAMA_ARG_CTX_CHECKPOINTS = '2' }
     Start-Process -FilePath $ollamaExecutable -ArgumentList 'serve' -WindowStyle Hidden -RedirectStandardOutput '.runtime\ollama.out.log' -RedirectStandardError '.runtime\ollama.err.log'
     for ($attempt = 0; $attempt -lt 20; $attempt++) {
         try { $null = Invoke-RestMethod -Uri "$($settings.url)/api/tags" -TimeoutSec 2; $ollamaReady = $true; break } catch { Start-Sleep -Seconds 1 }
@@ -36,9 +44,9 @@ if ($settings.model -notin $models.models.name) {
     $result = Invoke-RestMethod -Method Post -Uri "$($settings.url)/api/pull" -ContentType 'application/json' -Body $body -TimeoutSec 3600
     if ($result.status -ne 'success') { throw 'Model download failed. Try running the script again.' }
 }
-Write-Host "Loading $($settings.model)..."
-$warmupBody = @{model=$settings.model; stream=$false; keep_alive='30m'; options=@{num_ctx=8192}} | ConvertTo-Json -Depth 3
-$null = Invoke-RestMethod -Method Post -Uri "$($settings.url)/api/generate" -ContentType 'application/json' -Body $warmupBody -TimeoutSec 180
+# Serve the UI immediately; FastAPI warms the models and reports startup progress.
+$env:HF_HUB_OFFLINE = '1'
+$env:TRANSFORMERS_OFFLINE = '1'
 Write-Host 'Open http://127.0.0.1:8000'
 & $projectPython -X utf8 -m nu_chat serve
 if ($LASTEXITCODE -ne 0) { throw 'The chat server exited with an error.' }

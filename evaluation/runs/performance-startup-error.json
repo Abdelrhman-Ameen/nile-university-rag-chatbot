@@ -1,0 +1,146 @@
+{
+  "requests": [
+    {
+      "label": "identity",
+      "question": "انت مين؟",
+      "status": 200,
+      "result": {
+        "answer": "أنا NU Chat، شات بوت معمول مخصوص لجامعة النيل في مصر. بساعدك تعرف برامجها وفرصها، وتناقش أي حاجة مقلقاك عشان تقرر لو مناسبة ليك. وكمان أقدر أجاوب على أسئلة عامة. أنا مشروع طلابي مستقل، مش خدمة الدعم الرسمية للجامعة.",
+        "sources": [],
+        "mode": "identity",
+        "pipeline": {
+          "detected_language": "ar",
+          "reply_language": "ar",
+          "retrieval_query": "",
+          "retrieval_queries": [],
+          "current_information_links": false,
+          "route": "identity",
+          "general_information": false,
+          "message_meaning": "انت مين؟",
+          "normalization": "identity",
+          "intent_classification": null,
+          "encoder": null,
+          "generator": null,
+          "elapsed_seconds": 0.0,
+          "planning_seconds": 0.0,
+          "retrieval_seconds": 0.0,
+          "generation_seconds": 0.0
+        }
+      },
+      "seconds": 0.098
+    },
+    {
+      "label": "fees",
+      "question": "مصروفات حاسبات ومعلومات كام قبل الخصم؟",
+      "status": 503,
+      "result": {
+        "detail": "Local model could not process this message. Please retry."
+      },
+      "seconds": 1.516
+    },
+    {
+      "label": "franco",
+      "question": "nice bs azay a3ml apply? we elmsarref kam?",
+      "status": 503,
+      "result": {
+        "detail": "Local model could not process this message. Please retry."
+      },
+      "seconds": 0.045
+    },
+    {
+      "label": "location",
+      "question": "Where is Nile University in Egypt?",
+      "status": 503,
+      "result": {
+        "detail": "Local model could not process this message. Please retry."
+      },
+      "seconds": 0.033
+    },
+    {
+      "label": "advice",
+      "question": "هل الجامعة كويسة لدراسة حاسبات؟",
+      "status": 503,
+      "result": {
+        "detail": "Local model could not process this message. Please retry."
+      },
+      "seconds": 0.029
+    },
+    {
+      "label": "fees-repeat",
+      "question": "مصروفات حاسبات ومعلومات كام قبل الخصم؟",
+      "status": 503,
+      "result": {
+        "detail": "Local model could not process this message. Please retry."
+      },
+      "seconds": 0.032
+    },
+    {
+      "label": "overlap-retry",
+      "question": "What is UGRF?",
+      "status": 503,
+      "result": {
+        "detail": "Local model could not process this message. Please retry."
+      },
+      "seconds": 0.037
+    },
+    {
+      "label": "overlap-one",
+      "question": "What is UGRF?",
+      "status": 503,
+      "result": {
+        "detail": "Local model could not process this message. Please retry."
+      },
+      "seconds": 0.039
+    },
+    {
+      "label": "overlap-next",
+      "question": "Say hello in Arabic",
+      "status": 503,
+      "result": {
+        "detail": "Local model could not finish the response. Please retry."
+      },
+      "seconds": 0.062
+    }
+  ],
+  "health": [
+    {
+      "status": 200,
+      "seconds": 0.07105429999978696
+    },
+    {
+      "status": 200,
+      "seconds": 0.12698700000009921
+    },
+    {
+      "status": 200,
+      "seconds": 0.003373400000100446
+    },
+    {
+      "status": 200,
+      "seconds": 0.004369100000076287
+    }
+  ],
+  "server": {
+    "ready": false,
+    "index_ready": false,
+    "intent_ready": true,
+    "model_ready": true,
+    "model": "gemma4:12b",
+    "thinking": false,
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "retrieval_device": "cuda",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "code_version": "b83f78b88a203651",
+    "queue": {
+      "active": false,
+      "waiting": 0,
+      "capacity": 8
+    }
+  },
+  "health_summary": {
+    "count": 4,
+    "median": 0.037711699999931625,
+    "p95": 0.07105429999978696,
+    "errors": 0
+  }
+}
