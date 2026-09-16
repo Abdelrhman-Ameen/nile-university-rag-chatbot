@@ -1,0 +1,2 @@
+# Preserve the original bytes used by the frozen SHA-256 audit on every OS.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

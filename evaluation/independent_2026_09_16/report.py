@@ -30,6 +30,9 @@ if __name__ == '__main__':
     assert len(reviews)==100 and len({r['id'] for r in reviews})==100
     assert set(suite)==set(responses)=={r['id'] for r in reviews}
     frozen, done = load('freeze.json'), load('completion.json')
+    for filename, digest in frozen['hashes'].items():
+        if filename.startswith('evaluation/independent_2026_09_16/'):
+            assert hashlib.sha256((HERE/Path(filename).name).read_bytes()).hexdigest()==digest, filename
     assert hashlib.sha256((HERE/'responses.jsonl').read_bytes()).hexdigest()==done['responses_sha256']
     assert done['hashes_unchanged']
     for r in reviews:
@@ -61,7 +64,9 @@ if __name__ == '__main__':
         if cited: sections += ['**Returned citations:**\n\n'+'\n'.join(f"- [{s['citation']}] [{s['title']}]({s['url']})" for s in cited)]
         urls = load('reference_urls.json')
         if c['references']: sections += ['**Reference:** '+', '.join(f'[{k}]({urls[k]})' for k in c['references'])]
-    (HERE/'ANSWERS.md').write_text('\n\n'.join(sections)+'\n',encoding='utf-8')
+    # Presentation-only whitespace cleanup; the raw response bytes are untouched.
+    rendered = '\n'.join(line.rstrip() for line in '\n\n'.join(sections).splitlines())+'\n'
+    (HERE/'ANSWERS.md').write_text(rendered,encoding='utf-8',newline='\n')
     report = f"""# Independent human-style query evaluation — 100 new queries
 
 **{counts['pass']} pass · {counts['partial']} partial · {counts['fail']} fail.** These are AI-reviewed answers, not a human-reviewed benchmark or a production certification.

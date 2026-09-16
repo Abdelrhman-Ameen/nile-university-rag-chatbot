@@ -131,9 +131,9 @@ Official pages for details and updates: [IGCSE](https://nu.edu.eg/admission-requ
 
 **Answer:**
 
-أيوه، الـ 24 نقطة هي الحد الأدنى المقبول (minimum accepted point) لطلبة الـ IB في جامعة النيل [1]. لازم كمان تكوني مخلصة مواد الـ Extended Essay و Theory of Knowledge (TOK) [1]. 
+أيوه، الـ 24 نقطة هي الحد الأدنى المقبول (minimum accepted point) لطلبة الـ IB في جامعة النيل [1]. لازم كمان تكوني مخلصة مواد الـ Extended Essay و Theory of Knowledge (TOK) [1].
 
-جامعة النيل بتقدم فرص مميزة جداً ممكن تساعدك في مستقبلك، زي الـ Undergraduate Research Forum (UGRF) اللي بيتم فيه تقييم ونشر الأبحاث العلمية للطلبة في كل السنوات الدراسية [3]، ومركز الـ IECC اللي بيقدم دعم في ريادة الأعمال وتطوير المنتجات [4]. كمان فيه برامج تبادل طلابي (Exchange programs) في مجالات زي الهندسة، البيزنس، والـ IT في جامعات دولية في أمريكا، فرنسا، وأوروبا [5]. 
+جامعة النيل بتقدم فرص مميزة جداً ممكن تساعدك في مستقبلك، زي الـ Undergraduate Research Forum (UGRF) اللي بيتم فيه تقييم ونشر الأبحاث العلمية للطلبة في كل السنوات الدراسية [3]، ومركز الـ IECC اللي بيقدم دعم في ريادة الأعمال وتطوير المنتجات [4]. كمان فيه برامج تبادل طلابي (Exchange programs) في مجالات زي الهندسة، البيزنس، والـ IT في جامعات دولية في أمريكا، فرنسا، وأوروبا [5].
 
 إيه هو التخصص اللي بتخططي تدخليه في الجامعة؟
 
@@ -686,7 +686,7 @@ Official pages for details and updates: [Health Service](https://nu.edu.eg/stude
 
 **Answer:**
 
-أيوه، فيه tutoring ببلاش جوه Nile University من خلال الـ Teaching Learning Center (TLC). الـ TLC دي مبادرة عشان تساعد طلاب الـ Business School يواجهوا أي academic challenges ويقدروا ينجحوا في دراستهم، وبتوفر tutoring sessions، وworkshops، وfollow-up عشان يساعدوا الطلاب يكونوا empowered وconfident أكتر [6] [7]. 
+أيوه، فيه tutoring ببلاش جوه Nile University من خلال الـ Teaching Learning Center (TLC). الـ TLC دي مبادرة عشان تساعد طلاب الـ Business School يواجهوا أي academic challenges ويقدروا ينجحوا في دراستهم، وبتوفر tutoring sessions، وworkshops، وfollow-up عشان يساعدوا الطلاب يكونوا empowered وconfident أكتر [6] [7].
 
 تقدري تتواصلي مع الـ TLC عشان تطلبي الـ free tutoring sessions، أو لو محتاجة guidance في اختيار الـ major أو في أي academic-related issues [1] [2].
 
@@ -990,9 +990,9 @@ Official pages for details and updates: [ICPC](https://nu.edu.eg/students/studen
 
 **Answer:**
 
-لو بتحبي التنظيم أكتر من السياسة، فـ NIMUN فيه مكان ليكي في الـ Organizing Committee. الـ committee دي مخصصة للطلاب اللي حابين يشاركوا في الـ planning والـ execution لكل الـ committees طول السنة عشان يضمنوا إن الـ main event يتم تنفيذه بنجاح [1]. 
+لو بتحبي التنظيم أكتر من السياسة، فـ NIMUN فيه مكان ليكي في الـ Organizing Committee. الـ committee دي مخصصة للطلاب اللي حابين يشاركوا في الـ planning والـ execution لكل الـ committees طول السنة عشان يضمنوا إن الـ main event يتم تنفيذه بنجاح [1].
 
-ممكن تلاقي فرص كويسة جداً في Nile University لأن الجامعة بتركز على الـ learning through innovation وتطبيق الأبحاث من خلال الـ Undergraduate Research Forum (UGRF) [3]. كمان فيه الـ Innovation Entrepreneurship and competitiveness Centre (IECC) اللي بيقدم دعم للـ entrepreneurs والـ innovators في الـ business model و الـ product design [4]. 
+ممكن تلاقي فرص كويسة جداً في Nile University لأن الجامعة بتركز على الـ learning through innovation وتطبيق الأبحاث من خلال الـ Undergraduate Research Forum (UGRF) [3]. كمان فيه الـ Innovation Entrepreneurship and competitiveness Centre (IECC) اللي بيقدم دعم للـ entrepreneurs والـ innovators في الـ business model و الـ product design [4].
 
 إيه الـ specific skills اللي حابة تطوريها في الـ event management؟
 
@@ -2086,7 +2086,7 @@ I don't have a confirmed answer to that yet.
 
 **Answer:**
 
-لأسف، أنا مش هقدر أحجزلك الـ mock interview بنفسي أو أأكد الحجز هنا، لأن الحجز بيتم من خلال التواصل المباشر مع الـ SEEC office. 
+لأسف، أنا مش هقدر أحجزلك الـ mock interview بنفسي أو أأكد الحجز هنا، لأن الحجز بيتم من خلال التواصل المباشر مع الـ SEEC office.
 
 عشان تحجز الـ mock interview، لازم تبعت إيميل لـ seec@nu.edu.eg [1]. الـ SEEC office بتقدم الـ mock interview sessions عشان تديك practice وتساعدك في الـ career path بتاعك [1] [2].
 
@@ -2197,7 +2197,7 @@ assistant: FilmFish بيهتم بصناعة الأفلام بشكل جماعي،
 
 لو هدفك الأساسي هو إنتاج فيلم قصير مع فريق عمل، فـ **FilmFish** هو الأقرب لاهتمامك لأنه بيركز على صناعة الأفلام بشكل جماعي [1]. في المقابل، **Pixels** بيركز أكتر على التدريب التقني في أدوات الميديا زي Photoshop وPremiere Pro وAfter Effects [1].
 
-الفرص المتاحة في الجامعة ممكن تساعدك في تطوير مهاراتك؛ فمثلاً مركز **IECC** بيقدم دعم لريادة الأعمال وتطوير المنتجات [4]، وده ممكن يساعدك لو فكرت تحول مشروعك لعمل تجاري مستقبلاً. 
+الفرص المتاحة في الجامعة ممكن تساعدك في تطوير مهاراتك؛ فمثلاً مركز **IECC** بيقدم دعم لريادة الأعمال وتطوير المنتجات [4]، وده ممكن يساعدك لو فكرت تحول مشروعك لعمل تجاري مستقبلاً.
 
 إيه أكتر جزء في صناعة الأفلام مهتم بيه حالياً، هل هو الجانب الفني والإبداعي ولا الجانب التقني والإنتاجي؟
 
@@ -2383,7 +2383,7 @@ The provided documentation does not specify a 4–12 week timeframe for the proc
 
 **Answer:**
 
-In simple terms, the difference comes down to honesty and credit. 
+In simple terms, the difference comes down to honesty and credit.
 
 A **citation** is when you give credit to the original author of an idea, fact, or quote. It is a way of saying, "I didn't come up with this myself; here is where I found it." It allows you to use outside information while still being honest about where that information originated.
 
