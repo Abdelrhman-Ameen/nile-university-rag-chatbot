@@ -15,12 +15,13 @@ import httpx
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", required=True)
+    parser.add_argument("--base-url", default="http://127.0.0.1:8000")
     args = parser.parse_args()
     report = {"requests": [], "health": []}
     target = Path(args.output)
     target.parent.mkdir(parents=True, exist_ok=True)
     stopped = threading.Event()
-    with httpx.Client(base_url="http://127.0.0.1:8000", timeout=360, trust_env=False) as client:
+    with httpx.Client(base_url=args.base_url, timeout=360, trust_env=False) as client:
         report["server"] = client.get("/api/health").json()
 
         def health_probe():
@@ -61,10 +62,12 @@ def main():
         try:
             for label, question in [
                 ("identity", "انت مين؟"),
+                ("general", "Explain recursion in one short paragraph."),
                 ("fees", "مصروفات حاسبات ومعلومات كام قبل الخصم؟"),
-                ("franco", "nice bs azay a3ml apply? we elmsarref kam?"),
                 ("location", "Where is Nile University in Egypt?"),
                 ("advice", "هل الجامعة كويسة لدراسة حاسبات؟"),
+                ("bus-live", "How many NU bus seats are left right now?"),
+                ("library-live", "How many NU library copies are available this minute?"),
                 ("fees-repeat", "مصروفات حاسبات ومعلومات كام قبل الخصم؟"),
             ]:
                 ask(label, question)

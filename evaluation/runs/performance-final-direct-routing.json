@@ -1,0 +1,730 @@
+{
+  "requests": [
+    {
+      "label": "general",
+      "question": "Explain recursion in one short paragraph.",
+      "status": 200,
+      "seconds": 2.634,
+      "result": {
+        "answer": "Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller, similar sub-problems. Each call processes a smaller piece of the original task until it reaches a \"base case,\" which is a specific condition that stops the recursion from continuing infinitely. A classic example is calculating a factorial or traversing a folder structure, where the same logic is applied repeatedly at different levels of depth.\n\nI'm built specifically for Nile University, Egypt. This general answer isn't verified against university sources.",
+        "sources": [],
+        "mode": "general",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "",
+          "retrieval_queries": [],
+          "current_information_links": false,
+          "route": "general",
+          "general_information": true,
+          "message_meaning": "Explain recursion in one short paragraph.",
+          "normalization": "intent_classifier",
+          "intent_classification": {
+            "label": "general_information",
+            "intent_score": 0.5099,
+            "score": 0.5099,
+            "margin": 0.3115,
+            "confident": false,
+            "route": "general",
+            "general_information": true,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 2.63,
+          "planning_seconds": 0.04,
+          "retrieval_seconds": 0.0,
+          "generation_seconds": 2.58,
+          "queue_seconds": 0.0,
+          "model_calls": [
+            {
+              "stage": "answering",
+              "seconds": 2.584,
+              "load_duration": 2144900,
+              "prompt_eval_count": 311,
+              "prompt_eval_duration": 565934000,
+              "eval_count": 85,
+              "eval_duration": 2008342000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "fees",
+      "question": "What are the ITCS tuition fees before scholarships?",
+      "status": 200,
+      "seconds": 4.204,
+      "result": {
+        "answer": "The undergraduate tuition fees for the School of Information Technology and Computer Science (ITCS) for the 2026/2027 academic year, before scholarships (Category 4: scholarship discount 0%), are 193,680 EGP for the first year (Freshman) only [1].\n\nOfficial pages for details and updates: [Fees and Financials — 2026/2027](https://nu.edu.eg/fees-and-financials).",
+        "sources": [
+          {
+            "id": "e11a9e460e01b2db-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+            "text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T03:23:31.377163+03:00",
+            "extracted_at": "2026-09-16T23:11:14.298698+03:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "similarity": 0.7828,
+            "score": 0.7635,
+            "rerank_score": 0.9985,
+            "citation": 1,
+            "answer_text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "cited": true
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "What are the ITCS tuition fees before scholarships?",
+          "retrieval_queries": [
+            "What are the ITCS tuition fees before scholarships?"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "What are the ITCS tuition fees before scholarships?",
+          "normalization": "direct_english",
+          "intent_classification": {
+            "label": "university",
+            "intent_score": 0.7737,
+            "score": 0.7737,
+            "margin": 0.6446,
+            "confident": true,
+            "route": "university",
+            "general_information": false,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 4.2,
+          "planning_seconds": 0.01,
+          "retrieval_seconds": 0.24,
+          "generation_seconds": 3.95,
+          "queue_seconds": 0.0,
+          "model_calls": [
+            {
+              "stage": "answering",
+              "seconds": 3.162,
+              "load_duration": 1569400,
+              "prompt_eval_count": 978,
+              "prompt_eval_duration": 684971000,
+              "eval_count": 97,
+              "eval_duration": 2463127000
+            },
+            {
+              "stage": "checking",
+              "seconds": 0.782,
+              "load_duration": 2147300,
+              "prompt_eval_count": 594,
+              "prompt_eval_duration": 473720000,
+              "eval_count": 13,
+              "eval_duration": 298005000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "location",
+      "question": "Where is Nile University in Egypt?",
+      "status": 200,
+      "seconds": 3.74,
+      "result": {
+        "answer": "Nile University is located at Juhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt [1] [2]. The specific address is also listed as 26 July El Mehwar Road, El Sheikh Zayed [1].",
+        "sources": [
+          {
+            "id": "nu-library-public-contact-20260914-0",
+            "url": "https://www.library.nu.edu.eg/",
+            "title": "Nile University Library — public contact details and live catalogue limitation",
+            "text": "Nile University Egypt library contact details: Library@nu.edu.eg. Telephone: (+202) 3854-1861 and (+202) 3854-1863. Published hours: Sunday–Thursday, 9 am–7 pm; weekends closed. Address: 26 July El Mehwar Road, El Sheikh Zayed. This is a dated snapshot of the official homepage, not a live catalogue or live copy-availability check.",
+            "kind": "reviewed-web",
+            "page": null,
+            "fetched_at": "2026-09-14T04:25:38.384208+03:00",
+            "archived": false,
+            "reviewed_at": "2026-09-14",
+            "retrieval_method": "Manually reviewed public search-index copy of the official library homepage, indexed approximately two weeks before review. Direct HTTPS collection failed certificate verification; verification was not disabled.",
+            "context": "Nile University Egypt library contact details: Library@nu.edu.eg. Telephone: (+202) 3854-1861 and (+202) 3854-1863. Published hours: Sunday–Thursday, 9 am–7 pm; weekends closed. Address: 26 July El Mehwar Road, El Sheikh Zayed. This is a dated snapshot of the official homepage, not a live catalogue or live copy-availability check.",
+            "similarity": 0.2936,
+            "score": 0.3617,
+            "rerank_score": 0.3556,
+            "citation": 1,
+            "cited": true
+          },
+          {
+            "id": "fc92e8d926300290-0",
+            "url": "https://nu.edu.eg/contact-us-Departments",
+            "title": "Contact Us | NU",
+            "text": "## Hotline ## 16453\n## Our Location\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n##\n## NU Departments\nThe academic departments, professional services, administration, research centers, facilities, institutes and campus services work in harmony to make up Nile University. For any support needed, faculty members, students, or outsiders can easily reach out to our department through email or phone.\nRead More\n## Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T03:16:50.915373+03:00",
+            "archived": false,
+            "content_sha256": "3ef5b35c1b62eac5e9f91c8980ccef639edf39fcacb5519a07b2c3c707105f71",
+            "context": "## Hotline ## 16453\n## Our Location\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n##\n## NU Departments\nThe academic departments, professional services, administration, research centers, facilities, institutes and campus services work in harmony to make up Nile University. For any support needed, faculty members, students, or outsiders can easily reach out to our department through email or phone.\nRead More\n## Website contact details\nJuhayna Square, 26th of July Corridor, El Sheikh Zayed, Giza, Egypt\n16453",
+            "similarity": 0.5302,
+            "score": 0.5719,
+            "rerank_score": 0.776,
+            "citation": 2,
+            "cited": true
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "Where is Nile University in Egypt?",
+          "retrieval_queries": [
+            "Where is Nile University in Egypt?"
+          ],
+          "current_information_links": false,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "Where is Nile University in Egypt?",
+          "normalization": "direct_english",
+          "intent_classification": {
+            "label": "university",
+            "intent_score": 0.3211,
+            "score": 0.3211,
+            "margin": 0.052,
+            "confident": false,
+            "route": "university",
+            "general_information": false,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 3.74,
+          "planning_seconds": 0.01,
+          "retrieval_seconds": 0.16,
+          "generation_seconds": 3.56,
+          "queue_seconds": 0.0,
+          "model_calls": [
+            {
+              "stage": "answering",
+              "seconds": 2.703,
+              "load_duration": 2177500,
+              "prompt_eval_count": 1186,
+              "prompt_eval_duration": 836875000,
+              "eval_count": 76,
+              "eval_duration": 1850411000
+            },
+            {
+              "stage": "checking",
+              "seconds": 0.859,
+              "load_duration": 1608100,
+              "prompt_eval_count": 747,
+              "prompt_eval_duration": 549541000,
+              "eval_count": 13,
+              "eval_duration": 297801000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "ugrf",
+      "question": "What is UGRF?",
+      "status": 200,
+      "seconds": 5.969,
+      "result": {
+        "answer": "The Undergraduate Research Forum (UGRF) is a flagship event at Nile University that has been running for 11 years [2]. It is a semi-annual forum held at the end of each semester to encourage undergraduate students to turn their course projects into practical outcomes [1] [2]. The forum allows students from various schools to submit scientific research for evaluation and publishing, as well as research projects and graduation projects [1].\n\nOfficial pages for details and updates: [Home page](https://ugrf.nu.edu.eg/) · [22nd UGRF Submission Instructions](https://ugrf.nu.edu.eg/22nd-UGRF).",
+        "sources": [
+          {
+            "id": "96cdda725cbd65a8-74",
+            "url": "https://ugrf.nu.edu.eg/",
+            "title": "Home page | UGRF - Undergraduate Research Forum",
+            "text": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wael Akl - President of Nile University\n## Prof. Ahmed G. Radwan - Vice President for Research, Nile University\n## UGRF Documentary Videos\n## 15th UGRF Documentary Video\n## 14th UGRF Documentary Video\n## 13th UGRF Documentary Video\n## 12th UGRF Documentary Video\n## 11th UG",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T03:16:01.587986+03:00",
+            "archived": false,
+            "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+            "context": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wael Akl - President of Nile University\n## Prof. Ahmed G. Radwan - Vice President for Research, Nile University\n## UGRF Documentary Videos\n## 15th UGRF Documentary Video\n## 14th UGRF Documentary Video\n## 13th UGRF Documentary Video\n## 12th UGRF Documentary Video\n## 11th UG",
+            "similarity": 0.7437,
+            "score": 0.8078,
+            "rerank_score": 0.9981,
+            "citation": 1,
+            "cited": true
+          },
+          {
+            "id": "3a8a02050463a0f7-s8-0",
+            "url": "https://ugrf.nu.edu.eg/22nd-UGRF",
+            "title": "22nd UGRF Submission Instructions — 22nd UGRF | UGRF - Undergraduate Research Forum",
+            "text": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T03:16:01.583985+03:00",
+            "archived": false,
+            "content_sha256": "47d1b2b9ef6bf3f8f91fc730e0dc735c47118c809af2ef59b8cd385636ac3cb2",
+            "context": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring",
+            "similarity": 0.6418,
+            "score": 0.7371,
+            "rerank_score": 0.9994,
+            "citation": 2,
+            "cited": true
+          },
+          {
+            "id": "96cdda725cbd65a8-0",
+            "url": "https://ugrf.nu.edu.eg/",
+            "title": "Home page | UGRF - Undergraduate Research Forum",
+            "text": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wa",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T03:16:01.587986+03:00",
+            "archived": false,
+            "content_sha256": "1cbfbb2f39361b3283fc34cf58d95fac86adc930a97977c0981e820aed72924e",
+            "context": "##\n## The Journey of\n## UGRF\nNile University organizes the semi-annual research forum for the undergraduate students periodically, as it is held once at the end of each semester. The research forum for students is one of the most important features of Nile University as a scientific research university and reflects the university’s plan for learning through innovation and applying research.\n##\nAll university students from various schools participate in the forum. The forum includes the provision of scientific research from the students for evaluation and publishing, in addition to research projects for students of different academic years and graduation projects for final year students.\n## UGRF in Numbers\nUGRF in Numbers\n+\nStudents\n+\nProjects\n+\nAwards\n+\nUniversities\n+\nSchools\n+\nGovernorates\n## Undergraduate Research Forum (UGRF) Success Story\n## Learning Culture in Nile University\n## Prof. Wa",
+            "similarity": 0.6439,
+            "score": 0.7399,
+            "rerank_score": 0.9988,
+            "citation": 3,
+            "cited": false
+          },
+          {
+            "id": "3a8a02050463a0f7-s8-74",
+            "url": "https://ugrf.nu.edu.eg/22nd-UGRF",
+            "title": "22nd UGRF Submission Instructions — 22nd UGRF | UGRF - Undergraduate Research Forum",
+            "text": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring to sponsor brilliant concepts and inspire solutions that can make a difference on a Wide scale.",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T03:16:01.583985+03:00",
+            "archived": false,
+            "content_sha256": "47d1b2b9ef6bf3f8f91fc730e0dc735c47118c809af2ef59b8cd385636ac3cb2",
+            "context": "22nd UGRF Submission Instructions\nThe Undergraduate Research Forum (UGRF) is a flagship event of Nile University which has been going successfully for 11 years. Nile University organizes the UGRF every semester and it aims at encouraging the undergraduate students to put their course projects into practical outcome. Students present their projects in the form of 2 pages summary, videos, prototypes & applications. They get judged & evaluated by jury panel of university professors and senior researchers. Winners get recognized and receive Awards.\n22nd Undergraduate Research Forum: Youth National Innovation Competition. It will be a unique competition for undergraduate and graduate students to exchange ideas, and foster. With a focus on innovation and impact, the event will feature new innovative topics and aims to support out-of-the-box ideas, aspiring to sponsor brilliant concepts and inspire solutions that can make a difference on a Wide scale.",
+            "similarity": 0.6447,
+            "score": 0.7165,
+            "rerank_score": 0.9994,
+            "citation": 4,
+            "cited": false
+          },
+          {
+            "id": "994a5756f8a66dc2-148",
+            "url": "https://ugrf.nu.edu.eg/academic-staff/dr-mennatallah-kaoud",
+            "title": "Dr. Mennatallah Kaoud | UGRF - Undergraduate Research Forum",
+            "text": "provides coaching and supervision for graduation startup projects at the Business School.\nHer main research interests include Digital Transformation, Marketing, and Entrepreneurship. She is also a member of the Social Protection Secretariat at the central level of the National Front Party.\nShe has teaching experience in Marketing and Digital Management at ECV Digital and NEOMA Business School in France. Recently, she and her colleagues won the Best Paper Award at the 6th International Conference on Multi-Disciplinary Research Studies and Education (ICMDRSE-2023) in Malaysia.\nShe has also received recognition awards from the Central Bank of Egypt for her contributions to the FinYology initiative, which promotes FinTech education in Egypt. In addition, she served as a judge in the “Solution Challenge Egypt 2022” hackathon, the Egyptian edition of the global Google Solution Challenge.\n## Website contact details\n16453",
+            "page": null,
+            "kind": "html",
+            "fetched_at": "2026-09-14T03:42:12.805629+03:00",
+            "archived": false,
+            "content_sha256": "fc6e2196475f77f363207a719f2e4204fc96d18c8259ec97100a89dab95a0a5c",
+            "context": "provides coaching and supervision for graduation startup projects at the Business School.\nHer main research interests include Digital Transformation, Marketing, and Entrepreneurship. She is also a member of the Social Protection Secretariat at the central level of the National Front Party.\nShe has teaching experience in Marketing and Digital Management at ECV Digital and NEOMA Business School in France. Recently, she and her colleagues won the Best Paper Award at the 6th International Conference on Multi-Disciplinary Research Studies and Education (ICMDRSE-2023) in Malaysia.\nShe has also received recognition awards from the Central Bank of Egypt for her contributions to the FinYology initiative, which promotes FinTech education in Egypt. In addition, she served as a judge in the “Solution Challenge Egypt 2022” hackathon, the Egyptian edition of the global Google Solution Challenge.\n## Website contact details\n16453",
+            "similarity": 0.4837,
+            "score": 0.55,
+            "rerank_score": 0.986,
+            "citation": 5,
+            "cited": false
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "What is UGRF?",
+          "retrieval_queries": [
+            "What is UGRF?"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "What is UGRF?",
+          "normalization": "direct_english",
+          "intent_classification": {
+            "label": "mixed",
+            "intent_score": 0.434,
+            "score": 0.434,
+            "margin": 0.2357,
+            "confident": false,
+            "route": "mixed",
+            "general_information": true,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 5.97,
+          "planning_seconds": 0.01,
+          "retrieval_seconds": 0.16,
+          "generation_seconds": 5.8,
+          "queue_seconds": 0.0,
+          "model_calls": [
+            {
+              "stage": "answering",
+              "seconds": 4.757,
+              "load_duration": 2667000,
+              "prompt_eval_count": 2366,
+              "prompt_eval_duration": 1565938000,
+              "eval_count": 121,
+              "eval_duration": 3163114000
+            },
+            {
+              "stage": "checking",
+              "seconds": 1.04,
+              "load_duration": 2152600,
+              "prompt_eval_count": 1008,
+              "prompt_eval_duration": 726683000,
+              "eval_count": 13,
+              "eval_duration": 298649000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "bus-live",
+      "question": "How many NU bus seats are left right now?",
+      "status": 200,
+      "seconds": 0.233,
+      "result": {
+        "answer": "I can't inspect NU's live transport seat inventory, so I can't give an exact remaining-seat count. Please confirm it through the transportation service on the official page. [1]\n\nOfficial pages for details and updates: [Transportation — 2026/2027](https://nu.edu.eg/students/services-facilities/transportation).",
+        "sources": [
+          {
+            "id": "8bbda41c480a12eb-0",
+            "url": "https://nu.edu.eg/students/services-facilities/transportation",
+            "asset_url": "https://nu.edu.eg/sites/default/files/2026-09/transportation_prices.jpg",
+            "title": "Transportation | NU — NU Bus Fees and subscription policy 2026/2027 — Bus route subscription prices per semester 2026/2027",
+            "text": "Nile University transportation fees 2026/2027 per semester. Sheikh Zayed: 8,800 EGP. October: 8,800 EGP. Hadayek Al Ahram: 9,800 EGP. Hadayek October: 9,800 EGP. Imbaba and Zamalek: 11,750 EGP. Abbasia and Ghamra: 11,750 EGP. Maadi: 13,250 EGP. Gesr El Suez and Ring Road: 13,250 EGP. Heliopolis (Masr El Gedida): 15,300 EGP. Nasr City: 15,300 EGP. Helwan: 15,300 EGP. Rehab and Tagamoa: 16,300 EGP. The displayed amounts are for one semester.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T04:31:22.084691+03:00",
+            "extracted_at": "2026-09-16T23:11:14.349147+03:00",
+            "archived": false,
+            "content_sha256": "4c117f166ea9251f8eff5914124eaf4141cff11812f7b445741ae81118f220fd",
+            "ocr_reviewed": true,
+            "context": "Nile University transportation fees 2026/2027 per semester. Sheikh Zayed: 8,800 EGP. October: 8,800 EGP. Hadayek Al Ahram: 9,800 EGP. Hadayek October: 9,800 EGP. Imbaba and Zamalek: 11,750 EGP. Abbasia and Ghamra: 11,750 EGP. Maadi: 13,250 EGP. Gesr El Suez and Ring Road: 13,250 EGP. Heliopolis (Masr El Gedida): 15,300 EGP. Nasr City: 15,300 EGP. Helwan: 15,300 EGP. Rehab and Tagamoa: 16,300 EGP. The displayed amounts are for one semester.",
+            "similarity": 0.3809,
+            "score": 0.3933,
+            "rerank_score": 0.1378,
+            "citation": 1,
+            "cited": true
+          },
+          {
+            "id": "dc307f56a87aef03-74",
+            "url": "https://nu.edu.eg/students/services-facilities/transportation",
+            "asset_url": "https://nu.edu.eg/sites/default/files/2026-09/transportation_prices.jpg",
+            "title": "Transportation | NU — NU Bus Fees and subscription policy 2026/2027 — Minimum subscribers and route cancellation refund 2026/2027",
+            "text": "NU transportation subscription policy 2026/2027. A bus route requires a minimum of six subscribers. If the minimum number is not reached, the route is cancelled and the full subscription amount is refunded. This university cancellation with a full refund is distinct from a student's voluntary withdrawal deduction. The image does not expose live seat inventory, so current remaining seats must be confirmed through the transportation service.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T04:31:22.084691+03:00",
+            "extracted_at": "2026-09-16T23:11:14.349147+03:00",
+            "archived": false,
+            "content_sha256": "4c117f166ea9251f8eff5914124eaf4141cff11812f7b445741ae81118f220fd",
+            "ocr_reviewed": true,
+            "context": "NU transportation subscription policy 2026/2027. A bus route requires a minimum of six subscribers. If the minimum number is not reached, the route is cancelled and the full subscription amount is refunded. This university cancellation with a full refund is distinct from a student's voluntary withdrawal deduction. The image does not expose live seat inventory, so current remaining seats must be confirmed through the transportation service.",
+            "similarity": 0.4806,
+            "score": 0.5824,
+            "rerank_score": 0.1122,
+            "citation": 2,
+            "cited": false
+          },
+          {
+            "id": "nu-library-public-contact-20260914-0",
+            "url": "https://www.library.nu.edu.eg/",
+            "title": "Nile University Library — public contact details and live catalogue limitation",
+            "text": "Nile University Egypt library contact details: Library@nu.edu.eg. Telephone: (+202) 3854-1861 and (+202) 3854-1863. Published hours: Sunday–Thursday, 9 am–7 pm; weekends closed. Address: 26 July El Mehwar Road, El Sheikh Zayed. This is a dated snapshot of the official homepage, not a live catalogue or live copy-availability check.",
+            "kind": "reviewed-web",
+            "page": null,
+            "fetched_at": "2026-09-14T04:25:38.384208+03:00",
+            "archived": false,
+            "reviewed_at": "2026-09-14",
+            "retrieval_method": "Manually reviewed public search-index copy of the official library homepage, indexed approximately two weeks before review. Direct HTTPS collection failed certificate verification; verification was not disabled.",
+            "context": "Nile University Egypt library contact details: Library@nu.edu.eg. Telephone: (+202) 3854-1861 and (+202) 3854-1863. Published hours: Sunday–Thursday, 9 am–7 pm; weekends closed. Address: 26 July El Mehwar Road, El Sheikh Zayed. This is a dated snapshot of the official homepage, not a live catalogue or live copy-availability check.",
+            "similarity": 0.1756,
+            "score": 0.1947,
+            "rerank_score": 0.0024,
+            "citation": 3,
+            "cited": false
+          },
+          {
+            "id": "nu-wessal-contact-20260916-0",
+            "url": "https://nu.edu.eg/students/student-activities/wessal-nu",
+            "title": "Wessal-NU charity club — contact email",
+            "text": "Wessal-NU is a Nile University student charity club focused on helping families, needy children and orphans and encouraging charitable awareness. Its official club page publishes the contact email wessal_nu@nu.edu.eg.",
+            "kind": "reviewed-web",
+            "page": null,
+            "fetched_at": "2026-09-16T09:13:30+03:00",
+            "archived": false,
+            "content_sha256": "012698df671e885e9dcb8e5fe06849a7cc4b5ca5555194ea88c925510eaebf76",
+            "reviewed_at": "2026-09-16",
+            "retrieval_method": "Focused transcription checked against the Contact us section of the official club page snapshot.",
+            "context": "Wessal-NU is a Nile University student charity club focused on helping families, needy children and orphans and encouraging charitable awareness. Its official club page publishes the contact email wessal_nu@nu.edu.eg.",
+            "similarity": 0.0992,
+            "score": 0.1614,
+            "rerank_score": 0.0001,
+            "citation": 4,
+            "cited": false
+          }
+        ],
+        "mode": "live_confirmation",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "Nile University transportation bus service official contact",
+          "retrieval_queries": [
+            "Nile University transportation bus service official contact"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "How many NU bus seats are left right now?",
+          "normalization": "live_request",
+          "intent_classification": {
+            "label": "university",
+            "intent_score": 0.4088,
+            "score": 0.4088,
+            "margin": 0.086,
+            "confident": false,
+            "route": "university",
+            "general_information": false,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 0.23,
+          "planning_seconds": 0.01,
+          "retrieval_seconds": 0.22,
+          "generation_seconds": 0.0,
+          "queue_seconds": 0.0,
+          "model_calls": []
+        }
+      }
+    },
+    {
+      "label": "library-live",
+      "question": "How many NU library copies are available this minute?",
+      "status": 200,
+      "seconds": 0.218,
+      "result": {
+        "answer": "I can't inspect the NU Library's live catalogue or current loan inventory, so I can't confirm the exact number of available copies. Please check with the library through its official page or contact details. [1]\n\nOfficial pages for details and updates: [Nile University Library](https://www.library.nu.edu.eg/).",
+        "sources": [
+          {
+            "id": "nu-library-public-contact-20260914-74",
+            "url": "https://www.library.nu.edu.eg/",
+            "title": "Nile University Library — public contact details and live catalogue limitation",
+            "text": "Nile University Egypt library contact details: Library@nu.edu.eg. Telephone: (+202) 3854-1861 and (+202) 3854-1863. Published hours: Sunday–Thursday, 9 am–7 pm; weekends closed. Address: 26 July El Mehwar Road, El Sheikh Zayed. This is a dated snapshot of the official homepage, not a live catalogue or live copy-availability check.",
+            "kind": "reviewed-web",
+            "page": null,
+            "fetched_at": "2026-09-14T04:25:38.384208+03:00",
+            "archived": false,
+            "reviewed_at": "2026-09-14",
+            "retrieval_method": "Manually reviewed public search-index copy of the official library homepage, indexed approximately two weeks before review. Direct HTTPS collection failed certificate verification; verification was not disabled.",
+            "context": "Nile University Egypt library contact details: Library@nu.edu.eg. Telephone: (+202) 3854-1861 and (+202) 3854-1863. Published hours: Sunday–Thursday, 9 am–7 pm; weekends closed. Address: 26 July El Mehwar Road, El Sheikh Zayed. This is a dated snapshot of the official homepage, not a live catalogue or live copy-availability check.",
+            "similarity": 0.5828,
+            "score": 0.6621,
+            "rerank_score": 0.9981,
+            "citation": 1,
+            "cited": true
+          },
+          {
+            "id": "nu-wessal-contact-20260916-0",
+            "url": "https://nu.edu.eg/students/student-activities/wessal-nu",
+            "title": "Wessal-NU charity club — contact email",
+            "text": "Wessal-NU is a Nile University student charity club focused on helping families, needy children and orphans and encouraging charitable awareness. Its official club page publishes the contact email wessal_nu@nu.edu.eg.",
+            "kind": "reviewed-web",
+            "page": null,
+            "fetched_at": "2026-09-16T09:13:30+03:00",
+            "archived": false,
+            "content_sha256": "012698df671e885e9dcb8e5fe06849a7cc4b5ca5555194ea88c925510eaebf76",
+            "reviewed_at": "2026-09-16",
+            "retrieval_method": "Focused transcription checked against the Contact us section of the official club page snapshot.",
+            "context": "Wessal-NU is a Nile University student charity club focused on helping families, needy children and orphans and encouraging charitable awareness. Its official club page publishes the contact email wessal_nu@nu.edu.eg.",
+            "similarity": 0.3039,
+            "score": 0.2874,
+            "rerank_score": 0.0004,
+            "citation": 2,
+            "cited": false
+          }
+        ],
+        "mode": "live_confirmation",
+        "pipeline": {
+          "detected_language": "en",
+          "reply_language": "en",
+          "retrieval_query": "Nile University library catalogue official contact",
+          "retrieval_queries": [
+            "Nile University library catalogue official contact"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "How many NU library copies are available this minute?",
+          "normalization": "live_request",
+          "intent_classification": {
+            "label": "university",
+            "intent_score": 0.4832,
+            "score": 0.4832,
+            "margin": 0.2933,
+            "confident": false,
+            "route": "university",
+            "general_information": false,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 0.22,
+          "planning_seconds": 0.02,
+          "retrieval_seconds": 0.19,
+          "generation_seconds": 0.0,
+          "queue_seconds": 0.0,
+          "model_calls": []
+        }
+      }
+    },
+    {
+      "label": "arabic-fees",
+      "question": "مصاريف حاسبات ومعلومات كام قبل الخصم؟",
+      "status": 200,
+      "seconds": 7.588,
+      "result": {
+        "answer": "مصاريف السنة الأولى (Freshman) في كلية تكنولوجيا المعلومات وعلوم الحاسب (School of Information Technology and Computer Science) هي 193,680 جنيه مصري (EGP) للعام الدراسي 2026/2027، وده المبلغ قبل تطبيق أي خصومات (Category 4: scholarship discount 0%) [1].\n\nالتفاصيل والتحديثات على الصفحات الرسمية: [Fees and Financials — 2026/2027](https://nu.edu.eg/fees-and-financials).",
+        "sources": [
+          {
+            "id": "e11a9e460e01b2db-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Information Technology and Computer Science — Tuition fees by discount category",
+            "text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T03:23:31.377163+03:00",
+            "extracted_at": "2026-09-16T23:11:14.298698+03:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "similarity": 0.7949,
+            "score": 0.7996,
+            "rerank_score": 0.9997,
+            "citation": 1,
+            "answer_text": "School of Information Technology and Computer Science. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "cited": true
+          },
+          {
+            "id": "a26b53f4f7d8f3b0-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Engineering and Applied Sciences — Tuition fees by discount category",
+            "text": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T03:23:31.377163+03:00",
+            "extracted_at": "2026-09-16T23:11:14.298698+03:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 96,840 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 116,208 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 154,944 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "similarity": 0.7375,
+            "score": 0.6896,
+            "rerank_score": 0.8655,
+            "citation": 2,
+            "answer_text": "School of Engineering and Applied Sciences. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 193,680 EGP.",
+            "cited": false
+          },
+          {
+            "id": "5d4c8c939a671bea-0",
+            "url": "https://nu.edu.eg/fees-and-financials",
+            "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
+            "title": "Fees and Financials | NU — Undergraduate Tuition Fees 2026/2027 — School of Biotechnology — Tuition fees by discount category",
+            "text": "School of Biotechnology. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 91,980 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 110,376 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 147,168 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 183,960 EGP.",
+            "page": null,
+            "kind": "image",
+            "fetched_at": "2026-09-14T03:23:31.377163+03:00",
+            "extracted_at": "2026-09-16T23:11:14.298698+03:00",
+            "archived": false,
+            "content_sha256": "aa26add0f1008d15d5ded49fdefc3040c524ce18b0db2f9103a904a0a47d8a06",
+            "ocr_reviewed": true,
+            "context": "School of Biotechnology. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nSpecial Category: Top 500; annual tuition 0 EGP.\nCategory 1: scholarship discount 50%; annual tuition fees 91,980 EGP.\nCategory 2: scholarship discount 40%; annual tuition fees 110,376 EGP.\nCategory 3: scholarship discount 20%; annual tuition fees 147,168 EGP.\nCategory 4: scholarship discount 0%; annual tuition fees 183,960 EGP.",
+            "similarity": 0.699,
+            "score": 0.6663,
+            "rerank_score": 0.5911,
+            "citation": 3,
+            "answer_text": "School of Biotechnology. Undergraduate tuition fees 2026/2027. First year (Freshman) only. Tuition fees by discount category. Average annual tuition excludes non-curricular courses.\nCategory 4: scholarship discount 0%; annual tuition fees 183,960 EGP.",
+            "cited": false
+          }
+        ],
+        "mode": "generated",
+        "pipeline": {
+          "detected_language": "ar",
+          "reply_language": "ar",
+          "retrieval_query": "Computer and Information Science tuition fees at Nile University | ITCS tuition fees before discount",
+          "retrieval_queries": [
+            "Computer and Information Science tuition fees at Nile University",
+            "ITCS tuition fees before discount"
+          ],
+          "current_information_links": true,
+          "route": "university",
+          "general_information": false,
+          "message_meaning": "How much are the fees for Computer and Information Science before the discount?",
+          "normalization": "model",
+          "intent_classification": {
+            "label": "mixed",
+            "intent_score": 0.5152,
+            "score": 0.5152,
+            "margin": 0.3048,
+            "confident": false,
+            "route": "mixed",
+            "general_information": true,
+            "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "head_version": "69301ae44b2aa1db"
+          },
+          "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "generator": "gemma4:12b",
+          "elapsed_seconds": 7.59,
+          "planning_seconds": 2.48,
+          "retrieval_seconds": 0.5,
+          "generation_seconds": 4.61,
+          "queue_seconds": 0.0,
+          "model_calls": [
+            {
+              "stage": "understanding",
+              "seconds": 2.461,
+              "load_duration": 2159700,
+              "prompt_eval_count": 937,
+              "prompt_eval_duration": 689934000,
+              "eval_count": 72,
+              "eval_duration": 1757906000
+            },
+            {
+              "stage": "answering",
+              "seconds": 3.808,
+              "load_duration": 2126300,
+              "prompt_eval_count": 1493,
+              "prompt_eval_duration": 1027480000,
+              "eval_count": 108,
+              "eval_duration": 2765308000
+            },
+            {
+              "stage": "checking",
+              "seconds": 0.801,
+              "load_duration": 2160400,
+              "prompt_eval_count": 614,
+              "prompt_eval_duration": 490008000,
+              "eval_count": 13,
+              "eval_duration": 298972000
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "median_seconds": 3.74,
+  "total_seconds": 24.586,
+  "comparison": {
+    "before_median_seconds": 6.901,
+    "final_median_seconds": 3.74,
+    "median_improvement_percent": 45.8
+  }
+}

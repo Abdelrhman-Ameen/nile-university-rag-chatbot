@@ -76,6 +76,13 @@ FRANCO_WORDS = {
     "nafs",
     "elneel",
     "elnile",
+    "zayy",
+    "wala",
+    "bas",
+    "kan",
+    "beta3",
+    "bye3mel",
+    "far2",
 }
 AMBIGUOUS = {
     "ana",
@@ -138,6 +145,17 @@ FRANCO_HINTS = {
     "ta7weel": "transfer",
     "emt7an": "exam",
     "emte7an": "exam",
+    "zayy": "such as",
+    "wala": "or",
+    "bas": "only",
+    "kan": "was",
+    "beta3": "for/about",
+    "bye3mel": "does",
+    "far2": "numerical difference",
+    "ma3adetes": "did not pass",
+    "ma3adetsh": "did not pass",
+    "managa7tesh": "did not pass",
+    "mang7tesh": "did not pass",
 }
 FRANCO_WORDS.update(FRANCO_HINTS)
 
@@ -167,3 +185,35 @@ def fallback_query(text: str) -> str:
     """A small domain glossary when The local model is unavailable; not a full translator."""
     hints = [FRANCO_HINTS[w] for w in tokens(text) if w in FRANCO_HINTS]
     return text + ("\n" + " ".join(hints) if hints else "")
+
+
+def semantic_constraints(text: str) -> list[str]:
+    """Return high-impact facts that an Arabizi rewrite must not reverse.
+
+    Arabizi negation often wraps a verb with ``ma...sh`` or uses phonetic endings
+    such as ``ma3adetes``. The planner remains responsible for translation; this
+    guard carries the original negative phrase into retrieval and generation.
+    """
+    words = tokens(text)
+    constraints = []
+    negative = {
+        "ma3adetes": "did not pass",
+        "ma3adetsh": "did not pass",
+        "managa7tesh": "did not pass",
+        "mang7tesh": "did not pass",
+    }
+    for index, word in enumerate(words):
+        if word == "far2":
+            constraints.append("The user explicitly asks for the numerical difference between the values")
+            continue
+        meaning = negative.get(word)
+        if meaning:
+            target = " ".join(words[index + 1 : index + 4]).strip()
+            constraints.append(f"Explicit original-language negation: {meaning} {target}".strip())
+            continue
+        if len(word) >= 6 and word.startswith("ma") and word.endswith(("sh", "tesh", "tsh")):
+            phrase = " ".join(words[index : index + 4])
+            constraints.append(
+                f'Explicit original-language negation in "{phrase}": do not turn it into a positive claim'
+            )
+    return list(dict.fromkeys(constraints))

@@ -81,10 +81,11 @@ def test_head_skips_planning_for_chat_but_document_planner_resolves_intent(
     monkeypatch.setattr(api, "plan_query", unexpected if route == "general" else rewrite)
     monkeypatch.setattr(api, "retriever", lambda: Index())
     monkeypatch.setattr(api, "generate_answer", answer)
+    question = "Explain recursion" if route == "general" else "Tell me more about choosing NU"
     result = client.post(
         "/api/chat",
         json={
-            "question": "Tell me more about choosing NU",
+            "question": question,
             "history": [{"role": "user", "content": "I want to study computing"}],
         },
     )
@@ -112,3 +113,106 @@ def test_unconfident_head_passes_history_to_planner(monkeypatch, client):
         == 200
     )
     assert calls == [history]
+
+
+@pytest.mark.parametrize(
+    "question,classification,expected_route",
+    [
+        (
+            "What are the ITCS tuition fees before scholarships?",
+            {
+                "confident": True,
+                "route": "university",
+                "label": "university",
+                "general_information": False,
+            },
+            "university",
+        ),
+        (
+            "Where is Nile University in Egypt?",
+            {
+                "confident": False,
+                "route": "university",
+                "label": "university",
+                "general_information": False,
+            },
+            "university",
+        ),
+        (
+            "What is UGRF?",
+            {
+                "confident": False,
+                "route": "mixed",
+                "label": "mixed",
+                "general_information": True,
+            },
+            "university",
+        ),
+    ],
+)
+def test_clear_english_nu_questions_skip_model_planning(
+    monkeypatch, tmp_path, client, question, classification, expected_route
+):
+    monkeypatch.setattr(api, "classify_intent", lambda _: classification)
+    monkeypatch.setattr(api, "DATA_DIR", tmp_path)
+    (tmp_path / "index.npz").touch()
+    monkeypatch.setattr(
+        api,
+        "plan_query",
+        lambda *a: pytest.fail("A clear one-part English query should not call the planner"),
+    )
+
+    class Index:
+        def search(self, query, **kwargs):
+            return [{"citation": 1, "text": "Relevant NU evidence"}]
+
+        advise = search
+
+    monkeypatch.setattr(api, "retriever", lambda: Index())
+    monkeypatch.setattr(api, "focus_sources", lambda query, sources: sources)
+    monkeypatch.setattr(api, "generate_answer", lambda *a, **k: ("Answer [1]", "generated"))
+    response = client.post("/api/chat", json={"question": question})
+    assert response.status_code == 200
+    pipeline = response.json()["pipeline"]
+    assert pipeline["route"] == expected_route
+    assert pipeline["normalization"] == "direct_english"
+
+
+def test_live_nu_request_skips_planning_and_generation(monkeypatch, tmp_path, client):
+    monkeypatch.setattr(
+        api,
+        "classify_intent",
+        lambda _: {
+            "confident": False,
+            "route": "general",
+            "label": "social",
+            "general_information": False,
+        },
+    )
+    monkeypatch.setattr(api, "DATA_DIR", tmp_path)
+    (tmp_path / "index.npz").touch()
+    monkeypatch.setattr(
+        api, "plan_query", lambda *a: pytest.fail("A live NU request should not call the planner")
+    )
+
+    class Index:
+        def search(self, query, **kwargs):
+            assert "transportation" in query
+            return [
+                {
+                    "citation": 1,
+                    "title": "Transportation",
+                    "url": "https://nu.edu.eg/transportation",
+                    "text": "Contact transportation for live availability.",
+                }
+            ]
+
+    monkeypatch.setattr(api, "retriever", lambda: Index())
+    monkeypatch.setattr(api, "focus_sources", lambda query, sources: sources)
+    response = client.post(
+        "/api/chat", json={"question": "How many NU bus seats are left right now?"}
+    )
+    assert response.status_code == 200
+    result = response.json()
+    assert result["mode"] == "live_confirmation"
+    assert result["pipeline"]["normalization"] == "live_request"

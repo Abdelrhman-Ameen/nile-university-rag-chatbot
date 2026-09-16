@@ -42,7 +42,8 @@ def test_unsupported_draft_is_repaired_or_withheld(monkeypatch, repair_succeeds)
         answer, mode = generation.generate_answer("Where is NU?", "en", [], [source], True)
         assert answer == "Sheikh Zayed [1]" and mode == "generated"
     else:
-        with pytest.raises(generation.GenerationError, match="verify its answer"):
-            generation.generate_answer("Where is NU?", "en", [], [source], True)
+        answer, mode = generation.generate_answer("Where is NU?", "en", [], [source], True)
+        assert mode == "verified_fallback"
+        assert "Sheikh Zayed" in answer and "[1]" in answer and "Mansoura" not in answer
     assert len(messages) == 2
     assert "Mansoura is not in the source" in messages[1][-1]["content"]

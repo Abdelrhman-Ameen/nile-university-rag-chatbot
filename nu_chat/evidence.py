@@ -116,8 +116,10 @@ def needs_current_link(text: str) -> bool:
         re.search(
             r"\b(fees?|tuition|cost|scholarship|discount|deadline|apply|application|admission|"
             r"eligibility|policy|policies|schedule|event|competition|registration|current|latest|"
-            r"today|open|president|director|contact|phone|hours|202\d)\b|"
-            r"مصاريف|المصاريف|رسوم|الرسوم|منح|خصم|تقديم|موعد|مواعيد|شروط|دلوقتي|حاليا|أحدث|احدث|مدير|رئيس|تليفون|مفتوح",
+            r"today|open|president|director|contact|phone|hours|inventory|available|availability|"
+            r"seats?|copies|meeting|room|reserved|reservation|202\d)\b|"
+            r"مصاريف|المصاريف|رسوم|الرسوم|منح|خصم|تقديم|موعد|مواعيد|شروط|دلوقتي|حاليا|"
+            r"أحدث|احدث|مدير|رئيس|تليفون|مفتوح|متاح|أماكن|اماكن|اجتماع|قاعة|حجز|محجوز",
             text,
             re.I,
         )

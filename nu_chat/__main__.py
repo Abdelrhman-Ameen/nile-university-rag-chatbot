@@ -30,6 +30,11 @@ def main():
         "--max-images", type=int, default=0, help="Image OCR limit; 0 processes all selected images"
     )
     parser.add_argument(
+        "--reviewed-only",
+        action="store_true",
+        help="Refresh only content-hash-checked reviewed images; skip automatic OCR and PDFs",
+    )
+    parser.add_argument(
         "--with-llm", action="store_true", help="Use local model normalization during evaluation"
     )
     args = parser.parse_args()
@@ -48,7 +53,10 @@ def main():
         from nu_chat.ocr import extract_images
 
         result = extract_images(
-            not args.document_images_only, args.max_images, refresh=args.refresh
+            not args.document_images_only,
+            args.max_images,
+            refresh=args.refresh,
+            reviewed_only=args.reviewed_only,
         )
         print(json.dumps({k: v for k, v in result.items() if k != "results"}, indent=2))
     if args.command in {"index", "ingest"}:

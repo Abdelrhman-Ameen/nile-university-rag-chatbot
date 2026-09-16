@@ -55,7 +55,12 @@ def pdf_reading_order(record: dict, width: int, height: int) -> str:
     )
 
 
-def extract_images(all_images: bool = True, max_images: int = 0, refresh: bool = False) -> dict:
+def extract_images(
+    all_images: bool = True,
+    max_images: int = 0,
+    refresh: bool = False,
+    reviewed_only: bool = False,
+) -> dict:
     from rapidocr import LangRec, ModelType, OCRVersion, RapidOCR
 
     config = json.loads((ROOT / "sources.json").read_text(encoding="utf-8"))
@@ -305,6 +310,8 @@ def extract_images(all_images: bool = True, max_images: int = 0, refresh: bool =
     try:
         selected = []
         for asset in assets:
+            if reviewed_only and asset["url"] not in reviewed_urls:
+                continue
             if not all_images and not asset.get("ocr_candidate"):
                 continue
             safe = canonical_url(asset["url"], config["allowed_domains"], assets=True)
@@ -317,7 +324,8 @@ def extract_images(all_images: bool = True, max_images: int = 0, refresh: bool =
         for asset in selected:
             if asset["url"] in reviewed_urls:
                 accept_image(read_image(asset))
-        pdf_pages()
+        if not reviewed_only:
+            pdf_pages()
         # Each worker owns its OCR engines. Only this coordinator updates the corpus.
         remaining = [asset for asset in selected if asset["url"] not in reviewed_urls]
         with ThreadPoolExecutor(max_workers=4) as pool:

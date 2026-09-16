@@ -6,7 +6,13 @@ import pytest
 
 from nu_chat import api, generation, retrieval
 from nu_chat.collect import Collector, canonical_url, extract_html
-from nu_chat.language import detect_language, fallback_query
+from nu_chat.language import detect_language, fallback_query, semantic_constraints
+from nu_chat.routing import (
+    direct_live_query,
+    has_university_context,
+    is_nu_fact_request,
+    mentions_nu_entity,
+)
 
 
 @pytest.fixture(autouse=True)
@@ -247,6 +253,88 @@ def test_franco_glossary_fallback_and_qwen_rewrite(monkeypatch):
         "Nile University tuition fees",
         "model",
     )
+
+
+def test_franco_negation_is_carried_past_an_incorrect_model_rewrite(monkeypatch):
+    monkeypatch.setattr(
+        generation,
+        "call_model",
+        lambda *a, **k: json.dumps(
+            {
+                "intent": "university",
+                "queries": ["IB admission 24 points TOK"],
+                "meaning": "The student has 24 IB points with TOK.",
+                "general_question": "",
+            }
+        ),
+    )
+    plan = generation.plan_query("ana IB 24 points bas ma3adetes TOK", "franco", [])
+    assert "did not pass tok" in plan["meaning"].lower()
+    assert "did not pass tok" in plan["query"].lower()
+    assert semantic_constraints("ana ma3adetes TOK")
+
+
+def test_franco_comparison_request_keeps_the_requested_arithmetic():
+    assert "numerical difference" in semantic_constraints(
+        "far2 eshterak bus NU ben sheikh zayed w masr el gedida kam"
+    )[0]
+
+
+@pytest.mark.parametrize("text", ["Simulatopedia beta3 GSP", "FilmFish meeting", "Wessal NU"])
+def test_named_nu_entities_cannot_take_the_general_shortcut(text):
+    assert mentions_nu_entity(text)
+
+
+def test_concrete_program_eligibility_is_a_fact_request():
+    assert is_nu_fact_request("MSc mechatronics target graduates zayy biomedical wala mechanical")
+    assert not is_nu_fact_request("Convince me that NU is a good fit")
+
+
+def test_fast_route_guards_recognize_context_and_live_service():
+    assert has_university_context("قولي عنوان حرم النيل")
+    assert direct_live_query("How many NU library copies are available?").startswith(
+        "Nile University library"
+    )
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "How many bus seats are left right now?",
+        "How many library copies are available this minute?",
+        "Is a room reserved for me?",
+        "FilmFish meeting this week: what room and time?",
+    ],
+)
+def test_private_or_live_requests_use_confirmation_path(question):
+    assert generation.needs_live_confirmation(question)
+
+
+def test_live_confirmation_cites_only_the_relevant_official_route():
+    sources = [
+        {"citation": 1, "title": "Transportation", "url": "https://nu.edu.eg/transport"},
+        {"citation": 2, "title": "Application checklist", "url": "https://nu.edu.eg/apply"},
+    ]
+    answer = generation.missing_evidence(
+        "en", sources, "How many bus seats are left right now?", ""
+    )
+    assert "[1]" in answer and "[2]" not in answer
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "ana biomedical engineer. MSc mechatronics NU target graduates zayy wala mechanical bas?",
+        "master engineering microelectronics NU fe applied project w report wala courses bas?",
+    ],
+)
+def test_franco_with_english_program_terms_is_detected(question):
+    assert detect_language(question) == "franco"
+
+
+def test_arabic_reply_repair_preserves_citations(monkeypatch):
+    monkeypatch.setattr(generation, "call_model", lambda *a, **k: "الإجابة الصحيحة [1]")
+    assert generation.ensure_reply_language("The correct answer [1]", "ar") == "الإجابة الصحيحة [1]"
 
 
 def test_structured_citations_and_explicit_abstention(monkeypatch, source):

@@ -3,6 +3,7 @@
 import asyncio
 import json
 import logging
+import re
 import threading
 import time
 from contextlib import asynccontextmanager
@@ -32,6 +33,7 @@ from nu_chat.generation import (
     generate_answer,
     model_available,
     model_client,
+    needs_live_confirmation,
     plan_query,
     warm_model,
 )
@@ -41,6 +43,13 @@ from nu_chat.persona import identity_question
 from nu_chat.request_cache import RequestCache
 from nu_chat.request_queue import RequestQueue
 from nu_chat.retrieval import Retriever, encoder, reranker
+from nu_chat.routing import (
+    direct_live_query,
+    has_university_context,
+    is_nu_fact_request,
+    is_simple_named_nu_question,
+    mentions_nu_entity,
+)
 from nu_chat.telemetry import model_timings, progress, stage
 
 log = logging.getLogger(__name__)
@@ -298,14 +307,40 @@ def answer_request(request: ChatRequest):
             # A tags probe cannot predict whether inference will succeed. Let the actual
             # request reconnect or report its error, avoiding a redundant failure point.
             available = True
-            if classification["confident"] and classification["route"] == "identity":
+            live_request = needs_live_confirmation(question) and (
+                has_university_context(question)
+                or bool(
+                    re.search(
+                        r"\b(?:bus|transport|library|copies|meeting|reservation|booking)\b|"
+                        r"أتوبيس|اتوبيس|مكتبة|اجتماع|حجز",
+                        question,
+                        re.I,
+                    )
+                )
+            )
+            if live_request and not history:
+                query = direct_live_query(question)
+                plan = {
+                    "route": "university",
+                    "query": query,
+                    "queries": [query],
+                    "meaning": question,
+                    "normalization": "live_request",
+                    "general_information": False,
+                    "intent": "university",
+                }
+            elif classification["confident"] and classification["route"] == "identity":
                 plan = {
                     "route": "identity",
                     "query": "",
                     "meaning": "",
                     "normalization": "intent_classifier",
                 }
-            elif classification["confident"] and classification["route"] == "general":
+            elif (
+                classification["confident"]
+                and classification["route"] == "general"
+                and not mentions_nu_entity(question)
+            ):
                 plan = {
                     "query": "",
                     "meaning": "",
@@ -313,10 +348,62 @@ def answer_request(request: ChatRequest):
                     "route": "general",
                     "general_information": classification["general_information"],
                 }
+            elif (
+                not history
+                and detected == "en"
+                and classification.get("route") in {"university", "advising"}
+                and (classification["confident"] or is_simple_named_nu_question(question))
+            ):
+                plan = {
+                    "query": question,
+                    "queries": [question],
+                    "meaning": question,
+                    "normalization": "direct_english",
+                    "route": classification["route"],
+                    "general_information": False,
+                    "intent": classification["label"],
+                }
+            elif (
+                not history
+                and detected == "en"
+                and classification.get("route") == "mixed"
+                and is_simple_named_nu_question(question)
+            ):
+                plan = {
+                    "query": question,
+                    "queries": [question],
+                    "meaning": question,
+                    "normalization": "direct_english",
+                    "route": "university",
+                    "general_information": False,
+                    "intent": "university",
+                }
+            elif (
+                not history
+                and detected != "franco"
+                and classification.get("route") == "general"
+                and classification.get("score", 0) >= 0.5
+                and classification.get("margin", 0) >= 0.2
+                and not has_university_context(question)
+                and not is_nu_fact_request(question)
+            ):
+                plan = {
+                    "query": "",
+                    "queries": [],
+                    "meaning": question if detected == "en" else "",
+                    "normalization": "intent_classifier",
+                    "route": "general",
+                    "general_information": classification["general_information"],
+                    "intent": classification["label"],
+                }
             else:
                 # A document request already needs a query-planning call. Resolve its exact
                 # intent there too: an admission procedure is not a persuasion request.
                 plan = plan_query(question, detected, history)
+                if plan["route"] == "advising" and is_nu_fact_request(
+                    question + " " + plan.get("meaning", "")
+                ):
+                    plan.update(route="university", intent="university", general_information=False)
 
         planned = time.perf_counter()
         query = plan["query"]
@@ -337,7 +424,9 @@ def answer_request(request: ChatRequest):
                         part,
                         retriever().search(
                             part,
-                            original=question if len(queries) == 1 else "",
+                            # Original wording adds candidate terms; the reranker still
+                            # judges each subquestion independently against its passage.
+                            original=question,
                             meaning=part,
                         ),
                     )

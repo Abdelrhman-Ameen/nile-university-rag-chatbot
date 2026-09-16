@@ -1,5 +1,28 @@
 [
   {
+    "source_url": "https://nu.edu.eg/students/services-facilities/transportation",
+    "asset_url": "https://nu.edu.eg/sites/default/files/2026-09/transportation_prices.jpg",
+    "source_title": "Transportation | NU",
+    "section": "NU Bus Fees and subscription policy 2026/2027",
+    "sha256": "4c117f166ea9251f8eff5914124eaf4141cff11812f7b445741ae81118f220fd",
+    "reviewed_at": "2026-09-16",
+    "method": "Visually checked transcription of the official image. Values and policy conditions were read from the image rather than inferred from automatic OCR.",
+    "sections": [
+      {
+        "title": "Bus route subscription prices per semester 2026/2027",
+        "text": "Nile University transportation fees 2026/2027 per semester. Sheikh Zayed: 8,800 EGP. October: 8,800 EGP. Hadayek Al Ahram: 9,800 EGP. Hadayek October: 9,800 EGP. Imbaba and Zamalek: 11,750 EGP. Abbasia and Ghamra: 11,750 EGP. Maadi: 13,250 EGP. Gesr El Suez and Ring Road: 13,250 EGP. Heliopolis (Masr El Gedida): 15,300 EGP. Nasr City: 15,300 EGP. Helwan: 15,300 EGP. Rehab and Tagamoa: 16,300 EGP. The displayed amounts are for one semester."
+      },
+      {
+        "title": "Bus booking dates, subscribed bus rule and refund policy 2026/2027",
+        "text": "NU transportation subscription policy 2026/2027. Booking is open from 16 August 2026 through 24 September 2026, or until capacity is reached, whichever happens first. A student may not use a bus other than the bus to which the student subscribed. A refund requested during the first week from the start of study has a 10% deduction. A refund within the first month from the start of study has a 30% deduction. No subscription amount is refunded after the first month from the start of study."
+      },
+      {
+        "title": "Minimum subscribers and route cancellation refund 2026/2027",
+        "text": "NU transportation subscription policy 2026/2027. A bus route requires a minimum of six subscribers. If the minimum number is not reached, the route is cancelled and the full subscription amount is refunded. This university cancellation with a full refund is distinct from a student's voluntary withdrawal deduction. The image does not expose live seat inventory, so current remaining seats must be confirmed through the transportation service."
+      }
+    ]
+  },
+  {
     "source_url": "https://nu.edu.eg/fees-and-financials",
     "asset_url": "https://nu.edu.eg/sites/default/files/inline-images/Screenshot%202026-05-20%20132822.png",
     "source_title": "Fees and Financials | NU",

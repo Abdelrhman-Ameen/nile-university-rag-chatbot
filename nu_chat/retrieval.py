@@ -44,6 +44,7 @@ ABBREVIATIONS = {
     "FACT": "FESTO Authorized and Certified Training Centre",
     "SCE": "School of Continuing Education",
     "IECC": "Innovation Entrepreneurship and Competitiveness Centre",
+    "GSP": "Graduate Starter Pack",
 }
 
 
@@ -318,6 +319,14 @@ class Retriever:
         candidate_ids.update(
             int(i) for i in np.argsort(title_precision)[-24:] if title_precision[i] > 0
         )
+        reviewed_matches = set()
+        for i, chunk in enumerate(self.chunks):
+            if not (chunk.get("kind") == "reviewed-web" or chunk.get("ocr_reviewed")):
+                continue
+            passage_terms = set(search_terms(chunk["title"] + " " + chunk["text"]))
+            if (words & self.title_terms[i]) and len(words & passage_terms) >= min(2, len(words)):
+                reviewed_matches.add(i)
+        candidate_ids.update(reviewed_matches)
         tuition_tables = set()
         if general_tuition(query):
             years = re.findall(r"\b20\d{2}\b", query)
@@ -381,6 +390,9 @@ class Retriever:
                         # Reviewed general tables take priority over certificate-specific
                         # or old GPA tables for a question about undergraduate tuition.
                         + (0.35 if i in tuition_tables else 0)
+                        + (0.24 if self.chunks[i].get("kind") == "reviewed-web" else 0)
+                        + (0.2 if self.chunks[i].get("ocr_reviewed") else 0)
+                        + (1.0 if i in reviewed_matches else 0)
                         # Course pages carry an explicit Course ID field. A matching course
                         # title is weaker evidence for a degree catalogue than a program list.
                         - (
@@ -398,7 +410,11 @@ class Retriever:
                 )
         chosen, per_source, contexts = [], {}, set()
         for idx in candidates:
-            if ranker is not None and reranked[idx] < 0.05:
+            if (
+                ranker is not None
+                and reranked[idx] < 0.05
+                and idx not in reviewed_matches
+            ):
                 continue
             if ranker is None and dense[idx] < MIN_SIMILARITY:
                 continue
