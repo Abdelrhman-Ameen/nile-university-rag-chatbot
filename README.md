@@ -71,6 +71,8 @@ python evaluation/check_connections.py --output data/connections.json
 
 The 100-scenario suite includes 116 messages across identity, greetings, emotions, coding, NLP, fees, GPA, admissions, research, competitions, source grounding, follow-ups, invalid input, and concurrent requests. It uses the actual `/api/chat` endpoint and preserves full responses, cited passages, and timings in `data/scenarios-100.json`. Each scenario includes a manual-review rubric. Mechanical passes are regression signals, not factual-quality scores or production certification. See [evaluation notes](evaluation/RESULTS.md).
 
+A separate [100-query challenge evaluation on September 16, 2026](evaluation/independent_2026_09_16/REPORT.md) produced **67 pass, 13 partial and 20 fail**, including four HTTP 503 responses. It used new fact targets checked against 490 earlier prompts, frozen references and an unchanged local app. Every answer was reviewed by an AI agent; this was not a recruited human panel. The [full answers](evaluation/independent_2026_09_16/ANSWERS.md) and [failure analysis](evaluation/independent_2026_09_16/FINDINGS.md) document missing image-based transport information, lost Franco negation, retrieval gaps and citation errors. The interface refinement was made after that run; it does not fix those answer-quality failures.
+
 Coverage artifacts:
 
 - `evaluation/coverage-2026-09-14.json`: checked-in summary of completed extraction and remaining gaps.

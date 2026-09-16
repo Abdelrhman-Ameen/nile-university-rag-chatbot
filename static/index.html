@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#092d50" />
     <title>NU Chat · Nile University, Egypt</title>
     <link rel="icon" href="/static/mark.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/style.css?v=20260916.2" />
     <script src="/static/chat-transport.js" defer></script>
     <script src="/static/app.js" defer></script>
   </head>
@@ -24,12 +24,14 @@
         /><span>Nile University</span></a
       >
       <button id="new-chat" class="nav-button">
-        <span aria-hidden="true">＋</span> New chat
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+        New chat
       </button>
       <button id="library-button" class="nav-button">
-        <span aria-hidden="true">▤</span> Sources
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5" /></svg>
+        Sources
       </button>
-      <div id="recent-chats" class="recent-chats"></div>
+      <nav id="recent-chats" class="recent-chats" aria-label="Recent chats"></nav>
       <a
         class="university-link"
         href="https://nu.edu.eg"
@@ -48,8 +50,8 @@
             aria-controls="sidebar"
             aria-expanded="false"
           >
-            ☰</button
-          ><span>Nile University</span>
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button><span>NU Chat</span>
         </div>
         <button id="status-button" class="model-status" title="Model status">
           <span id="status-dot" class="dot pending"></span
@@ -85,14 +87,14 @@
             <div class="composer-tools">
               <label class="sr-only" for="reply-language">Reply language</label>
               <select id="reply-language" aria-label="Reply language">
-                <option value="auto">Auto</option>
+                <option value="auto">Auto language</option>
                 <option value="en">English</option>
                 <option value="ar">العربية</option>
                 <option value="franco">Franco</option>
                 <option value="mixed">عربي + English</option>
               </select>
               <button id="send-button" type="submit" aria-label="Send message">
-                ↑
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" /></svg>
               </button>
             </div>
           </form>
