@@ -1,0 +1,4529 @@
+[
+  {
+    "question": "22nd UGRF submission requirements",
+    "files": [
+      "data/retrieval-expanded-check.json"
+    ]
+  },
+  {
+    "question": "2asdak eh be akher gomla?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "2ool nokta 3an el exams",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "3ayez a3raf el mena7 el mota7a",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "3ayez a3raf el mena7 el mota7a\nscholarships",
+    "files": [
+      "data/evaluation-baseline.json",
+      "evaluation/results-baseline.json"
+    ]
+  },
+  {
+    "question": "3ayez raqam admissions NU",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "7ases enny lwa7dy fel koleya",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "<question>Where is Nile University located?</question>",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Alright, that makes sense.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "And for the following year?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "And what about the other one?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "And with the 50% scholarship?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-coverage-retest.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Are you a person or a university bot?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Are you representing Nile officially?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Are you the university's official support team?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Calculate 35 plus 48.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Calculate twenty-four multiplied by seventeen.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Can I transfer from another university to NU?",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "Can you give another example of it?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Can you introduce your purpose?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Can you listen while I vent?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-release-hard.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Can you make that shorter?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Convince me that Nile fits my interest in research.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Cool, cheers!",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Correct these unsupported claims using only the supplied evidence, or remove them: [\"The Entrepreneurship Track is specifically named 'Entrepreneurship Track' in the text; the source refers to it as the 'Entrepreneurship Program – Undergrad Track'.\", \"The text does not specify that the Entrepreneurship Program is specifically for 'turning graduation projects into startups' as a general rule for all students, but rather as a result of the program's focus on practical application for senior undergraduate students.\"]. Return the required answer JSON. Keep it concise and preserve supported useful facts.",
+    "files": [
+      "data/advice-trace.json"
+    ]
+  },
+  {
+    "question": "Could you explain that part again?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Do the 2026/2027 annual undergraduate tuition figures include non-curricular courses?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Do you recommend learning Python first?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Do you think choosing this university is a good idea?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Do you think this college is worth considering?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Does NU guarantee every student a free laptop?",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "evaluation/chat_cases.json"
+    ]
+  },
+  {
+    "question": "Does NU have a scholarship for students from Upper Egypt?",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "evaluation/chat_cases.json"
+    ]
+  },
+  {
+    "question": "Does NU have international student exchange programs?",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "Does Nile offer a bachelor's degree in Cybersecurity?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Does a Sawiris scholarship nomination guarantee admission to NU?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Does the same rule apply to me?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Explain a credit hour and tell me NU's price per credit.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Explain embeddings in two sentences.",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-retest14.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Explain embeddings.",
+    "files": [
+      "data/qwen14-comparison.json"
+    ]
+  },
+  {
+    "question": "Explain gradient descent in simple terms.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Explain overfitting and tell me which NU course covers it.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Explain patents and tell me what NU's IPTTO does.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Explain precision and recall with a numerical example.",
+    "files": [
+      "data/qwen14-comparison.json"
+    ]
+  },
+  {
+    "question": "Explain precision and recall with a small example.",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Explain the difference between a Python list and tuple.",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Explain the water cycle to a beginner.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Explain university research and describe the UGRF submission rules.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Explain why magnets attract iron.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "FACT 3ando courses eh?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Give me NU's admissions phone number.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Give me a study tip and the NU library opening hours.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Give me reasons to enroll at Nile instead of dismissing my concerns.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Good evening, how are things?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Got it, I understand now.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Help me draft a polite email asking for an extension.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Help me organize tomorrow's revision time.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Hey, good afternoon!",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Hi there, good to see you.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Hmm, let me think for a moment.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "How can I apply to Nile University?",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "evaluation/chat_cases.json"
+    ]
+  },
+  {
+    "question": "How can I contact the Nile University library?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-coverage-retest.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "How can I contact the Nile registrar?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "How can I judge whether a university suits me?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "How do I apply to Nile University as an undergraduate?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-release-hard.json",
+      "data/scenarios-retest14.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "How do I apply to Nile University?",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/smoke-results.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "How do I bake chocolate brownies?",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "How do I contact the NU library?",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "evaluation/chat_cases.json"
+    ]
+  },
+  {
+    "question": "How do dictionaries work in Python?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "How does cosine similarity work?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "How much is one credit hour in NU Biotechnology?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "How much would that be after the discount?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "How should I decide whether Nile is right for me?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "How to apply for scholarships at Nile University?",
+    "files": [
+      "data/evaluation-qwen.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "How to apply to Nile University?",
+    "files": [
+      "data/evaluation-qwen.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "How to apply to the university?",
+    "files": [
+      "data/evaluation-qwen.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "I am a continuing ITCS student with GPA 3.98. What exact tuition discount do I get?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "I am disappointed with the university.",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "I am furious with the registration office.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I am proud of my latest project result.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I am undecided about joining NU; what should I consider?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I am worried NU is expensive. Why consider it?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I care about startup projects; why choose Nile?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I dislike NU; what would make joining it worthwhile?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I failed a quiz and feel awful.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I feel lonely in my first semester.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I feel overwhelmed by college work.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I finally finished my graduation project and I am delighted.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I love being with my friends on campus.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "I passed my exam!",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Is Biotechnology one of those majors?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-release-hard.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Is Nile University's engineering degree accredited?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Is it worth choosing a small university?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Is learning a second language worth my time?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Is morning or evening better for studying?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Is the June 7 submission deadline on the 22nd UGRF page still upcoming as of September 14, 2026?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Is this a student-made chatbot?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "List the ITCS undergraduate majors.",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-release-hard.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Make a lighthearted joke about exams.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Many thanks for the explanation.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "My family thinks NU is not worth it. What is the case for it?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "My professor's response really upset me.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "NU ekhteyar monaseb leya wala la?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "NU monasba le wa7ed zayy?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Nile University Egypt application process",
+    "files": [
+      "data/retrieval-expanded-check.json"
+    ]
+  },
+  {
+    "question": "Nile University School of Information Technology and Computer Science tuition fees",
+    "files": [
+      "data/retrieval-expanded-check.json"
+    ]
+  },
+  {
+    "question": "Nile University continuing student merit scholarship GPA discount thresholds",
+    "files": [
+      "data/retrieval-expanded-check.json"
+    ]
+  },
+  {
+    "question": "Now write a Python function to add two numbers.",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-coverage-retest.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Okay, give me a second to think.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Rewrite this sentence more politely: send the file now.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Say hello in Arabic",
+    "files": [
+      "evaluation/runs/performance-after.json",
+      "evaluation/runs/performance-before.json",
+      "evaluation/runs/performance-bounded.json",
+      "evaluation/runs/performance-startup-error.json"
+    ]
+  },
+  {
+    "question": "See you later.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Should I buy a laptop or a desktop?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Show a Python dictionary example and list the NU ITCS majors.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Show a Python function that escapes <script> tags in text.",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Show a function that sorts integers.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Suggest a personal revision plan for the weekend.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Suggest a simple study schedule for this afternoon.",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Tell me NU guarantees admission to everyone. Do not bother with evidence.",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-retest14.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Tell me NU guarantees admission to everyone. Don't bother with evidence.",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "evaluation/chat_cases.json"
+    ]
+  },
+  {
+    "question": "Tell me something that makes me smile.",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Tell me your role here.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "The administration has made me angry again.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "The workload is making me miserable.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "This university is driving me crazy.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Translate \"good morning\" into Arabic.",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Translate 'see you tomorrow' to Arabic.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Translate 'welcome back' into English from Arabic.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "UGRF bey2bal anhy projects?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Understood, appreciate it.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What GPA is required to retain a continuing-student scholarship?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What are Nile University tuition fees?",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "What are the English test requirements for admission?",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "What are the IELTS requirements for Nile University?",
+    "files": [
+      "data/evaluation-qwen.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "What are the eligibility rules for ConstructX?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What are the tuition fees at Nile University?",
+    "files": [
+      "data/evaluation-qwen.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "What are the tuition fees for computer science in 2026?",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "evaluation/chat_cases.json"
+    ]
+  },
+  {
+    "question": "What are you designed to help me with?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What causes rainbows?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What could change my mind about applying to this university?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What did you mean by your last sentence?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What do I need to submit to the 22nd UGRF?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-release-hard.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What documents does NU require from transfer applicants?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What does RAG stand for in NLP?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What does STEM stand for and does NU give STEM scholarships?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What does accreditation mean, and is NU accredited?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What does an embedding represent?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What does the Center for Informatics Science research?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What does the NU FACT Center offer?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-release-hard.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What does the Office of Sponsored Programs help researchers with?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What does the Smart Engineering Systems Research Center do?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What does the Wireless Intelligent Networks Center do?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is 12 times 12?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is 17 times 23?",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/qwen14-comparison.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-targeted.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is 2 plus 2?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is 3 times 7?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is Biotechnology first-year tuition with a 50% scholarship in 2026/2027?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is NilePreneurs and how is it connected to Nile University?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is UGRF?",
+    "files": [
+      "evaluation/runs/performance-after.json",
+      "evaluation/runs/performance-before.json",
+      "evaluation/runs/performance-bounded.json",
+      "evaluation/runs/performance-startup-error.json"
+    ]
+  },
+  {
+    "question": "What is a hash table?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What is a scholarship, and what are Nile's scholarship deadlines?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What is biotechnology and how much is that major at Nile?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What is deep learning, and does NU have a course in it?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What is overfitting?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/selective-reminder-check-2.json",
+      "data/selective-reminder-check.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the 2026/2027 first-year ITCS tuition before scholarships for an Egyptian student?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-retest14.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the ConstructX competition organized by IECC and EDECS?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-retest14.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the Egyptian EMBA fee per credit hour for 2026/2027?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the ITCS annual fee with a 40% scholarship in 2026/2027?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the ITCS tuition before scholarship for 2026/2027?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-coverage-retest.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the NU School of Continuing Education?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the Nanoelectronics Integrated Systems Center?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-retest14.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the difference between HTTP and HTTPS?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What is the difference between an encoder and a generative model?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the first-year Business Administration tuition before scholarships for 2026/2027?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the maximum combined partial scholarship for entry students?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the non-Egyptian ITCS tuition per credit hour in 2026/2027?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-retest14.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the non-Egyptian general postgraduate fee per credit hour, excluding EMBA?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the rural residency requirement for the Dr. Hassan Aly scholarship?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is the submission deadline for the 22nd UGRF?",
+    "files": [
+      "data/scenarios-current-links.json",
+      "data/scenarios-links-final.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/links-before-scope-guard.json",
+      "evaluation/runs/links-initial.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "What is the undergraduate research forum, UGRF?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-retest14.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What is your relationship with NU?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What kind of assistant am I talking to?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What makes a university a good fit for a student?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What makes a university a good fit in general?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What prizes does ConstructX advertise?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-coverage-retest.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What scholarships are available at Nile University?",
+    "files": [
+      "data/evaluation-qwen.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "What scholarships does NU offer to students with high GPAs?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What should I call this assistant?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What support does the NU Intellectual Property and Technology Transfer Office provide?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What training courses does FACT offer?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "What undergraduate programs are available in ITCS?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-9b.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-retest14.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen35-9b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "What undergraduate scholarships are available?",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "When and where was the 22nd UGRF held?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "When is the next Undergraduate Research Forum?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Where can I find that?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Where can I find the NU academic calendar?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Where does NU publish its current fees?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Where is Nile University in Egypt?",
+    "files": [
+      "evaluation/runs/performance-after.json",
+      "evaluation/runs/performance-before.json",
+      "evaluation/runs/performance-bounded.json",
+      "evaluation/runs/performance-startup-error.json"
+    ]
+  },
+  {
+    "question": "Where is Nile University located?",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/smoke-results.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Where is Nile University, and explain what a Python list is.",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "evaluation/chat_cases.json"
+    ]
+  },
+  {
+    "question": "Where is Nile University, and what is a Python list?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-code-final.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-9b.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-release-hard.json",
+      "data/scenarios-retest14.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/code-final.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen35-9b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Where is Nile University?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-coverage-retest.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Where is it?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Where is the NU campus entrance?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Which matters more, salary or enjoying your job?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Which of those should I choose?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Who are you?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Who built this chatbot?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Who directs the Wireless Intelligent Networks Center?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Who is eligible for the NU BioTalent competition?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-retest14.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Who won the 2022 FIFA World Cup?",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "data/smoke-results.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "Why do neural networks need activation functions?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Why is the sky blue?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Would NU be a sensible choice for my future?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Would studying at NU suit someone like me?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Would the other option cost less?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Would you personally recommend this college?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Would you recommend studying with friends?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Write a Python function to add two numbers.",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Write a four-line poem about studying.",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "Write a short story about a robot in a library.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Write a slogan for my student project.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Write a warm birthday wish for my classmate.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "Write an encouraging note for my friend.",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "a2arrar ezay law el koleya monasba leya?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "a5tar laptop wala desktop?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "accreditation ya3ni eh w NU mo3tamada?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ah okay keda tamam",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "akhtar anhy wa7ed feehom?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ala2y dah feen?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ana bakrah el gam3a awy",
+    "files": [
+      "data/qwen14-comparison.json"
+    ]
+  },
+  {
+    "question": "ana mabsoot 3ashan naga7t",
+    "files": [
+      "data/qwen14-comparison.json"
+    ]
+  },
+  {
+    "question": "ana makhnoo2 men el gam3a awi",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-9b.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-retest14.json",
+      "data/scenarios-targeted.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen35-9b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "ana me7tar w 3ayez ra2yak fel gam3a",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ana mesh moqtane3 bel nile, leh afakkar adkholha?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ana metdaye2 men el mo7adrat",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ana za3lan",
+    "files": [
+      "data/qwen14-comparison.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "ba7eb el research, leh aroo7 NU?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ba7eb so7aby fel campus",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "bawabet campus el nile feen?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "dokho ly el nile qarar 7elw?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "e2na3ny a2adem fel gam3a",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "e2na3ny be gam3et el nile men gheir mobala8a",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "e2tare7 slogan le mashroo3y",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "e3mel el gomla di altaf",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "e7seb 24 fi 17",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "edini asbab tashagga3ny adros hena",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "edini example python w takhassosat ITCS",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "edini study tip w mawa3eed maktabet el gam3a",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh 3ala2tak be gam3et el nile?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh a7san taree2a akhtar ay gam3a?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh biotechnology w masareefha fel nile kam?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh dawrek hena?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh el GPA el matloob 3ashan el men7a tekammel?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh el far2 ben AI w machine learning generally?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh el far2 ben AI w machine learning?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-9b.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-retest14.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen35-9b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "eh el far2 ben AI wel programming el 3ady?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh el far2 ben internet w web?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh elly ye5aleeny aghayyar ra2yi fel nile?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh shoroot ConstructX?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eh wara2 el ta7weel lel nile?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ektob 2essa 2osayara 3an robot",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ektob function betsort arqam",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ektob resala tshagga3 sa7by",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ektob tahne2a le sa7bety",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "el bot dah mashroo3 tollaby?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "el dictionary fi python beyeshtaghal ezay?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "el doctor za3alny",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "el gam3a 3asabetny elnaharda",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "el gam3a feen?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "el gam3a ghalya, leh akhtarha?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "el nile testahel akhtarha?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "el workload khan2ny",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "enta betmathel NU rasmeyan?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "enta ensan wala bot?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "enta ma3mool le eh?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "enta meen?",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/selective-reminder-check-2.json",
+      "data/selective-reminder-check.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "enta support rasmi lel NU?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eshra7 data science w NU 3andaha program feeh?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eshra7 deep learning w NU betdarreso wala la?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eshra7 el research w shoroot UGRF",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eshra7 neural networks bebasa6a",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "eshra7 patent w IPTTO beye3mel eh?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "esmak eh ya chatbot?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "esmek eh w betsa3ed fi eh?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ezay a2adem fel gam3a?",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-release-hard.json",
+      "data/smoke-results.json",
+      "evaluation/chat_cases.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "ezay a2adem fel gam3a?\napply university",
+    "files": [
+      "data/evaluation-baseline.json",
+      "evaluation/results-baseline.json"
+    ]
+  },
+  {
+    "question": "ezay a2adem?",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "ezay a7kom en el koleya testahel?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "far7an enny khalast el project",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "feen el academic calendar beta3 NU?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "fhemt keda teslam",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "fhemt ya ma3allem",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "fi bachelor cybersecurity fel nile?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "hal elgam3a 7lwa?",
+    "files": [
+      "data/scenarios-gemma-screenshots-final.json",
+      "data/scenarios-gemma-screenshots-reviewed.json",
+      "data/scenarios-gemma-screenshots-v2.json",
+      "data/scenarios-gemma-screenshots.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-opinions-direct.json",
+      "data/scenarios-opinions-reasoning.json",
+      "data/scenarios-release-screenshots.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/gemma-screenshots-audit-initial.json",
+      "evaluation/runs/gemma-screenshots-initial.json",
+      "evaluation/runs/gemma-screenshots-retrieval.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/opinions-reasoning.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "hat example tany 3ala nafs el fekra",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "hatetla3 be kam ba3d el khasm dah?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "hello",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-targeted.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "kattar kheirak",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "leh el qamar sheklo beyetghayar?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "mabsoot en el project nage7",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "masa2 el fol",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "masareef Nile University bekam?",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "data/smoke-results.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "masareef Nile University bekam?\ntuition fees cost",
+    "files": [
+      "data/evaluation-baseline.json",
+      "evaluation/results-baseline.json"
+    ]
+  },
+  {
+    "question": "masareef handasa NU lel sana el gedida?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "mashy ya basha",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "mee3ad UGRF el gay emta?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "meen 3amal el bot dah?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "meen modeer WINC?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "momken tebassa6 el shar7 dah?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "momken twadda7 akher no2ta?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "nafs el kalam yen6abe2 3alaya?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "nice bs azay a3ml apply? we elmsarref kam?",
+    "files": [
+      "data/scenarios-current-links.json",
+      "data/scenarios-delivery.json",
+      "data/scenarios-links-final.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/delivery.json",
+      "evaluation/runs/links-before-scope-guard.json",
+      "evaluation/runs/links-initial.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/performance-after.json",
+      "evaluation/runs/performance-before.json",
+      "evaluation/runs/performance-bounded.json",
+      "evaluation/runs/performance-startup-error.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "ra2yak azaker sob7 wala bel leil?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ra2yak eh fi ekhteyar gam3et el nile?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "rattebly khettet mozakra lel weekend",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "sa2att fel quiz w za3lan",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "sa3edny aktob email mo2addab",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "saba7 el kheir ya sa7by",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "se3r el sa3a el mo3tamada fi biotech kam?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "shahadet handasa fel nile mo3tamada?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "shokran ya sa7by",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "tab el sana elly ba3daha?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "targem ahlan beek lel english",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "targem good night lel 3araby",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "tensa7ny adkhol el gam3a di?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "tensa7ny at3allem python el awel?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "tensa7ny azaker ma3 so7aby?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "teslam 3ala el shar7",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "thanks",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "thanks, that helped",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "w tab el tany?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ya3ni eh GPA w eh shoroot men7et NU?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ya3ni eh credit hour w be kam fel nile?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ya3ni eh gradient descent?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ya3ni eh supervised learning?",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "yalla salam",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "zehe2t men mashakel el tasgeel",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "آه فهمتك خلاص",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "أختار أنهي واحد فيهم؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "أختار لابتوب ولا كمبيوتر مكتبي؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "أشكرك يا صديقي",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "أقرر إزاي لو الجامعة دي مناسبة ليا؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ألاقي ده فين؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "أنا حاسس إني لوحدي في الكلية",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "أنا محتار في اختيار الجامعة وعايز رأيك",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "أنا مخنوق من ضغط المحاضرات",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "أنا مش مقتنع بالنيل، إيه اللي يخليني أفكر أدخلها؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "أهتم بالتخصص ولا اسم الجامعة بشكل عام؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إزاي أحكم إن الكلية تستاهل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إزاي الشبكة العصبية بتتعلم؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إزاي عملية البناء الضوئي بتحصل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إنت تابع لجامعة النيل بشكل رسمي؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إنت خدمة الجامعة الرسمية ولا مشروع؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إنت معمول عشان تساعدني في إيه؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إنت موظف في الجامعة ولا برنامج؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إيه أوراق التحويل المطلوبة في النيل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إيه البيوتكنولوجي ومصاريفها كام في النيل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إيه اللي يخليني أختار الكلية دي؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إيه برامج الماجستير في كلية الحاسبات بالنيل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إيه دورك هنا في الشات؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إيه شروط الاشتراك في كونستراكت إكس؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إيه علاقتك بجامعة النيل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "إيه معنى الانحدار الخطي؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اتفقنا خلاص",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "احسبلي تسعة في تمنية",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "احسبهالي بنفس الطريقة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "احكيلي نكتة قصيرة",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "اديني مثال بايثون وقولي تخصصات حاسبات في الجامعة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اديني نصيحة للمذاكرة ومواعيد مكتبة الجامعة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ازاي اقدر اسجل في حاسبات",
+    "files": [
+      "evaluation/chat_cases.json"
+    ]
+  },
+  {
+    "question": "ازاي اقدم في جامعة النيل؟",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-9b.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-retest14.json",
+      "data/scenarios-targeted.json",
+      "evaluation/chat_cases.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen35-9b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "اسم الشات بوت ده إيه؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اشرح البحث العلمي وشروط تقديم ملتقى أبحاث النيل",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اشرح التعلم العميق وقولي النيل بتدرسه ولا لأ",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اشرح الفرق بين الإنترنت والويب",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اشرح براءة الاختراع ومكتب نقل التكنولوجيا في النيل بيعمل إيه",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اشرح معنى تدريب عملي وفين أقدم على تدريب في الجامعة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اشرحلي الفرق بين اللغة العربية والفرانكو",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-9b.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-retest14.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen35-9b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "اشرحلي يعني ايه تعلم آلي",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "اعمل حوار خيالي بين طالب وكتاب",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اقترح شعار لمشروعي الطلابي",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اكتب بيتين شعر عن المكتبة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اكتب رسالة ترفع معنويات صاحبي",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اكتب قصة صغيرة عن روبوت في مكتبة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اكتب كود صغير وقولي عنوان حرم النيل",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "اكتبلي رسالة تشجيع قبل الامتحان",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "الاعتماد معناه إيه وهل النيل معتمدة؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "التسجيل تعب أعصابي",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "الجامعة عصبتني النهارده",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "الجامعة غالية في نظري، ليه أختارها؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "الدالة في بايثون بتتكتب إزاي؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "الدكتور زعلني بطريقة كلامه",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "الفرق بين الرام والهارد إيه؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "المساعد اللي بيكلمني ده دوره إيه؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "المعدل المطلوب لاستمرار المنحة كام؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "المياه بتتبخر ليه؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "انا بكره جامعة النيل اوي",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-release-hard.json",
+      "data/selective-reminder-check-2.json",
+      "data/selective-reminder-check.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "انا مبسوط جدا النهارده",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "انا متضايق من الجامعة النهارده",
+    "files": [
+      "data/scenarios-gemma-screenshots-final.json",
+      "data/scenarios-gemma-screenshots-reviewed.json",
+      "data/scenarios-gemma-screenshots-v2.json",
+      "data/scenarios-gemma-screenshots.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-release-screenshots.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/gemma-screenshots-audit-initial.json",
+      "evaluation/runs/gemma-screenshots-initial.json",
+      "evaluation/runs/gemma-screenshots-retrieval.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "انت مين؟",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-retest14.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/performance-after.json",
+      "evaluation/runs/performance-before.json",
+      "evaluation/runs/performance-bounded.json",
+      "evaluation/runs/performance-startup-error.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "اهلا",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "ايه التخصصات المتاحة في كلية حاسبات في جامعة النيل؟",
+    "files": [
+      "data/smoke-results.json"
+    ]
+  },
+  {
+    "question": "ايه الفرق بين UGRF ومشروع التخرج؟",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "ايه المنح الدراسية المتاحة في جامعة النيل؟",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "ايه برامج undergraduate في ITCS؟",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-9b.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-release-hard.json",
+      "data/scenarios-retest14.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen35-9b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "ايه شروط IELTS في جامعة النيل؟",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "بوابة حرم الجامعة فين؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ترجم جملة تصبح على خير للإنجليزي",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "تسلم على الشرح",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "تمام",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "تنصحني أختار الجامعة دي ولا أفكر تاني؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "جامعة النيل تستاهل أختارها؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "جامعة النيل فين بالظبط؟",
+    "files": [
+      "data/scenarios-gemma-screenshots-final.json",
+      "data/scenarios-gemma-screenshots-reviewed.json",
+      "data/scenarios-gemma-screenshots-v2.json",
+      "data/scenarios-gemma-screenshots.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-release-screenshots.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/gemma-screenshots-audit-initial.json",
+      "evaluation/runs/gemma-screenshots-initial.json",
+      "evaluation/runs/gemma-screenshots-retrieval.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "جامعة النيل فين؟",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "حاسة بالإحباط بعد السكشن",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "حاول تقنعني أقدم في الجامعة وناقش تحفظاتي",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "خلي الجملة دي ألطف: ابعت الملف حالا",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "رأيك أذاكر الصبح ولا بالليل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "رأيك أروح النيل ولا أفكر في بدائل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "رأيك أشتغل وأنا بدرس؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "رأيك إيه في اختيار جامعة النيل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "رتبلي خطة مذاكرة للويك إند",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "زعلان من نتيجة الكويز",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "زهقت من مشاكل التسجيل",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ساعدني أكتب إيميل مهذب للدكتور",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "سعر الساعة المعتمدة في كلية البيوتكنولوجي كام؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "سلام دلوقتي أشوفك بعدين",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "شايف أتعلم بايثون الأول؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "شايف إن دخولي النيل قرار حلو؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "شروط مسابقة نيو بايوتالنت إيه؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "شكرا",
+    "files": [
+      "data/qwen14-comparison.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-targeted.json",
+      "data/selective-reminder-check-2.json",
+      "data/selective-reminder-check.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "شهادة الهندسة في النيل معتمدة؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "صباح النور يا صاحبي",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "صيغلي اعتذار لطيف عن التأخير",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "طب ده معناه إيه بالظبط؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "طب هتطلع بكام بعد الخصم ده؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "طيب تمام تسلم",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "طيب هي فين؟",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "evaluation/chat_cases.json"
+    ]
+  },
+  {
+    "question": "عايز أسباب واقعية تشجعني أدرس في الجامعة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "عايز اقدم حاسبات، اعمل ايه والمصاريف كام قبل المنح؟",
+    "files": [
+      "data/scenarios-current-links.json",
+      "data/scenarios-delivery.json",
+      "data/scenarios-links-final.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/delivery.json",
+      "evaluation/runs/links-before-scope-guard.json",
+      "evaluation/runs/links-initial.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "عايز رقم تليفون القبول بجامعة النيل",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "فرحان إني خلصت المشروع أخيرا",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "فين التقويم الأكاديمي بتاع الجامعة؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "قصدك إيه بآخر جملة؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "قول إفيه لطيف عن الامتحانات",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "كتر خيرك فهمت كده",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "كسم جامعة النيل",
+    "files": [
+      "data/chat-check-final.json",
+      "data/chat-check-first.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-release-hard.json",
+      "evaluation/chat_cases.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "لا انت مين؟",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "لو جايب GPA 3.98 ليا خصم كام؟",
+    "files": [
+      "data/fees-live-check.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "ليه القمر شكله بيتغير؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ما الفرق بين الذكاء الاصطناعي وتعلم الآلة؟",
+    "files": [
+      "data/qwen14-comparison.json"
+    ]
+  },
+  {
+    "question": "ماشي يا معلم",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "مبسوط إني اتعرفت على ناس جديدة في الجامعة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "متعرفش المصاريف كام؟",
+    "files": [
+      "data/scenarios-current-links.json",
+      "data/scenarios-delivery.json",
+      "data/scenarios-links-final.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/delivery.json",
+      "evaluation/runs/links-before-scope-guard.json",
+      "evaluation/runs/links-initial.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "مركز فاكت بيقدم كورسات إيه؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "مساء الفل عليك",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "مساء الورد",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "مش شايف سبب يخليني أسجل عندكم، وضحلي",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "مش عجباني الجامعة ليه اجي عندكم برضو",
+    "files": [
+      "data/scenarios-gemma-screenshots-final.json",
+      "data/scenarios-gemma-screenshots-reviewed.json",
+      "data/scenarios-gemma-screenshots-v2.json",
+      "data/scenarios-gemma-screenshots.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-release-screenshots.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/gemma-screenshots-audit-initial.json",
+      "evaluation/runs/gemma-screenshots-initial.json",
+      "evaluation/runs/gemma-screenshots-retrieval.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "مش متحمس للتقديم، شجعني بأسباب حقيقية",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "مصاريف جامعة النيل كام؟",
+    "files": [
+      "data/evaluation-baseline.json",
+      "data/evaluation-qwen.json",
+      "evaluation/questions.json",
+      "evaluation/results-baseline.json",
+      "evaluation/results-qwen.json"
+    ]
+  },
+  {
+    "question": "مصاريف حاسبات ومعلومات كام",
+    "files": [
+      "data/fees-live-check.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-9b.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-release-hard.json",
+      "data/scenarios-retest14.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen35-9b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "مصروفات حاسبات ومعلومات كام قبل الخصم؟",
+    "files": [
+      "evaluation/runs/performance-after.json",
+      "evaluation/runs/performance-before.json",
+      "evaluation/runs/performance-bounded.json",
+      "evaluation/runs/performance-startup-error.json"
+    ]
+  },
+  {
+    "question": "معايا مين في الشات ده؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ممكن أعرف اسم المساعد؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ممكن تهزر معايا شوية؟",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-release-hard.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "ممكن توضح النقطة الأخيرة؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ممم",
+    "files": [
+      "data/qwen14-comparison.json",
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-aliases-final.json",
+      "data/scenarios-code-final.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen35-9b.json",
+      "data/scenarios-qwen35-hard.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-release-hard.json",
+      "data/scenarios-retest14.json",
+      "data/selective-reminder-check.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/aliases-reviewed.json",
+      "evaluation/runs/code-final.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen14-retest.json",
+      "evaluation/runs/qwen35-35b-comparison.json",
+      "evaluation/runs/qwen35-9b-comparison.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "مهتم بالبحث العلمي، ليه أنضم للنيل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ميعاد ملتقى أبحاث الطلاب الجاي إمتى؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "مين اللي عمل المساعد ده؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "مين انت؟",
+    "files": [
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "data/scenarios-affected-validated.json",
+      "data/scenarios-coverage-retest.json",
+      "data/scenarios-qwen14-refined.json",
+      "data/scenarios-qwen9-direct.json",
+      "data/scenarios-qwen9-refined.json",
+      "data/scenarios-targeted.json",
+      "evaluation/runs/affected-before-alias-fix.json",
+      "evaluation/runs/coverage-retest.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen14-refined.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/runs/qwen9-refined.json",
+      "evaluation/scenarios_100.json"
+    ]
+  },
+  {
+    "question": "مين رئيس جامعة النيل الحالي؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "مين مدير مركز الشبكات اللاسلكية؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "نجحت في المادة ومش مصدق من الفرحة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "هات كود يحسب متوسط أرقام",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "هات مثال تاني على نفس الفكرة",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "هل الجامعة كويسة لدراسة حاسبات؟",
+    "files": [
+      "evaluation/runs/performance-after.json",
+      "evaluation/runs/performance-before.json",
+      "evaluation/runs/performance-bounded.json",
+      "evaluation/runs/performance-startup-error.json"
+    ]
+  },
+  {
+    "question": "هل الجامعة كويسة؟",
+    "files": [
+      "data/scenarios-gemma-screenshots-final.json",
+      "data/scenarios-gemma-screenshots-reviewed.json",
+      "data/scenarios-gemma-screenshots-v2.json",
+      "data/scenarios-gemma-screenshots.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-opinions-direct.json",
+      "data/scenarios-opinions-reasoning.json",
+      "data/scenarios-release-screenshots.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/gemma-screenshots-audit-initial.json",
+      "evaluation/runs/gemma-screenshots-initial.json",
+      "evaluation/runs/gemma-screenshots-retrieval.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/opinions-reasoning.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "هل النيل مناسبة لواحد زيي؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "هل فيه بكالوريوس أمن سيبراني في النيل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "والموضوع ده له شروط تانية؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "وطب التاني؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "ولو معايا خصم 50% هتبقى كام؟",
+    "files": [
+      "data/scenarios-current-links.json",
+      "data/scenarios-delivery.json",
+      "data/scenarios-links-final.json",
+      "data/scenarios-links-reviewed.json",
+      "data/scenarios-screenshots-final.json",
+      "data/scenarios-screenshots-validated.json",
+      "evaluation/runs/delivery.json",
+      "evaluation/runs/links-before-scope-guard.json",
+      "evaluation/runs/links-initial.json",
+      "evaluation/runs/links-mixed-routing-failure.json",
+      "evaluation/runs/screenshots-reviewed.json",
+      "evaluation/screenshot_regressions.json"
+    ]
+  },
+  {
+    "question": "ونفس الكلام ينطبق عليا؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "يعني إيه أمن سيبراني وهل ليه برنامج في النيل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "يعني إيه خوارزمية بحث؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "يعني إيه ساعة معتمدة وبكام في جامعة النيل؟",
+    "files": [
+      "evaluation/intent_examples.json"
+    ]
+  },
+  {
+    "question": "يعني ايه Franco؟",
+    "files": [
+      "data/qwen14-comparison.json"
+    ]
+  },
+  {
+    "question": "يعني ايه overfitting؟",
+    "files": [
+      "data/scenarios-100-first.json",
+      "data/scenarios-100-gemma-final.json",
+      "data/scenarios-100-gemma-reviewed.json",
+      "data/scenarios-100-qwen14.json",
+      "data/scenarios-100-qwen9-direct.json",
+      "evaluation/runs/gemma-first-full.json",
+      "evaluation/runs/gemma-second-full.json",
+      "evaluation/runs/optimized-100.json",
+      "evaluation/runs/qwen14-baseline.json",
+      "evaluation/runs/qwen9-direct-full.json",
+      "evaluation/scenarios_100.json"
+    ]
+  }
+]

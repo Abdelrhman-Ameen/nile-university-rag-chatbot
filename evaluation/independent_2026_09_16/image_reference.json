@@ -1,0 +1,21 @@
+{
+  "url": "https://nu.edu.eg/sites/default/files/2026-09/transportation_prices.jpg",
+  "parent_page": "https://nu.edu.eg/students/services-facilities/transportation",
+  "method": "Independently visually read the downloaded official image before evaluating chatbot outputs. Only text information is scored.",
+  "academic_year": "2026/2027",
+  "period": "one semester",
+  "relevant_facts": {
+    "Hadayek Al Ahram / Hadayek October": 9800,
+    "Sheikh Zayed": 8800,
+    "Heliopolis": 15300,
+    "currency": "EGP",
+    "booking": "16 August 2026 through 24 September 2026 or capacity reached, whichever first",
+    "other_bus": "Use of another bus than the subscribed bus is not permitted",
+    "withdrawal_first_week": "10% deducted",
+    "withdrawal_first_month": "30% deducted",
+    "withdrawal_after_first_month": "No refund",
+    "minimum": "Six subscribers; route cancelled below minimum with full subscription refund"
+  },
+  "sha256": "4c117f166ea9251f8eff5914124eaf4141cff11812f7b445741ae81118f220fd",
+  "checked_at": "2026-09-16"
+}

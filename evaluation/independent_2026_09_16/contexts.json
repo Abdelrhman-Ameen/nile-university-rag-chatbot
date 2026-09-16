@@ -1,0 +1,8 @@
+{
+  "I089": [{"role":"user","content":"بنتكلم عن عيادة جامعة النيل ومواعيدها."},{"role":"assistant","content":"المواعيد المنشورة يوميًا من 9 صباحًا إلى 10 مساءً، مع استثناء ليوم الجمعة."}],
+  "I090": [{"role":"user","content":"ana me7tar ben FilmFish w Pixels fel NU."},{"role":"assistant","content":"FilmFish بيهتم بصناعة الأفلام بشكل جماعي، وPixels بيقدم تدريب في مجالات الميديا وأدواتها."}],
+  "I091": [{"role":"user","content":"I'm applying for MSc MOT at Nile, with IELTS overall 6.5 and writing 6.0."},{"role":"assistant","content":"The MSc MOT checklist asks for at least 6.5 in both overall IELTS and writing. Your writing band falls short."}],
+  "I092": [{"role":"user","content":"بتكلم عن استرداد اشتراك أتوبيس النيل في أول أسبوع من الدراسة."},{"role":"assistant","content":"في الاسترداد خلال أول أسبوع، الإعلان بيذكر خصم 10% من الاشتراك."}],
+  "I093": [{"role":"user","content":"ana 3ayez mosa3da fi el NU."},{"role":"assistant","content":"لو المشكلة في المواد، TLC بيقدم مساعدة أكاديمية لطلبة Business."}],
+  "I094": [{"role":"user","content":"We are discussing IECC venture clienting and finding startups for a corporate challenge."},{"role":"assistant","content":"The service page gives a typical 4–12 weeks for scouting and selecting solutions."}]
+}

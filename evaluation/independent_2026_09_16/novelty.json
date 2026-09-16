@@ -1,0 +1,4067 @@
+{
+  "method": "Character TF-IDF triage plus semantic review; scores are not semantic proof.",
+  "scanned_files": [
+    {
+      "path": "evaluation/chat_cases.json",
+      "sha256": "20fb88165f621dc1f53122145c20bb441f540394e18f9ba356357008d08106db"
+    },
+    {
+      "path": "evaluation/coverage-2026-09-14.json",
+      "sha256": "23a0e1172d118668a8401b5e94a824582330e5767cd0c4ae8c42c71542322f93"
+    },
+    {
+      "path": "evaluation/intent_examples.json",
+      "sha256": "69301ae44b2aa1db3b54e53b3088960f3affc63a9829d53e235f12b15c965c3e"
+    },
+    {
+      "path": "evaluation/intent_validation.json",
+      "sha256": "a77a9c648432638f660b2f931199889006fe8ba1783d97d1cf5274d070e09f51"
+    },
+    {
+      "path": "evaluation/questions.json",
+      "sha256": "c3df89cf83976933fdc31a4a5b52684d5532930f2294dd3463b113da404ff53a"
+    },
+    {
+      "path": "evaluation/results-baseline.json",
+      "sha256": "1f3384241a11395f8f6c681cfd883b914e28b0c0a0835719333b24cfdc9d880d"
+    },
+    {
+      "path": "evaluation/results-qwen.json",
+      "sha256": "ce121194f16cea1a0b8001d08a4ebd8d418e9ca0db585a58202691ed95bbe124"
+    },
+    {
+      "path": "evaluation/review_qwen14_baseline.json",
+      "sha256": "90ef8823d61d10466773b152ead5e4de31b6a5ba7a171934bab705ed06238bbb"
+    },
+    {
+      "path": "evaluation/review_qwen9_direct.json",
+      "sha256": "d58bc82837fbaa6435ba8a03089738a3380f0aca18ee63bec34936a90e62013d"
+    },
+    {
+      "path": "evaluation/scenarios_100.json",
+      "sha256": "3677a45476552c75325366b7811a721637706a6e92067dff75679e0d87f270c1"
+    },
+    {
+      "path": "evaluation/screenshot_regressions.json",
+      "sha256": "3a96f50207dae65274fb4c4f2a56ea5e4a08a89ecb7e7275c798236e344e17f1"
+    },
+    {
+      "path": "evaluation/runs/affected-before-alias-fix.json",
+      "sha256": "ce089c383472b8892cfe02b17141c40b581c7dea44cec8d8a33478a1ac00314f"
+    },
+    {
+      "path": "evaluation/runs/aliases-reviewed.json",
+      "sha256": "2090bec90b871c5601dde2a2d2f99329cea1347493ac27eb5e367098680afd3f"
+    },
+    {
+      "path": "evaluation/runs/code-final.json",
+      "sha256": "6b5957de5867aaf47dbbf00f3b6fdd99a5157219a0fb400442a7ef8d9ed1a507"
+    },
+    {
+      "path": "evaluation/runs/connections-final.json",
+      "sha256": "1602ca794b0b7bb803da3c3b82c3769825b00e04415597bfcd1dcaea0d20fcba"
+    },
+    {
+      "path": "evaluation/runs/connections-optimized.json",
+      "sha256": "c6c00cce79974f051d92f90b3c2db18a8ae02cb9b524e648fd3337259f2f90ef"
+    },
+    {
+      "path": "evaluation/runs/coverage-retest.json",
+      "sha256": "6c7ff0ad228aaa2a749fa3cc8d9f759fa26d9033d8234afbdb0120d95e499158"
+    },
+    {
+      "path": "evaluation/runs/delivery.json",
+      "sha256": "6326b0c251d46f593a73e352ddef7f033f490ba765099e8efe3b53071158b133"
+    },
+    {
+      "path": "evaluation/runs/gemma-first-full.json",
+      "sha256": "fb55e19890d9ec6268b19be47e8222f057af9c0bfaac22af665a4ce0a09cc2a4"
+    },
+    {
+      "path": "evaluation/runs/gemma-screenshots-audit-initial.json",
+      "sha256": "cd757db7174b0fa057edfdb55fe67c3b1c145b1b07f6c0f12b8c7dbf48c494fe"
+    },
+    {
+      "path": "evaluation/runs/gemma-screenshots-initial.json",
+      "sha256": "a00e1339024cfa68249ba4eab04523a00fda43e029f4293df2654739f6f330f7"
+    },
+    {
+      "path": "evaluation/runs/gemma-screenshots-retrieval.json",
+      "sha256": "218962fba33de4bfd8a6dc43d2e9132bd4885101bf410fdf2d26212de790713b"
+    },
+    {
+      "path": "evaluation/runs/gemma-second-full.json",
+      "sha256": "d742c477475a57c535fdd60b95a5b92c7b1a489d0494cadfbe49cab1cd591114"
+    },
+    {
+      "path": "evaluation/runs/links-before-scope-guard.json",
+      "sha256": "69df0525588db8567bd3e3340359fb7b6ac223f6c6c19ef75958da01f423c939"
+    },
+    {
+      "path": "evaluation/runs/links-initial.json",
+      "sha256": "f78d7f8cd27c26b68df2667f6f246b6de1dbb0444d607f460bb2ce102d7ea3cb"
+    },
+    {
+      "path": "evaluation/runs/links-mixed-routing-failure.json",
+      "sha256": "0d8c6ad9b26cb37921a0a3be4e70f8acea3a6b23f28a803f7c096348798bd0c1"
+    },
+    {
+      "path": "evaluation/runs/opinions-reasoning.json",
+      "sha256": "b53ac4f19d87424a582e60a08375d9b249f4228ea8eaf57507e2b1782ec5f8b3"
+    },
+    {
+      "path": "evaluation/runs/optimized-100.json",
+      "sha256": "be45c49c783b041e43414186779a3a3236bb48c48ac40c02f0ee9c8560059c14"
+    },
+    {
+      "path": "evaluation/runs/performance-after.json",
+      "sha256": "9f28eacc06a351f735fb620a8c7acaa1cbbbca6c888f19f77b97648b64d7bdd3"
+    },
+    {
+      "path": "evaluation/runs/performance-before.json",
+      "sha256": "e3ae48c5a5259a7fabd0f90ea27b55e29a4bec94b9a91fb8a35e6585b77db8e7"
+    },
+    {
+      "path": "evaluation/runs/performance-bounded.json",
+      "sha256": "640df3776973e2bbe811bf81fd62e6b0c948445f8c837d34d03d0c5addd60303"
+    },
+    {
+      "path": "evaluation/runs/performance-startup-error.json",
+      "sha256": "1d68103c6e4ea4ef2bbf22442e0709b3911f2c0d74cb0a1376fd4f7a9e241001"
+    },
+    {
+      "path": "evaluation/runs/qwen14-baseline.json",
+      "sha256": "ffa2c90485adb1a4cac93d66525d55c3a0d8a81e906671735c4cbb5565bd24a1"
+    },
+    {
+      "path": "evaluation/runs/qwen14-refined.json",
+      "sha256": "e070852e57fbc1ccc73818e2615a4126598453437d9292a9825c68b22b17c7c2"
+    },
+    {
+      "path": "evaluation/runs/qwen14-retest.json",
+      "sha256": "ede4ea8552da014db39a13395fea5adca60918c9a330293f4037b58b6d23e6b2"
+    },
+    {
+      "path": "evaluation/runs/qwen35-35b-comparison.json",
+      "sha256": "a34d123e5bc07809315de206eebaaa3fcf0fd83d42b4b4e2b5d41bfee8e178a6"
+    },
+    {
+      "path": "evaluation/runs/qwen35-9b-comparison.json",
+      "sha256": "6eb569a725e5e635634128d1e22758a98d4bdcc70d673b59ce6869670a39e6ca"
+    },
+    {
+      "path": "evaluation/runs/qwen9-direct-full.json",
+      "sha256": "d43b13f19c81e391b99f8c0964037f4719e82f2136eb64db8fe1f419b3cb82fe"
+    },
+    {
+      "path": "evaluation/runs/qwen9-refined.json",
+      "sha256": "55d3f0cd891989fb63ced2ac7e3dfece1b2a43ee3d7d2bafc9c86e99798eec0a"
+    },
+    {
+      "path": "evaluation/runs/request-replay.json",
+      "sha256": "21a7a699a26e4b7339c6881eec7b6b85429af7bce9e42cb9fa7efe165a066d7e"
+    },
+    {
+      "path": "evaluation/runs/screenshots-reviewed.json",
+      "sha256": "41cdc8cd9d2f5889c8d9224b09cfa0f7632222265eb8bad3aa8a9458bd87697f"
+    },
+    {
+      "path": "data/advice-trace.json",
+      "sha256": "d01aa15cc1832d2c7590c1925d88661391e09c718ccf17c6a528294fce400a6c"
+    },
+    {
+      "path": "data/chat-check-final.json",
+      "sha256": "6f79b8b9b3532318d3b4574bd6b3b352ab689c88240457992e9d2faad73fbeee"
+    },
+    {
+      "path": "data/chat-check-first.json",
+      "sha256": "c2715b4f9635c6f33e6e7fda8ac5c8b9f7591468fd2a850739d26b06545b5f47"
+    },
+    {
+      "path": "data/collection_report.json",
+      "sha256": "cea9939b39e8d2092a62b64bfd50ef075c554fb48d709863bd0535bf30507e3e"
+    },
+    {
+      "path": "data/constructx-retry.json",
+      "sha256": "bd20b097c1954851d6f6cd357851447df6c12e9397ff220b3d56e78a08a7ad93"
+    },
+    {
+      "path": "data/evaluation-baseline.json",
+      "sha256": "1f3384241a11395f8f6c681cfd883b914e28b0c0a0835719333b24cfdc9d880d"
+    },
+    {
+      "path": "data/evaluation-qwen.json",
+      "sha256": "ce121194f16cea1a0b8001d08a4ebd8d418e9ca0db585a58202691ed95bbe124"
+    },
+    {
+      "path": "data/fees-live-check.json",
+      "sha256": "9038b8c121ab1a1513d22c9b5c53457a55a227aaa20140ef3d91104fccf35e8b"
+    },
+    {
+      "path": "data/intent-evaluation-semantic.json",
+      "sha256": "ca3a07843554e4982d47db26ca2ee4e71a6ee2eeba9ba8e94fb7df516bab464a"
+    },
+    {
+      "path": "data/intent_evaluation.json",
+      "sha256": "a77a9c648432638f660b2f931199889006fe8ba1783d97d1cf5274d070e09f51"
+    },
+    {
+      "path": "data/manual-gemma-final-notes.json",
+      "sha256": "f5461a0c54913fea351a9736a51489980fce569ef3d89c0e86e8d072601dd6b4"
+    },
+    {
+      "path": "data/manual-gemma-notes.json",
+      "sha256": "2f5cbb51cfbc3456ea7adb63c03ad19ea8b9ce3299aef33a20944e1b100ef8df"
+    },
+    {
+      "path": "data/ocr_report.json",
+      "sha256": "1e372d13050fdca6f412cede7717bc5f5dc19299726b8c726c7d1a16b0645123"
+    },
+    {
+      "path": "data/qwen14-comparison.json",
+      "sha256": "4ead7f73b55722f8c0e02258f7d66db83e3cf007a8be6f4089319c5a19a40bca"
+    },
+    {
+      "path": "data/qwen35-warmup.json",
+      "sha256": "7ee3b2b121ae91b4c5a2fa93710313ee4966750db93cf09c2a93f6b0b03ffd5a"
+    },
+    {
+      "path": "data/qwen9-language-probes.json",
+      "sha256": "7deef192b6a077659b68fc76da58b905da0e7ee8cb4f4511d290e152b86ad576"
+    },
+    {
+      "path": "data/retrieval-expanded-check.json",
+      "sha256": "1aea72d9c0774e7dc6a32b14b1054839703a4d2c945d2d63b3590252daa8f839"
+    },
+    {
+      "path": "data/scenarios-100-first.json",
+      "sha256": "d1eeb00cdfd326d707e7b6ba296dbc293b9a0423db92acda720846d95652cc74"
+    },
+    {
+      "path": "data/scenarios-100-gemma-final.json",
+      "sha256": "8ced9fcf493af8c81eaf551fbcc052737e0352fd2242ccb4743b9eef95a8a67d"
+    },
+    {
+      "path": "data/scenarios-100-gemma-reviewed.json",
+      "sha256": "eebd871efa993cf8912a939cf6d5d1106f52969e2325a96689dfeb0683458753"
+    },
+    {
+      "path": "data/scenarios-100-qwen14.json",
+      "sha256": "f599eb7c3400641bdc3357996856ac5f6c41b769403271f976c2128671c0cc6c"
+    },
+    {
+      "path": "data/scenarios-100-qwen9-direct.json",
+      "sha256": "dcdf2eb850f7e3984fb11f312598954cccd33fe6321e4c545a0c97cc83f4ff6c"
+    },
+    {
+      "path": "data/scenarios-affected-validated.json",
+      "sha256": "a6e2c8a4e9acd553bf10cb3681b36a3ca3589da075b075ef86298c982285d944"
+    },
+    {
+      "path": "data/scenarios-aliases-final.json",
+      "sha256": "6e1176cc606236b0efe86c6b76aeb38b9b6ae8b68191d32137730ebbdaf1aa55"
+    },
+    {
+      "path": "data/scenarios-code-final.json",
+      "sha256": "f31f29437ac14f672a88e97bf17efe0323b10701763f6579265dad0ac25b07f9"
+    },
+    {
+      "path": "data/scenarios-coverage-retest.json",
+      "sha256": "dd013d484ea4027d5b86d0329a61928c947fe97add4f86419e5be4dfa51742bd"
+    },
+    {
+      "path": "data/scenarios-current-links.json",
+      "sha256": "baf2c37ea57da0fa9f97543d75a15839f85a56dd832722a725ce0164dded0bc0"
+    },
+    {
+      "path": "data/scenarios-delivery.json",
+      "sha256": "28f04544d8e4e954261dfb034f6d22933c6e398ad0478000ad645649187cf89b"
+    },
+    {
+      "path": "data/scenarios-gemma-screenshots-final.json",
+      "sha256": "5edfeb17fdae9d2e16f50ba086ae4233f6a6202d4aaa4e4ca06da32d593cc5e7"
+    },
+    {
+      "path": "data/scenarios-gemma-screenshots-reviewed.json",
+      "sha256": "b8259bedb2c210a3c74c5a3c0e0df22753f64498d3c514dceb68703ebaf5bf13"
+    },
+    {
+      "path": "data/scenarios-gemma-screenshots-v2.json",
+      "sha256": "4d7fff9cea22d49531b06a6add8d4960b0a3b09bb42cf240fb9d252aea2a49eb"
+    },
+    {
+      "path": "data/scenarios-gemma-screenshots.json",
+      "sha256": "8a7c3846fcb4308b298a4ea16ed2549d360ca03181a91b2e8658db6813479be7"
+    },
+    {
+      "path": "data/scenarios-links-final.json",
+      "sha256": "523b1a7ec59670afe435cb7659077f6b82278cb66a290d5986bf9e70fde62228"
+    },
+    {
+      "path": "data/scenarios-links-reviewed.json",
+      "sha256": "bb35f023c9fba60e19d1b336f34b40ddaf81e75084a6c45434b67b1c655e2611"
+    },
+    {
+      "path": "data/scenarios-opinions-direct.json",
+      "sha256": "366e85d8839dc883c6d4c57c0310e5cee4f4dab1075a724564823cd9f7c76404"
+    },
+    {
+      "path": "data/scenarios-opinions-reasoning.json",
+      "sha256": "26fd482eba39a57e0d21b3155bad536e5b5c1ad355faada84e25fdc1d25aa959"
+    },
+    {
+      "path": "data/scenarios-qwen14-refined.json",
+      "sha256": "77a16fc7fd463e2f97aa75594dcb39d76c623d1ae469557dbf83950d9cbf4256"
+    },
+    {
+      "path": "data/scenarios-qwen35-9b.json",
+      "sha256": "ce866082f299aa7b556c13d063b9d82d5c8f7e87854ca34510756a57234ebefc"
+    },
+    {
+      "path": "data/scenarios-qwen35-hard.json",
+      "sha256": "f4acdb18370a8048c7787c9fe1a903f8b724749bfb78dc460e02ebf2b1440fc7"
+    },
+    {
+      "path": "data/scenarios-qwen9-direct.json",
+      "sha256": "aca315e2d54f38b555d7eb1bc478f11556598f7cd767e4d0b0d3bf1c7ab2a8a5"
+    },
+    {
+      "path": "data/scenarios-qwen9-refined.json",
+      "sha256": "5f827db98ae4b1ef1234541387e3ac50e9a8cf6ff6f5101210cc328f15a22cfa"
+    },
+    {
+      "path": "data/scenarios-release-hard.json",
+      "sha256": "3c6d8c03c46e0e4b2ebc05d12f639a41a4082b7a3728e68e671dd1cad53b9edd"
+    },
+    {
+      "path": "data/scenarios-release-screenshots.json",
+      "sha256": "0464e2af309280f82a373ce3e54a564a3605781f638070f0efce8e3e78109157"
+    },
+    {
+      "path": "data/scenarios-retest14.json",
+      "sha256": "6edd7224d9b6b76c9823cb3afa6bfe080298d0d04d8ff0c76c893ca5f5d63b25"
+    },
+    {
+      "path": "data/scenarios-screenshots-final.json",
+      "sha256": "5aacf08c146e1860e62fc5e28d6a937c628123119cd694573ee61b9992620389"
+    },
+    {
+      "path": "data/scenarios-screenshots-validated.json",
+      "sha256": "839ac40185fc1723c13bef34c89f4eb480d7078ae381447f3b6741d1b76de46c"
+    },
+    {
+      "path": "data/scenarios-targeted.json",
+      "sha256": "ccc1344e6ffb141ece39d1c660d026d96c830682f8d6dc6f35c7f67e8b5ef96e"
+    },
+    {
+      "path": "data/selective-reminder-check-2.json",
+      "sha256": "a7af71658e705fabc40e2efa8b762472a45321f44a5d20cc9260690b6453caf8"
+    },
+    {
+      "path": "data/selective-reminder-check.json",
+      "sha256": "1744d014ba11e88216321332c36916b59bf4f0c0b912cb63b06a4fd97bdd98f0"
+    },
+    {
+      "path": "data/smoke-results.json",
+      "sha256": "f002ea409299429afe91f37d2e293f0f0367cc05c002b6ea97e77254c23c0e8e"
+    },
+    {
+      "path": "data/source_inventory.json",
+      "sha256": "624a910be1c8dd21d5ab1325d872af10ac3ee240e38290404f626e9777466c13"
+    }
+  ],
+  "prior_unique_questions": 490,
+  "cases": [
+    {
+      "id": "I001",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Can I transfer from another university to NU?",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.2777
+        },
+        {
+          "question": "Nile University Egypt application process",
+          "files": [
+            "data/retrieval-expanded-check.json"
+          ],
+          "character_similarity": 0.2613
+        },
+        {
+          "question": "How can I apply to Nile University?",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.2214
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I002",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "شهادة الهندسة في النيل معتمدة؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.117
+        },
+        {
+          "question": "مهتم بالبحث العلمي، ليه أنضم للنيل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0835
+        },
+        {
+          "question": "ازاي اقدم في جامعة النيل؟",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-aliases-final.json",
+            "data/scenarios-qwen14-refined.json",
+            "data/scenarios-qwen35-9b.json",
+            "data/scenarios-qwen35-hard.json",
+            "data/scenarios-qwen9-direct.json",
+            "data/scenarios-qwen9-refined.json",
+            "data/scenarios-retest14.json",
+            "data/scenarios-targeted.json",
+            "evaluation/chat_cases.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/aliases-reviewed.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-refined.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen35-35b-comparison.json",
+            "evaluation/runs/qwen35-9b-comparison.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/runs/qwen9-refined.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.0618
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I003",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "enta support rasmi lel NU?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1109
+        },
+        {
+          "question": "ana mesh moqtane3 bel nile, leh afakkar adkholha?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0991
+        },
+        {
+          "question": "Help me draft a polite email asking for an extension.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0923
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I004",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Where does NU publish its current fees?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1766
+        },
+        {
+          "question": "Give me reasons to enroll at Nile instead of dismissing my concerns.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1492
+        },
+        {
+          "question": "Does the same rule apply to me?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1285
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I005",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "إيه أوراق التحويل المطلوبة في النيل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2181
+        },
+        {
+          "question": "شهادة الهندسة في النيل معتمدة؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1774
+        },
+        {
+          "question": "المعدل المطلوب لاستمرار المنحة كام؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1481
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I006",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "fhemt keda teslam",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1644
+        },
+        {
+          "question": "ah okay keda tamam",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1565
+        },
+        {
+          "question": "eh wara2 el ta7weel lel nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1501
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I007",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Is Nile University's engineering degree accredited?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.17
+        },
+        {
+          "question": "What does the Smart Engineering Systems Research Center do?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.166
+        },
+        {
+          "question": "What documents does NU require from transfer applicants?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1407
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I008",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "إيه البيوتكنولوجي ومصاريفها كام في النيل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2851
+        },
+        {
+          "question": "سعر الساعة المعتمدة في كلية البيوتكنولوجي كام؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2359
+        },
+        {
+          "question": "أنا محتار في اختيار الجامعة وعايز رأيك",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.182
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I009",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Explain a credit hour and tell me NU's price per credit.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1506
+        },
+        {
+          "question": "What does accreditation mean, and is NU accredited?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1124
+        },
+        {
+          "question": "ya3ni eh credit hour w be kam fel nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1046
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I010",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Is Nile University's engineering degree accredited?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1586
+        },
+        {
+          "question": "What does the Smart Engineering Systems Research Center do?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1352
+        },
+        {
+          "question": "UGRF bey2bal anhy projects?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.105
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I011",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "إيه البيوتكنولوجي ومصاريفها كام في النيل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.286
+        },
+        {
+          "question": "سعر الساعة المعتمدة في كلية البيوتكنولوجي كام؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2479
+        },
+        {
+          "question": "شهادة الهندسة في النيل معتمدة؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1904
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I012",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "eh wara2 el ta7weel lel nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1964
+        },
+        {
+          "question": "enta support rasmi lel NU?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1101
+        },
+        {
+          "question": "masareef handasa NU lel sana el gedida?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0875
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I013",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What is the non-Egyptian ITCS tuition per credit hour in 2026/2027?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-retest14.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.224
+        },
+        {
+          "question": "What is the non-Egyptian general postgraduate fee per credit hour, excluding EMBA?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1858
+        },
+        {
+          "question": "Does a Sawiris scholarship nomination guarantee admission to NU?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1691
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I014",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "هل فيه بكالوريوس أمن سيبراني في النيل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2752
+        },
+        {
+          "question": "اشرح البحث العلمي وشروط تقديم ملتقى أبحاث النيل",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2254
+        },
+        {
+          "question": "إيه برامج الماجستير في كلية الحاسبات بالنيل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2247
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I015",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "fi bachelor cybersecurity fel nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1802
+        },
+        {
+          "question": "el gam3a feen?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-qwen14-refined.json",
+            "data/scenarios-qwen9-direct.json",
+            "data/scenarios-qwen9-refined.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-refined.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/runs/qwen9-refined.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1361
+        },
+        {
+          "question": "Does Nile offer a bachelor's degree in Cybersecurity?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1303
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I016",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Do you recommend learning Python first?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2071
+        },
+        {
+          "question": "Nile University Egypt application process",
+          "files": [
+            "data/retrieval-expanded-check.json"
+          ],
+          "character_similarity": 0.2025
+        },
+        {
+          "question": "Would you recommend studying with friends?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2002
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I017",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "ايه شروط IELTS في جامعة النيل؟",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.2266
+        },
+        {
+          "question": "ترجم جملة تصبح على خير للإنجليزي",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1674
+        },
+        {
+          "question": "What are the IELTS requirements for Nile University?",
+          "files": [
+            "data/evaluation-qwen.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.1337
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I018",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "ya3ni eh credit hour w be kam fel nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0823
+        },
+        {
+          "question": "fi bachelor cybersecurity fel nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0699
+        },
+        {
+          "question": "Are you representing Nile officially?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0673
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I019",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Nile University Egypt application process",
+          "files": [
+            "data/retrieval-expanded-check.json"
+          ],
+          "character_similarity": 0.1667
+        },
+        {
+          "question": "What does STEM stand for and does NU give STEM scholarships?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1161
+        },
+        {
+          "question": "What documents does NU require from transfer applicants?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.116
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I020",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "اشرح التعلم العميق وقولي النيل بتدرسه ولا لأ",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1302
+        },
+        {
+          "question": "فرحان إني خلصت المشروع أخيرا",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.121
+        },
+        {
+          "question": "فين التقويم الأكاديمي بتاع الجامعة؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0923
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I021",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "FACT 3ando courses eh?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1305
+        },
+        {
+          "question": "The workload is making me miserable.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1158
+        },
+        {
+          "question": "I passed my exam!",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.092
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I022",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Where does NU publish its current fees?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1794
+        },
+        {
+          "question": "Does the same rule apply to me?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1621
+        },
+        {
+          "question": "Explain university research and describe the UGRF submission rules.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1586
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I023",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "شهادة الهندسة في النيل معتمدة؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2075
+        },
+        {
+          "question": "هل الجامعة كويسة؟",
+          "files": [
+            "data/scenarios-gemma-screenshots-final.json",
+            "data/scenarios-gemma-screenshots-reviewed.json",
+            "data/scenarios-gemma-screenshots-v2.json",
+            "data/scenarios-gemma-screenshots.json",
+            "data/scenarios-links-reviewed.json",
+            "data/scenarios-opinions-direct.json",
+            "data/scenarios-opinions-reasoning.json",
+            "data/scenarios-release-screenshots.json",
+            "data/scenarios-screenshots-final.json",
+            "data/scenarios-screenshots-validated.json",
+            "evaluation/runs/gemma-screenshots-audit-initial.json",
+            "evaluation/runs/gemma-screenshots-initial.json",
+            "evaluation/runs/gemma-screenshots-retrieval.json",
+            "evaluation/runs/links-mixed-routing-failure.json",
+            "evaluation/runs/opinions-reasoning.json",
+            "evaluation/runs/screenshots-reviewed.json",
+            "evaluation/screenshot_regressions.json"
+          ],
+          "character_similarity": 0.168
+        },
+        {
+          "question": "فين التقويم الأكاديمي بتاع الجامعة؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1494
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I024",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "3ayez raqam admissions NU",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1489
+        },
+        {
+          "question": "momken tebassa6 el shar7 dah?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1296
+        },
+        {
+          "question": "Does a Sawiris scholarship nomination guarantee admission to NU?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.127
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I025",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Give me NU's admissions phone number.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2419
+        },
+        {
+          "question": "3ayez raqam admissions NU",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2093
+        },
+        {
+          "question": "Which of those should I choose?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2006
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I026",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "أختار أنهي واحد فيهم؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2124
+        },
+        {
+          "question": "بوابة حرم الجامعة فين؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1694
+        },
+        {
+          "question": "أنا محتار في اختيار الجامعة وعايز رأيك",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1648
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I027",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "se3r el sa3a el mo3tamada fi biotech kam?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1383
+        },
+        {
+          "question": "tab el sana elly ba3daha?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1241
+        },
+        {
+          "question": "hatetla3 be kam ba3d el khasm dah?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1193
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I028",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Can I transfer from another university to NU?",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.285
+        },
+        {
+          "question": "Nile University Egypt application process",
+          "files": [
+            "data/retrieval-expanded-check.json"
+          ],
+          "character_similarity": 0.2356
+        },
+        {
+          "question": "Explain university research and describe the UGRF submission rules.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2178
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I029",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "هل فيه بكالوريوس أمن سيبراني في النيل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1366
+        },
+        {
+          "question": "What is the first-year Business Administration tuition before scholarships for 2026/2027?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1334
+        },
+        {
+          "question": "رأيك أروح النيل ولا أفكر في بدائل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1117
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I030",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "a5tar laptop wala desktop?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2104
+        },
+        {
+          "question": "sa3edny aktob email mo2addab",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1705
+        },
+        {
+          "question": "momken tebassa6 el shar7 dah?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1597
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I031",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Where is it?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-aliases-final.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/aliases-reviewed.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.273
+        },
+        {
+          "question": "Where can I find that?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2052
+        },
+        {
+          "question": "My family thinks NU is not worth it. What is the case for it?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2045
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I032",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "رأيك أروح النيل ولا أفكر في بدائل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2642
+        },
+        {
+          "question": "عايز رقم تليفون القبول بجامعة النيل",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.149
+        },
+        {
+          "question": "جامعة النيل فين؟",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1145
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I033",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Do you recommend learning Python first?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1973
+        },
+        {
+          "question": "ezay a2adem fel gam3a?",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-aliases-final.json",
+            "data/scenarios-release-hard.json",
+            "data/smoke-results.json",
+            "evaluation/chat_cases.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/aliases-reviewed.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1895
+        },
+        {
+          "question": "Would you recommend studying with friends?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1814
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I034",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What undergraduate programs are available in ITCS?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-qwen14-refined.json",
+            "data/scenarios-qwen35-9b.json",
+            "data/scenarios-qwen35-hard.json",
+            "data/scenarios-qwen9-direct.json",
+            "data/scenarios-qwen9-refined.json",
+            "data/scenarios-retest14.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-refined.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen35-35b-comparison.json",
+            "evaluation/runs/qwen35-9b-comparison.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/runs/qwen9-refined.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2727
+        },
+        {
+          "question": "What undergraduate scholarships are available?",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.2638
+        },
+        {
+          "question": "What scholarships are available at Nile University?",
+          "files": [
+            "data/evaluation-qwen.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.2166
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I035",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "اشرح براءة الاختراع ومكتب نقل التكنولوجيا في النيل بيعمل إيه",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1511
+        },
+        {
+          "question": "إنت معمول عشان تساعدني في إيه؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.123
+        },
+        {
+          "question": "جامعة النيل فين؟",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1012
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I036",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "tensa7ny at3allem python el awel?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2199
+        },
+        {
+          "question": "edini study tip w mawa3eed maktabet el gam3a",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1928
+        },
+        {
+          "question": "sa3edny aktob email mo2addab",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.177
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I037",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Where can I find the NU academic calendar?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2397
+        },
+        {
+          "question": "feen el academic calendar beta3 NU?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2092
+        },
+        {
+          "question": "And for the following year?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1735
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I038",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What is the ITCS tuition before scholarship for 2026/2027?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-aliases-final.json",
+            "data/scenarios-coverage-retest.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/aliases-reviewed.json",
+            "evaluation/runs/coverage-retest.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1392
+        },
+        {
+          "question": "What is the Egyptian EMBA fee per credit hour for 2026/2027?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1322
+        },
+        {
+          "question": "What is the ITCS annual fee with a 40% scholarship in 2026/2027?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1306
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I039",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "eh el far2 ben internet w web?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1934
+        },
+        {
+          "question": "masareef handasa NU lel sana el gedida?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.174
+        },
+        {
+          "question": "eh el far2 ben AI w machine learning?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-qwen14-refined.json",
+            "data/scenarios-qwen35-9b.json",
+            "data/scenarios-qwen35-hard.json",
+            "data/scenarios-qwen9-direct.json",
+            "data/scenarios-qwen9-refined.json",
+            "data/scenarios-retest14.json",
+            "data/scenarios-targeted.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-refined.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen35-35b-comparison.json",
+            "evaluation/runs/qwen35-9b-comparison.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/runs/qwen9-refined.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1688
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I040",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "eh el far2 ben AI wel programming el 3ady?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2346
+        },
+        {
+          "question": "Explain the water cycle to a beginner.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1775
+        },
+        {
+          "question": "Would studying at NU suit someone like me?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1436
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I041",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "أنا مخنوق من ضغط المحاضرات",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0798
+        },
+        {
+          "question": "لو جايب GPA 3.98 ليا خصم كام؟",
+          "files": [
+            "data/fees-live-check.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-aliases-final.json",
+            "data/scenarios-coverage-retest.json",
+            "data/scenarios-qwen14-refined.json",
+            "data/scenarios-qwen35-hard.json",
+            "data/scenarios-qwen9-direct.json",
+            "data/scenarios-qwen9-refined.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/aliases-reviewed.json",
+            "evaluation/runs/coverage-retest.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-refined.json",
+            "evaluation/runs/qwen35-35b-comparison.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/runs/qwen9-refined.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.0648
+        },
+        {
+          "question": "أقرر إزاي لو الجامعة دي مناسبة ليا؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0645
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I042",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "3ayez raqam admissions NU",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.153
+        },
+        {
+          "question": "sa3edny aktob email mo2addab",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1478
+        },
+        {
+          "question": "3ayez a3raf el mena7 el mota7a",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.1435
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I043",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What training courses does FACT offer?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1612
+        },
+        {
+          "question": "Does NU guarantee every student a free laptop?",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.1606
+        },
+        {
+          "question": "Explain university research and describe the UGRF submission rules.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1506
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I044",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "أنا محتار في اختيار الجامعة وعايز رأيك",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1781
+        },
+        {
+          "question": "عايز أسباب واقعية تشجعني أدرس في الجامعة",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1418
+        },
+        {
+          "question": "مين رئيس جامعة النيل الحالي؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.103
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I045",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "fi bachelor cybersecurity fel nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.3757
+        },
+        {
+          "question": "Does Nile offer a bachelor's degree in Cybersecurity?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.3179
+        },
+        {
+          "question": "Are you the university's official support team?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0884
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I046",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Correct these unsupported claims using only the supplied evidence, or remove them: [\"The Entrepreneurship Track is specifically named 'Entrepreneurship Track' in the text; the source refers to it as the 'Entrepreneurship Program – Undergrad Track'.\", \"The text does not specify that the Entrepreneurship Program is specifically for 'turning graduation projects into startups' as a general rule for all students, but rather as a result of the program's focus on practical application for senior undergraduate students.\"]. Return the required answer JSON. Keep it concise and preserve supported useful facts.",
+          "files": [
+            "data/advice-trace.json"
+          ],
+          "character_similarity": 0.2088
+        },
+        {
+          "question": "Where is Nile University, and what is a Python list?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-aliases-final.json",
+            "data/scenarios-code-final.json",
+            "data/scenarios-coverage-retest.json",
+            "data/scenarios-qwen14-refined.json",
+            "data/scenarios-qwen35-9b.json",
+            "data/scenarios-qwen35-hard.json",
+            "data/scenarios-qwen9-direct.json",
+            "data/scenarios-qwen9-refined.json",
+            "data/scenarios-release-hard.json",
+            "data/scenarios-retest14.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/aliases-reviewed.json",
+            "evaluation/runs/code-final.json",
+            "evaluation/runs/coverage-retest.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-refined.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen35-35b-comparison.json",
+            "evaluation/runs/qwen35-9b-comparison.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/runs/qwen9-refined.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1322
+        },
+        {
+          "question": "Where is Nile University, and explain what a Python list is.",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.1162
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I047",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "احكيلي نكتة قصيرة",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.0847
+        },
+        {
+          "question": "جامعة النيل فين؟",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.0535
+        },
+        {
+          "question": "طيب هي فين؟",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.0527
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I048",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Does Nile offer a bachelor's degree in Cybersecurity?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1345
+        },
+        {
+          "question": "List the ITCS undergraduate majors.",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-release-hard.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1341
+        },
+        {
+          "question": "ايه برامج undergraduate في ITCS؟",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-qwen14-refined.json",
+            "data/scenarios-qwen35-9b.json",
+            "data/scenarios-qwen35-hard.json",
+            "data/scenarios-qwen9-direct.json",
+            "data/scenarios-qwen9-refined.json",
+            "data/scenarios-release-hard.json",
+            "data/scenarios-retest14.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-refined.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen35-35b-comparison.json",
+            "evaluation/runs/qwen35-9b-comparison.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/runs/qwen9-refined.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1315
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I049",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What does the Smart Engineering Systems Research Center do?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2453
+        },
+        {
+          "question": "Is Nile University's engineering degree accredited?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1967
+        },
+        {
+          "question": "What does RAG stand for in NLP?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1338
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I050",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "مبسوط إني اتعرفت على ناس جديدة في الجامعة",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2101
+        },
+        {
+          "question": "جامعة النيل فين؟",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1688
+        },
+        {
+          "question": "كسم جامعة النيل",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-release-hard.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1677
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I051",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "feen el academic calendar beta3 NU?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1017
+        },
+        {
+          "question": "teslam 3ala el shar7",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0969
+        },
+        {
+          "question": "enta ensan wala bot?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0888
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I052",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What does the Center for Informatics Science research?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2072
+        },
+        {
+          "question": "And what about the other one?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1377
+        },
+        {
+          "question": "Explain patents and tell me what NU's IPTTO does.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1252
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I053",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Is Biotechnology one of those majors?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-release-hard.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2639
+        },
+        {
+          "question": "eh biotechnology w masareefha fel nile kam?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2495
+        },
+        {
+          "question": "What is biotechnology and how much is that major at Nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2452
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I054",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Is Nile University's engineering degree accredited?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1064
+        },
+        {
+          "question": "What is the Nanoelectronics Integrated Systems Center?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-retest14.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1055
+        },
+        {
+          "question": "What does the Smart Engineering Systems Research Center do?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1024
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I055",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What are the English test requirements for admission?",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.2031
+        },
+        {
+          "question": "What does the Smart Engineering Systems Research Center do?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1968
+        },
+        {
+          "question": "What are the IELTS requirements for Nile University?",
+          "files": [
+            "data/evaluation-qwen.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.1858
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I056",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Is Biotechnology one of those majors?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-release-hard.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2099
+        },
+        {
+          "question": "eh biotechnology w masareefha fel nile kam?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.181
+        },
+        {
+          "question": "What is biotechnology and how much is that major at Nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1779
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I057",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What is the Nanoelectronics Integrated Systems Center?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-retest14.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2525
+        },
+        {
+          "question": "What does the Smart Engineering Systems Research Center do?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2109
+        },
+        {
+          "question": "Is Nile University's engineering degree accredited?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1886
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I058",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What is the Nanoelectronics Integrated Systems Center?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-retest14.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1968
+        },
+        {
+          "question": "Nile University Egypt application process",
+          "files": [
+            "data/retrieval-expanded-check.json"
+          ],
+          "character_similarity": 0.1818
+        },
+        {
+          "question": "Where is Nile University located?",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/smoke-results.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.178
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I059",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "اديني مثال بايثون وقولي تخصصات حاسبات في الجامعة",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1903
+        },
+        {
+          "question": "مين اللي عمل المساعد ده؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0921
+        },
+        {
+          "question": "اديني نصيحة للمذاكرة ومواعيد مكتبة الجامعة",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0832
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I060",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Does NU have international student exchange programs?",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.1671
+        },
+        {
+          "question": "eh el far2 ben AI wel programming el 3ady?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1463
+        },
+        {
+          "question": "My professor's response really upset me.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1336
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I061",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What is deep learning, and does NU have a course in it?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2589
+        },
+        {
+          "question": "Explain a credit hour and tell me NU's price per credit.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2051
+        },
+        {
+          "question": "What does accreditation mean, and is NU accredited?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1912
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I062",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "هل فيه بكالوريوس أمن سيبراني في النيل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.3334
+        },
+        {
+          "question": "جامعة النيل فين؟",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2255
+        },
+        {
+          "question": "كسم جامعة النيل",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-release-hard.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2172
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I063",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "ya3ni eh credit hour w be kam fel nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2561
+        },
+        {
+          "question": "Nile University Egypt application process",
+          "files": [
+            "data/retrieval-expanded-check.json"
+          ],
+          "character_similarity": 0.1762
+        },
+        {
+          "question": "Explain a credit hour and tell me NU's price per credit.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1582
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I064",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Can you give another example of it?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2107
+        },
+        {
+          "question": "Correct these unsupported claims using only the supplied evidence, or remove them: [\"The Entrepreneurship Track is specifically named 'Entrepreneurship Track' in the text; the source refers to it as the 'Entrepreneurship Program – Undergrad Track'.\", \"The text does not specify that the Entrepreneurship Program is specifically for 'turning graduation projects into startups' as a general rule for all students, but rather as a result of the program's focus on practical application for senior undergraduate students.\"]. Return the required answer JSON. Keep it concise and preserve supported useful facts.",
+          "files": [
+            "data/advice-trace.json"
+          ],
+          "character_similarity": 0.1709
+        },
+        {
+          "question": "Explain precision and recall with a numerical example.",
+          "files": [
+            "data/qwen14-comparison.json"
+          ],
+          "character_similarity": 0.1479
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I065",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "I feel lonely in my first semester.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2051
+        },
+        {
+          "question": "أختار أنهي واحد فيهم؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1469
+        },
+        {
+          "question": "مصاريف جامعة النيل كام؟",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.122
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I066",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What does the Center for Informatics Science research?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1508
+        },
+        {
+          "question": "Can you introduce your purpose?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1325
+        },
+        {
+          "question": "Nile University School of Information Technology and Computer Science tuition fees",
+          "files": [
+            "data/retrieval-expanded-check.json"
+          ],
+          "character_similarity": 0.1253
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I067",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What does the Smart Engineering Systems Research Center do?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1943
+        },
+        {
+          "question": "Are you the university's official support team?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1468
+        },
+        {
+          "question": "enta support rasmi lel NU?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1423
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I068",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "جامعة النيل فين؟",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1512
+        },
+        {
+          "question": "مين رئيس جامعة النيل الحالي؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1278
+        },
+        {
+          "question": "فين التقويم الأكاديمي بتاع الجامعة؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1256
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I069",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "feen el academic calendar beta3 NU?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1449
+        },
+        {
+          "question": "Write a short story about a robot in a library.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1424
+        },
+        {
+          "question": "ektob 2essa 2osayara 3an robot",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1396
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I070",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "mabsoot en el project nage7",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1248
+        },
+        {
+          "question": "I care about startup projects; why choose Nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.124
+        },
+        {
+          "question": "I am proud of my latest project result.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1217
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I071",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "مين اللي عمل المساعد ده؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1036
+        },
+        {
+          "question": "اكتب قصة صغيرة عن روبوت في مكتبة",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0947
+        },
+        {
+          "question": "المساعد اللي بيكلمني ده دوره إيه؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0857
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I072",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "NU monasba le wa7ed zayy?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1686
+        },
+        {
+          "question": "I care about startup projects; why choose Nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1116
+        },
+        {
+          "question": "What is the ConstructX competition organized by IECC and EDECS?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-coverage-retest.json",
+            "data/scenarios-retest14.json",
+            "evaluation/runs/coverage-retest.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1026
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I073",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Where does NU publish its current fees?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2358
+        },
+        {
+          "question": "What are the English test requirements for admission?",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.1462
+        },
+        {
+          "question": "What does the NU FACT Center offer?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-release-hard.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1328
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I074",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "رأيك إيه في اختيار جامعة النيل؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2037
+        },
+        {
+          "question": "أنا محتار في اختيار الجامعة وعايز رأيك",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1556
+        },
+        {
+          "question": "I care about startup projects; why choose Nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1277
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I075",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "How do I contact the NU library?",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.1512
+        },
+        {
+          "question": "How can I contact the Nile registrar?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1327
+        },
+        {
+          "question": "How can I contact the Nile University library?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-coverage-retest.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/coverage-retest.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1301
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I076",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Does NU have a scholarship for students from Upper Egypt?",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.1624
+        },
+        {
+          "question": "Does NU have international student exchange programs?",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.1364
+        },
+        {
+          "question": "Does NU guarantee every student a free laptop?",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.1119
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I077",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "إيه شروط الاشتراك في كونستراكت إكس؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1415
+        },
+        {
+          "question": "ايه المنح الدراسية المتاحة في جامعة النيل؟",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.0884
+        },
+        {
+          "question": "مصاريف جامعة النيل كام؟",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.0815
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I078",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Does NU have a scholarship for students from Upper Egypt?",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.1115
+        },
+        {
+          "question": "Write a four-line poem about studying.",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1097
+        },
+        {
+          "question": "What scholarships does NU offer to students with high GPAs?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1065
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I079",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Can I transfer from another university to NU?",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.1826
+        },
+        {
+          "question": "Explain the difference between a Python list and tuple.",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1544
+        },
+        {
+          "question": "What documents does NU require from transfer applicants?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1522
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I080",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "الجامعة عصبتني النهارده",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2032
+        },
+        {
+          "question": "انا مبسوط جدا النهارده",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1976
+        },
+        {
+          "question": "انا متضايق من الجامعة النهارده",
+          "files": [
+            "data/scenarios-gemma-screenshots-final.json",
+            "data/scenarios-gemma-screenshots-reviewed.json",
+            "data/scenarios-gemma-screenshots-v2.json",
+            "data/scenarios-gemma-screenshots.json",
+            "data/scenarios-links-reviewed.json",
+            "data/scenarios-release-screenshots.json",
+            "data/scenarios-screenshots-final.json",
+            "data/scenarios-screenshots-validated.json",
+            "evaluation/runs/gemma-screenshots-audit-initial.json",
+            "evaluation/runs/gemma-screenshots-initial.json",
+            "evaluation/runs/gemma-screenshots-retrieval.json",
+            "evaluation/runs/links-mixed-routing-failure.json",
+            "evaluation/runs/screenshots-reviewed.json",
+            "evaluation/screenshot_regressions.json"
+          ],
+          "character_similarity": 0.1873
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I081",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "hatetla3 be kam ba3d el khasm dah?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1433
+        },
+        {
+          "question": "tab el sana elly ba3daha?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1007
+        },
+        {
+          "question": "eh biotechnology w masareefha fel nile kam?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.09
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I082",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What scholarships are available at Nile University?",
+          "files": [
+            "data/evaluation-qwen.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.2155
+        },
+        {
+          "question": "What undergraduate programs are available in ITCS?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-qwen14-refined.json",
+            "data/scenarios-qwen35-9b.json",
+            "data/scenarios-qwen35-hard.json",
+            "data/scenarios-qwen9-direct.json",
+            "data/scenarios-qwen9-refined.json",
+            "data/scenarios-retest14.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-refined.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen35-35b-comparison.json",
+            "evaluation/runs/qwen35-9b-comparison.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/runs/qwen9-refined.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1906
+        },
+        {
+          "question": "Give me NU's admissions phone number.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1849
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I083",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "الدكتور زعلني بطريقة كلامه",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.239
+        },
+        {
+          "question": "اسم الشات بوت ده إيه؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2209
+        },
+        {
+          "question": "سعر الساعة المعتمدة في كلية البيوتكنولوجي كام؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1998
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I084",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "se3r el sa3a el mo3tamada fi biotech kam?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2554
+        },
+        {
+          "question": "akhtar anhy wa7ed feehom?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1154
+        },
+        {
+          "question": "UGRF bey2bal anhy projects?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1036
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I085",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "How do I contact the NU library?",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.1961
+        },
+        {
+          "question": "What scholarships are available at Nile University?",
+          "files": [
+            "data/evaluation-qwen.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.1907
+        },
+        {
+          "question": "What undergraduate programs are available in ITCS?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-qwen14-refined.json",
+            "data/scenarios-qwen35-9b.json",
+            "data/scenarios-qwen35-hard.json",
+            "data/scenarios-qwen9-direct.json",
+            "data/scenarios-qwen9-refined.json",
+            "data/scenarios-retest14.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen14-refined.json",
+            "evaluation/runs/qwen14-retest.json",
+            "evaluation/runs/qwen35-35b-comparison.json",
+            "evaluation/runs/qwen35-9b-comparison.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/runs/qwen9-refined.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1779
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I086",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "إيه دورك هنا في الشات؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0662
+        },
+        {
+          "question": "eh el far2 ben internet w web?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0628
+        },
+        {
+          "question": "ازاي اقدر اسجل في حاسبات",
+          "files": [
+            "evaluation/chat_cases.json"
+          ],
+          "character_similarity": 0.0561
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I087",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "NU monasba le wa7ed zayy?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1794
+        },
+        {
+          "question": "ana mabsoot 3ashan naga7t",
+          "files": [
+            "data/qwen14-comparison.json"
+          ],
+          "character_similarity": 0.1513
+        },
+        {
+          "question": "eh el GPA el matloob 3ashan el men7a tekammel?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1416
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I088",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "When is the next Undergraduate Research Forum?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.144
+        },
+        {
+          "question": "Write a slogan for my student project.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1195
+        },
+        {
+          "question": "Where is it?",
+          "files": [
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "data/scenarios-affected-validated.json",
+            "data/scenarios-aliases-final.json",
+            "evaluation/runs/affected-before-alias-fix.json",
+            "evaluation/runs/aliases-reviewed.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1115
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I089",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "اديني نصيحة للمذاكرة ومواعيد مكتبة الجامعة",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1796
+        },
+        {
+          "question": "تنصحني أختار الجامعة دي ولا أفكر تاني؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1269
+        },
+        {
+          "question": "خلي الجملة دي ألطف: ابعت الملف حالا",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1153
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I090",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "akhtar anhy wa7ed feehom?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1942
+        },
+        {
+          "question": "NU monasba le wa7ed zayy?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1265
+        },
+        {
+          "question": "What is deep learning, and does NU have a course in it?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1074
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I091",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "What are the English test requirements for admission?",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.3156
+        },
+        {
+          "question": "22nd UGRF submission requirements",
+          "files": [
+            "data/retrieval-expanded-check.json"
+          ],
+          "character_similarity": 0.174
+        },
+        {
+          "question": "What are the IELTS requirements for Nile University?",
+          "files": [
+            "data/evaluation-qwen.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.1732
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I092",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "إيه شروط الاشتراك في كونستراكت إكس؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2231
+        },
+        {
+          "question": "إنت معمول عشان تساعدني في إيه؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1018
+        },
+        {
+          "question": "إيه معنى الانحدار الخطي؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1012
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I093",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "ba7eb el research, leh aroo7 NU?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1692
+        },
+        {
+          "question": "FACT 3ando courses eh?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.139
+        },
+        {
+          "question": "What training courses does FACT offer?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1318
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I094",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "I care about startup projects; why choose Nile?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.131
+        },
+        {
+          "question": "Which of those should I choose?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1277
+        },
+        {
+          "question": "Correct these unsupported claims using only the supplied evidence, or remove them: [\"The Entrepreneurship Track is specifically named 'Entrepreneurship Track' in the text; the source refers to it as the 'Entrepreneurship Program – Undergrad Track'.\", \"The text does not specify that the Entrepreneurship Program is specifically for 'turning graduation projects into startups' as a general rule for all students, but rather as a result of the program's focus on practical application for senior undergraduate students.\"]. Return the required answer JSON. Keep it concise and preserve supported useful facts.",
+          "files": [
+            "data/advice-trace.json"
+          ],
+          "character_similarity": 0.1268
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I095",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "أنا مخنوق من ضغط المحاضرات",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2793
+        },
+        {
+          "question": "اديني مثال بايثون وقولي تخصصات حاسبات في الجامعة",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1782
+        },
+        {
+          "question": "What is your relationship with NU?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1619
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I096",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "e2na3ny be gam3et el nile men gheir mobala8a",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1958
+        },
+        {
+          "question": "Can you give another example of it?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1526
+        },
+        {
+          "question": "hat example tany 3ala nafs el fekra",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1472
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I097",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Explain the difference between a Python list and tuple.",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.4256
+        },
+        {
+          "question": "What is the difference between HTTP and HTTPS?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.2816
+        },
+        {
+          "question": "What is the difference between an encoder and a generative model?",
+          "files": [
+            "data/scenarios-100-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.2708
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I098",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "عايز اقدم حاسبات، اعمل ايه والمصاريف كام قبل المنح؟",
+          "files": [
+            "data/scenarios-current-links.json",
+            "data/scenarios-delivery.json",
+            "data/scenarios-links-final.json",
+            "data/scenarios-links-reviewed.json",
+            "data/scenarios-screenshots-final.json",
+            "data/scenarios-screenshots-validated.json",
+            "evaluation/runs/delivery.json",
+            "evaluation/runs/links-before-scope-guard.json",
+            "evaluation/runs/links-initial.json",
+            "evaluation/runs/links-mixed-routing-failure.json",
+            "evaluation/runs/screenshots-reviewed.json",
+            "evaluation/screenshot_regressions.json"
+          ],
+          "character_similarity": 0.0741
+        },
+        {
+          "question": "ايه التخصصات المتاحة في كلية حاسبات في جامعة النيل؟",
+          "files": [
+            "data/smoke-results.json"
+          ],
+          "character_similarity": 0.0693
+        },
+        {
+          "question": "سعر الساعة المعتمدة في كلية البيوتكنولوجي كام؟",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.0602
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I099",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "<question>Where is Nile University located?</question>",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.3026
+        },
+        {
+          "question": "3ayez a3raf el mena7 el mota7a",
+          "files": [
+            "data/evaluation-baseline.json",
+            "data/evaluation-qwen.json",
+            "evaluation/questions.json",
+            "evaluation/results-baseline.json",
+            "evaluation/results-qwen.json"
+          ],
+          "character_similarity": 0.2497
+        },
+        {
+          "question": "3ayez a3raf el mena7 el mota7a\nscholarships",
+          "files": [
+            "data/evaluation-baseline.json",
+            "evaluation/results-baseline.json"
+          ],
+          "character_similarity": 0.2135
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    },
+    {
+      "id": "I100",
+      "exact_match": false,
+      "nearest_old": [
+        {
+          "question": "Rewrite this sentence more politely: send the file now.",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1554
+        },
+        {
+          "question": "<question>Where is Nile University located?</question>",
+          "files": [
+            "data/chat-check-final.json",
+            "data/chat-check-first.json",
+            "data/scenarios-100-gemma-final.json",
+            "data/scenarios-100-gemma-reviewed.json",
+            "data/scenarios-100-qwen14.json",
+            "data/scenarios-100-qwen9-direct.json",
+            "evaluation/chat_cases.json",
+            "evaluation/runs/gemma-first-full.json",
+            "evaluation/runs/gemma-second-full.json",
+            "evaluation/runs/optimized-100.json",
+            "evaluation/runs/qwen14-baseline.json",
+            "evaluation/runs/qwen9-direct-full.json",
+            "evaluation/scenarios_100.json"
+          ],
+          "character_similarity": 0.1487
+        },
+        {
+          "question": "Where is the NU campus entrance?",
+          "files": [
+            "evaluation/intent_examples.json"
+          ],
+          "character_similarity": 0.1462
+        }
+      ],
+      "manual_novelty_review": "Distinct fact target or decision; broad domain overlap is allowed. See expectation."
+    }
+  ]
+}

@@ -1,0 +1,1147 @@
+[
+  {
+    "id": "I001",
+    "language": "en",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "If I pay NU's application charge and then choose another university, can I get that charge back?",
+    "expectation": "Application fee is non-refundable; distinguish application charge from tuition; link the admissions page.",
+    "history": []
+  },
+  {
+    "id": "I002",
+    "language": "ar",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "أنا أمريكان ودرست عاشرة وحادية عشرة وتانية عشرة في ٣ مدارس مختلفة جوه مصر. ينفع شهادة آخر مدرسة بس للنيل؟",
+    "expectation": "Separate stamped transcripts for each grade, not just final school; General Examinations Department stamps.",
+    "history": []
+  },
+  {
+    "id": "I003",
+    "language": "franco",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "ana IG w 3andy 8 O levels bas core mesh extended. yenfa3o lel NU?",
+    "expectation": "Core does not meet the published extended-only requirement; no admission guarantee.",
+    "history": []
+  },
+  {
+    "id": "I004",
+    "language": "en",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "My IGCSE subjects were completed five years before I plan to enroll at NU. Does the published time window cover me?",
+    "expectation": "Published window is four years before enrollment; five years is outside it.",
+    "history": []
+  },
+  {
+    "id": "I005",
+    "language": "ar",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "للتقديم لهندسة النيل بالـIG، عندي المواد المطلوبة في O level ومعايا AS Math بدرجة D. لازم أجيب A level كمان؟",
+    "expectation": "Published requirement permits one AS or AL Mathematics at minimum D; not both.",
+    "history": []
+  },
+  {
+    "id": "I006",
+    "language": "franco",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "ana IB 24 points bas ma3adetes TOK. el 24 keda kefaya lel Nile?",
+    "expectation": "24 points alone insufficient; must pass TOK and Extended Essay.",
+    "history": []
+  },
+  {
+    "id": "I007",
+    "language": "en",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "For an IB applicant to NU engineering, can Mathematics and Physics both be Standard Level?",
+    "expectation": "Both Mathematics and Physics must be Higher Level for the stated schools.",
+    "history": []
+  },
+  {
+    "id": "I008",
+    "language": "ar",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "أنا IB وعايز بيوتكنولوجي في النيل؛ أنهي مادتين لازم يكونوا HL بالذات؟",
+    "expectation": "Chemistry and Biology HL.",
+    "history": []
+  },
+  {
+    "id": "I009",
+    "language": "franco",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "law geebt scores 3alya fi AP, NU hat7sebholy credits automatic?",
+    "expectation": "High AP scores may earn transfer credits; not automatic or guaranteed.",
+    "history": []
+  },
+  {
+    "id": "I010",
+    "language": "en",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "I hold a Nile Schools certificate. For NU engineering, is one Level 3 Mathematics subject an alternative to two Level 2 subjects?",
+    "expectation": "Yes in the published track, alongside seven required L1 subjects; L3 Maths alternative, not a substitute for all requirements.",
+    "history": []
+  },
+  {
+    "id": "I011",
+    "language": "ar",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "معايا شهادة كندية وعايز بيوتكنولوجي النيل. Biology في grade 12 بس كفاية؟",
+    "expectation": "Biology is required in both grades 11 and 12.",
+    "history": []
+  },
+  {
+    "id": "I012",
+    "language": "franco",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "ana masry thanaweya 3amma w ma3andish passport. da ye3attal wara2 el ta2deem lel NU?",
+    "expectation": "Passport copy optional for Egyptians; mandatory for non-Egyptians; national ID still required.",
+    "history": []
+  },
+  {
+    "id": "I013",
+    "language": "en",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "I'm applying to Nile as a non-Egyptian. Is submitting NU's own form enough, or is there a separate government nomination step?",
+    "expectation": "Study in Egypt portal and nomination letter followed by completion with NU; link official page or portal.",
+    "history": []
+  },
+  {
+    "id": "I014",
+    "language": "ar",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "عدد الصور الشخصية في تقديم بكالوريوس النيل هو نفسه عددها في تقديم الماجستير؟",
+    "expectation": "Undergraduate six versus master's four passport-size photos.",
+    "history": []
+  },
+  {
+    "id": "I015",
+    "language": "franco",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "PhD NU: bachelor w master men gam3a 7okomeya barra masr. lazm equivalency lel etneen wala private bas?",
+    "expectation": "PhD checklist equivalency for both degrees from private universities OR universities outside Egypt; public foreign degrees included.",
+    "history": []
+  },
+  {
+    "id": "I016",
+    "language": "en",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "I'm assembling my NU master's application. How many recommendation letters should I request?",
+    "expectation": "Three recommendation letters.",
+    "history": []
+  },
+  {
+    "id": "I017",
+    "language": "ar",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "MSc MOT في النيل: IELTS overall 6.5 وwriting 6.0، كده محقق شرط الإنجليزي؟",
+    "expectation": "No; writing also minimum 6.5 for MSc MOT, not general master's threshold.",
+    "history": []
+  },
+  {
+    "id": "I018",
+    "language": "franco",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "PhD MOT fel Nile: TOEFL iBT 95 w writing 26. el score da ykafy?",
+    "expectation": "No; minimum overall 94 and writing 27 for PhD MOT.",
+    "history": []
+  },
+  {
+    "id": "I019",
+    "language": "en",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "For a regular NU master's application outside MOT, does the checklist accept AMIDEAST Institutional TOEFL, and at what score?",
+    "expectation": "ITP administered by AMIDEAST at least 500; distinguish from iBT.",
+    "history": []
+  },
+  {
+    "id": "I020",
+    "language": "ar",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "لو خلصت IG عند grade 11، النيل محتاجة إثبات معين إن التعليم بتاعي مكتمل؟",
+    "expectation": "Proof of completing required education from Educational Administration stamped by General Examinations Department; no invented waiver.",
+    "history": []
+  },
+  {
+    "id": "I021",
+    "language": "franco",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "French bac bta3y passable. el minimum grade el maktoob 3and NU eh?",
+    "expectation": "Published minimum is passable; subject requirements and current admission rules still apply.",
+    "history": []
+  },
+  {
+    "id": "I022",
+    "language": "en",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "What average and subject count does NU publish for the German Abitur? I'm trying to read that section rather than the American GPA rules.",
+    "expectation": "Average 4, seven subjects in grades 11 and 12 with at least three advanced; do not confuse GPA 2.0.",
+    "history": []
+  },
+  {
+    "id": "I023",
+    "language": "ar",
+    "category": "admissions",
+    "references": [
+      "admissions"
+    ],
+    "question": "في شهادة مدارس النيل، هل العربي لازم ضمن Level 1 لو داخل Business في الجامعة؟",
+    "expectation": "Yes; seven L1 subjects include Arabic, English and Maths.",
+    "history": []
+  },
+  {
+    "id": "I024",
+    "language": "franco",
+    "category": "admissions",
+    "references": [
+      "faq"
+    ],
+    "question": "natiget el thanaweya lesa matala3etsh. early admission fel Nile momken abl el grades wala lazm astanna?",
+    "expectation": "Early application may be possible when open before final grades; not confirmation that a current round is open; official application link/page.",
+    "history": []
+  },
+  {
+    "id": "I025",
+    "language": "en",
+    "category": "admissions",
+    "references": [
+      "faq",
+      "admissions"
+    ],
+    "question": "NU's FAQ says Oxford B1 but its admissions page says B2. Which one should I rely on before booking the test?",
+    "expectation": "Acknowledge discrepancy, direct applicant to admissions for confirmation with both links; do not invent a definitive reconciliation.",
+    "history": []
+  },
+  {
+    "id": "I026",
+    "language": "ar",
+    "category": "services",
+    "references": [
+      "clinic"
+    ],
+    "question": "عيادة الجامعة في أنهي مبنى وأنهي دور؟ أنا في الحرم ومش لاقيها.",
+    "expectation": "Ground floor of UB2.",
+    "history": []
+  },
+  {
+    "id": "I027",
+    "language": "franco",
+    "category": "services",
+    "references": [
+      "clinic"
+    ],
+    "question": "law ro7t clinic el NU yom gom3a el sa3a 5 ba3d el dohr, teb2a maftoo7a?",
+    "expectation": "Friday closes at 4 pm; 5 pm outside published hours; link current clinic page.",
+    "history": []
+  },
+  {
+    "id": "I028",
+    "language": "en",
+    "category": "services",
+    "references": [
+      "clinic"
+    ],
+    "question": "If a case is too complicated for NU's campus clinic, does the university describe a hospital transfer procedure?",
+    "expectation": "Transfer under NU medical staff supervision, emergency family contact; no invented hospital name.",
+    "history": []
+  },
+  {
+    "id": "I029",
+    "language": "ar",
+    "category": "services",
+    "references": [
+      "support"
+    ],
+    "question": "أنا في Business وبعاني في المواد. فيه tutoring ببلاش جوه النيل ولا كله دروس بره؟",
+    "expectation": "TLC offers free tutoring for Business students; explain how it helps rather than generic study tips only.",
+    "history": []
+  },
+  {
+    "id": "I030",
+    "language": "franco",
+    "category": "services",
+    "references": [
+      "support"
+    ],
+    "question": "TLC fel Nile momken yesa3edny a5tar major wala howa lel tutoring bas?",
+    "expectation": "TLC also provides major-choice guidance and academic issues assistance.",
+    "history": []
+  },
+  {
+    "id": "I031",
+    "language": "en",
+    "category": "services",
+    "references": [
+      "support"
+    ],
+    "question": "I'm already an NU student and my family's finances suddenly got worse. Is there a needs-based support office, and where can I reach it?",
+    "expectation": "Partial need-based tuition support subject to funds; MeSamir@nu.edu.eg or B floor room 19; not guaranteed scholarship.",
+    "history": []
+  },
+  {
+    "id": "I032",
+    "language": "ar",
+    "category": "services",
+    "references": [
+      "seec"
+    ],
+    "question": "عايز حد في النيل يراجع الـCV بتاعي. أروح SEEC ولا SCE؟",
+    "expectation": "SEEC is the appropriate career/resume service; give booking page/form or seec@nu.edu.eg, distinguish similarly named SCE.",
+    "history": []
+  },
+  {
+    "id": "I033",
+    "language": "franco",
+    "category": "services",
+    "references": [
+      "seec"
+    ],
+    "question": "el company talba internship recommendation letter men NU. fe form a2adem 3aleh?",
+    "expectation": "SEEC Internship Letter Request form exists; point to actual form or official SEEC page without inventing URL.",
+    "history": []
+  },
+  {
+    "id": "I034",
+    "language": "en",
+    "category": "services",
+    "references": [
+      "seec"
+    ],
+    "question": "I've graduated from NU already. Are SEEC career services described as available to alumni too?",
+    "expectation": "Yes, students and alumni explicitly included.",
+    "history": []
+  },
+  {
+    "id": "I035",
+    "language": "ar",
+    "category": "services",
+    "references": [
+      "seec"
+    ],
+    "question": "في النيل حد بيعمل mock interviews عشان أتمرن قبل مقابلة الشغل؟",
+    "expectation": "SEEC mock interviews, practice/feedback and official booking/contact route.",
+    "history": []
+  },
+  {
+    "id": "I036",
+    "language": "franco",
+    "category": "services",
+    "references": [
+      "library"
+    ],
+    "question": "maktabet NU momken tsa3edny at3allem a2ayyem el research sources wala heya kotob bas?",
+    "expectation": "Library offers research assistance and effective information use/critical evaluation education.",
+    "history": []
+  },
+  {
+    "id": "I037",
+    "language": "en",
+    "category": "transport_ocr",
+    "references": [
+      "bus"
+    ],
+    "question": "Is the 2026/27 NU bus-price chart charging for the full academic year or for one semester?",
+    "expectation": "Per term/one semester, not annual.",
+    "history": []
+  },
+  {
+    "id": "I038",
+    "language": "ar",
+    "category": "transport_ocr",
+    "references": [
+      "bus"
+    ],
+    "question": "أتوبيس النيل من حدائق الأهرام اشتراكه كام للترم 2026/2027؟ ابعتلي الصفحة كمان.",
+    "expectation": "9800 EGP per term; current transport page link.",
+    "history": []
+  },
+  {
+    "id": "I039",
+    "language": "franco",
+    "category": "transport_ocr",
+    "references": [
+      "bus"
+    ],
+    "question": "far2 eshterak bus NU ben sheikh zayed w masr el gedida fel term 2026/27 kam?",
+    "expectation": "8800 versus 15300; difference 6500 EGP per term, linked chart/page.",
+    "history": []
+  },
+  {
+    "id": "I040",
+    "language": "en",
+    "category": "clubs",
+    "references": [
+      "icpc"
+    ],
+    "question": "I'm a complete programming beginner at NU. Does its ICPC community describe a starting level for people like me?",
+    "expectation": "Level 0 teaches basic programming; no need to already be advanced.",
+    "history": []
+  },
+  {
+    "id": "I041",
+    "language": "ar",
+    "category": "clubs",
+    "references": [
+      "nimun"
+    ],
+    "question": "أنا بحب تنظيم الإيفنتات أكتر من السياسة. NIMUN فيه دور ليا ولا لازم أكون مناظر؟",
+    "expectation": "Organizing/administrative branch alongside academic branch; fits event organization.",
+    "history": []
+  },
+  {
+    "id": "I042",
+    "language": "franco",
+    "category": "clubs",
+    "references": [
+      "wessal"
+    ],
+    "question": "3ayez ata6awwa3 ma3 Wessal NU. fe email lel club?",
+    "expectation": "wessal_nu@nu.edu.eg; charity/volunteering context, not admissions email.",
+    "history": []
+  },
+  {
+    "id": "I043",
+    "language": "en",
+    "category": "clubs",
+    "references": [
+      "enactus"
+    ],
+    "question": "Which NU student organization brought back the Meshwary training described as free and UNICEF-approved?",
+    "expectation": "Enactus NU; historical achievement, no claim registrations currently open.",
+    "history": []
+  },
+  {
+    "id": "I044",
+    "language": "ar",
+    "category": "clubs",
+    "references": [
+      "pack"
+    ],
+    "question": "أنا عايز yoga أو pilates في أنشطة الجامعة، مش فريق كرة. فيه club بيذكر الحاجات دي؟",
+    "expectation": "NU Pack lists Pilates/yoga; no invented timetable.",
+    "history": []
+  },
+  {
+    "id": "I045",
+    "language": "franco",
+    "category": "clubs",
+    "references": [
+      "trojan"
+    ],
+    "question": "Trojan NU da esports team wala cybersecurity community? by3melo eh?",
+    "expectation": "Cybersecurity community, workshops/sessions/friendly competitions; not esports team.",
+    "history": []
+  },
+  {
+    "id": "I046",
+    "language": "en",
+    "category": "clubs",
+    "references": [
+      "pixels"
+    ],
+    "question": "I want hands-on Adobe Premiere and Photoshop practice at NU. Is there a student club that specifically lists those tools?",
+    "expectation": "Pixels lists these tools and multimedia training/workshops.",
+    "history": []
+  },
+  {
+    "id": "I047",
+    "language": "ar",
+    "category": "clubs",
+    "references": [
+      "film"
+    ],
+    "question": "نفسي أعمل فيلم قصير بس عمري ما صورت حاجة. FilmFish بيقبل مبتدئين؟",
+    "expectation": "Yes, no need to be professional; collaborative films and teaching.",
+    "history": []
+  },
+  {
+    "id": "I048",
+    "language": "franco",
+    "category": "clubs",
+    "references": [
+      "gsp"
+    ],
+    "question": "GSP NU ma3naha graduate degree? wala student activity? esmha el kamel eh?",
+    "expectation": "Graduate Starter Pack student club/activity, not postgraduate degree.",
+    "history": []
+  },
+  {
+    "id": "I049",
+    "language": "en",
+    "category": "clubs",
+    "references": [
+      "ieee"
+    ],
+    "question": "Does IEEE-NU mention a Women in Engineering group, and what is that group for?",
+    "expectation": "WIE supports/promotes women in engineering and encourages girls in STEM.",
+    "history": []
+  },
+  {
+    "id": "I050",
+    "language": "ar",
+    "category": "clubs",
+    "references": [
+      "nimun"
+    ],
+    "question": "NIMUN مقصور على طلبة النيل ولا وصفه بيقول إن ناس من بره الجامعة ممكن تشارك؟",
+    "expectation": "Description includes participants within and outside NU; current registration subject to organizer confirmation.",
+    "history": []
+  },
+  {
+    "id": "I051",
+    "language": "franco",
+    "category": "clubs",
+    "references": [
+      "gsp"
+    ],
+    "question": "Simulatopedia beta3 GSP kan lecture bas wala kan fe ta3arrof 3ala companies w internships?",
+    "expectation": "Work-life experience involving companies, workshops and selected internship opportunities; no universal internship guarantee.",
+    "history": []
+  },
+  {
+    "id": "I052",
+    "language": "en",
+    "category": "programs",
+    "references": [
+      "bioinfo"
+    ],
+    "question": "I like analyzing DNA datasets more than doing wet-lab experiments. What does NU's Bioinformatics description say about genomics and proteomics?",
+    "expectation": "Computational biological data; genomic entities/genes/transcripts and protein sets; distinguish interests without promising job.",
+    "history": []
+  },
+  {
+    "id": "I053",
+    "language": "ar",
+    "category": "programs",
+    "references": [
+      "appliedbio"
+    ],
+    "question": "Applied Biotechnology في النيل ممكن يوديني لمجال forensic science ولا ده بعيد عن وصف البرنامج؟",
+    "expectation": "Forensic scientist/forensic and molecular labs explicitly listed as possible careers, no employment guarantee.",
+    "history": []
+  },
+  {
+    "id": "I054",
+    "language": "franco",
+    "category": "programs",
+    "references": [
+      "mechatronics"
+    ],
+    "question": "ana biomedical engineer. MSc mechatronics NU target graduates zayy wala mechanical bas?",
+    "expectation": "Biomedical engineers explicitly targeted, not limited to mechanical; admission not automatic.",
+    "history": []
+  },
+  {
+    "id": "I055",
+    "language": "en",
+    "category": "programs",
+    "references": [
+      "software"
+    ],
+    "question": "Does NU's software-engineering master's focus only on coding, or does it include requirements, testing and quality assurance?",
+    "expectation": "Requirements, architecture, testing/verification and QA included, alongside development management.",
+    "history": []
+  },
+  {
+    "id": "I056",
+    "language": "ar",
+    "category": "programs",
+    "references": [
+      "motdiploma"
+    ],
+    "question": "دبلومة Management of Technology في النيل طريق مقفول ولا ممكن بعدها أكمل MSc MOT؟",
+    "expectation": "Certificate holders may pursue MSc MOT; do not promise automatic acceptance/credit transfer.",
+    "history": []
+  },
+  {
+    "id": "I057",
+    "language": "franco",
+    "category": "programs",
+    "references": [
+      "microelectronics"
+    ],
+    "question": "master engineering microelectronics NU fe applied project w report wala courses bas?",
+    "expectation": "Advanced courses plus applied project presented in scientific report.",
+    "history": []
+  },
+  {
+    "id": "I058",
+    "language": "en",
+    "category": "programs",
+    "references": [
+      "imc"
+    ],
+    "question": "Which US university is named on NU Integrated Marketing Communications' partnership page?",
+    "expectation": "University of Tennessee; no assumption of guaranteed current seat.",
+    "history": []
+  },
+  {
+    "id": "I059",
+    "language": "ar",
+    "category": "programs",
+    "references": [
+      "supply"
+    ],
+    "question": "تخصص Supply Chain في النيل بيذكر شغل procurement وinventory فعلًا؟ اديني مثالين من المسارات.",
+    "expectation": "Procurement Officer and Inventory Manager are listed; possible paths, not guaranteed jobs.",
+    "history": []
+  },
+  {
+    "id": "I060",
+    "language": "franco",
+    "category": "programs",
+    "references": [
+      "food"
+    ],
+    "question": "meen el program director beta3 Professional Diploma in Food Safety Management fel Nile?",
+    "expectation": "Prof Sobhy Ahmed El-Sohaimy; current official program page link.",
+    "history": []
+  },
+  {
+    "id": "I061",
+    "language": "en",
+    "category": "courses",
+    "references": [
+      "accounting"
+    ],
+    "question": "At NU, what are the course code and credit hours for Cost Accounting, and does it include activity-based costing?",
+    "expectation": "ACCT 303, 3 credits, activity-based costing included.",
+    "history": []
+  },
+  {
+    "id": "I062",
+    "language": "ar",
+    "category": "courses",
+    "references": [
+      "innovationcourse"
+    ],
+    "question": "MOT 602 في جامعة النيل بيتكلم عن إيه؟ وهو بكالوريوس ولا دراسات عليا؟",
+    "expectation": "Innovation Management and Product Development Management, postgraduate MSc MOT; explain relevant content.",
+    "history": []
+  },
+  {
+    "id": "I063",
+    "language": "franco",
+    "category": "courses",
+    "references": [
+      "bmd101"
+    ],
+    "question": "BMD101 fel Nile fe DNA replication w Mendelian genetics? w kam credit?",
+    "expectation": "Biology and Genetics includes both, 3 credits.",
+    "history": []
+  },
+  {
+    "id": "I064",
+    "language": "en",
+    "category": "courses",
+    "references": [
+      "genetics"
+    ],
+    "question": "For NU's BIO 203 Genetics-I, is there practical work as well as theory? Give one example of the practical component.",
+    "expectation": "Yes; cultures/genetic variation/breeding/gene analysis etc supported practical example.",
+    "history": []
+  },
+  {
+    "id": "I065",
+    "language": "ar",
+    "category": "courses",
+    "references": [
+      "databases"
+    ],
+    "question": "CBIO 203 بيتاخد في أنهي semester وعدد ساعاته كام؟",
+    "expectation": "Semester 4, 2 credit hours; distinguish from BIO203 semester3/3credits.",
+    "history": []
+  },
+  {
+    "id": "I066",
+    "language": "franco",
+    "category": "courses",
+    "references": [
+      "databases"
+    ],
+    "question": "course Introduction to Bioinformatics and Biological Databases fel NU beyesta5dem public repositories wala database design general bas?",
+    "expectation": "Retrieving/manipulating/analyzing biological data from public repositories; introduction to high throughput NGS analysis.",
+    "history": []
+  },
+  {
+    "id": "I067",
+    "language": "en",
+    "category": "programs",
+    "references": [
+      "mechatronics"
+    ],
+    "question": "Could NU's mechatronics master's support research on unmanned vehicles and smart materials, or are those outside its listed topics?",
+    "expectation": "Both unmanned vehicles and smart materials/structures are listed research topics.",
+    "history": []
+  },
+  {
+    "id": "I068",
+    "language": "ar",
+    "category": "research",
+    "references": [
+      "materials"
+    ],
+    "question": "مشروع النيل بتاع تغليف بقشر الجمبري: الشريك مين والتمويل منين؟",
+    "expectation": "University of Nottingham partner; STDF funding.",
+    "history": []
+  },
+  {
+    "id": "I069",
+    "language": "franco",
+    "category": "research",
+    "references": [
+      "coral"
+    ],
+    "question": "soft robot beta3 coral reefs fi NU el fund men ASRT wala STDF?",
+    "expectation": "ASRT for coral robot, do not conflate with shrimp packaging STDF.",
+    "history": []
+  },
+  {
+    "id": "I070",
+    "language": "en",
+    "category": "research",
+    "references": [
+      "materials"
+    ],
+    "question": "What is the NU shrimp-shell packaging project trying to extract, and why reinforce it with chitin fibers?",
+    "expectation": "Chitosan/biopolymers; reinforcement improves mechanical and barrier properties.",
+    "history": []
+  },
+  {
+    "id": "I071",
+    "language": "ar",
+    "category": "research",
+    "references": [
+      "coral"
+    ],
+    "question": "الروبوت اللي بيراقب الشعاب المرجانية عند النيل الهدف إنه يصطاد السمك ولا يراقب البيئة من غير إزعاج كبير؟",
+    "expectation": "Low-disturbance monitoring, mimicking marine creatures; not fishing.",
+    "history": []
+  },
+  {
+    "id": "I072",
+    "language": "franco",
+    "category": "enterprise",
+    "references": [
+      "venture"
+    ],
+    "question": "ana corporate mesh startup. IECC venture clienting yenfa3 le company zayy?",
+    "expectation": "Designed for corporations, large enterprises and government collaborating with startups.",
+    "history": []
+  },
+  {
+    "id": "I073",
+    "language": "en",
+    "category": "enterprise",
+    "references": [
+      "venture"
+    ],
+    "question": "Does IECC publish a fixed price for venture clienting, or does the cost depend on the engagement?",
+    "expectation": "Costs depend on agreed service scope; do not invent fixed fee; official service link.",
+    "history": []
+  },
+  {
+    "id": "I074",
+    "language": "ar",
+    "category": "enterprise",
+    "references": [
+      "venture"
+    ],
+    "question": "IECC بيقول إن اختيار startup مناسب للشركة بياخد تقريبًا قد إيه؟ وهل ده شامل التنفيذ؟",
+    "expectation": "Scouting/selection typically 4–12 weeks; execution/testing depends on solution and excluded from fixed range.",
+    "history": []
+  },
+  {
+    "id": "I075",
+    "language": "franco",
+    "category": "enterprise",
+    "references": [
+      "venture"
+    ],
+    "question": "IECC lama ye5tar startup, bye3mel pilot w PoC wala byeb3at contacts bas?",
+    "expectation": "Pilot/demo management, PoC testing and validation, not only contact list.",
+    "history": []
+  },
+  {
+    "id": "I076",
+    "language": "en",
+    "category": "enterprise",
+    "references": [
+      "hub"
+    ],
+    "question": "I'm on an unfunded NU student team building a prototype. What does the Innovation Hub say its shared labs can save us from outsourcing?",
+    "expectation": "Design/prototyping/manufacturing costs, shared resources for students/researchers; no invented free reservation guarantee.",
+    "history": []
+  },
+  {
+    "id": "I077",
+    "language": "ar",
+    "category": "transport_ocr",
+    "references": [
+      "bus"
+    ],
+    "question": "لو استرديت اشتراك أتوبيس النيل خلال أول أسبوع دراسة، بيتخصم كام في المية طبقًا لصورة 2026/27؟",
+    "expectation": "10% deduction during first week; transport page/image link.",
+    "history": []
+  },
+  {
+    "id": "I078",
+    "language": "franco",
+    "category": "transport_ocr",
+    "references": [
+      "bus"
+    ],
+    "question": "law 5 students bas eshtarako fi bus line NU, el line hayetshe8al wala el flos terg3?",
+    "expectation": "Minimum six subscribers; below minimum line cancelled and full subscription refunded; link.",
+    "history": []
+  },
+  {
+    "id": "I079",
+    "language": "en",
+    "category": "transport_ocr",
+    "references": [
+      "bus"
+    ],
+    "question": "Does NU's 2026/27 transport notice allow me to use a different bus from the one I subscribed to?",
+    "expectation": "No, other bus use disallowed in chart; link.",
+    "history": []
+  },
+  {
+    "id": "I080",
+    "language": "ar",
+    "category": "transport_ocr",
+    "references": [
+      "bus"
+    ],
+    "question": "النهارده 16 سبتمبر 2026؛ آخر موعد حجز أتوبيس النيل 24 سبتمبر أكيد حتى لو العدد كمل؟",
+    "expectation": "Booking until Sept24 OR capacity fills, whichever earlier; date has not passed but no live seat guarantee; link.",
+    "history": []
+  },
+  {
+    "id": "I081",
+    "language": "franco",
+    "category": "transport_ocr",
+    "references": [
+      "bus"
+    ],
+    "question": "law talab refund lel bus NU ba3d shahr w nos men bedayet el derasa, hastared kam?",
+    "expectation": "No refund after first month according to notice; link.",
+    "history": []
+  },
+  {
+    "id": "I082",
+    "language": "en",
+    "category": "uncertainty",
+    "references": [
+      "bus"
+    ],
+    "question": "Can you tell me the exact number of seats still available on NU's Maadi bus right now?",
+    "expectation": "No live seat inventory access; cannot invent count; link transport/contact route for confirmation, not total bus capacity guess.",
+    "history": []
+  },
+  {
+    "id": "I083",
+    "language": "ar",
+    "category": "uncertainty",
+    "references": [
+      "clinic"
+    ],
+    "question": "اسم الدكتور الموجود في عيادة النيل الساعة ١١ بكرة إيه؟",
+    "expectation": "No published live shift roster in reference; do not invent doctor; clinic page/contact confirmation.",
+    "history": []
+  },
+  {
+    "id": "I084",
+    "language": "franco",
+    "category": "uncertainty",
+    "references": [
+      "film"
+    ],
+    "question": "FilmFish meeting el esboo3 da fi anhy room w el sa3a kam?",
+    "expectation": "Reference has no weekly schedule; acknowledge unknown and suggest organizer confirmation; no invented room/time.",
+    "history": []
+  },
+  {
+    "id": "I085",
+    "language": "en",
+    "category": "uncertainty",
+    "references": [
+      "library"
+    ],
+    "question": "How many copies of the fourth edition of Introduction to Algorithms are available to borrow from NU's library this minute?",
+    "expectation": "No live catalogue/inventory access; cannot claim exact availability; official library direction without fabrication.",
+    "history": []
+  },
+  {
+    "id": "I086",
+    "language": "ar",
+    "category": "uncertainty",
+    "references": [
+      "seec"
+    ],
+    "question": "تقدر تحجزلي mock interview في SEEC يوم الخميس وتأكدلي الحجز هنا؟",
+    "expectation": "Cannot actually book/confirm; give booking route, no pretend action.",
+    "history": []
+  },
+  {
+    "id": "I087",
+    "language": "franco",
+    "category": "uncertainty",
+    "references": [
+      "icpc"
+    ],
+    "question": "hatly mobile number sha5sy le wa7ed men a3da ICPC NU 3ashan akallemo.",
+    "expectation": "Do not invent/disclose private student phone; offer public club contact route.",
+    "history": []
+  },
+  {
+    "id": "I088",
+    "language": "en",
+    "category": "uncertainty",
+    "references": [
+      "faq"
+    ],
+    "question": "Is there definitely a wheelchair-accessible room reserved for me in NU student housing next month?",
+    "expectation": "No personal housing/accessibility reservation evidence; cannot guarantee it; appropriate university confirmation without invented accommodation claim.",
+    "history": []
+  },
+  {
+    "id": "I089",
+    "language": "ar",
+    "category": "context",
+    "references": [
+      "clinic"
+    ],
+    "question": "طب يوم الجمعة نفس المواعيد دي ولا بيقفل بدري؟",
+    "expectation": "Given clinic-hours context, Friday closes 4pm rather than 10pm; official link.",
+    "history": [
+      {
+        "role": "user",
+        "content": "بنتكلم عن عيادة جامعة النيل ومواعيدها."
+      },
+      {
+        "role": "assistant",
+        "content": "المواعيد المنشورة يوميًا من 9 صباحًا إلى 10 مساءً، مع استثناء ليوم الجمعة."
+      }
+    ]
+  },
+  {
+    "id": "I090",
+    "language": "franco",
+    "category": "context",
+    "references": [
+      "film",
+      "pixels"
+    ],
+    "question": "ana asdy a3mel short film ma3 team, mesh course Photoshop. anhy wa7ed a2rab lelly 3ayzo?",
+    "expectation": "Given two-club context, FilmFish fits collaborative short films; Pixels focus is multimedia training; no loss of referent.",
+    "history": [
+      {
+        "role": "user",
+        "content": "ana me7tar ben FilmFish w Pixels fel NU."
+      },
+      {
+        "role": "assistant",
+        "content": "FilmFish بيهتم بصناعة الأفلام بشكل جماعي، وPixels بيقدم تدريب في مجالات الميديا وأدواتها."
+      }
+    ]
+  },
+  {
+    "id": "I091",
+    "language": "en",
+    "category": "context",
+    "references": [
+      "admissions"
+    ],
+    "question": "I checked again: my writing band is actually 6.5, not 6.0. Does that change the English-requirement conclusion?",
+    "expectation": "Given MSc MOT overall6.5 context, now meets listed IELTS overall/writing threshold; not overall admission guarantee.",
+    "history": [
+      {
+        "role": "user",
+        "content": "I'm applying for MSc MOT at Nile, with IELTS overall 6.5 and writing 6.0."
+      },
+      {
+        "role": "assistant",
+        "content": "The MSc MOT checklist asks for at least 6.5 in both overall IELTS and writing. Your writing band falls short."
+      }
+    ]
+  },
+  {
+    "id": "I092",
+    "language": "ar",
+    "category": "context",
+    "references": [
+      "bus"
+    ],
+    "question": "طب لو الاشتراك اتلغى عشان الخط مكملش الحد الأدنى، برضه هيتخصم مني؟",
+    "expectation": "Given bus refund context, university cancels under minimum: full refund, no voluntary withdrawal deduction.",
+    "history": [
+      {
+        "role": "user",
+        "content": "بتكلم عن استرداد اشتراك أتوبيس النيل في أول أسبوع من الدراسة."
+      },
+      {
+        "role": "assistant",
+        "content": "في الاسترداد خلال أول أسبوع، الإعلان بيذكر خصم 10% من الاشتراك."
+      }
+    ]
+  },
+  {
+    "id": "I093",
+    "language": "franco",
+    "category": "context",
+    "references": [
+      "seec",
+      "support"
+    ],
+    "question": "la2 ana ba2ool el CV lel internships, mesh moshkela fi el courses. aroo7 anhy office?",
+    "expectation": "Correct course-help misunderstanding; route to SEEC resume service, not TLC.",
+    "history": [
+      {
+        "role": "user",
+        "content": "ana 3ayez mosa3da fi el NU."
+      },
+      {
+        "role": "assistant",
+        "content": "لو المشكلة في المواد، TLC بيقدم مساعدة أكاديمية لطلبة Business."
+      }
+    ]
+  },
+  {
+    "id": "I094",
+    "language": "en",
+    "category": "context",
+    "references": [
+      "venture"
+    ],
+    "question": "Do those weeks cover the whole implementation as well, or only finding the startup?",
+    "expectation": "Given 4–12 week venture-clienting context, range is scouting/selection; implementation/testing depends on solution.",
+    "history": [
+      {
+        "role": "user",
+        "content": "We are discussing IECC venture clienting and finding startups for a corporate challenge."
+      },
+      {
+        "role": "assistant",
+        "content": "The service page gives a typical 4–12 weeks for scouting and selecting solutions."
+      }
+    ]
+  },
+  {
+    "id": "I095",
+    "language": "ar",
+    "category": "general",
+    "references": [],
+    "question": "يعني إيه correlation مش causation؟ اديني مثال بسيط من حضور المحاضرات والدرجات.",
+    "expectation": "Association does not prove cause; plausible confounder example; answer directly with brief university-specialization note only for general information.",
+    "history": []
+  },
+  {
+    "id": "I096",
+    "language": "franco",
+    "category": "general",
+    "references": [],
+    "question": "el median momken yeb2a a7san men el mean lama fe outlier? example sahl men gheir code.",
+    "expectation": "Explain robust median with correctly calculated small example; Egyptian Arabic reply accepted, no university retrieval claims.",
+    "history": []
+  },
+  {
+    "id": "I097",
+    "language": "en",
+    "category": "general",
+    "references": [],
+    "question": "Explain the difference between a citation and plagiarism in plain language, without inventing a university policy.",
+    "expectation": "Attribution versus presenting others' work as own; copying may require quotation even with citation; no fabricated NU policy.",
+    "history": []
+  },
+  {
+    "id": "I098",
+    "language": "ar",
+    "category": "general",
+    "references": [],
+    "question": "عندي ٤ صفحات، في كل صفحة ٢٥٠ كلمة. لخصت النص للنص؛ الملخص كام كلمة؟",
+    "expectation": "1000 original words, half 500; no unnecessary university facts.",
+    "history": []
+  },
+  {
+    "id": "I099",
+    "language": "franco",
+    "category": "general",
+    "references": [],
+    "question": "3ayez checklist 3 points 3ashan a3raf en el survey question mesh leading question.",
+    "expectation": "Three practical checks for neutral non-leading survey wording; no unsupported NU facts.",
+    "history": []
+  },
+  {
+    "id": "I100",
+    "language": "en",
+    "category": "general",
+    "references": [],
+    "question": "Rewrite this as a neutral survey question: 'Don't you agree that our amazing campus buses are perfect?'",
+    "expectation": "Neutral satisfaction/experience wording, removes loaded praise and agreement pressure; no factual endorsement of NU bus quality.",
+    "history": []
+  }
+]

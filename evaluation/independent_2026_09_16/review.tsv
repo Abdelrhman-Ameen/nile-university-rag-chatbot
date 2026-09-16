@@ -1,0 +1,101 @@
+id	correctness	completeness	grounding	language	links	evidence	failure_type	note
+I001	2	2	2	1	1	present	none	Correctly states application fee non-refundable and supplies official page.
+I002	0	0	0	0	0	unavailable	verification_error	HTTP 503: local model could not verify its answer. Server log shows both verification attempts rejected; no answer delivered. Evidence not returned, so retrieval cannot be diagnosed.
+I003	2	2	2	1	1	present	none	Correctly excludes core O-levels, with relevant IGCSE evidence and Arabic reply to Franco.
+I004	2	2	2	1	1	present	none	Applies the four-year window correctly to a five-year-old certificate.
+I005	2	2	2	1	1	present	none	Correctly treats AS Math D as the stated alternative to AL, alongside O-level requirements.
+I006	0	1	1	1	1	present	meaning_lost	Answers yes to sufficiency despite failed TOK, then says subjects must be completed rather than passed. Pipeline normalizes 'ma3adetes TOK' to 'with TOK'; relevant pass requirement was retrieved. Irrelevant promotional material follows.
+I007	2	2	2	1	1	present	none	Correctly requires Higher Level Mathematics and Physics, not Standard Level.
+I008	2	2	2	1	1	present	none	Correctly identifies Chemistry and Biology HL; supporting IB checklist returned.
+I009	2	2	2	1	1	present	none	Preserves discretionary AP credit wording and explicitly rejects automatic transfer.
+I010	1	1	2	1	1	present	ambiguous_answer	Repeats the source's awkward OR wording, presenting two L2 subjects as the requirement while listing one L3 within it. Does not clearly answer the alternative question or mention the accompanying L1 requirement. Source wording itself is ambiguous; not treated as a proven false policy.
+I011	1	0	1	1	1	absent	missing_evidence	Does not answer grade 11 versus grade 12 for Canadian Biology. Gives IGCSE/IB requirements and an unhelpful equivalence discussion instead; Canadian section is absent from returned passages although present on the official page.
+I012	2	2	2	1	1	present	none	Correctly says passport is optional for Egyptians and includes national ID. Most direct cited chunk is the Azhar checklist, but its nationality clause matches the fresh Thanawya checklist; avoid certificate mixing in future.
+I013	2	2	2	1	1	present	none	Correct sequence: Study in Egypt nomination before completing NU application, with official links.
+I014	2	1	2	1	1	partial	missing_evidence	Correct master's four photos but does not provide undergraduate six; returned evidence contains only postgraduate photo counts. Useful half-answer, not full comparison.
+I015	2	2	2	1	1	present	none	Correctly applies foreign-degree equivalency to both degrees even though the institution is public.
+I016	2	2	2	1	1	present	none	Three recommendation letters, directly supported.
+I017	2	2	2	1	1	present	none	Correctly rejects writing 6.0 under MSc MOT's 6.5 writing threshold. Numbered citation resolves to the official admissions URL.
+I018	0	0	0	0	0	unavailable	verification_error	HTTP 503 after answer verification; no answer delivered to the TOEFL writing-threshold scenario.
+I019	2	2	2	1	1	present	none	Correct AMIDEAST ITP minimum 500. One citation is only the checklist, but another and an uncited master's chunk supply the English threshold.
+I020	1	0	1	1	1	absent	missing_evidence	Gives general IGCSE subjects and stamps, omitting the specific grade-11 completion proof. Also changes enrollment window to application window. Relevant grade-11 clause not returned.
+I021	2	2	2	1	1	present	none	Correctly states the published French-baccalaureate minimum without claiming individual admission.
+I022	2	2	2	1	1	present	none	Accurately gives Abitur average, subject count, grades and advanced subjects; citation resolves to official admissions page.
+I023	2	2	2	1	1	present	none	Correctly confirms Arabic among the seven L1 Business subjects.
+I024	0	0	0	0	0	unavailable	verification_error	HTTP 503: verification rejected early-admission answer twice; no usable answer delivered.
+I025	0	0	0	0	0	unavailable	verification_error	HTTP 503 on the explicit Oxford B1/B2 source-conflict question; no guidance delivered.
+I026	2	2	2	1	N/A	present	none	Correct concise clinic location: ground floor, UB2.
+I027	2	2	2	1	1	present	none	Final answer correctly says closed at 5pm Friday and provides 9am–4pm hours. Internal refinement corrected an earlier contradictory draft; only final delivered answer scored.
+I028	2	2	2	1	1	present	none	Correct supervised hospital transfer and family notification; no invented destination hospital.
+I029	2	2	2	1	1	present	none	TLC free Business tutoring, workshops and follow-up supported; readable though unnecessarily heavy English code-switching.
+I030	2	2	2	1	N/A	present	none	Correctly explains major guidance beyond tutoring, with Business scope.
+I031	2	2	2	1	1	present	none	Correct fund-dependent partial tuition aid, office email and room. Returned fees page additionally supports tuition-only scope.
+I032	2	2	2	1	1	partial	none	Correctly chooses SEEC for CV help, distinguishes SCE and links the official service page. Retrieved SEEC passages are broad career-service descriptions rather than the specific CV section.
+I033	2	2	2	1	1	present	none	Identifies Internship Letter Request Form and links its official parent page without inventing a form URL.
+I034	2	2	2	1	N/A	present	none	Correctly includes alumni in SEEC services.
+I035	2	2	2	1	1	present	none	Correct mock-interview practice/feedback and seec@nu.edu.eg booking route.
+I036	2	2	2	1	N/A	present	none	Explains critical evaluation and research assistance beyond book lending.
+I037	2	2	2	1	1	present	none	Correct per-semester charge, supported by HTML and OCR, with transport link.
+I038	2	0	1	1	0	absent	missing_evidence	Fails to provide 9800 EGP and links an unrelated 2022 Hadayek Al Ahram field trip as the nearest official page. Correct transport fee image not retrieved.
+I039	2	0	2	1	1	absent	missing_evidence	Abstains instead of giving 8800, 15300 and 6500 difference. Transport HTML retrieved but relevant OCR amounts absent from returned sources.
+I040	2	2	2	1	1	present	none	Correct beginner Level 0 with explicit supporting community description.
+I041	2	2	2	1	N/A	present	none	Correct Organizing Committee fit. Adds irrelevant UGRF/IECC promotion, but those additional claims are supported; quality-of-style concern rather than factual failure.
+I042	2	0	2	1	1	absent	missing_evidence	Does not give the published wessal_nu@nu.edu.eg email. Retrieves mission/history/news rather than contact section; unrelated activity detail does not answer the request.
+I043	2	2	2	1	N/A	present	none	Correctly identifies Enactus and describes historical training without claiming a current opening.
+I044	2	2	2	1	N/A	present	none	Correct NU Pack Pilates/yoga and other supported activities; no invented timetable.
+I045	2	2	2	1	N/A	present	none	Correctly describes Trojan as cybersecurity with workshops and friendly competitions. Unnecessary esports-information disclaimer does not assert absence of all esports at NU.
+I046	2	2	2	1	N/A	present	none	Correct Pixels tools and practical media training, backed by its mission.
+I047	2	2	2	1	1	present	none	Correctly accepts beginner interest in FilmFish; numbered citation supplies official club page.
+I048	2	2	2	1	N/A	present	none	Correctly expands Graduate Starter Pack as a student club, not a degree, with supported career-help examples.
+I049	2	2	2	1	N/A	present	none	Correct WIE support for women engineers and girls entering STEM.
+I050	2	2	2	1	1	present	none	Correctly includes outside participants and supports the additional junior-school conference example; no claim that a round is currently open.
+I051	0	0	0	1	N/A	absent	wrong_route	Routes GSP Simulatopedia to general, invents 'Bas wala' introductory lectures and their purpose, with no NU evidence. The generic disclaimer does not make the invented university-specific answer acceptable.
+I052	2	2	2	1	N/A	present	none	Correct genomics/proteomics definitions from Bioinformatics description.
+I053	2	2	2	1	N/A	present	none	Correctly includes forensic laboratory careers as possibilities; additional supported promotion is unnecessary but not false.
+I054	2	2	2	0	1	present	wrong_language	Correct Biomedical Engineering eligibility and program description, but replies entirely in English to Franco input rather than Egyptian Arabic/Franco.
+I055	2	2	2	1	N/A	present	none	Correctly includes requirements, testing and quality assurance beyond coding.
+I056	2	2	2	1	1	present	none	Correct diploma-to-MSc possibility with supporting hands-on curriculum details; no explicit guaranteed admission or transfer.
+I057	2	2	2	0	N/A	present	wrong_language	Accurate applied-project plus report requirement, but fully English response to Franco input.
+I058	2	2	2	1	N/A	present	none	Correct University of Tennessee named on the partnership page.
+I059	2	2	2	1	N/A	present	none	Gives both requested career examples and supported relevant course topics without employment guarantees.
+I060	2	2	1	1	1	partial	incomplete_grounding	Correct director matches the fresh reference, but returned chunks contain only the page heading and a biography tail naming El-Sohaimy, not the full Sobhy Ahmed name. Citation context is incomplete.
+I061	2	2	2	1	1	present	none	Accurate ACCT 303, three credits and activity-based costing.
+I062	2	2	2	1	1	present	none	Correct MOT 602 title, topics and postgraduate level.
+I063	2	2	2	1	1	present	none	Correct BMD101 DNA/genetics coverage and three credits.
+I064	2	2	2	1	N/A	present	none	Correct practical component with organism cultures and genetic variation example.
+I065	2	2	2	1	1	present	none	Correct semester four and two credits; avoids confusion with BIO203.
+I066	2	2	2	1	N/A	present	none	Correct public biological repositories and NGS-analysis orientation.
+I067	2	2	2	1	N/A	present	none	Both unmanned vehicles and smart materials correctly identified in research scope.
+I068	2	2	2	1	N/A	present	none	Correct Nottingham partner and STDF funder for shrimp-shell packaging.
+I069	2	2	2	1	N/A	present	none	Correctly identifies ASRT for the coral robot, without mixing project funders.
+I070	1	2	1	1	N/A	partial	overgeneralized_evidence	Core extraction/reinforcement answer correct. Additional claim generalizes strength/modulus improvements to fibers and whiskers; full official paper abstract specifically reports 25 wt.% whiskers. Returned cited abstract tail also loses the qualifying setup. Supplemental reference check recorded; no rubric changed.
+I071	2	2	2	1	N/A	present	none	Correct low-disturbance coral monitoring purpose, not fishing.
+I072	2	2	2	1	N/A	present	none	Correctly presents venture clienting as support for companies working with startups, with supported pilot/scaling process.
+I073	2	1	1	1	0	absent	missing_evidence	Correct no-fixed-price conclusion, but omits dependence on agreed scope and cites unrelated news boilerplate instead of the service FAQ. Price policy absent from returned passages.
+I074	1	0	1	1	0	absent	missing_evidence	Misses published 4–12 week scouting range and implementation distinction, replacing them with general IECC promotion and unrelated program links.
+I075	2	1	2	1	N/A	absent	missing_evidence	Correctly says support goes beyond contacts, but never answers the requested pilot/PoC process. Retrieves general entrepreneurship programs instead of venture-clienting workflow.
+I076	2	2	2	1	N/A	present	none	Correctly lists design, prototyping and manufacturing outsourcing expenses supported by shared labs.
+I077	2	0	2	1	0	absent	missing_evidence	No answer to first-week 10% bus deduction; no sources returned and only a generic home-page link.
+I078	2	0	2	1	0	absent	missing_evidence	No answer to six-subscriber minimum and full refund below it; no sources returned.
+I079	2	0	2	1	0	absent	missing_evidence	No answer to the published other-bus prohibition; no sources and only home page.
+I080	2	0	1	1	0	absent	missing_evidence	Misses capacity-or-date booking condition and links unrelated Egyptian Refining Company scholarship terms.
+I081	2	0	1	1	0	absent	missing_evidence	Misses no-refund-after-one-month rule and links student-exchange funding rather than bus policy.
+I082	2	1	2	1	0	not-needed	unhelpful_abstention	Does not invent live seat count, but gives only a one-line uncertainty response with no explanation of live-access limits or transport confirmation route.
+I083	2	2	2	1	1	not-needed	none	Correctly declines to name an unknown shift doctor and provides verified clinic location, hours and official page.
+I084	2	2	2	1	0	not-needed	wrong_route	Sensibly suggests contacting FilmFish organizers without inventing time/room, but routes university question as general, appends irrelevant specialization note and omits official club link.
+I085	2	1	2	1	0	not-needed	unhelpful_abstention	Does not invent live book availability, but provides no library contact/link or explanation of inventory-access limits.
+I086	2	2	2	1	1	present	none	Correctly states it cannot book or confirm; gives verified SEEC email and service reference.
+I087	2	2	2	1	1	present	none	Does not invent a student's private mobile; directs to the published ICPC Facebook contact via official page.
+I088	1	1	1	1	1	partial	overgeneralized_evidence	Quotes the no-housing statement for international students, then generalizes it to all on-campus housing without knowing the user's status. Does not clearly explain lack of access to their personal reservation or give a reservation-confirmation route. OCS evidence concerns accessibility support, not a reserved residential room.
+I089	2	2	2	1	1	present	none	Resolves Friday clinic follow-up correctly as 9 am to 4 pm, with the official clinic reference.
+I090	2	2	0	1	N/A	partial	misattributed_citation	Correctly distinguishes FilmFish from Pixels using the history, but cites the Pixels page as evidence for FilmFish's collaborative mission. No FilmFish passage was returned. Adds unrelated IECC promotion.
+I091	2	2	2	1	1	present	none	Applies the corrected writing score of 6.5 and confirms the stated overall and writing English requirements, without promising admission.
+I092	2	0	2	1	0	absent	missing_evidence	Does not answer the below-minimum bus cancellation and full-refund follow-up; gives only uncertainty and the NU homepage. Required image policy is absent from returned passages.
+I093	2	2	2	1	1	partial	none	Uses the CV-versus-courses context to recommend SEEC rather than TLC, with relevant career support evidence and official links. Returned passages describe career support broadly; the independent SEEC reference confirms CV help.
+I094	2	0	2	1	1	partial	missing_evidence	Lists venture-clienting stages but does not resolve whether the 4-12 weeks covers finding startups or execution. Says provided documentation lacks the range despite the history mentioning it; the required FAQ scope is absent from returned passages.
+I095	2	2	2	1	N/A	not-needed	none	Explains correlation versus causation with attendance and grades, including a plausible confounder rather than asserting causality.
+I096	2	2	2	1	N/A	not-needed	none	Arabic reply to Franco correctly calculates both means and the unchanged median, illustrating the outlier effect without code.
+I097	2	1	2	1	N/A	not-needed	incomplete_explanation	Explains credit and plagiarism without fabricating NU policy, but omits the expected caveat that verbatim copying may still require quotation even when a citation is supplied.
+I098	2	2	2	1	N/A	not-needed	none	Correctly calculates 1000 original words and a 500-word summary.
+I099	2	2	2	1	N/A	not-needed	none	Provides three practical checks for neutral survey questions: neutral wording, balanced choices and avoiding assumptions. Natural Arabic reply to Franco.
+I100	2	2	2	1	N/A	not-needed	none	Produces a neutral bus-service rating question, removing loaded praise and pressure to agree.

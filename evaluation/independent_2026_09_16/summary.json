@@ -1,0 +1,141 @@
+{
+  "reviewed_at": "2026-09-16T19:35:38.436977+00:00",
+  "reviewer": "AI agent, not recruited human reviewers",
+  "total": 100,
+  "outcomes": {
+    "pass": 67,
+    "fail": 20,
+    "partial": 13
+  },
+  "http": {
+    "200": 96,
+    "503": 4
+  },
+  "latency_seconds": {
+    "median": 9.072,
+    "p95": 20.05,
+    "max": 27.548
+  },
+  "breakdown": {
+    "category": [
+      {
+        "category": "admissions",
+        "pass": 16,
+        "partial": 2,
+        "fail": 7,
+        "total": 25
+      },
+      {
+        "category": "services",
+        "pass": 11,
+        "partial": 0,
+        "fail": 0,
+        "total": 11
+      },
+      {
+        "category": "transport_ocr",
+        "pass": 1,
+        "partial": 0,
+        "fail": 7,
+        "total": 8
+      },
+      {
+        "category": "clubs",
+        "pass": 10,
+        "partial": 0,
+        "fail": 2,
+        "total": 12
+      },
+      {
+        "category": "programs",
+        "pass": 7,
+        "partial": 3,
+        "fail": 0,
+        "total": 10
+      },
+      {
+        "category": "courses",
+        "pass": 6,
+        "partial": 0,
+        "fail": 0,
+        "total": 6
+      },
+      {
+        "category": "research",
+        "pass": 3,
+        "partial": 1,
+        "fail": 0,
+        "total": 4
+      },
+      {
+        "category": "enterprise",
+        "pass": 2,
+        "partial": 2,
+        "fail": 1,
+        "total": 5
+      },
+      {
+        "category": "uncertainty",
+        "pass": 3,
+        "partial": 4,
+        "fail": 0,
+        "total": 7
+      },
+      {
+        "category": "context",
+        "pass": 3,
+        "partial": 0,
+        "fail": 3,
+        "total": 6
+      },
+      {
+        "category": "general",
+        "pass": 5,
+        "partial": 1,
+        "fail": 0,
+        "total": 6
+      }
+    ],
+    "input_language": [
+      {
+        "input_language": "en",
+        "pass": 24,
+        "partial": 7,
+        "fail": 3,
+        "total": 34
+      },
+      {
+        "input_language": "ar",
+        "pass": 24,
+        "partial": 1,
+        "fail": 8,
+        "total": 33
+      },
+      {
+        "input_language": "franco",
+        "pass": 19,
+        "partial": 5,
+        "fail": 9,
+        "total": 33
+      }
+    ]
+  },
+  "failure_types": {
+    "verification_error": 4,
+    "meaning_lost": 1,
+    "ambiguous_answer": 1,
+    "missing_evidence": 16,
+    "wrong_route": 2,
+    "wrong_language": 2,
+    "incomplete_grounding": 1,
+    "overgeneralized_evidence": 2,
+    "unhelpful_abstention": 2,
+    "misattributed_citation": 1,
+    "incomplete_explanation": 1
+  },
+  "code_version": "2b2c1e1ccbdf35c8",
+  "app_commit": "2729a6ebc5550318733ae1d322606aee37e5f006",
+  "run_started": "2026-09-16T06:19:05.107964+00:00",
+  "run_finished": "2026-09-16T06:35:42.543709+00:00",
+  "frozen_assets_unchanged": true
+}
