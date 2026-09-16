@@ -53,7 +53,7 @@ if __name__ == '__main__':
              'run_started':frozen['frozen_at'],'run_finished':done['finished_at'],'frozen_assets_unchanged':True}
     (HERE/'summary.json').write_text(json.dumps(stats,ensure_ascii=False,indent=2),encoding='utf-8')
     (HERE/'review.json').write_text(json.dumps(reviews,ensure_ascii=False,indent=2),encoding='utf-8')
-    sections = ['# All 100 answers and their reviews','AI-reviewed human-style challenge set. Scores and references were defined before execution. Every case is included, including failures. Full returned source passages and pipeline diagnostics are in `responses.jsonl`.']
+    sections = ['# All 100 answers and their reviews','AI-reviewed human-style challenge set. Scoring criteria and references were defined before execution. Every case is included, including failures. Full returned source passages and pipeline diagnostics are in `responses.jsonl`.']
     for r in reviews:
         c,x=suite[r['id']],responses[r['id']]
         sections += [f"## {r['id']} — {r['outcome'].upper()}", f"**Question ({c['language']}):** {c['question']}"]
@@ -97,6 +97,8 @@ Run: {stats['run_started']} through {stats['run_finished']}. Frozen-asset hashes
 - [Reference snapshots](references.json), [visually checked transport image facts](image_reference.json), [freeze manifest](freeze.json), [completion hashes](completion.json).
 
 The author/reviewer is the same AI agent with implementation context, not an independent human panel. References and criteria were frozen before responses, but query selection was informed partly by available university pages; this is not a blinded population study. Source-page ambiguity, missing live inventories and unknown real-world service status remain limitations. Repeated broad subjects within the set test different facets; six contextual cases intentionally revisit a fact to test continuity. No claims about all university endpoints or production readiness follow from these 100 results.
+
+The frozen protocol's phrase "No model-generated grading" was imprecise: there was no separate automated judge or chatbot self-scoring, but these scores were authored by the AI assistant. They are AI judgments, not human ratings. The original frozen protocol is retained unchanged for auditability.
 """
     (HERE/'REPORT.md').write_text(report,encoding='utf-8')
     print(json.dumps(stats,ensure_ascii=False,indent=2))

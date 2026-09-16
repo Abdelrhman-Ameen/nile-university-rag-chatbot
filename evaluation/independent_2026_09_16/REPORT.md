@@ -44,3 +44,5 @@ Run: 2026-09-16T06:19:05.107964+00:00 through 2026-09-16T06:35:42.543709+00:00. 
 - [Reference snapshots](references.json), [visually checked transport image facts](image_reference.json), [freeze manifest](freeze.json), [completion hashes](completion.json).
 
 The author/reviewer is the same AI agent with implementation context, not an independent human panel. References and criteria were frozen before responses, but query selection was informed partly by available university pages; this is not a blinded population study. Source-page ambiguity, missing live inventories and unknown real-world service status remain limitations. Repeated broad subjects within the set test different facets; six contextual cases intentionally revisit a fact to test continuity. No claims about all university endpoints or production readiness follow from these 100 results.
+
+The frozen protocol's phrase "No model-generated grading" was imprecise: there was no separate automated judge or chatbot self-scoring, but these scores were authored by the AI assistant. They are AI judgments, not human ratings. The original frozen protocol is retained unchanged for auditability.

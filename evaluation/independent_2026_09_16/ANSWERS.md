@@ -1,6 +1,6 @@
 # All 100 answers and their reviews
 
-AI-reviewed human-style challenge set. Scores and references were defined before execution. Every case is included, including failures. Full returned source passages and pipeline diagnostics are in `responses.jsonl`.
+AI-reviewed human-style challenge set. Scoring criteria and references were defined before execution. Every case is included, including failures. Full returned source passages and pipeline diagnostics are in `responses.jsonl`.
 
 ## I001 — PASS
 
